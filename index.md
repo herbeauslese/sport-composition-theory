@@ -229,8 +229,8 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 .seg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .leg-item { font-size: 0.78em; color: #555; display: flex; align-items: center; gap: 5px; }
 .leg-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.tactics,  .leg-dot.tactics  { background: #333333; }
-.physical, .leg-dot.physical { background: #777777; }
-.skill,    .leg-dot.skill    { background: #aaaaaa; }
-.material, .leg-dot.material { background: #cccccc; }
+.tactics,  .leg-dot.tactics  { background: #2d5a3d; }
+.physical, .leg-dot.physical { background: #8b4513; }
+.skill,    .leg-dot.skill    { background: #1a3a6b; }
+.material, .leg-dot.material { background: #6b2d6b; }
 </style>

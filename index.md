@@ -10,11 +10,11 @@ I have always been a fan of sport — not one sport, but many. Football, cycling
 
 Not in terms of which is more exciting, or more demanding, or more prestigious. But structurally. What does it take to be good at something? What kind of skills — in the broadest sense — does each sport reward?
 
-A sprinter and a Formula 1 driver are both elite athletes. But the nature of their excellence is completely different. One trains their body to an almost incomprehensible degree of physical refinement. The other depends, in large part, on a machine worth hundreds of millions of euros. Comparing their "skill" directly seems almost meaningless.
+Consider a sprinter and a Formula 1 driver. Both are elite athletes competing at the absolute limit of human performance. But the nature of their excellence is radically different. The sprinter has refined their body over years to produce a single explosive output lasting under ten seconds. The Formula 1 driver must process a torrent of sensory information at 300 km/h, making tactical decisions in fractions of a second — decisions that have to hold up across an entire race strategy built over dozens of laps. And then there is the chess player: no physical output to speak of, no machine, no course — just pure cognitive warfare conducted across a board, where a single positional miscalculation made on move twelve can silently unravel everything by move forty.
 
-And yet: both are competing. Both are winning and losing. Something is being measured in both cases. The question is just — what?
+Three athletes. Three completely different skill sets. And yet all three are competing, winning, and losing based on something that can be measured and compared.
 
-That question led to this theory. The idea is straightforward: every sport can be broken down into the same set of fundamental components. Not the same values — the values differ enormously, and that is rather the point — but the same *categories*. The same vocabulary for describing what a sport demands.
+That question — what exactly is being measured — led to this theory.
 
 > *"What does it take to win? The answer is always the same components. Just in different proportions."*
 
@@ -204,6 +204,20 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 <small>* Percentages are curated estimates derived from structured qualitative analysis. They reflect the author's considered opinion and should be treated as such — which is to say, seriously, but not too seriously.</small>
 
 <style>
+@media (prefers-color-scheme: dark) {
+  body { background-color: #0d1117 !important; color: #e6edf3 !important; }
+  .main-content h1, .main-content h2, .main-content h3,
+  .main-content h4, .main-content h5, .main-content h6 { color: #e6edf3 !important; }
+  .main-content p, .main-content li, .main-content blockquote { color: #c9d1d9 !important; }
+  .page-header { background: #161b22 !important; background-image: none !important; }
+  .main-content { background: #0d1117 !important; }
+  .sport-entry { border-bottom-color: #30363d !important; }
+  .stacked-bar { background: #21262d !important; }
+  .sport-meta, .bar-label, .leg-item { color: #8b949e !important; }
+  small { color: #8b949e !important; }
+  a { color: #58a6ff !important; }
+}
+
 .sport-charts { margin-top: 1.5em; }
 .sport-entry { margin-bottom: 2.2em; padding-bottom: 2em; border-bottom: 1px solid #e0ddd8; }
 .sport-entry:last-child { border-bottom: none; }
@@ -215,8 +229,8 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 .seg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .leg-item { font-size: 0.78em; color: #555; display: flex; align-items: center; gap: 5px; }
 .leg-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.tactics,  .leg-dot.tactics  { background: #2d5a3d; }
-.physical, .leg-dot.physical { background: #8b4513; }
-.skill,    .leg-dot.skill    { background: #1a3a6b; }
-.material, .leg-dot.material { background: #6b2d6b; }
+.tactics,  .leg-dot.tactics  { background: #333333; }
+.physical, .leg-dot.physical { background: #777777; }
+.skill,    .leg-dot.skill    { background: #aaaaaa; }
+.material, .leg-dot.material { background: #cccccc; }
 </style>

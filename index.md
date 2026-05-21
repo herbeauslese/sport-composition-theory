@@ -15,13 +15,34 @@ description: Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Ko
   <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
 </div>
 
+<nav class="toc" aria-label="Inhaltsverzeichnis">
+<p class="toc-title">Inhalt</p>
+<ol class="toc-list">
+  <li><a href="#hintergrund">Hintergrund</a></li>
+  <li><a href="#die-theorie">Die Theorie</a>
+    <ol>
+      <li><a href="#annahmen">Annahmen</a></li>
+      <li><a href="#komponenten">Komponenten</a></li>
+    </ol>
+  </li>
+  <li><a href="#vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</a></li>
+  <li><a href="#methodik">Methodik</a></li>
+  <li><a href="#beispiele">Beispiele</a></li>
+  <li><a href="#vergleich">Vergleich</a>
+    <ol>
+      <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
+    </ol>
+  </li>
+</ol>
+</nav>
+
 ---
 
 ## Hintergrund
 
-Ich bin schon immer Sportfan gewesen — nicht von einer Sportart, sondern von vielen. Fußball, Radsport, Schach, Leichtathletik, Motorsport. Das ganze, chaotische Spektrum. Und lange Zeit habe ich mir eine Frage gestellt, die einfach klang und sich als überraschend schwer herausstellte: wie vergleicht man sie eigentlich?
+Irgendwann hört man es zum hundertsten Mal: dass Fußballer im Vergleich zu Sprintern, Turnern oder Boxern „eigentlich keinen richtigen Sport machen". Dass sie körperlich weich seien, dass ihr Sport in Wirklichkeit gar nicht so anspruchsvoll sei wie das, was andere Athleten leisten. Das Argument ist alt, es wird in Stammtischrunden geführt und in Talkshows, und es endet meistens damit, dass beide Seiten ihre Position lauter wiederholen.
 
-Nicht in der Frage, welche spannender ist, welche fordernder, welche prestigeträchtiger. Sondern strukturell. Was braucht es, um in etwas gut zu sein? Welche Art von Anforderungen — im weitesten Sinne — stellt eine Sportart an den Athleten?
+Was an dem Streit reizvoll ist, ist nicht die Antwort. Es ist die Frage, die darunter liegt: *Wie vergleicht man Sportarten eigentlich?* Nicht in der Frage, welche spannender ist, welche fordernder, welche prestigeträchtiger. Sondern strukturell. Was braucht es, um in etwas gut zu sein? Welche Art von Anforderungen — im weitesten Sinne — stellt eine Sportart an den Athleten?
 
 Man nehme einen Sprinter und einen Formel-1-Fahrer. Beide sind Spitzensportler, die am absoluten Limit menschlicher Leistungsfähigkeit antreten. Aber die Natur ihrer Exzellenz ist grundverschieden. Der Sprinter hat seinen Körper über Jahre darauf geformt, einen einzigen explosiven Output von unter zehn Sekunden zu produzieren. Der Formel-1-Fahrer muss bei 300 km/h einen Strom sensorischer Eindrücke verarbeiten und in Sekundenbruchteilen taktische Entscheidungen treffen — Entscheidungen, die sich über eine ganze Rennstrategie hinweg tragen müssen, die wiederum über Dutzende Runden aufgebaut wird. Und dann ist da der Schachspieler: keine nennenswerte körperliche Leistung, keine Maschine, keine Strecke — nur reine kognitive Auseinandersetzung über ein Brett, in der ein einziger positioneller Fehler in Zug zwölf bis Zug vierzig still und leise alles auseinandernehmen kann.
 
@@ -70,23 +91,27 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 
 ---
 
-### Taktik
+### Komponenten
+
+Die vier Komponenten des Composition Vector werden im Folgenden einzeln beschrieben.
+
+#### Taktik
 
 Entscheidungsfindung, Planung, das Lesen von Gegnern und das Anpassen der Strategie in Echtzeit. Taktik umfasst den *Inhalt* der Entscheidungen: die Wahl der Formation, das Lesen einer Situation, die Entscheidung anzugreifen oder zu warten. Es ist die Komponente, die für den Gelegenheitszuschauer am unsichtbarsten und für den ernsthaften Beobachter am entscheidendsten ist.
 
 Taktik betrifft *was* entschieden wird, nicht die kognitive Kapazität, über die Zeit weiter zu entscheiden. Letzteres gehört zur Physis, und die Unterscheidung ist wichtig: ein Athlet, der zehn Minuten lang brillante Entscheidungen trifft und dann mental zusammenbricht, hat nur dann ein Taktik-Problem, wenn die Entscheidungen selbst schlecht waren. Wenn die Entscheidungen korrekt waren, aber irgendwann ausgingen, ist das Problem Kapazität, nicht Urteilsvermögen.
 
-### Physis
+#### Physis
 
 Die Anforderungen an den menschlichen Körper: Kraft, Ausdauer, Schnelligkeit, Beweglichkeit — und ihre mentalen Entsprechungen. Anhaltende Konzentration, psychische Belastbarkeit unter Druck und die Fähigkeit, über lange Zeiträume kognitiv leistungsfähig zu bleiben, zählen ebenfalls hierher. Der Geist ist Teil des Körpers, und im Sport wird er entsprechend trainiert.
 
 Das ist die kognitive *Kapazitäts*-Dimension, die Taktik ergänzt. Eine fünfstündige Schachpartie stellt enorme Anforderungen an die Physis in diesem Sinn, auch wenn kein Muskel ernsthaft beansprucht wird. Die Qualität der gespielten Züge ist Taktik; die Fähigkeit, in Zug sechzig immer noch gute Züge zu finden, ist Physis.
 
-### Skill
+#### Skill
 
 Erlernte menschliche Technik: motorische Kontrolle, Präzision, Koordination und Ausführung. Skill unterscheidet sich von Physis dadurch, dass es um die *Qualität* der Bewegung geht, nicht um die *Kapazität* zu ihr. Der physische Output eines Sprinters ist seine Höchstgeschwindigkeit. Sein Skill ist die Technik, die ihn effizient dorthin bringt.
 
-### Material
+#### Material
 
 Die Rolle externer Ausrüstung beim Zustandekommen kompetitiver Ergebnisse. Diese Komponente erfordert besondere Aufmerksamkeit.
 
@@ -100,46 +125,29 @@ Noch eine Anmerkung: Trainingsinfrastruktur — Höhencamps, Spezialbahnen, Spit
 
 ## Vorbehalte & Anmerkungen
 
-Der Composition Vector ist eine bewusste Vereinfachung. Das ist ein Feature, kein Mangel — aber es hat Konsequenzen, die man explizit benennen sollte. Dieser Abschnitt sammelt die bekannten Grenzen des Modells. Er wird wachsen, sobald die Theorie an weiteren Sportarten getestet wird.
+Der Composition Vector ist eine bewusste Vereinfachung. Das ist ein Feature, kein Mangel — aber es hat Konsequenzen, die explizit benannt werden sollten.
 
 ### Das Mannschaftssport-Problem
 
-In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten nicht.
+In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten beschreibt er das Team, nicht den Spieler — denn taktische Qualität operiert dort auf zwei Ebenen: kollektiv (Formation, Pressing, Standardsituationen) und individuell (Positionsentscheidungen innerhalb des Systems). Diese sind nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur schlecht ist.
 
-Man nehme Taktik im Fußball. Der zugewiesene Wert spiegelt wider, wie stark taktische Qualität das Ergebnis eines Spiels bestimmt. Aber taktische Qualität in einem Mannschaftssport operiert auf zwei unterschiedlichen Ebenen: der **kollektiven Ebene** (Mannschaftsform, Pressing-Struktur, Standardsituationen) und der **individuellen Ebene** (die Positionsentscheidungen eines Spielers innerhalb dieses Systems). Das ist nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur seiner Mannschaft schlecht ist.
-
-Das bedeutet, dass der Composition Vector in Mannschaftssportarten die Sportart auf Teamebene beschreibt — also auf der Ebene, auf der Ergebnisse tatsächlich entschieden werden. Die individuellen Beiträge der Athleten sind real, aber sie sind Eingaben in ein kollektives System, nicht direkte Ausgaben.
-
-Eine praktische Folge: Taktik hat in Mannschaftssportarten tendenziell ein größeres Gewicht, als eine naive Lesart vermuten lässt, weil kollektive taktische Organisation individuelle Überlegenheit in anderen Komponenten kompensieren — oder vollständig neutralisieren — kann. Elf individuell überlegene Athleten ohne System verlieren regelmäßig gegen elf organisierte. Das ist kein Mangel im Modell; es ist eine korrekte Abbildung dessen, wie Mannschaftssport funktioniert.
+Eine praktische Folge: Taktik wiegt in Mannschaftssportarten schwerer, als eine naive Lesart vermuten lässt, weil kollektive Organisation individuelle Überlegenheit in anderen Komponenten kompensieren oder neutralisieren kann. Elf individuell überlegene Athleten ohne System verlieren regelmäßig gegen elf organisierte.
 
 ### Material ist nicht symmetrisch zwischen Athleten
 
-Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. Diese Unterscheidung ist leicht zu übersehen und sollte explizit benannt werden.
-
-Man nehme Formel 1, wo Material ungefähr die Hälfte des Vektors ausmacht. Diese Zahl spiegelt wider, wie stark die Qualität der Ausrüstung Ergebnisse *im gesamten Feld* prägt: Ein Hinterbänkler-Team und ein Spitzenteam sind in erster Linie durch ihre Autos getrennt, nicht durch das Talent ihrer Fahrer. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material. Zwischen ihnen kollabiert die Material-Komponente effektiv auf null, und der Wettkampf wird allein durch Taktik, Physis und Skill entschieden.
-
-Dieselbe Logik gilt überall dort, wo Ausrüstung relevant ist. Ein Top-Rennrad ist entscheidend, wenn man einen Tour-de-France-Fahrer mit einem Amateur vergleicht, aber irrelevant, wenn man zwei World-Tour-Profis vergleicht. Material ist, anders gesagt, eine Eigenschaft des Wettbewerbs als Ganzes — nicht eine Konstante, die jeder Athlet mit sich trägt. Der Composition Vector erfasst die Struktur der Sportart; er beschreibt nicht von sich aus ein bestimmtes Duell innerhalb dieser Sportart.
+Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund die Hälfte des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse *im gesamten Feld* prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.
 
 ### Kritik an der Zerlegbarkeit
 
-Annahme 1 behauptet, dass vier Komponenten ausreichen. Diese Behauptung ist nicht selbstverständlich, und mehrere plausible Kandidaten für eine fünfte Komponente lassen sich nennen. Dieser Abschnitt geht die drei häufigsten Einwände durch — und erklärt, warum die Theorie sie nicht aufnimmt.
+Annahme 1 behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten für eine fünfte werden hier kurz behandelt — und an ihrem Platz innerhalb des Modells verortet, statt eine eigene Achse zu bekommen.
 
-**Glück, Varianz, Zufall.**
-Manche Sportarten haben Zufall strukturell eingebaut: Backgammon durch den Würfel, Curling durch das Eis, Poker durch das Blatt. In Fußball entscheidet manchmal ein abgefälschter Schuss. Müsste eine fünfte Komponente diesen Faktor erfassen?
+**Glück, Varianz, Zufall.** Glück ist keine sportliche Leistung; die Komponenten beschreiben, was vom Athleten *verlangt* wird. Wo Zufallsmanagement zur Leistung wird — Wahrscheinlichkeiten rechnen, Gegner lesen wie im Poker — ist das Taktik. Über lange Wettkampfformate (eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund) mittelt sich Zufall ohnehin heraus.
 
-Die Theorie verneint das, aus einem grundsätzlichen Grund: Glück ist keine sportliche Leistung. Die vier Komponenten beschreiben, was vom Athleten *verlangt* wird — Zufall verlangt nichts, er passiert einfach. Was Sportarten unterscheidet, in denen Zufall eine Rolle spielt, ist nicht das Ausmaß des Zufalls selbst, sondern die *Art, wie Athleten mit ihm umgehen*. Im Poker bedeutet das: das eigene Blatt korrekt einzuschätzen, Wahrscheinlichkeiten zu rechnen, gegnerisches Verhalten zu lesen. Das ist Taktik. In Sportarten, in denen Glück über viele Wettkampftage hinweg ausgemittelt wird — eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund — verschwindet der Zufallseffekt strukturell, und übrig bleiben wieder die vier Komponenten.
+**Ästhetik und Wertungssport.** Was Bewerter belohnen, ist im Wesentlichen Skill (saubere Ausführung) plus Physis (Schwierigkeitsgrad). Choreografie und Ausdruck sind eine interpretative Spielart von Skill, keine eigene Achse.
 
-**Ästhetik und Wertungssport.**
-In Kunstturnen, Eiskunstlauf oder Synchronschwimmen wird das Ergebnis nicht objektiv durch Tor, Zeit oder Distanz bestimmt, sondern durch Bewertung. Müsste eine eigene Komponente erfassen, dass hier ein Teil des Erfolgs darin besteht, *gefällig auszuführen*?
+**Mentale Härte.** Bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck. Eine separate Komponente wäre Doppelzählung.
 
-Auch hier verneint die Theorie. Was Bewerter belohnen, ist im Wesentlichen Skill — die saubere, präzise, kontrollierte Ausführung erlernter Technik. Schwierigkeitsgrad fällt unter Physis. Was darüber hinaus geht — Choreografie, Ausdruck, künstlerische Linie — ist eine besondere Spielart von Skill, in der die Technik nicht nur sauber, sondern auch interpretativ angewandt wird. Eine eigene Komponente dafür einzuführen, würde die Trennlinie zu Skill künstlich ziehen, ohne wirklich etwas Neues zu erfassen.
-
-**Mentale Härte.**
-Nervenstärke unter Druck, Clutch-Performance, die Fähigkeit, im entscheidenden Moment zu liefern — verdient das keine eigene Komponente?
-
-Diese ist bereits in Physis enthalten. Die Definition von Physis umfasst ausdrücklich auch die mentalen Entsprechungen körperlicher Belastung: anhaltende Konzentration, psychische Belastbarkeit, kognitive Ausdauer unter Druck. Mentale Härte ist eine *Kapazität*, fokussiert und handlungsfähig zu bleiben, wenn die Umstände es schwer machen — und genau das ist, was Physis nach der hier verwendeten Definition meint. Eine eigene Komponente wäre eine Doppelzählung.
-
-Diese drei Antworten lösen die Einwände nicht in dem Sinn, dass sie sie widerlegen — sie zeigen lediglich, wo die Theorie die jeweilige Sorge bereits einordnet. Wer einen Einwand für nicht ausreichend behandelt hält, sollte die Theorie entsprechend erweitern. Bis dahin bleibt sie viergliedrig.
+Diese Antworten widerlegen die Einwände nicht; sie verorten sie innerhalb der bestehenden vier Komponenten. Wer das für unzureichend hält, sollte die Theorie entsprechend erweitern.
 
 ---
 
@@ -161,7 +169,7 @@ Die resultierenden Werte sind kuratierte Schätzungen, angegeben auf einem 5%-Ra
 
 ## Beispiele
 
-Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist.
+Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung, warum die Werte so verteilt sind.
 
 <div class="sport-charts">
 
@@ -180,6 +188,25 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
   </div>
 </div>
+<p class="sport-rationale">Auf Profiniveau ein vor allem taktisch entschiedener Sport: Formation, Pressinghöhe, Standardsituationen und Spielplan gegen einen bestimmten Gegner prägen Ergebnisse stärker als individuelle Klasse. Skill bleibt wichtig (Ballbehandlung, Passqualität), Physis ist Voraussetzung, aber selten der entscheidende Unterschied zwischen zwei Topteams. Kein Material — die Ausrüstung ist standardisiert und über die Liga hinweg vergleichbar.</p>
+</div>
+
+<div class="sport-entry">
+<h3>Tennis</h3>
+<p class="sport-meta">Einzel · drei oder fünf Sätze</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"   style="width:20%" title="Taktik: 20%"></div>
+    <div class="seg physical"  style="width:35%" title="Physis: 35%"></div>
+    <div class="seg skill"     style="width:45%" title="Skill: 45%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 35%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 45%</span>
+  </div>
+</div>
+<p class="sport-rationale">Skill-getrieben: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie machen den Unterschied zwischen Top-100 und Top-10. Physis ist mit 35% hoch angesetzt, weil Best-of-Five-Matches über mehrere Stunden gehen können und der Wettkampfkalender erbarmungslos ist. Taktik ist real (Aufschlagmuster, Returnposition, Punktaufbau), wirkt aber im direkten Vergleich zu Mannschaftssportarten begrenzt — die Zahl der Spielzüge pro Punkt ist klein. Material ist 0, da Profis untereinander Zugang zu vergleichbarer Ausrüstung haben.</p>
 </div>
 
 <div class="sport-entry">
@@ -197,23 +224,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
   </div>
 </div>
-</div>
-
-<div class="sport-entry">
-<h3>Basketball</h3>
-<p class="sport-meta">5 gegen 5 · hohes Tempo</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"  style="width:35%" title="Taktik: 35%"></div>
-    <div class="seg physical" style="width:30%" title="Physis: 30%"></div>
-    <div class="seg skill"    style="width:35%" title="Skill: 35%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 35%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
-  </div>
-</div>
+<p class="sport-rationale">Vor allem körperliche Anlage und Konditionierung: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill steckt in der Technik — Startphase, Beschleunigungsmuster, Lauftechnik — und ist substanzieller, als Laien vermuten. Taktik existiert nur in Mikroentscheidungen (Startverhalten, Bahnzuteilung, Rennrhythmus). Nicht 0, weil diese Entscheidungen messbar sind, aber niedrig genug, um klar dominant von Physis überlagert zu sein.</p>
 </div>
 
 <div class="sport-entry">
@@ -231,25 +242,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
   </div>
 </div>
-</div>
-
-<div class="sport-entry">
-<h3>Bogenschießen</h3>
-<p class="sport-meta">Präzisions-Einzelsport</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"  style="width:10%" title="Taktik: 10%"></div>
-    <div class="seg physical" style="width:15%" title="Physis: 15%"></div>
-    <div class="seg skill"    style="width:65%" title="Skill: 65%"></div>
-    <div class="seg material" style="width:10%" title="Material: 10%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 10%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 15%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 65%</span>
-    <span class="leg-item"><span class="leg-dot material"></span>Material 10%</span>
-  </div>
-</div>
+<p class="sport-rationale">Praktisch reine Entscheidungsleistung — Stellungsbeurteilung, Berechnung, strategische Planung. Skill mit 10% steht für die motorische und mustererkennende Routine: Eröffnungsrepertoire, Standardstrukturen, das schnelle Greifen typischer Manöver. Physis mit 10% ist die kognitive Ausdauer über mehrstündige Partien — keine triviale Komponente, wie jeder Spieler bestätigen wird, der Zug 60 erlebt hat. Kein Material.</p>
 </div>
 
 <div class="sport-entry">
@@ -269,6 +262,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
   </div>
 </div>
+<p class="sport-rationale">Ausdauerleistung mit erheblichem taktischen Überbau. Physis ist die Basis — eine dreiwöchige Rundfahrt verlangt eine Konstitution, die durch nichts ersetzbar ist. Taktik ist auf Profiniveau ein Teamspiel: Domestiquen-Einsatz, Ausreißerkalkül, Positionierung in entscheidenden Momenten. Skill betrifft Fahrtechnik und Risikomanagement bei Abfahrten und Klassikern. Material ist real, aber innerhalb der World Tour begrenzt — die Räder unterscheiden sich, aber nicht so dramatisch wie in motorisierten Sportarten.</p>
 </div>
 
 <div class="sport-entry">
@@ -288,6 +282,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot material"></span>Material 55%</span>
   </div>
 </div>
+<p class="sport-rationale">Die einzige Sportart in der Stichprobe, in der Material dominant ist — über die Saison hinweg entscheidet die Konstrukteursleistung mehr über das Klassement als jede individuelle Fahrerstärke. Taktik (Boxenstrategie, Reifenmanagement, Renntempo-Kalkül) ist substanzielle Größe und teils Teamleistung. Skill — Fahrzeugkontrolle am Limit, Spurwahl, Überholtechnik — wirkt im Wettkampf, ist aber innerhalb des Spitzenfelds in engerem Korridor. Physis spielt eine reale, aber begrenzte Rolle: G-Kräfte und Hitze fordern den Körper, ohne dass Konditionierung im Vordergrund stünde.</p>
 </div>
 
 </div>
@@ -300,7 +295,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
 
 Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: *Wie vergleicht man Sportarten?* Korollar 1 hat behauptet, dass jeder Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.
 
-Die folgenden Beobachtungen sind in zwei Teile gegliedert. Der erste Teil ist strikte Konsequenz der Definition — gegeben die Werte aus dem Examples-Abschnitt fallen die Distanzen automatisch heraus. Der zweite Teil (folgt später) bewegt sich auf spekulativerem Boden.
+Die folgenden Beobachtungen sind in zwei Teile gegliedert. Der erste Teil ist strikte Konsequenz der Definition — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Der zweite Teil (folgt später) verlässt diesen rein formalen Rahmen und stellt Fragen, die die Theorie selbst nicht beantwortet.
 
 ### Strukturelle Distanz
 
@@ -308,36 +303,47 @@ Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, 
 
 <div class="math-block">d(S₁, S₂) = √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
 
-Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.414 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe reicht die größte beobachtete Distanz an etwa zwei Drittel dieses Maximums heran.
+Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.41 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe reicht die größte beobachtete Distanz an etwa zwei Drittel dieses Maximums heran.
 
-Die folgende Tabelle zeigt die paarweisen Distanzen für die sieben Beispielsportarten:
+Die folgende Tabelle zeigt die paarweisen Distanzen für die sechs Beispielsportarten:
 
 <div class="distance-matrix-wrap">
 <table class="vector-table distance-matrix">
 <thead>
-<tr><th></th><th>Fußball</th><th>100m</th><th>Basket.</th><th>Schach</th><th>Bogen.</th><th>Rad</th><th>F1</th></tr>
+<tr><th></th><th>Fußball</th><th>Tennis</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th></tr>
 </thead>
 <tbody>
-<tr><th>Fußball</th>         <td>—</td>     <td>0.566</td><td class="cell-near">0.122</td><td>0.430</td><td>0.515</td><td>0.300</td><td>0.640</td></tr>
-<tr><th>100m Sprint</th>     <td>0.566</td><td>—</td>     <td>0.464</td><td class="cell-far">0.951</td><td>0.620</td><td>0.412</td><td>0.806</td></tr>
-<tr><th>Basketball</th>      <td class="cell-near">0.122</td><td>0.464</td><td>—</td>     <td>0.552</td><td>0.430</td><td>0.274</td><td>0.636</td></tr>
-<tr><th>Schach</th>          <td>0.430</td><td class="cell-far">0.951</td><td>0.552</td><td>—</td>     <td>0.897</td><td>0.604</td><td>0.815</td></tr>
-<tr><th>Bogenschießen</th>   <td>0.515</td><td>0.620</td><td>0.430</td><td>0.897</td><td>—</td>     <td>0.596</td><td>0.682</td></tr>
-<tr><th>Straßenradsport</th> <td>0.300</td><td>0.412</td><td>0.274</td><td>0.604</td><td>0.596</td><td>—</td>     <td>0.510</td></tr>
-<tr><th>Formel 1</th>        <td>0.640</td><td>0.806</td><td>0.636</td><td>0.815</td><td>0.682</td><td>0.510</td><td>—</td></tr>
+<tr><th>Fußball</th>         <td>—</td>    <td>0.31</td><td>0.57</td><td>0.43</td><td class="cell-near">0.30</td><td>0.64</td></tr>
+<tr><th>Tennis</th>          <td>0.31</td><td>—</td>    <td>0.37</td><td>0.74</td><td>0.35</td><td>0.68</td></tr>
+<tr><th>100m Sprint</th>     <td>0.57</td><td>0.37</td><td>—</td>    <td class="cell-far">0.95</td><td>0.41</td><td>0.81</td></tr>
+<tr><th>Schach</th>          <td>0.43</td><td>0.74</td><td class="cell-far">0.95</td><td>—</td>    <td>0.60</td><td>0.82</td></tr>
+<tr><th>Straßenradsport</th> <td class="cell-near">0.30</td><td>0.35</td><td>0.41</td><td>0.60</td><td>—</td>    <td>0.51</td></tr>
+<tr><th>Formel 1</th>        <td>0.64</td><td>0.68</td><td>0.81</td><td>0.82</td><td>0.51</td><td>—</td></tr>
 </tbody>
 </table>
 </div>
 
+Werte sind auf zwei Nachkommastellen gerundet. Sie sollten so gelesen werden: Distanzen unter etwa 0.10 deuten auf strukturelle Ununterscheidbarkeit hin, Distanzen über 0.70 auf grundlegende Verschiedenheit. Alles dazwischen ist Abstufung.
+
 Aus der Matrix lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.
 
-**Fußball und Basketball sind strukturelle Zwillinge.** Ihre Distanz von 0.122 ist mit Abstand die kleinste in der Stichprobe — und liegt deutlich näher beieinander als die nächstkleinere Paarung (Basketball/Straßenradsport, 0.274). Trotz oberflächlich sehr unterschiedlicher Erscheinung — 11 gegen 11 auf großem Feld vs. 5 gegen 5 auf engem Court — sind beide Sportarten in ihrer fundamentalen Anforderungsstruktur fast identisch: ausgewogene Verteilung über Taktik, Physis und Skill, kein Material. Was zwischen ihnen unterscheidet, ist nicht *was* sie verlangen, sondern *wie* sie es einsetzen.
+**Fußball und Straßenradsport sind die nächsten Nachbarn.** Mit einer Distanz von 0.30 sind sie das engste Paar in der Stichprobe — ein zunächst überraschender Befund, denn äußerlich haben ein Ballsport mit 22 Spielern auf einem Rasenfeld und ein dreiwöchiges Etappenrennen auf der Straße wenig gemein. Strukturell aber teilen sie viel: beide sind Mannschaftssportarten mit substanzieller taktischer Tiefe, ähnlichen Anteilen körperlicher Anforderung und einer untergeordneten Skill-Komponente. Dass Straßenradsport zusätzlich 15% Material trägt, das Fußball nicht hat, ist der einzige nennenswerte Unterschied — und erklärt, warum die Distanz überhaupt 0.30 beträgt und nicht weniger.
 
-**Schach ist das strukturelle Extrem.** Es taucht in vier der sieben Sportarten als fernster Nachbar auf — gegen Sprint, Bogenschießen, Straßenradsport und Formel 1. Die Distanz zwischen Schach und 100m Sprint (0.951) ist die größte in der gesamten Tabelle und liegt nahe am theoretischen Maximum. Das ist erwartbar: Schach ist die einzige Sportart in der Stichprobe, in der eine einzelne Komponente dominant ist (Taktik mit 80%). Diese Konzentration macht sie zu jedem anderen Vektor extrem unähnlich, mit Ausnahme von Sportarten, in denen Taktik *ebenfalls* schwer wiegt — was unter den Beispielen nur auf Fußball halbwegs zutrifft (Distanz 0.430, der nächste Nachbar von Schach).
+**Schach ist das strukturelle Extrem.** Es taucht in vier der sechs Sportarten als fernster Nachbar auf — gegen Sprint, Tennis, Straßenradsport und Formel 1. Die Distanz zwischen Schach und 100m Sprint (0.95) ist die größte in der gesamten Tabelle und liegt nahe am theoretischen Maximum. Das ist erwartbar: Schach ist die einzige Sportart in der Stichprobe, in der eine einzelne Komponente dominant ist (Taktik mit 80%). Diese Konzentration macht es zu jedem anderen Vektor extrem unähnlich, mit Ausnahme von Sportarten, in denen Taktik *ebenfalls* schwer wiegt — was unter den Beispielen nur auf Fußball halbwegs zutrifft (Distanz 0.43, der nächste Nachbar von Schach).
 
-**Basketball ist das strukturelle Zentrum.** Mit einer durchschnittlichen Distanz von 0.413 zu allen anderen Sportarten liegt Basketball im Mittel näher an der Gesamtstichprobe als jede andere Disziplin. Fußball folgt knapp dahinter (0.429), Straßenradsport an dritter Stelle (0.449). Am anderen Ende der Skala stehen Schach (0.708) und Formel 1 (0.682) als die strukturell isoliertesten Sportarten. Was diese Beobachtung suggeriert, ist nicht, dass Basketball *typisch* sei — sondern dass eine ausgewogene Verteilung über alle drei menschlichen Komponenten ein gewisses strukturelles Schwerezentrum darstellt, von dem aus Spezialisierung (Schach in Richtung Taktik, Sprint in Richtung Physis, Formel 1 in Richtung Material) jeweils messbare Abweichung bedeutet.
+**Straßenradsport ist das strukturelle Zentrum.** Mit einer durchschnittlichen Distanz von 0.44 zu allen anderen Sportarten liegt Straßenradsport im Mittel näher an der Gesamtstichprobe als jede andere Disziplin. Fußball folgt knapp dahinter (0.45), Tennis an dritter Stelle (0.49). Am anderen Ende der Skala stehen Schach (0.71) und Formel 1 (0.69) als die strukturell isoliertesten Sportarten. Was diese Beobachtung suggeriert, ist nicht, dass Straßenradsport *typisch* sei — sondern dass eine breite Verteilung über alle Komponenten, einschließlich eines maßvollen Material-Anteils, ein gewisses strukturelles Schwerezentrum darstellt, von dem aus Spezialisierung (Schach in Richtung Taktik, Sprint in Richtung Physis, Formel 1 in Richtung Material) jeweils messbare Abweichung bedeutet.
 
 Diese drei Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.
+
+#### Grenzen dieser Berechnung
+
+Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat drei methodische Schwächen, die offen benannt werden sollten.
+
+**Die Komponenten werden als gleichwertig behandelt.** Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie das Material-Caveat zeigt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.
+
+**Die Vektoren leben auf einem Simplex, nicht im freien Raum.** Weil T + P + Sk + M = 1 gilt, sind die Vektoren auf einem dreidimensionalen Simplex eingebettet, nicht im vollen 4D-Raum. Das ist keine Schwäche der Distanzformel selbst — der Euklidische Abstand misst korrekt den Abstand auf diesem Simplex — wohl aber ein Hinweis darauf, dass Komponenten nicht unabhängig variieren können. Erhöht sich eine Komponente um 20 Prozentpunkte, müssen die anderen entsprechend nachgeben. Die Distanz misst dies konsistent, aber der Leser sollte sich bewusst sein, dass Bewegungen im Raum eingeschränkt sind.
+
+**Die Eingangswerte sind Schätzungen auf einem 5%-Raster.** Eine Distanz von 0.30 zwischen Fußball und Straßenradsport ist genau so präzise wie die Vektoren, aus denen sie berechnet wurde — also nicht sehr. Eine Verschiebung um 5 Prozentpunkte in einer einzigen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden die Werte in der Tabelle auf zwei Nachkommastellen gerundet dargestellt; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.
 
 ---
 
@@ -428,6 +434,14 @@ a { color: var(--text-link); }
 .seg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .leg-item { font-size: 0.78em; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
 .leg-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+
+.sport-rationale {
+  margin-top: 0.9em;
+  font-size: 0.92em;
+  line-height: 1.55;
+  color: var(--text-body);
+  opacity: 0.85;
+}
 
 .vector-table {
   width: 100%;
@@ -530,6 +544,45 @@ small { color: var(--text-muted); }
 }
 .top-controls .theme-toggle:hover { color: var(--text-body); border-color: var(--text-body); }
 .top-controls .sep { color: var(--text-muted); opacity: 0.5; }
+
+/* ---------- Table of contents ---------- */
+
+.toc {
+  margin: 0 0 2em 0;
+  padding: 1em 1.25em;
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  background: var(--bg-mathblock);
+}
+.toc-title {
+  margin: 0 0 0.5em 0;
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+.toc-list {
+  margin: 0;
+  padding-left: 1.4em;
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+.toc-list ol {
+  margin: 0.15em 0 0.3em 0;
+  padding-left: 1.4em;
+  font-size: 0.92em;
+}
+.toc-list li { margin: 0.1em 0; }
+.toc-list a {
+  color: var(--text-body);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+.toc-list a:hover {
+  border-bottom-color: var(--text-link);
+  color: var(--text-link);
+}
 </style>
 
 <script>

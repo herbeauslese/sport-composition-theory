@@ -120,6 +120,27 @@ Man nehme Formel 1, wo Material ungefähr die Hälfte des Vektors ausmacht. Dies
 
 Dieselbe Logik gilt überall dort, wo Ausrüstung relevant ist. Ein Top-Rennrad ist entscheidend, wenn man einen Tour-de-France-Fahrer mit einem Amateur vergleicht, aber irrelevant, wenn man zwei World-Tour-Profis vergleicht. Material ist, anders gesagt, eine Eigenschaft des Wettbewerbs als Ganzes — nicht eine Konstante, die jeder Athlet mit sich trägt. Der Composition Vector erfasst die Struktur der Sportart; er beschreibt nicht von sich aus ein bestimmtes Duell innerhalb dieser Sportart.
 
+### Kritik an der Zerlegbarkeit
+
+Annahme 1 behauptet, dass vier Komponenten ausreichen. Diese Behauptung ist nicht selbstverständlich, und mehrere plausible Kandidaten für eine fünfte Komponente lassen sich nennen. Dieser Abschnitt geht die drei häufigsten Einwände durch — und erklärt, warum die Theorie sie nicht aufnimmt.
+
+**Glück, Varianz, Zufall.**
+Manche Sportarten haben Zufall strukturell eingebaut: Backgammon durch den Würfel, Curling durch das Eis, Poker durch das Blatt. In Fußball entscheidet manchmal ein abgefälschter Schuss. Müsste eine fünfte Komponente diesen Faktor erfassen?
+
+Die Theorie verneint das, aus einem grundsätzlichen Grund: Glück ist keine sportliche Leistung. Die vier Komponenten beschreiben, was vom Athleten *verlangt* wird — Zufall verlangt nichts, er passiert einfach. Was Sportarten unterscheidet, in denen Zufall eine Rolle spielt, ist nicht das Ausmaß des Zufalls selbst, sondern die *Art, wie Athleten mit ihm umgehen*. Im Poker bedeutet das: das eigene Blatt korrekt einzuschätzen, Wahrscheinlichkeiten zu rechnen, gegnerisches Verhalten zu lesen. Das ist Taktik. In Sportarten, in denen Glück über viele Wettkampftage hinweg ausgemittelt wird — eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund — verschwindet der Zufallseffekt strukturell, und übrig bleiben wieder die vier Komponenten.
+
+**Ästhetik und Wertungssport.**
+In Kunstturnen, Eiskunstlauf oder Synchronschwimmen wird das Ergebnis nicht objektiv durch Tor, Zeit oder Distanz bestimmt, sondern durch Bewertung. Müsste eine eigene Komponente erfassen, dass hier ein Teil des Erfolgs darin besteht, *gefällig auszuführen*?
+
+Auch hier verneint die Theorie. Was Bewerter belohnen, ist im Wesentlichen Skill — die saubere, präzise, kontrollierte Ausführung erlernter Technik. Schwierigkeitsgrad fällt unter Physis. Was darüber hinaus geht — Choreografie, Ausdruck, künstlerische Linie — ist eine besondere Spielart von Skill, in der die Technik nicht nur sauber, sondern auch interpretativ angewandt wird. Eine eigene Komponente dafür einzuführen, würde die Trennlinie zu Skill künstlich ziehen, ohne wirklich etwas Neues zu erfassen.
+
+**Mentale Härte.**
+Nervenstärke unter Druck, Clutch-Performance, die Fähigkeit, im entscheidenden Moment zu liefern — verdient das keine eigene Komponente?
+
+Diese ist bereits in Physis enthalten. Die Definition von Physis umfasst ausdrücklich auch die mentalen Entsprechungen körperlicher Belastung: anhaltende Konzentration, psychische Belastbarkeit, kognitive Ausdauer unter Druck. Mentale Härte ist eine *Kapazität*, fokussiert und handlungsfähig zu bleiben, wenn die Umstände es schwer machen — und genau das ist, was Physis nach der hier verwendeten Definition meint. Eine eigene Komponente wäre eine Doppelzählung.
+
+Diese drei Antworten lösen die Einwände nicht in dem Sinn, dass sie sie widerlegen — sie zeigen lediglich, wo die Theorie die jeweilige Sorge bereits einordnet. Wer einen Einwand für nicht ausreichend behandelt hält, sollte die Theorie entsprechend erweitern. Bis dahin bleibt sie viergliedrig.
+
 ---
 
 ## Methodik

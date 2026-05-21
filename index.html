@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -36,6 +36,8 @@
         }
       },
       // Configuration for docsify-darklight-theme
+      // Note: the plugin uses misspelled property names ("toogle" instead of "toggle").
+      // These typos are intentional — they must match the plugin's internal code.
       darklightTheme: {
         siteFont: 'inherit',
         defaultTheme: 'light',
@@ -43,7 +45,7 @@
         bodyFontSize: '17px',
         dark: {
           accent: '#58a6ff',
-          toggleBackground: '#21262d',
+          toogleBackground: '#21262d',
           background: '#0d1117',
           textColor: '#e6edf3',
           codeTextColor: '#e6edf3',
@@ -53,12 +55,12 @@
           highlightColor: '#58a6ff',
           sidebarSublink: '#8b949e',
           codeTypeColor: '#e6edf3',
-          coverBackground: '#0d1117',
-          toggleImage: 'url(//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)'
+          coverBackground: 'linear-gradient(to left bottom, #0d1117 0%, #161b22 100%)',
+          toogleImage: 'url(//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)'
         },
         light: {
           accent: '#155799',
-          toggleBackground: '#ffffff',
+          toogleBackground: '#ffffff',
           background: '#ffffff',
           textColor: '#222222',
           codeTextColor: '#222222',
@@ -68,8 +70,8 @@
           highlightColor: '#155799',
           sidebarSublink: '#505d6b',
           codeTypeColor: '#091a28',
-          coverBackground: '#ffffff',
-          toggleImage: 'url(//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)'
+          coverBackground: 'linear-gradient(to left bottom, #ffffff 0%, #f6f8fa 100%)',
+          toogleImage: 'url(//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)'
         }
       },
       plugins: [

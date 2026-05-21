@@ -275,6 +275,51 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
 
 ---
 
+## Vergleich
+
+Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: *Wie vergleicht man Sportarten?* Korollar 1 hat behauptet, dass jeder Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.
+
+Die folgenden Beobachtungen sind in zwei Teile gegliedert. Der erste Teil ist strikte Konsequenz der Definition — gegeben die Werte aus dem Examples-Abschnitt fallen die Distanzen automatisch heraus. Der zweite Teil (folgt später) bewegt sich auf spekulativerem Boden.
+
+### Strukturelle Distanz
+
+Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, lässt sich die strukturelle Distanz zwischen je zwei Sportarten als Euklidischer Abstand berechnen:
+
+<div class="math-block">d(S₁, S₂) = √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
+
+Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.414 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe reicht die größte beobachtete Distanz an etwa zwei Drittel dieses Maximums heran.
+
+Die folgende Tabelle zeigt die paarweisen Distanzen für die sieben Beispielsportarten:
+
+<div class="distance-matrix-wrap">
+<table class="vector-table distance-matrix">
+<thead>
+<tr><th></th><th>Fußball</th><th>100m</th><th>Basket.</th><th>Schach</th><th>Bogen.</th><th>Rad</th><th>F1</th></tr>
+</thead>
+<tbody>
+<tr><th>Fußball</th>         <td>—</td>     <td>0.566</td><td class="cell-near">0.122</td><td>0.430</td><td>0.515</td><td>0.300</td><td>0.640</td></tr>
+<tr><th>100m Sprint</th>     <td>0.566</td><td>—</td>     <td>0.464</td><td class="cell-far">0.951</td><td>0.620</td><td>0.412</td><td>0.806</td></tr>
+<tr><th>Basketball</th>      <td class="cell-near">0.122</td><td>0.464</td><td>—</td>     <td>0.552</td><td>0.430</td><td>0.274</td><td>0.636</td></tr>
+<tr><th>Schach</th>          <td>0.430</td><td class="cell-far">0.951</td><td>0.552</td><td>—</td>     <td>0.897</td><td>0.604</td><td>0.815</td></tr>
+<tr><th>Bogenschießen</th>   <td>0.515</td><td>0.620</td><td>0.430</td><td>0.897</td><td>—</td>     <td>0.596</td><td>0.682</td></tr>
+<tr><th>Straßenradsport</th> <td>0.300</td><td>0.412</td><td>0.274</td><td>0.604</td><td>0.596</td><td>—</td>     <td>0.510</td></tr>
+<tr><th>Formel 1</th>        <td>0.640</td><td>0.806</td><td>0.636</td><td>0.815</td><td>0.682</td><td>0.510</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+Aus der Matrix lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.
+
+**Fußball und Basketball sind strukturelle Zwillinge.** Ihre Distanz von 0.122 ist mit Abstand die kleinste in der Stichprobe — und liegt deutlich näher beieinander als die nächstkleinere Paarung (Basketball/Straßenradsport, 0.274). Trotz oberflächlich sehr unterschiedlicher Erscheinung — 11 gegen 11 auf großem Feld vs. 5 gegen 5 auf engem Court — sind beide Sportarten in ihrer fundamentalen Anforderungsstruktur fast identisch: ausgewogene Verteilung über Taktik, Physis und Skill, kein Material. Was zwischen ihnen unterscheidet, ist nicht *was* sie verlangen, sondern *wie* sie es einsetzen.
+
+**Schach ist das strukturelle Extrem.** Es taucht in vier der sieben Sportarten als fernster Nachbar auf — gegen Sprint, Bogenschießen, Straßenradsport und Formel 1. Die Distanz zwischen Schach und 100m Sprint (0.951) ist die größte in der gesamten Tabelle und liegt nahe am theoretischen Maximum. Das ist erwartbar: Schach ist die einzige Sportart in der Stichprobe, in der eine einzelne Komponente dominant ist (Taktik mit 80%). Diese Konzentration macht sie zu jedem anderen Vektor extrem unähnlich, mit Ausnahme von Sportarten, in denen Taktik *ebenfalls* schwer wiegt — was unter den Beispielen nur auf Fußball halbwegs zutrifft (Distanz 0.430, der nächste Nachbar von Schach).
+
+**Basketball ist das strukturelle Zentrum.** Mit einer durchschnittlichen Distanz von 0.413 zu allen anderen Sportarten liegt Basketball im Mittel näher an der Gesamtstichprobe als jede andere Disziplin. Fußball folgt knapp dahinter (0.429), Straßenradsport an dritter Stelle (0.449). Am anderen Ende der Skala stehen Schach (0.708) und Formel 1 (0.682) als die strukturell isoliertesten Sportarten. Was diese Beobachtung suggeriert, ist nicht, dass Basketball *typisch* sei — sondern dass eine ausgewogene Verteilung über alle drei menschlichen Komponenten ein gewisses strukturelles Schwerezentrum darstellt, von dem aus Spezialisierung (Schach in Richtung Taktik, Sprint in Richtung Physis, Formel 1 in Richtung Material) jeweils messbare Abweichung bedeutet.
+
+Diese drei Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.
+
+---
+
 <div class="footnotes">
 <p id="fn1"><sup>1</sup> Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material oben. <a href="#fn1ref">↩</a></p>
 </div>
@@ -383,6 +428,33 @@ a { color: var(--text-link); }
   color: var(--text-body);
 }
 .vector-table tr:last-child td { border-bottom: none; }
+
+/* Distance matrix — built on .vector-table with extras */
+.distance-matrix-wrap {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+.distance-matrix th {
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+.distance-matrix td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.distance-matrix tbody th {
+  text-align: left;
+  border-bottom: 1px solid var(--border-row);
+  background: transparent;
+}
+.distance-matrix .cell-near {
+  background: rgba(45, 90, 61, 0.18);
+  font-weight: bold;
+}
+.distance-matrix .cell-far {
+  background: rgba(139, 69, 19, 0.18);
+  font-weight: bold;
+}
 
 .math-block {
   font-family: 'Courier New', monospace;

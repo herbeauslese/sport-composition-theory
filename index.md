@@ -9,32 +9,41 @@ description: Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Ko
 
 *Ein Framework dafür, woraus eine Sportart eigentlich besteht.*
 
-<div class="top-controls">
-  <a class="lang-link" href="{{ '/en/' | relative_url }}" hreflang="en" lang="en">English</a>
-  <span class="sep">·</span>
-  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
-</div>
+<button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false">☰</button>
 
-<nav class="toc" aria-label="Inhaltsverzeichnis">
-<p class="toc-title">Inhalt</p>
-<ol class="toc-list">
-  <li><a href="#hintergrund">Hintergrund</a></li>
-  <li><a href="#die-theorie">Die Theorie</a>
-    <ol>
-      <li><a href="#annahmen">Annahmen</a></li>
-      <li><a href="#komponenten">Komponenten</a></li>
-    </ol>
-  </li>
-  <li><a href="#vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</a></li>
-  <li><a href="#methodik">Methodik</a></li>
-  <li><a href="#beispiele">Beispiele</a></li>
-  <li><a href="#vergleich">Vergleich</a>
-    <ol>
-      <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
-    </ol>
-  </li>
-</ol>
-</nav>
+<aside id="sidebar" class="sidebar" aria-label="Seitenleiste">
+  <div class="sidebar-inner">
+    <p class="sidebar-brand">Sport Composition Theory</p>
+
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <p class="toc-title">Inhalt</p>
+      <ol class="toc-list">
+        <li><a href="#hintergrund">Hintergrund</a></li>
+        <li><a href="#die-theorie">Die Theorie</a>
+          <ol>
+            <li><a href="#annahmen">Annahmen</a></li>
+            <li><a href="#komponenten">Komponenten</a></li>
+          </ol>
+        </li>
+        <li><a href="#vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</a></li>
+        <li><a href="#methodik">Methodik</a></li>
+        <li><a href="#beispiele">Beispiele</a></li>
+        <li><a href="#vergleich">Vergleich</a>
+          <ol>
+            <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="sidebar-controls">
+      <a class="lang-link" href="{{ '/en/' | relative_url }}" hreflang="en" lang="en">English</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
+    </div>
+  </div>
+</aside>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
 
 ---
 
@@ -516,73 +525,191 @@ small { color: var(--text-muted); }
 .skill,    .leg-dot.skill    { background: #1a3a6b; }
 .material, .leg-dot.material { background: #6b2d6b; }
 
-/* ---------- Top controls (language + theme) ---------- */
+/* ---------- Sidebar layout ---------- */
 
-.top-controls {
+:root {
+  --sidebar-width: 240px;
+  --sidebar-breakpoint: 1100px;
+}
+
+/* On wide screens: push the main content right to make room for the sidebar */
+@media (min-width: 1100px) {
+  .page-header,
+  .main-content,
+  .site-footer {
+    padding-left: calc(var(--sidebar-width) + 1.5rem) !important;
+  }
+}
+
+/* Sidebar — fixed on the left, scrolls internally */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--bg-page);
+  border-right: 1px solid var(--border-soft);
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform 0.25s ease;
+}
+.sidebar-inner {
+  padding: 1.5rem 1.25rem;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.75em;
-  margin: -0.5em 0 1.5em 0;
-  font-size: 0.85em;
+  flex-direction: column;
+  min-height: 100%;
 }
-.top-controls .lang-link {
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--text-muted);
+.sidebar-brand {
+  margin: 0 0 1.5em 0;
+  font-size: 0.95em;
+  font-weight: bold;
+  color: var(--text-body);
+  line-height: 1.3;
 }
-.top-controls .lang-link:hover { color: var(--text-body); border-bottom-color: var(--text-body); }
-.top-controls .theme-toggle {
-  background: transparent;
+
+/* On narrow screens: hide off-canvas, reveal via toggle */
+@media (max-width: 1099px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 0 0 24px rgba(0,0,0,0.18);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Sidebar toggle button — only visible on narrow screens */
+.sidebar-toggle {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 110;
+  width: 2.4em;
+  height: 2.4em;
+  background: var(--bg-page);
   border: 1px solid var(--border-soft);
-  color: var(--text-muted);
-  padding: 0.25em 0.7em;
+  color: var(--text-body);
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.95em;
+  font-size: 1.1em;
   line-height: 1;
+  padding: 0;
+  display: none;
 }
-.top-controls .theme-toggle:hover { color: var(--text-body); border-color: var(--text-body); }
-.top-controls .sep { color: var(--text-muted); opacity: 0.5; }
+@media (max-width: 1099px) {
+  .sidebar-toggle { display: block; }
+}
+
+/* Backdrop behind the sidebar on mobile, fades in/out */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.sidebar-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ---------- Table of contents ---------- */
 
 .toc {
-  margin: 0 0 2em 0;
-  padding: 1em 1.25em;
-  border: 1px solid var(--border-soft);
-  border-radius: 4px;
-  background: var(--bg-mathblock);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  flex: 1;
 }
 .toc-title {
-  margin: 0 0 0.5em 0;
-  font-size: 0.78em;
+  margin: 0 0 0.6em 0;
+  font-size: 0.72em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
   font-weight: bold;
 }
 .toc-list {
   margin: 0;
-  padding-left: 1.4em;
-  font-size: 0.95em;
-  line-height: 1.55;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9em;
+  line-height: 1.45;
 }
 .toc-list ol {
-  margin: 0.15em 0 0.3em 0;
-  padding-left: 1.4em;
+  margin: 0.25em 0 0.5em 0.9em;
+  padding: 0;
+  list-style: none;
   font-size: 0.92em;
 }
-.toc-list li { margin: 0.1em 0; }
+.toc-list li {
+  margin: 0.15em 0;
+}
 .toc-list a {
-  color: var(--text-body);
+  display: block;
+  padding: 0.25em 0.5em;
+  color: var(--text-muted);
   text-decoration: none;
-  border-bottom: 1px dotted transparent;
+  border-left: 2px solid transparent;
+  border-radius: 0 3px 3px 0;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
 .toc-list a:hover {
-  border-bottom-color: var(--text-link);
-  color: var(--text-link);
+  color: var(--text-body);
+  background: var(--bg-mathblock);
 }
+.toc-list a.active {
+  color: var(--text-link);
+  border-left-color: var(--text-link);
+  background: var(--bg-mathblock);
+  font-weight: 600;
+}
+
+/* ---------- Sidebar bottom controls ---------- */
+
+.sidebar-controls {
+  margin-top: 2em;
+  padding-top: 1.25em;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  align-items: flex-start;
+  font-size: 0.85em;
+}
+.sidebar-controls .lang-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-muted);
+}
+.sidebar-controls .lang-link:hover {
+  color: var(--text-body);
+  border-bottom-color: var(--text-body);
+}
+.sidebar-controls .theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95em;
+  line-height: 1;
+}
+.sidebar-controls .theme-toggle:hover {
+  color: var(--text-body);
+  border-color: var(--text-body);
+}
+
+/* Smooth scrolling within the page */
+html { scroll-behavior: smooth; }
+
+/* Anchor offset so headings aren't hidden under fixed elements */
+:target { scroll-margin-top: 1rem; }
 </style>
 
 <script>
@@ -615,24 +742,105 @@ small { color: var(--text-muted); }
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    // --- Theme toggle ---
     var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    var lang = (location.pathname.indexOf('/en') === 0 || location.pathname.indexOf('/en/') !== -1) ? 'en' : 'de';
+    if (btn) {
+      var lang = (location.pathname.indexOf('/en') === 0 || location.pathname.indexOf('/en/') !== -1) ? 'en' : 'de';
 
-    function refresh() { btn.textContent = labelFor(currentMode(), lang); }
-    refresh();
-
-    btn.addEventListener('click', function () {
-      var next = cycle(currentMode());
-      if (next === 'auto') {
-        root.removeAttribute('data-theme');
-        try { localStorage.removeItem('theme'); } catch (e) {}
-      } else {
-        root.setAttribute('data-theme', next);
-        try { localStorage.setItem('theme', next); } catch (e) {}
-      }
+      function refresh() { btn.textContent = labelFor(currentMode(), lang); }
       refresh();
-    });
+
+      btn.addEventListener('click', function () {
+        var next = cycle(currentMode());
+        if (next === 'auto') {
+          root.removeAttribute('data-theme');
+          try { localStorage.removeItem('theme'); } catch (e) {}
+        } else {
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        }
+        refresh();
+      });
+    }
+
+    // --- Sidebar toggle (mobile) ---
+    var sidebar  = document.getElementById('sidebar');
+    var toggle   = document.getElementById('sidebar-toggle');
+    var backdrop = document.getElementById('sidebar-backdrop');
+
+    function openSidebar() {
+      sidebar.classList.add('open');
+      backdrop.classList.add('visible');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('visible');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    if (toggle && sidebar && backdrop) {
+      toggle.addEventListener('click', function () {
+        if (sidebar.classList.contains('open')) closeSidebar();
+        else openSidebar();
+      });
+      backdrop.addEventListener('click', closeSidebar);
+      // Close when a TOC link is clicked on mobile
+      sidebar.querySelectorAll('.toc-list a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.matchMedia('(max-width: 1099px)').matches) closeSidebar();
+        });
+      });
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
+      });
+    }
+
+    // --- Scrollspy: highlight the TOC link of the currently visible section ---
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-list a[href^="#"]'));
+    if (tocLinks.length && 'IntersectionObserver' in window) {
+      var linkById = {};
+      var sections = [];
+      tocLinks.forEach(function (link) {
+        var id = link.getAttribute('href').slice(1);
+        var section = document.getElementById(id);
+        if (section) {
+          linkById[id] = link;
+          sections.push(section);
+        }
+      });
+
+      // Track which sections are currently above-the-fold-visible.
+      var visibleIds = new Set();
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) visibleIds.add(entry.target.id);
+          else visibleIds.delete(entry.target.id);
+        });
+        // Activate the topmost visible section, or fall back to the last passed one.
+        var activeId = null;
+        for (var i = 0; i < sections.length; i++) {
+          if (visibleIds.has(sections[i].id)) { activeId = sections[i].id; break; }
+        }
+        if (!activeId) {
+          // No section visible — pick the last one above the viewport
+          var scrollY = window.scrollY;
+          for (var j = sections.length - 1; j >= 0; j--) {
+            if (sections[j].getBoundingClientRect().top + scrollY <= scrollY + 80) {
+              activeId = sections[j].id;
+              break;
+            }
+          }
+        }
+        tocLinks.forEach(function (l) { l.classList.remove('active'); });
+        if (activeId && linkById[activeId]) linkById[activeId].classList.add('active');
+      }, {
+        rootMargin: '-10% 0px -75% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function (s) { observer.observe(s); });
+    }
   });
 })();
 </script>

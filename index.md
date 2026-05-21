@@ -4,7 +4,7 @@
 
 ---
 
-## Introduction
+## Background
 
 I have always been a fan of sport — not one sport, but many. Football, cycling, chess, athletics, motorsport. The full, chaotic spectrum. And for a long time, I found myself asking a question that seemed simple but turned out to be surprisingly difficult: how do you actually compare them?
 
@@ -22,9 +22,30 @@ That question — what exactly is being measured — led to this theory.
 
 ## The Theory
 
-Sport Composition Theory holds that any competitive sport can be fully described by a combination of four components. These components are **exhaustive** — nothing meaningful falls outside them — and **mutually exclusive** — no element of a sport belongs to more than one.
+### Assumptions
 
-Every sport gets a percentage for each component. The percentages always sum to 100. That is the whole theory. The interesting part is what happens when you apply it.
+Before the theory can be applied, two foundational assumptions must be accepted. They cannot be proven — they are the starting point, not the conclusion.
+
+**Assumption 1 — Decomposability.**
+Any competitive sport can be fully and meaningfully described by four components: Tactics, Physical, Skill, and Material. Nothing essential falls outside these four categories. This is the core claim of the theory, and the only one that requires genuine agreement before proceeding.
+
+This assumption is not self-evident. One could argue that certain sports resist reduction — that the psychological dimension of competition, or the intangible quality of teamwork, cannot be captured by four numbers. We argue that these dimensions are already contained within the components as defined. But we acknowledge the assumption for what it is.
+
+**Definition — The Composition Vector.**
+Given Assumption 1, any sport *S* can be formally represented as a tuple:
+
+<div class="math-block">S = (T, P, Sk, M)</div>
+
+where *T* = Tactics, *P* = Physical, *Sk* = Skill, *M* = Material, and:
+
+<div class="math-block">T + P + Sk + M = 1</div>
+
+All values are real numbers in the interval [0, 1]. For most sports, M = 0, reducing the representation to a three-component vector.<sup><a href="#fn1" id="fn1ref">1</a></sup>
+
+**Assumption 2 — Comparability.**
+It follows directly from Assumption 1 and the Definition that any two sports can be meaningfully compared. Because every sport is expressed in the same four-dimensional space, the structural similarity or distance between any two sports is well-defined. A sport dominated by Physical and one dominated by Tactics are not just qualitatively different — they are measurably far apart.
+
+---
 
 ### Tactics
 
@@ -65,6 +86,51 @@ For each sport, four guiding questions are applied — one per component:
 The resulting values are curated estimates. We do not pretend otherwise. The point is not false precision — it is structured comparison. A sport in which Tactics accounts for 50% and one in which it accounts for 5% are genuinely, meaningfully different things, even if the exact numbers are open to debate.
 
 The estimates are informed by observation, reasoning, and the kind of arguments that tend to happen when someone who watches too much sport has too much time to think. They are offered in good faith, and revised when better arguments appear.
+
+---
+
+## Derivation
+
+<div class="derivation-block">
+
+### Vector Representation
+
+Given the Composition Vector S = (T, P, Sk, M), each sport occupies a unique point in four-dimensional composition space. The sports introduced in the Examples section can be expressed as follows:
+
+<table class="vector-table">
+  <thead>
+    <tr><th>Sport</th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Football</td><td>0.45</td><td>0.25</td><td>0.30</td><td>0.00</td></tr>
+    <tr><td>Basketball</td><td>0.35</td><td>0.30</td><td>0.35</td><td>0.00</td></tr>
+    <tr><td>100m Sprint</td><td>0.05</td><td>0.65</td><td>0.30</td><td>0.00</td></tr>
+    <tr><td>Archery</td><td>0.10</td><td>0.15</td><td>0.65</td><td>0.10</td></tr>
+    <tr><td>Road Cycling</td><td>0.30</td><td>0.40</td><td>0.15</td><td>0.15</td></tr>
+    <tr><td>Chess</td><td>0.80</td><td>0.10</td><td>0.10</td><td>0.00</td></tr>
+    <tr><td>Formula 1</td><td>0.20</td><td>0.10</td><td>0.15</td><td>0.55</td></tr>
+  </tbody>
+</table>
+
+Each row is a point in composition space. Sports that feel structurally similar — Football and Basketball, for instance — sit close together. Sports that feel fundamentally unlike each other — Chess and 100m Sprint — sit far apart. The table makes this intuition precise.
+
+</div>
+
+---
+
+## Caveats & Considerations
+
+The Composition Vector is a deliberate simplification. That is a feature, not a flaw — but it comes with consequences worth stating explicitly. This section collects the known limitations of the model. It will grow as the theory is stress-tested against more sports.
+
+### The Team Sport Problem
+
+In individual sports, the Composition Vector describes a single athlete. In team sports, it does not.
+
+Consider Tactics in football. The value assigned reflects how much tactical quality determines the outcome of a match. But tactical quality in a team sport operates on two distinct levels: the **collective level** (team shape, pressing structure, set piece design) and the **individual level** (a player's positional decisions within that system). These are not the same thing. A player with exceptional individual tactical intelligence can still lose comprehensively if their team's collective structure is poor.
+
+This means that in team sports, the Composition Vector describes the sport at the team level — which is the level at which outcomes are actually decided. The individual contributions of athletes are real, but they are inputs into a collective system, not direct outputs.
+
+A practical consequence: Tactics tends to carry more weight in team sports than a naive reading might suggest, because collective tactical organisation can compensate for — or completely negate — individual superiority in other components. Eleven individually superior athletes without a system regularly lose to eleven organised ones. This is not a flaw in the model; it is an accurate reflection of how team sports work.
 
 ---
 
@@ -203,6 +269,12 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 
 <small>* Percentages are curated estimates derived from structured qualitative analysis. They reflect the author's considered opinion and should be treated as such — which is to say, seriously, but not too seriously.</small>
 
+---
+
+<div class="footnotes">
+<p id="fn1"><sup>1</sup> The Material component only takes a non-zero value when equipment quality has a meaningful, structural effect on competitive outcome — independent of athlete ability. See the Material section for the full definition. <a href="#fn1ref">↩</a></p>
+</div>
+
 <style>
 @media (prefers-color-scheme: dark) {
   body { background-color: #0d1117 !important; color: #e6edf3 !important; }
@@ -229,6 +301,87 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 .seg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .leg-item { font-size: 0.78em; color: #555; display: flex; align-items: center; gap: 5px; }
 .leg-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.derivation-block {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid #d0cdc8;
+  border-radius: 4px;
+  padding: 1.5em 1.75em;
+  margin: 1em 0;
+}
+.vector-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  margin-top: 1em;
+  font-family: 'Courier New', monospace;
+}
+.vector-table th {
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding: 0.4em 0.75em;
+  color: #555;
+  font-weight: bold;
+}
+.vector-table td {
+  padding: 0.35em 0.75em;
+  border-bottom: 1px solid #e8e8e8;
+}
+.vector-table tr:last-child td { border-bottom: none; }
+@media (prefers-color-scheme: dark) {
+  .derivation-block { background: rgba(255,255,255,0.04); border-color: #30363d; }
+  .vector-table th { border-bottom-color: #444; color: #8b949e; }
+  .vector-table td { border-bottom-color: #21262d; color: #e6edf3; }
+}
+.math-block {
+  font-family: 'Courier New', monospace;
+  background: rgba(0,0,0,0.05);
+  border-left: 3px solid #ccc;
+  padding: 0.5em 1em;
+  margin: 0.75em 0;
+  color: #222;
+}
+.footnotes {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #e0ddd8;
+  font-size: 0.82em;
+  color: #888;
+}
+@media (prefers-color-scheme: dark) {
+  .derivation-block {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid #d0cdc8;
+  border-radius: 4px;
+  padding: 1.5em 1.75em;
+  margin: 1em 0;
+}
+.vector-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  margin-top: 1em;
+  font-family: 'Courier New', monospace;
+}
+.vector-table th {
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding: 0.4em 0.75em;
+  color: #555;
+  font-weight: bold;
+}
+.vector-table td {
+  padding: 0.35em 0.75em;
+  border-bottom: 1px solid #e8e8e8;
+}
+.vector-table tr:last-child td { border-bottom: none; }
+@media (prefers-color-scheme: dark) {
+  .derivation-block { background: rgba(255,255,255,0.04); border-color: #30363d; }
+  .vector-table th { border-bottom-color: #444; color: #8b949e; }
+  .vector-table td { border-bottom-color: #21262d; color: #e6edf3; }
+}
+.math-block { background: rgba(255,255,255,0.07); border-left-color: #444; color: #e6edf3; }
+  .footnotes { border-top-color: #30363d; color: #8b949e; }
+}
 .tactics,  .leg-dot.tactics  { background: #2d5a3d; }
 .physical, .leg-dot.physical { background: #8b4513; }
 .skill,    .leg-dot.skill    { background: #1a3a6b; }

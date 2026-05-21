@@ -10,39 +10,7 @@ description: Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Ko
 *Ein Framework dafür, woraus eine Sportart eigentlich besteht.*
 
 <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false">☰</button>
-
-<aside id="sidebar" class="sidebar" aria-label="Seitenleiste">
-  <div class="sidebar-inner">
-    <p class="sidebar-brand">Sport Composition Theory</p>
-
-    <nav class="toc" aria-label="Inhaltsverzeichnis">
-      <p class="toc-title">Inhalt</p>
-      <ol class="toc-list">
-        <li><a href="#hintergrund">Hintergrund</a></li>
-        <li><a href="#die-theorie">Die Theorie</a>
-          <ol>
-            <li><a href="#annahmen">Annahmen</a></li>
-            <li><a href="#komponenten">Komponenten</a></li>
-          </ol>
-        </li>
-        <li><a href="#vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</a></li>
-        <li><a href="#methodik">Methodik</a></li>
-        <li><a href="#beispiele">Beispiele</a></li>
-        <li><a href="#vergleich">Vergleich</a>
-          <ol>
-            <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
-          </ol>
-        </li>
-      </ol>
-    </nav>
-
-    <div class="sidebar-controls">
-      <a class="lang-link" href="{{ '/en/' | relative_url }}" hreflang="en" lang="en">English</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
-    </div>
-  </div>
-</aside>
-
+<aside id="sidebar" class="sidebar" aria-label="Seitenleiste" markdown="0"><div class="sidebar-inner"><p class="sidebar-brand">Sport Composition Theory</p><nav class="toc" aria-label="Inhaltsverzeichnis"><p class="toc-title">Inhalt</p><ol class="toc-list"><li><a href="#hintergrund">Hintergrund</a></li><li><a href="#die-theorie">Die Theorie</a><ol><li><a href="#annahmen">Annahmen</a></li><li><a href="#komponenten">Komponenten</a></li></ol></li><li><a href="#vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</a></li><li><a href="#methodik">Methodik</a></li><li><a href="#beispiele">Beispiele</a></li><li><a href="#vergleich">Vergleich</a><ol><li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li></ol></li></ol></nav><div class="sidebar-controls"><a class="lang-link" href="{{ '/en/' | relative_url }}" hreflang="en" lang="en">English</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button></div></div></aside>
 <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
 
 ---
@@ -528,7 +496,7 @@ small { color: var(--text-muted); }
 /* ---------- Sidebar layout ---------- */
 
 :root {
-  --sidebar-width: 240px;
+  --sidebar-width: 220px;
   --sidebar-breakpoint: 1100px;
 }
 
@@ -537,42 +505,53 @@ small { color: var(--text-muted); }
   .page-header,
   .main-content,
   .site-footer {
-    padding-left: calc(var(--sidebar-width) + 1.5rem) !important;
+    padding-left: calc(var(--sidebar-width) + 3rem) !important;
   }
 }
 
-/* Sidebar — fixed on the left, scrolls internally */
+/* Sidebar — floating, vertically centered in the left margin */
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
   width: var(--sidebar-width);
+  max-height: calc(100vh - 3rem);
   background: var(--bg-page);
-  border-right: 1px solid var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
   overflow-y: auto;
   z-index: 100;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 .sidebar-inner {
-  padding: 1.5rem 1.25rem;
+  padding: 1.25rem 1.1rem;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }
 .sidebar-brand {
-  margin: 0 0 1.5em 0;
-  font-size: 0.95em;
-  font-weight: bold;
+  margin: 0 0 1.25em 0;
+  font-size: 0.88em;
+  font-weight: 600;
   color: var(--text-body);
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 /* On narrow screens: hide off-canvas, reveal via toggle */
 @media (max-width: 1099px) {
   .sidebar {
+    top: 0;
+    left: 0;
     transform: translateX(-100%);
-    box-shadow: 0 0 24px rgba(0,0,0,0.18);
+    width: 260px;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid var(--border-soft);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.18);
   }
   .sidebar.open {
     transform: translateX(0);

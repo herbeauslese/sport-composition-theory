@@ -17,17 +17,17 @@ description: Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Ko
 
 ## Hintergrund
 
-Irgendwann hört man es zum hundertsten Mal: dass Fußballer im Vergleich zu Sprintern, Turnern oder Boxern „eigentlich keinen richtigen Sport machen". Dass sie körperlich weich seien, dass ihr Sport in Wirklichkeit gar nicht so anspruchsvoll sei wie das, was andere Athleten leisten. Das Argument ist alt, es wird in Stammtischrunden geführt und in Talkshows, und es endet meistens damit, dass beide Seiten ihre Position lauter wiederholen.
+Eine Frage, die in Sportdebatten immer wieder auftaucht: Sind Fußballer eigentlich „richtige" Sportler? Oder ist ihr Sport im Vergleich zu Sprintern, Turnern oder Boxern weniger anspruchsvoll? Solche Diskussionen enden meistens damit, dass beide Seiten ihre Position lauter wiederholen.
 
-Was an dem Streit reizvoll ist, ist nicht die Antwort. Es ist die Frage, die darunter liegt: *Wie vergleicht man Sportarten eigentlich?* Nicht in der Frage, welche spannender ist, welche fordernder, welche prestigeträchtiger. Sondern strukturell. Was braucht es, um in etwas gut zu sein? Welche Art von Anforderungen — im weitesten Sinne — stellt eine Sportart an den Athleten?
+Was an der Frage reizvoll ist, ist nicht die Antwort. Es ist die Frage, die darunter liegt: *Wie vergleicht man Sportarten eigentlich?* Nicht in der Frage, welche spannender ist, welche fordernder, welche prestigeträchtiger. Sondern strukturell. Was braucht es, um in etwas gut zu sein? Welche Art von Anforderungen — im weitesten Sinne — stellt eine Sportart an den Athleten?
 
-Man nehme einen Sprinter und einen Formel-1-Fahrer. Beide sind Spitzensportler, die am absoluten Limit menschlicher Leistungsfähigkeit antreten. Aber die Natur ihrer Exzellenz ist grundverschieden. Der Sprinter hat seinen Körper über Jahre darauf geformt, einen einzigen explosiven Output von unter zehn Sekunden zu produzieren. Der Formel-1-Fahrer muss bei 300 km/h einen Strom sensorischer Eindrücke verarbeiten und in Sekundenbruchteilen taktische Entscheidungen treffen — Entscheidungen, die sich über eine ganze Rennstrategie hinweg tragen müssen, die wiederum über Dutzende Runden aufgebaut wird. Und dann ist da der Schachspieler: keine nennenswerte körperliche Leistung, keine Maschine, keine Strecke — nur reine kognitive Auseinandersetzung über ein Brett, in der ein einziger positioneller Fehler in Zug zwölf bis Zug vierzig still und leise alles auseinandernehmen kann.
+Ein Sprinter und ein Formel-1-Fahrer sind beide Spitzensportler, die am Limit menschlicher Leistungsfähigkeit antreten. Aber die Natur dieser Leistung ist grundverschieden. Der Sprinter formt seinen Körper über Jahre darauf, einen einzigen explosiven Output von unter zehn Sekunden zu produzieren. Der Formel-1-Fahrer verarbeitet bei 300 km/h einen Strom sensorischer Eindrücke und trifft in Sekundenbruchteilen Entscheidungen, die sich über eine ganze Rennstrategie hinweg tragen müssen. Und dann ist da der Schachspieler: keine nennenswerte körperliche Leistung, keine Maschine, keine Strecke — nur kognitive Auseinandersetzung über ein Brett, in der ein positioneller Fehler in Zug zwölf bis Zug vierzig still und leise alles auseinandernehmen kann.
 
-Drei Athleten. Drei vollständig verschiedene Profile. Und trotzdem treten alle drei an, gewinnen und verlieren auf Basis von etwas, das sich messen und vergleichen lässt.
+Drei Athleten, drei vollständig verschiedene Profile. Und trotzdem treten alle drei an, gewinnen und verlieren auf Basis von etwas, das sich messen und vergleichen lässt.
 
 Diese Frage — *was* genau hier gemessen wird — hat zu dieser Theorie geführt.
 
-> *„Was braucht es, um zu gewinnen? Die Antwort sind immer dieselben Komponenten. Nur in unterschiedlichen Verhältnissen."*
+*Was braucht es, um zu gewinnen? Die Antwort sind immer dieselben Komponenten — nur in unterschiedlichen Verhältnissen.*
 
 ---
 
@@ -47,7 +47,7 @@ Wo eine Sportart in deutlich unterschiedlichen Wettkampfformen existiert, muss j
 **Annahme 1 — Zerlegbarkeit.**
 Jede kompetitive Sportart lässt sich vollständig und sinnvoll durch vier Komponenten beschreiben: Taktik, Physis, Skill und Material. Nichts Wesentliches liegt außerhalb dieser vier Kategorien. Das ist die Kernaussage der Theorie und die einzige, die wirklich zugestimmt werden muss, bevor es weitergeht.
 
-Diese Annahme ist nicht selbstverständlich. Man könnte argumentieren, dass bestimmte Sportarten sich der Reduktion widersetzen — dass die psychologische Dimension des Wettkampfs oder die schwer fassbare Qualität von Teamwork sich nicht in vier Zahlen erfassen lässt. Wir argumentieren, dass diese Dimensionen bereits in den Komponenten enthalten sind, wie sie definiert wurden. Aber wir erkennen die Annahme als das an, was sie ist.
+Diese Annahme ist nicht selbstverständlich. Man könnte argumentieren, dass bestimmte Sportarten sich der Reduktion widersetzen — dass die psychologische Dimension des Wettkampfs oder die schwer fassbare Qualität von Teamwork sich nicht in vier Zahlen erfassen lässt. Die Theorie geht davon aus, dass diese Dimensionen bereits in den Komponenten enthalten sind, wie sie definiert wurden. Die Annahme wird dennoch als das anerkannt, was sie ist.
 
 **Definition — Der Composition Vector.**
 Aus Annahme 1 folgt, dass jede Sportart *S* formal als Tupel dargestellt werden kann:
@@ -183,7 +183,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot skill"></span>Skill 45%</span>
   </div>
 </div>
-<p class="sport-rationale">Skill-getrieben: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie machen den Unterschied zwischen Top-100 und Top-10. Physis ist mit 35% hoch angesetzt, weil Best-of-Five-Matches über mehrere Stunden gehen können und der Wettkampfkalender erbarmungslos ist. Taktik ist real (Aufschlagmuster, Returnposition, Punktaufbau), wirkt aber im direkten Vergleich zu Mannschaftssportarten begrenzt — die Zahl der Spielzüge pro Punkt ist klein. Material ist 0, da Profis untereinander Zugang zu vergleichbarer Ausrüstung haben.</p>
+<p class="sport-rationale">Skill-getrieben: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie machen den Unterschied zwischen Top-100 und Top-10. Physis ist mit 35% hoch angesetzt, weil Best-of-Five-Matches über mehrere Stunden gehen können und der Wettkampfkalender erbarmungslos ist. Taktik ist real (Aufschlagmuster, Returnposition, Punktaufbau), bleibt aber stark an die individuelle Schlagqualität gekoppelt — strategische Pläne setzen sich nur durch, wenn die Ausführung sie trägt. Material ist 0, da Profis untereinander Zugang zu vergleichbarer Ausrüstung haben.</p>
 </div>
 
 <div class="sport-entry">
@@ -219,7 +219,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
   </div>
 </div>
-<p class="sport-rationale">Praktisch reine Entscheidungsleistung — Stellungsbeurteilung, Berechnung, strategische Planung. Skill mit 10% steht für die motorische und mustererkennende Routine: Eröffnungsrepertoire, Standardstrukturen, das schnelle Greifen typischer Manöver. Physis mit 10% ist die kognitive Ausdauer über mehrstündige Partien — keine triviale Komponente, wie jeder Spieler bestätigen wird, der Zug 60 erlebt hat. Kein Material.</p>
+<p class="sport-rationale">Praktisch reine Entscheidungsleistung — Stellungsbeurteilung, Berechnung, strategische Planung. Die jeweils 10% für Skill und Physis sind weniger präzise Zuordnungen als das, was bleibt, nachdem Taktik den Hauptanteil bekommen hat: kognitive Routine, Mustererkennung, anhaltende Konzentration über mehrstündige Partien. Das fällt nicht sauber unter die Definitionen von Skill und Physis, ist aber an die kognitive Kapazitätsseite näher anschließbar als an die motorische. Die Verteilung trägt hier eher den Charakter einer Aufrundung als einer genauen Messung. Kein Material.</p>
 </div>
 
 <div class="sport-entry">
@@ -259,7 +259,7 @@ Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird 
     <span class="leg-item"><span class="leg-dot material"></span>Material 55%</span>
   </div>
 </div>
-<p class="sport-rationale">Die einzige Sportart in der Stichprobe, in der Material dominant ist — über die Saison hinweg entscheidet die Konstrukteursleistung mehr über das Klassement als jede individuelle Fahrerstärke. Taktik (Boxenstrategie, Reifenmanagement, Renntempo-Kalkül) ist substanzielle Größe und teils Teamleistung. Skill — Fahrzeugkontrolle am Limit, Spurwahl, Überholtechnik — wirkt im Wettkampf, ist aber innerhalb des Spitzenfelds in engerem Korridor. Physis spielt eine reale, aber begrenzte Rolle: G-Kräfte und Hitze fordern den Körper, ohne dass Konditionierung im Vordergrund stünde.</p>
+<p class="sport-rationale">Die einzige Sportart in der Stichprobe, in der Material dominant ist — über die Saison hinweg entscheidet die Konstrukteursleistung mehr über das Klassement als jede individuelle Fahrerstärke. Taktik (Boxenstrategie, Reifenmanagement, Renntempo-Kalkül) ist substanzielle Größe und teils Teamleistung. Skill — Fahrzeugkontrolle am Limit, Spurwahl, Überholtechnik — differenziert die Fahrer untereinander, ist aber innerhalb des Spitzenfelds enger gestreut als das Materialgefälle zwischen den Teams. Physis spielt eine reale, aber begrenzte Rolle: G-Kräfte und Hitze fordern den Körper, ohne dass Konditionierung im Vordergrund stünde.</p>
 </div>
 
 </div>
@@ -487,11 +487,47 @@ a { color: var(--text-link); }
 
 small { color: var(--text-muted); }
 
-/* Component colours — fixed across themes */
+/* Component colours — light mode (default) */
 .tactics,  .leg-dot.tactics  { background: #2d5a3d; }
 .physical, .leg-dot.physical { background: #8b4513; }
 .skill,    .leg-dot.skill    { background: #1a3a6b; }
 .material, .leg-dot.material { background: #6b2d6b; }
+
+/* Component colours — dark mode (system-preferred, unless user picked light) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tactics,
+  :root:not([data-theme="light"]) .leg-dot.tactics  { background: #4ea66c; }
+  :root:not([data-theme="light"]) .physical,
+  :root:not([data-theme="light"]) .leg-dot.physical { background: #d18d4a; }
+  :root:not([data-theme="light"]) .skill,
+  :root:not([data-theme="light"]) .leg-dot.skill    { background: #5a8fd8; }
+  :root:not([data-theme="light"]) .material,
+  :root:not([data-theme="light"]) .leg-dot.material { background: #b56fb5; }
+
+  :root:not([data-theme="light"]) .distance-matrix .cell-near {
+    background: rgba(78, 166, 108, 0.22);
+  }
+  :root:not([data-theme="light"]) .distance-matrix .cell-far {
+    background: rgba(209, 141, 74, 0.22);
+  }
+}
+
+/* Component colours — dark mode (explicit user choice) */
+:root[data-theme="dark"] .tactics,
+:root[data-theme="dark"] .leg-dot.tactics  { background: #4ea66c; }
+:root[data-theme="dark"] .physical,
+:root[data-theme="dark"] .leg-dot.physical { background: #d18d4a; }
+:root[data-theme="dark"] .skill,
+:root[data-theme="dark"] .leg-dot.skill    { background: #5a8fd8; }
+:root[data-theme="dark"] .material,
+:root[data-theme="dark"] .leg-dot.material { background: #b56fb5; }
+
+:root[data-theme="dark"] .distance-matrix .cell-near {
+  background: rgba(78, 166, 108, 0.22);
+}
+:root[data-theme="dark"] .distance-matrix .cell-far {
+  background: rgba(209, 141, 74, 0.22);
+}
 
 /* ---------- Sidebar layout ---------- */
 

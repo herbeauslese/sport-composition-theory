@@ -26,6 +26,13 @@ That question — what exactly is being measured — led to this theory.
 
 Before the theory can be applied, two foundational assumptions must be accepted. They cannot be proven — they are the starting point, not the conclusion.
 
+**Assumption 0 — Scope.**
+Every sport is evaluated in the form in which it is professionally and competitively practiced at the highest level. Recreational or informal variants are excluded — not because they are less interesting, but because the competitive form is the most clearly defined and most consistently comparable across athletes.
+
+Road cycling, for instance, is a team sport at the professional level. A domestique sacrifices their own result to protect a team leader; tactics operate across an entire roster, not just a single rider. Evaluating road cycling as a solo physical effort would produce a fundamentally different — and less accurate — vector.
+
+Where a sport exists in meaningfully distinct competitive forms, each version must be named and evaluated separately. Beach volleyball and indoor volleyball share a name but differ structurally. The 100m and 400m sprint reward different physical profiles. Treating them as interchangeable would undermine the precision the model depends on.
+
 **Assumption 1 — Decomposability.**
 Any competitive sport can be fully and meaningfully described by four components: Tactics, Physical, Skill, and Material. Nothing essential falls outside these four categories. This is the core claim of the theory, and the only one that requires genuine agreement before proceeding.
 
@@ -86,35 +93,6 @@ For each sport, four guiding questions are applied — one per component:
 The resulting values are curated estimates. We do not pretend otherwise. The point is not false precision — it is structured comparison. A sport in which Tactics accounts for 50% and one in which it accounts for 5% are genuinely, meaningfully different things, even if the exact numbers are open to debate.
 
 The estimates are informed by observation, reasoning, and the kind of arguments that tend to happen when someone who watches too much sport has too much time to think. They are offered in good faith, and revised when better arguments appear.
-
----
-
-## Derivation
-
-<div class="derivation-block">
-
-### Vector Representation
-
-Given the Composition Vector S = (T, P, Sk, M), each sport occupies a unique point in four-dimensional composition space. The sports introduced in the Examples section can be expressed as follows:
-
-<table class="vector-table">
-  <thead>
-    <tr><th>Sport</th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Football</td><td>0.45</td><td>0.25</td><td>0.30</td><td>0.00</td></tr>
-    <tr><td>Basketball</td><td>0.35</td><td>0.30</td><td>0.35</td><td>0.00</td></tr>
-    <tr><td>100m Sprint</td><td>0.05</td><td>0.65</td><td>0.30</td><td>0.00</td></tr>
-    <tr><td>Archery</td><td>0.10</td><td>0.15</td><td>0.65</td><td>0.10</td></tr>
-    <tr><td>Road Cycling</td><td>0.30</td><td>0.40</td><td>0.15</td><td>0.15</td></tr>
-    <tr><td>Chess</td><td>0.80</td><td>0.10</td><td>0.10</td><td>0.00</td></tr>
-    <tr><td>Formula 1</td><td>0.20</td><td>0.10</td><td>0.15</td><td>0.55</td></tr>
-  </tbody>
-</table>
-
-Each row is a point in composition space. Sports that feel structurally similar — Football and Basketball, for instance — sit close together. Sports that feel fundamentally unlike each other — Chess and 100m Sprint — sit far apart. The table makes this intuition precise.
-
-</div>
 
 ---
 
@@ -301,13 +279,6 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 .seg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .leg-item { font-size: 0.78em; color: #555; display: flex; align-items: center; gap: 5px; }
 .leg-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.derivation-block {
-  background: rgba(0,0,0,0.04);
-  border: 1px solid #d0cdc8;
-  border-radius: 4px;
-  padding: 1.5em 1.75em;
-  margin: 1em 0;
-}
 .vector-table {
   width: 100%;
   border-collapse: collapse;
@@ -328,8 +299,7 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 }
 .vector-table tr:last-child td { border-bottom: none; }
 @media (prefers-color-scheme: dark) {
-  .derivation-block { background: rgba(255,255,255,0.04); border-color: #30363d; }
-  .vector-table th { border-bottom-color: #444; color: #8b949e; }
+    .vector-table th { border-bottom-color: #444; color: #8b949e; }
   .vector-table td { border-bottom-color: #21262d; color: #e6edf3; }
 }
 .math-block {
@@ -348,14 +318,7 @@ The following breakdowns represent current estimates. Each sport is shown as a s
   color: #888;
 }
 @media (prefers-color-scheme: dark) {
-  .derivation-block {
-  background: rgba(0,0,0,0.04);
-  border: 1px solid #d0cdc8;
-  border-radius: 4px;
-  padding: 1.5em 1.75em;
-  margin: 1em 0;
-}
-.vector-table {
+  .vector-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.88em;
@@ -375,8 +338,7 @@ The following breakdowns represent current estimates. Each sport is shown as a s
 }
 .vector-table tr:last-child td { border-bottom: none; }
 @media (prefers-color-scheme: dark) {
-  .derivation-block { background: rgba(255,255,255,0.04); border-color: #30363d; }
-  .vector-table th { border-bottom-color: #444; color: #8b949e; }
+    .vector-table th { border-bottom-color: #444; color: #8b949e; }
   .vector-table td { border-bottom-color: #21262d; color: #e6edf3; }
 }
 .math-block { background: rgba(255,255,255,0.07); border-left-color: #444; color: #e6edf3; }

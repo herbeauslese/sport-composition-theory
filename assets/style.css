@@ -374,6 +374,88 @@ sup { font-size: 0.75em; }
   opacity: 0.92;
 }
 
+/* ---------- Rubric details (per-sport scorecard) ---------- */
+
+.rubric-details {
+  margin-top: 0.9em;
+  font-size: 0.9em;
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  background: var(--bg-elevated);
+}
+.rubric-details > summary {
+  cursor: pointer;
+  padding: 0.55em 0.9em;
+  color: var(--text-muted);
+  font-size: 0.9em;
+  user-select: none;
+  list-style: none;
+}
+.rubric-details > summary::-webkit-details-marker { display: none; }
+.rubric-details > summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+  margin-right: 0.3em;
+}
+.rubric-details[open] > summary::before {
+  transform: rotate(90deg);
+}
+.rubric-details > summary:hover {
+  color: var(--text-body);
+}
+.rubric-body {
+  padding: 0.4em 1em 1em 1em;
+  border-top: 1px solid var(--border-soft);
+}
+.rubric-group {
+  margin: 0.8em 0 0.4em 0;
+}
+.rubric-group-title {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: bold;
+  margin: 0 0 0.3em 0;
+}
+.rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+}
+.rubric-table td {
+  padding: 0.2em 0.4em;
+  border-bottom: 1px solid var(--border-row);
+  vertical-align: top;
+}
+.rubric-table tr:last-child td {
+  border-bottom: none;
+}
+.rubric-table .rubric-code {
+  font-family: 'Courier New', monospace;
+  color: var(--text-muted);
+  width: 3em;
+  white-space: nowrap;
+}
+.rubric-table .rubric-label {
+  color: var(--text-body);
+}
+.rubric-table .rubric-value {
+  font-family: 'Courier New', monospace;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  width: 2em;
+  color: var(--text-body);
+  font-weight: bold;
+}
+.rubric-sum {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin: 0.4em 0 0 0;
+  font-style: italic;
+}
+
 /* ---------- Vector / distance table ---------- */
 
 .vector-table {

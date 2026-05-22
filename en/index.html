@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A framework for decomposing any sport into its fundamental components.">
+  <title>Sport Composition Theory</title>
+
+  <!-- Apply persisted theme before paint to prevent flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Open table of contents" aria-expanded="false">☰</button>
+
+<aside id="sidebar" class="sidebar" aria-label="Sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-brand"><a href="#top">Sport Composition Theory</a></p>
+
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-title">Contents</p>
+<ol class="toc-list">
+  <li><a href="#background">Background</a>
+  </li>
+  <li><a href="#the-theory">The Theory</a>
+    <ol>
+      <li><a href="#assumptions">Assumptions</a></li>
+      <li><a href="#tactics">Tactics</a></li>
+      <li><a href="#physical">Physical</a></li>
+      <li><a href="#skill">Skill</a></li>
+      <li><a href="#material">Material</a></li>
+    </ol>
+  </li>
+  <li><a href="#caveats-considerations">Caveats & Considerations</a>
+  </li>
+  <li><a href="#methodology">Methodology</a>
+  </li>
+  <li><a href="#examples">Examples</a>
+  </li>
+</ol>
+    </nav>
+
+    <div class="sidebar-controls">
+      <a class="lang-link" href="../">Deutsch</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">Theme: Auto</button>
+    </div>
+  </div>
+</aside>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+<main class="content" id="top">
+  <header class="page-header">
+    <h1>Sport Composition Theory</h1>
+    <p class="subtitle"><em>A framework for understanding what any sport is actually made of.</em></p>
+  </header>
+
+  <article class="article">
+<hr />
+<h2 id="background">Background</h2>
+<p>I have always been a fan of sport — not one sport, but many. Football, cycling, chess, athletics, motorsport. The full, chaotic spectrum. And for a long time, I found myself asking a question that seemed simple but turned out to be surprisingly difficult: how do you actually compare them?</p>
+<p>Not in terms of which is more exciting, or more demanding, or more prestigious. But structurally. What does it take to be good at something? What kind of demands — in the broadest sense — does each sport place on the athlete?</p>
+<p>Consider a sprinter and a Formula 1 driver. Both are elite athletes competing at the absolute limit of human performance. But the nature of their excellence is radically different. The sprinter has refined their body over years to produce a single explosive output lasting under ten seconds. The Formula 1 driver must process a torrent of sensory information at 300 km/h, making tactical decisions in fractions of a second — decisions that have to hold up across an entire race strategy built over dozens of laps. And then there is the chess player: no physical output to speak of, no machine, no course — just pure cognitive warfare conducted across a board, where a single positional miscalculation made on move twelve can silently unravel everything by move forty.</p>
+<p>Three athletes. Three completely different skill sets. And yet all three are competing, winning, and losing based on something that can be measured and compared.</p>
+<p>That question — what exactly is being measured — led to this theory.</p>
+<blockquote>
+<p><em>"What does it take to win? The answer is always the same components. Just in different proportions."</em></p>
+</blockquote>
+<hr />
+<h2 id="the-theory">The Theory</h2>
+<h3 id="assumptions">Assumptions</h3>
+<p>Before the theory can be applied, two foundational assumptions must be accepted. They cannot be proven — they are the starting point, not the conclusion. A formal definition and one direct consequence follow from them.</p>
+<p><strong>Assumption 0 — Scope.</strong>
+Every sport is evaluated in the form in which it is professionally and competitively practiced at the highest level. Recreational or informal variants are excluded — not because they are less interesting, but because the competitive form is the most clearly defined and most consistently comparable across athletes.</p>
+<p>Road cycling, for instance, is a team sport at the professional level. A domestique sacrifices their own result to protect a team leader; tactics operate across an entire roster, not just a single rider. Evaluating road cycling as a solo physical effort would produce a fundamentally different — and less accurate — vector.</p>
+<p>Where a sport exists in meaningfully distinct competitive forms, each version must be named and evaluated separately. Beach volleyball and indoor volleyball share a name but differ structurally. The 100m and 400m sprint reward different physical profiles. Treating them as interchangeable would undermine the precision the model depends on.</p>
+<p><strong>Assumption 1 — Decomposability.</strong>
+Any competitive sport can be fully and meaningfully described by four components: Tactics, Physical, Skill, and Material. Nothing essential falls outside these four categories. This is the core claim of the theory, and the only one that requires genuine agreement before proceeding.</p>
+<p>This assumption is not self-evident. One could argue that certain sports resist reduction — that the psychological dimension of competition, or the intangible quality of teamwork, cannot be captured by four numbers. We argue that these dimensions are already contained within the components as defined. But we acknowledge the assumption for what it is.</p>
+<p><strong>Definition — The Composition Vector.</strong>
+Given Assumption 1, any sport <em>S</em> can be formally represented as a tuple:</p>
+<div class="math-block">S = (T, P, Sk, M)</div>
+
+<p>where <em>T</em> = Tactics, <em>P</em> = Physical, <em>Sk</em> = Skill, <em>M</em> = Material, and:</p>
+<div class="math-block">T + P + Sk + M = 1</div>
+
+<p>All values are real numbers in the interval [0, 1]. For most sports, M = 0, reducing the representation to a three-component vector.<sup><a href="#fn1" id="fn1ref">1</a></sup></p>
+<p><strong>Corollary 1 — Comparability.</strong>
+From Assumption 1 and the Definition it follows directly that any two sports can be meaningfully compared. Because every sport is expressed in the same four-dimensional space, the structural similarity or distance between any two sports is well-defined. A sport dominated by Physical and one dominated by Tactics are not just qualitatively different — they are measurably far apart.</p>
+<p><strong>A note on theory and application.</strong>
+Everything above is exact. The Composition Vector is defined over real numbers, and any assignment satisfying the constraints is formally valid. Assigning concrete weights to a real sport is a different matter — it is a judgement, not a measurement. That step is treated separately, under Methodology.</p>
+<hr />
+<h3 id="tactics">Tactics</h3>
+<p>Decision-making, planning, reading opponents, and adapting strategy in real time. Tactics covers the <em>content</em> of decisions: the choice of formation, the read of a situation, the decision to attack or to wait. It is the component most invisible to the casual observer, and most decisive to the serious one.</p>
+<p>Tactics is concerned with <em>what</em> is decided, not with the cognitive capacity to keep deciding over time. The latter belongs to Physical, and the distinction matters: an athlete who makes brilliant decisions for ten minutes and then collapses mentally has a Tactics problem only if the decisions themselves were poor. If the decisions were correct but ran out, the limitation is one of capacity, not of judgement.</p>
+<h3 id="physical">Physical</h3>
+<p>The demands placed on the human body: strength, endurance, speed, agility — and their mental equivalents. Sustained concentration, psychological resilience under pressure, and the capacity to perform cognitively over long periods all count here too. The mind is part of the body, and in sport, it is trained accordingly.</p>
+<p>This is the cognitive <em>capacity</em> dimension that complements Tactics. A five-hour chess game places enormous demands on Physical in this sense, even though no muscle is meaningfully strained. The quality of the moves played is Tactics; the ability to keep finding good moves on move sixty is Physical.</p>
+<h3 id="skill">Skill</h3>
+<p>Learned human technique: motor control, precision, coordination, and execution. Skill is distinct from Physical in that it concerns the <em>quality</em> of movement, not the <em>capacity</em> for it. A sprinter's physical output is their top speed. Their skill is the technique that gets them there efficiently.</p>
+<h3 id="material">Material</h3>
+<p>The role of external equipment in producing competitive outcomes. This component requires special attention.</p>
+<p>Almost every sport involves some equipment — shoes, balls, rackets. Material does <strong>not</strong> apply to all of them. It applies only when the <em>quality or specification</em> of the equipment has a meaningful, direct effect on competitive outcome — when a better-equipped athlete has a structural advantage over an equivalently skilled one with inferior gear.</p>
+<p>A tennis racket does not qualify. A Formula 1 car does. A bobsled does. A high-end road cycling setup sits somewhere in between, and is treated accordingly.</p>
+<p>One further note: facilities and training environments — altitude camps, specialist tracks, elite coaching infrastructure — could in principle be counted under Material. At the highest levels of competition, however, these tend to converge. The top athletes in most sports have broadly comparable access to top-tier facilities, which means the differentiating effect is limited. For this reason, training infrastructure is excluded from the model unless it creates a <em>persistent, structural</em> competitive asymmetry.</p>
+<hr />
+<h2 id="caveats-considerations">Caveats &amp; Considerations</h2>
+<p>The Composition Vector is a deliberate simplification. That is a feature, not a flaw — but it comes with consequences worth stating explicitly. This section collects the known limitations of the model. It will grow as the theory is stress-tested against more sports.</p>
+<h3 id="team-sport">The Team Sport Problem</h3>
+<p>In individual sports, the Composition Vector describes a single athlete. In team sports, it does not.</p>
+<p>Consider Tactics in football. The value assigned reflects how much tactical quality determines the outcome of a match. But tactical quality in a team sport operates on two distinct levels: the <strong>collective level</strong> (team shape, pressing structure, set piece design) and the <strong>individual level</strong> (a player's positional decisions within that system). These are not the same thing. A player with exceptional individual tactical intelligence can still lose comprehensively if their team's collective structure is poor.</p>
+<p>This means that in team sports, the Composition Vector describes the sport at the team level — which is the level at which outcomes are actually decided. The individual contributions of athletes are real, but they are inputs into a collective system, not direct outputs.</p>
+<p>A practical consequence: Tactics tends to carry more weight in team sports than a naive reading might suggest, because collective tactical organisation can compensate for — or completely negate — individual superiority in other components. Eleven individually superior athletes without a system regularly lose to eleven organised ones. This is not a flaw in the model; it is an accurate reflection of how team sports work.</p>
+<h3 id="material-asymmetry">Material Is Not Symmetric Between Athletes</h3>
+<p>Material weights describe a sport as a whole, not the matchup between two specific competitors. This distinction is easy to miss and worth stating explicitly.</p>
+<p>Consider Formula 1, where Material accounts for roughly half of the vector. That figure reflects how much equipment quality shapes outcomes <em>across the grid</em>: a backmarker team and a frontrunner team are separated primarily by their cars, not by the talent of their drivers. But within a single team, two drivers race identical machinery. Between them, the Material component effectively collapses to zero, and the contest is decided by Tactics, Physical, and Skill alone.</p>
+<p>The same logic applies wherever equipment matters. A high-end road bike is decisive when comparing a Tour de France rider to an amateur, but irrelevant when comparing two World Tour professionals. Material, in other words, is a property of the competition as a whole — not a constant carried by each athlete. The Composition Vector captures the structure of the sport; it does not by itself describe any particular duel within it.</p>
+<hr />
+<h2 id="methodology">Methodology</h2>
+<p>For each sport, four guiding questions are applied — one per component:</p>
+<p><strong>Tactics:</strong> How much does a superior strategic approach — independent of physical ability — determine the outcome of a contest?</p>
+<p><strong>Physical:</strong> How much does a measurable difference in athletic or mental conditioning affect the result, holding all else equal?</p>
+<p><strong>Skill:</strong> How much is the outcome determined by the precision and quality of learned human technique?</p>
+<p><strong>Material:</strong> How much would a significant disadvantage in equipment — independent of the athlete — change the result?</p>
+<p>The resulting values are curated estimates, reported on a 5% grid. False precision (writing 23.7% when one means <em>roughly a quarter</em>) would suggest a measurement procedure that does not exist. The estimates are informed by observation, reasoning, and the kind of arguments that tend to happen when someone who watches too much sport has too much time to think. They are offered in good faith, and revised when better arguments appear.</p>
+<hr />
+<h2 id="examples">Examples</h2>
+<p>The following breakdowns represent current estimates. Each sport is shown as a single bar divided into its components.</p>
+<div class="sport-charts">
+
+<div class="sport-entry">
+<h3>Football (Soccer)</h3>
+<p class="sport-meta">11v11 · 90 minutes</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"   style="width:45%" title="Tactics: 45%"></div>
+    <div class="seg physical"  style="width:25%" title="Physical: 25%"></div>
+    <div class="seg skill"     style="width:30%" title="Skill: 30%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 45%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 25%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
+  </div>
+</div>
+</div>
+
+<div class="sport-entry">
+<h3>100m Sprint</h3>
+<p class="sport-meta">Pure athletic event</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"  style="width:5%"  title="Tactics: 5%"></div>
+    <div class="seg physical" style="width:65%" title="Physical: 65%"></div>
+    <div class="seg skill"    style="width:30%" title="Skill: 30%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 5%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 65%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
+  </div>
+</div>
+</div>
+
+<div class="sport-entry">
+<h3>Basketball</h3>
+<p class="sport-meta">5v5 · high tempo</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"  style="width:35%" title="Tactics: 35%"></div>
+    <div class="seg physical" style="width:30%" title="Physical: 30%"></div>
+    <div class="seg skill"    style="width:35%" title="Skill: 35%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 35%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 30%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
+  </div>
+</div>
+</div>
+
+<div class="sport-entry">
+<h3>Chess</h3>
+<p class="sport-meta">Included as a boundary case</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"  style="width:80%" title="Tactics: 80%"></div>
+    <div class="seg physical" style="width:10%" title="Physical: 10%"></div>
+    <div class="seg skill"    style="width:10%" title="Skill: 10%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 80%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 10%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
+  </div>
+</div>
+</div>
+
+<div class="sport-entry">
+<h3>Archery</h3>
+<p class="sport-meta">Precision individual sport</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"  style="width:10%" title="Tactics: 10%"></div>
+    <div class="seg physical" style="width:15%" title="Physical: 15%"></div>
+    <div class="seg skill"    style="width:65%" title="Skill: 65%"></div>
+    <div class="seg material" style="width:10%" title="Material: 10%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 10%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 15%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 65%</span>
+    <span class="leg-item"><span class="leg-dot material"></span>Material 10%</span>
+  </div>
+</div>
+</div>
+
+<div class="sport-entry">
+<h3>Road Cycling</h3>
+<p class="sport-meta">Grand Tour stage race</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"  style="width:30%" title="Tactics: 30%"></div>
+    <div class="seg physical" style="width:40%" title="Physical: 40%"></div>
+    <div class="seg skill"    style="width:15%" title="Skill: 15%"></div>
+    <div class="seg material" style="width:15%" title="Material: 15%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 30%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 40%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
+    <span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
+  </div>
+</div>
+</div>
+
+<div class="sport-entry">
+<h3>Formula 1</h3>
+<p class="sport-meta">Includes driver and constructor</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics"  style="width:20%" title="Tactics: 20%"></div>
+    <div class="seg physical" style="width:10%" title="Physical: 10%"></div>
+    <div class="seg skill"    style="width:15%" title="Skill: 15%"></div>
+    <div class="seg material" style="width:55%" title="Material: 55%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Tactics 20%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physical 10%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
+    <span class="leg-item"><span class="leg-dot material"></span>Material 55%</span>
+  </div>
+</div>
+</div>
+
+</div>
+
+<p><small>* Percentages are curated estimates derived from structured qualitative analysis. They reflect the author's considered opinion and should be treated as such — which is to say, seriously, but not too seriously.</small></p>
+<hr />
+<div class="footnotes">
+<p id="fn1"><sup>1</sup> For the precise conditions under which Material takes a non-zero value, see the Material section above. <a href="#fn1ref">↩</a></p>
+</div>
+  </article>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  // ---------- Theme toggle ----------
+  function currentMode() {
+    var a = root.getAttribute('data-theme');
+    return (a === 'light' || a === 'dark') ? a : 'auto';
+  }
+  function cycle(m) {
+    if (m === 'auto')  return 'light';
+    if (m === 'light') return 'dark';
+    return 'auto';
+  }
+  var btn = document.getElementById('theme-toggle');
+  var labels = {
+    auto:  'Theme: Auto',
+    light: 'Theme: Light',
+    dark:  'Theme: Dark'
+  };
+  function refreshLabel() { btn.textContent = labels[currentMode()]; }
+  refreshLabel();
+  btn.addEventListener('click', function () {
+    var next = cycle(currentMode());
+    if (next === 'auto') {
+      root.removeAttribute('data-theme');
+      try { localStorage.removeItem('theme'); } catch (e) {}
+    } else {
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    }
+    refreshLabel();
+  });
+
+  // ---------- Sidebar toggle (mobile) ----------
+  var sidebar  = document.getElementById('sidebar');
+  var toggle   = document.getElementById('sidebar-toggle');
+  var backdrop = document.getElementById('sidebar-backdrop');
+  function open()  { sidebar.classList.add('open');  backdrop.classList.add('visible'); toggle.setAttribute('aria-expanded', 'true'); }
+  function close() { sidebar.classList.remove('open'); backdrop.classList.remove('visible'); toggle.setAttribute('aria-expanded', 'false'); }
+  toggle.addEventListener('click', function () {
+    if (sidebar.classList.contains('open')) close(); else open();
+  });
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+  });
+  sidebar.querySelectorAll('.toc-list a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.matchMedia('(max-width: 1099px)').matches) close();
+    });
+  });
+
+  // ---------- Scrollspy: highlight active TOC entry ----------
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-list a[href^="#"]'));
+  if (tocLinks.length && 'IntersectionObserver' in window) {
+    var linkById = {};
+    var sections = [];
+    tocLinks.forEach(function (link) {
+      var id = link.getAttribute('href').slice(1);
+      var section = document.getElementById(id);
+      if (section) { linkById[id] = link; sections.push(section); }
+    });
+    var visible = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) visible.add(entry.target.id);
+        else visible.delete(entry.target.id);
+      });
+      var activeId = null;
+      for (var i = 0; i < sections.length; i++) {
+        if (visible.has(sections[i].id)) { activeId = sections[i].id; break; }
+      }
+      if (!activeId) {
+        var sy = window.scrollY;
+        for (var j = sections.length - 1; j >= 0; j--) {
+          if (sections[j].getBoundingClientRect().top + sy <= sy + 80) {
+            activeId = sections[j].id; break;
+          }
+        }
+      }
+      tocLinks.forEach(function (l) { l.classList.remove('active'); });
+      if (activeId && linkById[activeId]) linkById[activeId].classList.add('active');
+    }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

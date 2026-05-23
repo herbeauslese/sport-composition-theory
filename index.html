@@ -1,189 +1,629 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Komponenten.">
-  <title>Sport Composition Theory</title>
-
-  <!-- Apply persisted theme before paint to prevent flash -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="stylesheet" href="assets/style.css">
-
-  <!-- KaTeX for math rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body, {
-      delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '\\[', right: '\\]', display: true},
-        {left: '$',  right: '$',  display: false},
-        {left: '\\(', right: '\\)', display: false}
-      ],
-      throwOnError: false
-    });"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sport Composition Theory</title>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root {
+    --c-T: #2c3e50;
+    --c-P: #c0392b;
+    --c-Sk: #16a085;
+    --c-M: #d4ac0d;
+    --ink: #111;
+    --muted: #666;
+    --rule: #ddd;
+  }
+  html, body {
+    background: #fff;
+    color: var(--ink);
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    padding: 4em 20% 6em 20%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  @media (max-width: 900px) {
+    body { padding: 2em 5% 4em 5%; }
+  }
+  h1, h2, h3, h4 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+  }
+  h1 {
+    font-size: 2.4em;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 2.5em;
+    font-size: 1.15em;
+  }
+  h2 { font-size: 1.6em; border-bottom: 1px solid var(--rule); padding-bottom: 0.3em; }
+  h3 { font-size: 1.2em; }
+  h4 { font-size: 1.05em; color: var(--muted); }
+  p { margin: 0.8em 0; }
+  ul, ol { padding-left: 1.5em; }
+  li { margin: 0.3em 0; }
+  blockquote {
+    border-left: 3px solid var(--ink);
+    padding-left: 1.2em;
+    margin-left: 0;
+    color: var(--muted);
+    font-style: italic;
+  }
+  code, .mono { font-family: 'Menlo', 'Consolas', monospace; font-size: 0.95em; }
+  figure {
+    margin: 2em 0;
+    text-align: center;
+  }
+  figcaption {
+    font-size: 0.92em;
+    color: var(--muted);
+    margin-top: 0.6em;
+    text-align: left;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+  }
+  th, td {
+    border: 1px solid var(--rule);
+    padding: 0.5em 0.8em;
+    text-align: left;
+  }
+  th {
+    background: #f6f6f6;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .toc {
+    background: #f9f9f9;
+    border: 1px solid var(--rule);
+    padding: 1em 1.5em;
+    margin: 2em 0 3em 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.95em;
+  }
+  .toc ol { padding-left: 1.2em; }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .cite { color: var(--muted); }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4em;
+    justify-content: center;
+    margin: 1em 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.92em;
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.4em; }
+  .legend-swatch {
+    width: 14px; height: 14px;
+    display: inline-block;
+    border-radius: 2px;
+  }
+  .callout {
+    background: #fafafa;
+    border-left: 3px solid var(--ink);
+    padding: 1em 1.4em;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+  }
+  .callout h4 { margin-top: 0; color: var(--ink); }
+  .bib {
+    font-size: 0.92em;
+    line-height: 1.5;
+  }
+  .bib li { margin-bottom: 0.7em; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 3em 0;
+  }
+  .sport-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.9em;
+  }
+</style>
 </head>
 <body>
 
-<button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false">☰</button>
+<h1>Sport Composition Theory</h1>
+<p class="subtitle">Eine Methode, die Anforderungen verschiedener Sportarten als Komposition aus vier Grundkomponenten zu beschreiben und vergleichbar zu machen.</p>
 
-<aside id="sidebar" class="sidebar" aria-label="Sidebar">
-  <div class="sidebar-inner">
-    <p class="sidebar-brand"><a href="#top">Sport Composition Theory</a></p>
+<div class="toc">
+  <strong>Inhalt</strong>
+  <ol>
+    <li><a href="#einleitung">Einleitung</a></li>
+    <li><a href="#theorie">Theorie</a></li>
+    <li><a href="#methodik">Methodik</a></li>
+    <li><a href="#anmerkungen">Anmerkungen & Vorbehalte</a></li>
+    <li><a href="#bewertungen">Beispielbewertungen</a></li>
+    <li><a href="#vergleich">Vergleich</a></li>
+    <li><a href="#anhang">Anhang</a></li>
+    <li><a href="#literatur">Literatur</a></li>
+  </ol>
+</div>
 
-    <nav class="toc" aria-label="Table of contents">
-      <p class="toc-title">Inhalt</p>
-      <ol class="toc-list">
-        <li><a href="#hintergrund-zweck">Hintergrund und Zweck</a></li>
-        <li><a href="#literatur">Literatur</a></li>
-      </ol>
-    </nav>
+<!-- ============================================================ -->
+<h2 id="einleitung">1. Einleitung</h2>
 
-    <div class="sidebar-controls">
-      <a class="lang-link" href="en/">English</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
-    </div>
-  </div>
-</aside>
+<p>Es gibt wenige Streitgespräche, die so verlässlich entgleisen wie die Frage, welche Sportart die <em>härteste</em> sei. Ein Marathonläufer, ein Boxer und ein Schachspieler werden sich nicht einigen — und wenn doch, dann nur deshalb, weil einer von ihnen beleidigt geht. Das Problem ist nicht, dass die Beteiligten nicht zuhören. Das Problem ist, dass sie keine gemeinsame Sprache haben, in der eine Antwort überhaupt formulierbar wäre.</p>
 
-<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+<p>Diese Arbeit schlägt eine solche Sprache vor. Die <strong>Sport Composition Theory</strong> beschreibt die kompetitiven Anforderungen jeder Sportart als Komposition aus vier Grundkomponenten: <em>Taktik</em>, <em>Physis</em>, <em>Skill</em> und <em>Material</em>. Jede Sportart erhält dabei einen Komponentenvektor, dessen Werte sich zu eins summieren. Damit lassen sich Sportarten erstmals systematisch nebeneinanderstellen — nicht über Bauchgefühl, sondern über eine wohldefinierte Struktur.</p>
 
-<main class="content" id="top">
-  <article>
-    <header class="page-header">
-      <h1>Sport Composition Theory</h1>
-      <p class="subtitle"><em>Ein Framework dafür, woraus eine Sportart eigentlich besteht.</em></p>
-    </header>
+<p>Das Ziel ist nicht, den ewigen Streit zu schlichten. Welche Sportart die "härteste" ist, bleibt eine Frage der Wertung. Das Ziel ist, den Streit präziser zu machen: Wenn Marathon und Schach am Ende beide auf hoher physischer Anforderung landen, dann meinen die Streitenden dasselbe Wort mit unterschiedlichem Inhalt — und ein produktives Gespräch kann beginnen.</p>
 
-    <section id="hintergrund-zweck">
-      <h2>1. Hintergrund und Zweck</h2>
+<h3>1.1 Hintergrund</h3>
 
-      <p>Die Frage, wie Sportarten miteinander zu vergleichen sind, ist alt und wird selten präzise gestellt. Im Alltag werden Sportarten ständig gegeneinander abgewogen — ob Schach „ein echter Sport" sei, ob Marathonlaufen schwieriger sei als Fußball, ob Formel 1 mehr Können verlange als Bogenschießen. Solche Diskussionen scheitern in der Regel nicht an mangelnder Empirie, sondern an mangelnder Sprache: Es fehlt ein gemeinsames Vokabular, das beschreibt, <em>woraus</em> eine Sportart besteht, bevor man sich über ihre Schwierigkeit oder Wertigkeit verständigen kann.</p>
+<p>In der internationalen Trainingswissenschaft hat sich seit den 1990er Jahren ein Vier-Felder-Modell durchgesetzt, das sportliche Leistung in <em>physische</em>, <em>technische</em>, <em>taktische</em> und <em>psychosoziale</em> Komponenten zerlegt (Höhmann, Lames, Letzelter & Pfeiffer, 2020). Aufbauend darauf entstanden zahlreiche sportartspezifische <em>Anforderungsprofile</em> — qualitative Beschreibungen, was eine Sportart vom Athleten verlangt.</p>
 
-      <p>Die Sportwissenschaft hat dieses Vakuum nicht vollständig ausgefüllt. Etablierte Klassifikationssysteme — etwa das jüngere <em>Participant Classification Framework</em> von McKay et al.<sup><a href="#ref-1">[1]</a></sup> — gruppieren Sportarten in Kategorien anhand physiologischer Anforderungen, taktischer Komponenten und Skill-Anforderungen. Sie liefern wertvolle Strukturierungen, bleiben aber bei der Kategorisierung stehen: Eine Sportart gehört zu einer Klasse, sie wird nicht in ihre Bestandteile zerlegt. Wer wissen will, ob Tennis und Tischtennis dieselbe strukturelle Signatur haben — und worin sie sich genau unterscheiden —, findet in diesen Systemen keine Antwort.</p>
+<p>Diese Profile haben zwei Schwächen, die die Sport Composition Theory adressiert. Erstens sind sie qualitativ: Sie beschreiben, was zählt, aber nicht wie viel. Zweitens behandeln sie <em>Material</em> stiefmütterlich — es taucht meist als Randnotiz unter "technical" auf, wenn es überhaupt erwähnt wird. Für Sportarten, in denen die Ausrüstung das Ergebnis dominiert, ist das unzureichend. Ein Formel-1-Fahrer in einem Auto am Ende des Felds gewinnt kein Rennen, egal wie gut er fährt. Das ist keine Randnotiz, das ist eine Hauptachse.</p>
 
-      <p>Die hier vorgeschlagene <strong>Sport Composition Theory</strong> versucht diese Lücke zu schließen. Ihre zentrale These lautet: Die kompetitiven Anforderungen jeder Sportart lassen sich als Komposition aus vier fundamentalen Komponenten beschreiben — <em>Taktik</em>, <em>Physis</em>, <em>Skill</em> und <em>Material</em> —, deren relative Gewichtung sich zwischen Sportarten unterscheidet, innerhalb einer Sportart aber stabil ist. Formal wird jede Sportart $S$ als Tupel dargestellt, dessen Komponenten Werte im Intervall $[0,\ 1]$ annehmen:</p>
+<h3>1.2 Was diese Arbeit liefert</h3>
 
-      <p>$$S = (T,\ P,\ \text{Sk},\ M) \quad \text{mit} \quad T + P + \text{Sk} + M = 1$$</p>
+<p>Konkret: ein formales Modell mit vier Komponenten, eine Erhebungsmethode (Fuzzy Analytic Hierarchy Process), ein Distanzmaß zum Vergleich von Sportarten und eine Visualisierung, die alle Sportarten gleichzeitig in einem Raum verortet. Anschließend werden sechs Sportarten beispielhaft bewertet — Schach, Fußball, Straßenrad, 100-Meter-Sprint, Formel 1 und Boxen — und ihre strukturelle Nähe zueinander untersucht.</p>
 
-      <p>Die Theorie ist damit nicht primär eine Klassifikation, sondern eine Dekomposition: Sie ordnet nicht zu, sondern zerlegt.</p>
+<!-- ============================================================ -->
+<h2 id="theorie">2. Theorie</h2>
 
-      <p>Diese Verschiebung hat methodische Konsequenzen. Eine Dekomposition erlaubt strukturelle Vergleiche, die einer Kategorisierung verschlossen bleiben — etwa die Frage, wie <em>ähnlich</em> sich zwei Sportarten sind, gemessen als Abstand ihrer Kompositionsvektoren im vierdimensionalen Raum. Sie erlaubt auch falsifizierbare Aussagen: Wer behauptet, eine Sportart sei „im Wesentlichen Skill", muss eine konkrete Gewichtung benennen und sich an empirischen Indikatoren — Trainingszeitverteilung, Varianzaufklärung in der Leistungsspitze, Crossover zwischen Sportarten — messen lassen.</p>
+<h3>2.1 Annahmen</h3>
 
-      <p>Der vorliegende Artikel verfolgt drei Ziele. Erstens werden die vier Komponenten so definiert, dass sie disjunkt, vollständig und auf höchstem kompetitiven Niveau anwendbar sind. Zweitens wird ein methodischer Rahmen vorgeschlagen, mit dem einer Sportart ihr Kompositionsvektor reproduzierbar zugewiesen werden kann — basierend auf dem <em>Analytic Hierarchy Process</em> nach Saaty<sup><a href="#ref-2">[2]</a></sup>, dem etablierten Standardverfahren für vergleichbare Dekompositionsprobleme in der Entscheidungsforschung. Drittens werden fünf beispielhafte Bewertungen — Formel 1, Straßenradsport, Fußball, 100-Meter-Sprint und Schach — durchgeführt, die das Modell auf Konsistenz und Differenzierungsfähigkeit prüfen.</p>
+<p>Die Theorie steht und fällt mit drei Annahmen, die im Folgenden offen ausgesprochen werden:</p>
 
-      <p>Die Theorie erhebt keinen Anspruch, eine erschöpfende Beschreibung sportlicher Leistung zu liefern. Sie versucht, eine Sprache anzubieten — eine, in der die alten Fragen nach Vergleichbarkeit, Schwierigkeit und Verwandtschaft von Sportarten erstmals präzise stellbar werden.</p>
-    </section>
+<p><strong>(A1) Vier-Komponenten-Hypothese.</strong> Die kompetitiven Anforderungen jeder Sportart lassen sich vollständig durch genau vier Komponenten beschreiben: Taktik, Physis, Skill und Material. Diese Annahme ist stark. Sie behauptet sowohl <em>Vollständigkeit</em> (es fehlt nichts Wesentliches) als auch <em>Unabhängigkeit</em> (die Komponenten überlappen nicht in einer Weise, die das Modell zusammenbrechen lässt). Beides ist diskutabel und wird in Abschnitt 4 erneut aufgenommen.</p>
 
-    <section id="literatur">
-      <h2>Literatur</h2>
-      <ol class="references">
-        <li id="ref-1">McKay, A. K. A., Stellingwerff, T., Smith, E. S., Martin, D. T., Mujika, I., Goosey-Tolfrey, V. L., Sheppard, J., &amp; Burke, L. M. (2022). <em>Defining Training and Performance Caliber: A Participant Classification Framework.</em> International Journal of Sports Physiology and Performance, 17(2), 317–331.</li>
-        <li id="ref-2">Saaty, T. L. (1980). <em>The Analytic Hierarchy Process: Planning, Priority Setting, Resource Allocation.</em> McGraw-Hill, New York.</li>
-      </ol>
-    </section>
+<p><strong>(A2) Stabilität innerhalb einer Sportart.</strong> Innerhalb einer Sportart — und innerhalb einer <em>kompetitiven Ära</em>, also einer Periode, in der Regelwerk, Material und Trainingsmethoden weitgehend stabil sind — ist die relative Gewichtung der Komponenten ebenfalls stabil. Marathonlauf 2025 hat keinen anderen Kompositionsvektor als Marathonlauf 2010. Marathonlauf 1925 vermutlich schon.</p>
 
-  </article>
-</main>
+<p><strong>(A3) Vergleichbarkeit zwischen Sportarten.</strong> Die Komponentenwerte zweier Sportarten sind direkt vergleichbar. Wenn Schach einen Taktik-Wert von 0,60 trägt und Fußball einen von 0,30, dann bedeutet das, dass Taktik in Schach <em>relativ</em> doppelt so bedeutsam ist — bezogen auf die für jede Sportart eigenen Gesamtanforderungen.</p>
 
-<script>
-(function () {
-  var root = document.documentElement;
+<h3>2.2 Die Hauptthese</h3>
 
-  // ---------- Theme toggle ----------
-  function currentMode() {
-    var a = root.getAttribute('data-theme');
-    return (a === 'light' || a === 'dark') ? a : 'auto';
-  }
-  function cycle(m) {
-    if (m === 'auto')  return 'light';
-    if (m === 'light') return 'dark';
-    return 'auto';
-  }
-  var btn = document.getElementById('theme-toggle');
-  var labels = {
-    auto:  'Theme: Auto',
-    light: 'Theme: Hell',
-    dark:  'Theme: Dunkel'
-  };
-  function refreshLabel() { btn.textContent = labels[currentMode()]; }
-  refreshLabel();
-  btn.addEventListener('click', function () {
-    var next = cycle(currentMode());
-    if (next === 'auto') {
-      root.removeAttribute('data-theme');
-      try { localStorage.removeItem('theme'); } catch (e) {}
-    } else {
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    }
-    refreshLabel();
-  });
+<blockquote>
+Jede Sportart besitzt einen wohldefinierten, innerhalb ihrer kompetitiven Ära stabilen Kompositionsvektor. Vektoren sind zwischen Sportarten vergleichbar; strukturelle Ähnlichkeit ist als Abstand messbar.
+</blockquote>
 
-  // ---------- Sidebar toggle (mobile) ----------
-  var sidebar  = document.getElementById('sidebar');
-  var toggle   = document.getElementById('sidebar-toggle');
-  var backdrop = document.getElementById('sidebar-backdrop');
-  function open()  { sidebar.classList.add('open');  backdrop.classList.add('visible'); toggle.setAttribute('aria-expanded', 'true'); }
-  function close() { sidebar.classList.remove('open'); backdrop.classList.remove('visible'); toggle.setAttribute('aria-expanded', 'false'); }
-  toggle.addEventListener('click', function () {
-    if (sidebar.classList.contains('open')) close(); else open();
-  });
-  backdrop.addEventListener('click', close);
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
-  });
-  sidebar.querySelectorAll('.toc-list a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (window.matchMedia('(max-width: 1099px)').matches) close();
-    });
-  });
+<h3>2.3 Die vier Komponenten</h3>
 
-  // ---------- Scrollspy: highlight active TOC entry ----------
-  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc-list a[href^="#"]'));
-  if (tocLinks.length && 'IntersectionObserver' in window) {
-    var linkById = {};
-    var sections = [];
-    tocLinks.forEach(function (link) {
-      var id = link.getAttribute('href').slice(1);
-      var section = document.getElementById(id);
-      if (section) { linkById[id] = link; sections.push(section); }
-    });
-    var visible = new Set();
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) visible.add(entry.target.id);
-        else visible.delete(entry.target.id);
-      });
-      var activeId = null;
-      for (var i = 0; i < sections.length; i++) {
-        if (visible.has(sections[i].id)) { activeId = sections[i].id; break; }
-      }
-      if (!activeId) {
-        var sy = window.scrollY;
-        for (var j = sections.length - 1; j >= 0; j--) {
-          if (sections[j].getBoundingClientRect().top + sy <= sy + 80) {
-            activeId = sections[j].id; break;
-          }
-        }
-      }
-      tocLinks.forEach(function (l) { l.classList.remove('active'); });
-      if (activeId && linkById[activeId]) linkById[activeId].classList.add('active');
-    }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
-    sections.forEach(function (s) { observer.observe(s); });
-  }
-})();
-</script>
+<p>Die vier Komponenten werden im Folgenden einzeln definiert. Die Reihenfolge ist nicht zufällig: Taktik und Physis sind die analytisch trickreichsten Komponenten, weil sie an mehreren Stellen Grenzen ziehen, die die intuitive Sprache nicht kennt.</p>
+
+<h4>Taktik (T)</h4>
+
+<p>Entscheidungsfindung, Planung, das Antizipieren gegnerischen Verhaltens und die Anpassung der Strategie an die Wettkampfsituation. Taktik umfasst den <em>Inhalt</em> der Entscheidungen: die Wahl der Formation, die Bewertung einer Situation, die Entscheidung zwischen offensivem und abwartendem Verhalten. Sie ist diejenige Komponente, deren Wirkung sich der oberflächlichen Betrachtung am ehesten entzieht und deren Bedeutung erst bei detaillierter Analyse sichtbar wird.</p>
+
+<p>Taktik betrifft, <em>was</em> entschieden wird — nicht die kognitive Kapazität, kontinuierlich Entscheidungen zu treffen. Letztere wird unter Physis behandelt. Diese Unterscheidung ist analytisch wichtig: Trifft ein Athlet über einen kurzen Zeitraum hochwertige Entscheidungen und versagt anschließend mental, liegt nur dann eine taktische Schwäche vor, wenn die getroffenen Entscheidungen selbst fehlerhaft waren. Sind sie inhaltlich korrekt, aber lassen sich nicht aufrechterhalten, ist das Defizit kapazitärer und nicht analytischer Natur.</p>
+
+<h4>Physis (P)</h4>
+
+<p>Die Anforderungen an den menschlichen Körper: Kraft, Ausdauer, Schnelligkeit, Beweglichkeit — sowie deren <em>kognitive Entsprechungen</em>. Anhaltende Konzentration, psychische Belastbarkeit unter Druck und die Fähigkeit, über lange Zeiträume kognitiv leistungsfähig zu bleiben, werden ebenfalls dieser Komponente zugerechnet. Im sportwissenschaftlichen Verständnis bildet der Geist eine trainierbare Dimension körperlicher Leistungsfähigkeit (Schmidt & Lee, 2011); diese Modellentscheidung folgt dieser Auffassung konsequent.</p>
+
+<p>Physis bezeichnet damit die <em>Kapazitätsdimension</em>, in deren Rahmen Taktik realisiert wird. Eine fünfstündige Schachpartie stellt erhebliche Anforderungen an die Physis in diesem Sinne, auch ohne nennenswerte muskuläre Beanspruchung. Die Qualität der einzelnen Züge ist der Taktik zuzuordnen; die Fähigkeit, auch in den späten Phasen einer Partie qualitativ gleichbleibende Züge zu finden, der Physis.</p>
+
+<p>Diese Definition ist bewusst breit und für manche Leser kontraintuitiv. Sie wird in Abschnitt 4 erneut aufgenommen.</p>
+
+<h4>Skill (Sk)</h4>
+
+<p>Erlernte menschliche Technik: motorische Kontrolle, Präzision, Koordination und Ausführung. Skill unterscheidet sich von Physis dadurch, dass es um die <em>Qualität</em> der Bewegung geht, nicht um die Kapazität zu ihr. Der physische Output eines Sprinters ist seine Höchstgeschwindigkeit. Sein Skill ist die Technik, die ihn effizient dorthin bringt — Startphase, Schrittfrequenz, Körperhaltung in der Druckphase.</p>
+
+<p>Skill setzt Physis als Substrat voraus und wird dadurch limitiert; umgekehrt entfaltet Physis ihren vollen Wert erst durch Skill. Trotz dieser Kopplung sind beide Komponenten analytisch trennbar: Ein technisch perfekter Sprinter ohne die nötige Schnellkraft ist langsam; ein roher Athlet ohne Technik ebenfalls.</p>
+
+<h4>Material (M)</h4>
+
+<p>Die Rolle externer Ausrüstung beim Zustandekommen kompetitiver Ergebnisse. Diese Komponente erfordert besondere Aufmerksamkeit. Fast jede Sportart involviert <em>irgendeine</em> Form von Ausrüstung — Schuhe, Bälle, Schläger. Material gilt nicht für alle. Es gilt nur dann, wenn die Qualität oder Spezifikation der Ausrüstung einen bedeutsamen, direkten Einfluss auf das Ergebnis hat — wenn ein besser ausgerüsteter Athlet einen <em>strukturellen</em> Vorteil gegenüber einem gleich starken mit schlechterer Ausrüstung hat.</p>
+
+<p>Ein Tennisschläger qualifiziert sich nicht: Auf Tour-Niveau sind Schläger weitgehend austauschbar. Ein Formel-1-Auto qualifiziert sich: Der Geschwindigkeitsunterschied zwischen Spitzenteam und Tabellenende beträgt sekundenweise pro Runde, unabhängig vom Fahrer. Ein Bob qualifiziert sich ebenfalls. Ein hochwertiges Straßenrad-Setup liegt dazwischen und wird entsprechend behandelt.</p>
+
+<p>Eine wichtige Abgrenzung: Trainingsinfrastruktur — Höhencamps, Spezialbahnen, Spitzentrainerstäbe — könnte prinzipiell unter Material fallen. Auf höchstem kompetitiven Niveau konvergieren diese Faktoren jedoch in der Regel. Die Top-Athleten in den meisten Sportarten haben weitgehend vergleichbaren Zugang zu erstklassigen Einrichtungen, was den differenzierenden Effekt begrenzt. Aus diesem Grund ist Trainingsinfrastruktur aus dem Modell ausgeschlossen, sofern sie nicht eine persistente, strukturelle Wettbewerbsasymmetrie erzeugt.</p>
+
+<h3>2.4 Der Kompositionsvektor</h3>
+
+<p>Formal wird jede Sportart $S$ als Tupel dargestellt, dessen Komponenten Werte im Intervall $[0, 1]$ annehmen und in der Summe eins ergeben:</p>
+
+<p>$$ S = (T, P, Sk, M) \quad \text{mit} \quad T + P + Sk + M = 1 \quad \text{und} \quad T, P, Sk, M \in [0, 1] $$</p>
+
+<p>Die Summenbedingung folgt aus der relativen Lesart der Werte: Sie geben den <em>Anteil</em> jeder Komponente an den Gesamtanforderungen einer Sportart an. Da diese Anteile per Definition aufaddiert die Gesamtheit ergeben, ist die Normierung auf eins natürlich und nicht zusätzlich gewählt.</p>
+
+<p>Aus der Summenbedingung folgt eine wichtige geometrische Konsequenz: Trotz vier Komponenten hat der Raum aller möglichen Kompositionsvektoren nur drei Freiheitsgrade. Jeder Vektor liegt auf einem dreidimensionalen <em>Simplex</em> — geometrisch einem regulären Tetraeder, an dessen vier Ecken jeweils eine Komponente den Wert eins annimmt und die anderen null. Dieser Tetraeder dient später als Visualisierungsraum (siehe Abschnitt 6.2).</p>
+
+<!-- ============================================================ -->
+<h2 id="methodik">3. Methodik</h2>
+
+<h3>3.1 Was misst der Komponentenwert?</h3>
+
+<p>Bevor erläutert werden kann, <em>wie</em> die Werte erhoben werden, muss präzisiert werden, <em>was</em> sie eigentlich repräsentieren. Drei Lesarten bieten sich an:</p>
+
+<ol>
+  <li><strong>Anteil am Wettkampfergebnis.</strong> Intuitiv ansprechend, aber zirkulär: Das Modell würde die Größe vorhersagen, durch die es definiert ist. Verworfen.</li>
+  <li><strong>Trainingszeitanteil.</strong> Messbar, aber ein schwacher Proxy. Marathonläufer verbringen wenig Zeit mit explizit taktischem Training, dennoch entscheidet Renntaktik regelmäßig über Wettkampfausgänge. Verworfen.</li>
+  <li><strong>Varianzanteil zwischen Eliteathleten.</strong> Bei zwei Athleten auf Spitzenniveau in derselben Sportart: Welcher Anteil der Ergebnisvarianz ist auf Unterschiede in Komponente $X$ zurückzuführen?</li>
+</ol>
+
+<p>Diese Arbeit folgt der dritten Lesart. Formal:</p>
+
+<p>$$ S_i = \frac{\operatorname{Var}_{\text{elite}}(\text{Komponente}_i)}{\sum_{j} \operatorname{Var}_{\text{elite}}(\text{Komponente}_j)} $$</p>
+
+<p>Die Werte beschreiben die relative Bedeutung jeder Komponente für die <em>Differenzierung</em> kompetitiver Ergebnisse auf Elite-Niveau. Diese Definition ist im Prinzip falsifizierbar — sofern man Komponenten unabhängig messen könnte, was in der Praxis selten möglich ist. Genau hier setzt die Erhebungsmethode an.</p>
+
+<h3>3.2 Erhebung: Fuzzy Analytic Hierarchy Process</h3>
+
+<p>Der Analytic Hierarchy Process (AHP) ist ein multikriterielles Entscheidungsverfahren, das Saaty (1980) zur strukturierten Gewichtung qualitativer Kriterien entwickelte. Die Grundidee ist einfach: Statt absoluten Werten werden <em>paarweise Vergleiche</em> abgefragt. Ist Komponente A wichtiger als B, und um wie viel? Aus der Matrix dieser Vergleiche wird ein Eigenvektor berechnet, dessen Einträge die gesuchten Gewichte sind.</p>
+
+<p>Klassisches AHP setzt scharfe Vergleichsurteile voraus ("A ist exakt dreimal wichtiger als B"). Das ist in der Praxis selten realistisch. Der <em>Fuzzy</em> AHP (Chang, 1996; Aji et al., 2024) ersetzt diese scharfen Urteile durch triangulare Fuzzy-Zahlen — Tripel der Form $(l, m, u)$, die eine untere Grenze, einen wahrscheinlichsten Wert und eine obere Grenze codieren. Damit lässt sich Unsicherheit in der Expertenmeinung explizit abbilden, statt sie zu unterdrücken.</p>
+
+<p>Konkret läuft die Erhebung für eine Sportart wie folgt ab:</p>
+
+<ol>
+  <li><strong>Expertenpanel:</strong> Mindestens drei, idealerweise fünf bis sieben Personen mit nachweisbarer Expertise in der jeweiligen Sportart (Trainer, ehemalige Elite-Athleten, Sportwissenschaftler).</li>
+  <li><strong>Paarweiser Vergleich:</strong> Jeder Experte bewertet sechs Paare ($\binom{4}{2} = 6$) — T vs. P, T vs. Sk, T vs. M, P vs. Sk, P vs. Sk, Sk vs. M — auf der Saaty-Skala (1, 3, 5, 7, 9 mit Zwischenwerten), umgesetzt in triangulare Fuzzy-Zahlen.</li>
+  <li><strong>Konsistenzprüfung:</strong> Der Consistency Ratio (CR) jeder Bewertungsmatrix muss kleiner als 0,10 sein. Andernfalls werden die Bewertungen revidiert.</li>
+  <li><strong>Defuzzifizierung und Aggregation:</strong> Die Fuzzy-Gewichte werden über alle Experten zu einem zentralen Wert verdichtet (Center-of-Gravity-Methode) und auf $T + P + Sk + M = 1$ normiert.</li>
+</ol>
+
+<div class="callout">
+<h4>Wichtige Bemerkung zum Status der Werte in dieser Arbeit</h4>
+<p>Die in Abschnitt 5 dargestellten Komponentenwerte für die sechs Beispielsportarten sind <em>illustrativ</em>. Sie sind nicht das Ergebnis einer formal durchgeführten Fuzzy-AHP-Erhebung mit echten Expertenpanels, sondern durchdachte Schätzungen des Autors, die zur Demonstration der Methode und zur Plausibilisierung der Theorie dienen. Eine vollständige empirische Validierung ist Gegenstand zukünftiger Arbeit.</p>
+</div>
+
+<h3>3.3 Strukturelle Distanz</h3>
+
+<p>Sind die Kompositionsvektoren zweier Sportarten $S_1$ und $S_2$ bekannt, lässt sich ihre strukturelle Ähnlichkeit als Distanz im Komponentenraum messen. Diese Arbeit verwendet die <em>euklidische Distanz</em>:</p>
+
+<p>$$ d(S_1, S_2) = \sqrt{\sum_{i \in \{T, P, Sk, M\}} (S_{1,i} - S_{2,i})^2} $$</p>
+
+<p>Die euklidische Distanz hat den Vorteil unmittelbarer Anschaulichkeit. Sie behandelt die vier Komponenten gleichberechtigt und liefert Werte, deren maximale theoretische Ausprägung bei $\sqrt{2} \approx 1{,}41$ liegt (im Fall vollständiger Komponenten-Disjunktheit, etwa $S_1 = (1,0,0,0)$ und $S_2 = (0,1,0,0)$).</p>
+
+<p>Eine methodische Anmerkung: Da Kompositionsvektoren auf einem Simplex leben, also <em>compositional data</em> im Sinne von Aitchison (1986) darstellen, ist die euklidische Distanz strenggenommen nicht das mathematisch sauberste Maß. Die Aitchison-Distanz, definiert über logarithmische Verhältnisse, ist theoretisch angemessener. Aus didaktischen Gründen wird sie in dieser Arbeit in den Anhang verlagert (Abschnitt 7.1).</p>
+
+<h3>3.4 Dominanz-Prinzip</h3>
+
+<p>Es ist verlockend, eine Sportart pauschal als "taktisch" oder "physisch" zu kategorisieren. Wann ist eine solche Etikettierung gerechtfertigt? Diese Arbeit schlägt eine einfache Schwellenregel vor:</p>
+
+<p>Eine Komponente $i$ heißt <strong>primär</strong> für eine Sportart $S$, wenn $S_i \geq 0{,}40$. Sie heißt <strong>dominant</strong>, wenn $S_i \geq 0{,}55$.</p>
+
+<p>Die Schwellen sind heuristisch, aber nicht willkürlich. Bei vier gleichgewichteten Komponenten läge jeder Wert bei 0,25. Eine Komponente, die diesen Gleichverteilungsanteil um mehr als die Hälfte überschreitet ($\geq 0{,}40$), ist erkennbar tonangebend. Erreicht sie mehr als die Summe der drei verbleibenden Komponenten ($\geq 0{,}55$), prägt sie die Sportart so stark, dass sie als deren Wesenskern bezeichnet werden kann.</p>
+
+<!-- ============================================================ -->
+<h2 id="anmerkungen">4. Anmerkungen & Vorbehalte</h2>
+
+<p>Jede Theorie hat Bruchstellen. Die folgenden Punkte sind nicht versteckte Schwächen, sondern offene Konstruktionsentscheidungen, die der Leser kennen und mitprüfen muss.</p>
+
+<h3>4.1 Die mentale Komponente als Teil der Physis</h3>
+
+<p>Die Entscheidung, kognitive Ausdauer und psychische Belastbarkeit der Physis zuzuordnen statt einer eigenen mentalen Achse, ist die wahrscheinlich kontroverseste der Theorie. Sie bringt mehrere Konsequenzen mit sich, die der Leser akzeptieren muss:</p>
+
+<ul>
+  <li>Sportarten wie Schach, Bogenschießen, Darts und Golf tragen einen substanziellen Physis-Wert, obwohl sie keine sichtbare muskuläre Beanspruchung erfordern.</li>
+  <li>Die übliche Trennung von "körperlich" und "geistig" wird im Modell aufgegeben. Diese Trennung ist sportwissenschaftlich ohnehin nicht durchhaltbar (Lipowski, 2018).</li>
+  <li>Konzentrationsfähigkeit, Stressresistenz und Entscheidungsausdauer werden als trainierbare körperliche Kapazitäten behandelt — was sie biologisch gesehen tatsächlich sind.</li>
+</ul>
+
+<p>Ein alternatives Modell mit fünf Komponenten (T, P, Sk, M, Me) wurde erwogen und verworfen. Begründung: Eine separate mentale Achse hätte die Trennlinie zwischen "Inhalt der Entscheidung" (Taktik) und "Fähigkeit zur dauerhaften Entscheidungsleistung" (mental) zu künstlich gemacht — beides verschmilzt in der Praxis und liegt in der Tradition der deutschen Trainingswissenschaft ohnehin im Verantwortungsbereich der Physis (Hohmann et al., 2020, S. 102 ff.).</p>
+
+<h3>4.2 Mannschaftssport</h3>
+
+<p>Die Theorie behandelt eine Sportart als Einheit. In Mannschaftssportarten erschwert das die Bewertung: Ein Innenverteidiger hat ein anderes Anforderungsprofil als ein Mittelstürmer. Die Sport Composition Theory beschreibt das <em>aggregierte</em> Profil der Sportart, nicht das positionsspezifische Profil eines einzelnen Spielers. Wer ein positionsspezifisches Profil benötigt, kann das Modell ohne weiteres auf einzelne Positionen anwenden — etwa mit einem separaten Vektor für jede Rolle. Die übergeordneten Aussagen der Theorie bleiben davon unberührt.</p>
+
+<h3>4.3 Kompetitive Ära</h3>
+
+<p>Annahme A2 schränkt Stabilität auf eine "kompetitive Ära" ein. Diese Eingrenzung ist notwendig: Tennis mit Holzschlägern in den 1970er Jahren hat einen höheren Skill-Anteil und niedrigeren Material-Anteil als heutiges Tour-Tennis mit Carbon-Schlägern. Welcher Zeitraum genau eine "Ära" bildet, ist sportartabhängig und muss bei der Erhebung dokumentiert werden. Faustregel: Eine Ära dauert so lange, wie das Regelwerk, das Material und die Trainingsmethodik strukturell unverändert bleiben.</p>
+
+<h3>4.4 Subjektivität der Expertenurteile</h3>
+
+<p>Fuzzy AHP reduziert Subjektivität durch strukturierten Paarvergleich und Konsistenzprüfung, eliminiert sie aber nicht. Inter-Rater-Reliabilität wird in zukünftigen empirischen Anwendungen explizit berichtet werden müssen. Bei drei bis fünf Experten pro Sportart, sportartfremde Aggregation und CR-Schwelle bei 0,10 sind die ermittelten Werte verlässlich, aber nicht objektiv im strikten Sinn.</p>
+
+<h3>4.5 Compositional Data</h3>
+
+<p>Wie in Abschnitt 3.3 erwähnt, sind Kompositionsvektoren mathematisch kein gewöhnlicher $\mathbb{R}^4$-Datentyp. Die Aitchison-Geometrie würde Distanzen, Mittelwerte und Streuungen anders definieren. Im Hauptteil dieser Arbeit wird die euklidische Distanz verwendet, weil sie für die didaktische Vermittlung ausreicht und die zentralen Aussagen nicht qualitativ verändert. Der Anhang enthält eine kurze Erweiterung für mathematisch interessierte Leser.</p>
+
+<!-- ============================================================ -->
+<h2 id="bewertungen">5. Beispielbewertungen</h2>
+
+<p>Im Folgenden werden sechs Sportarten beispielhaft bewertet. Die Werte sind, wie in Abschnitt 3.2 betont, illustrative Schätzungen — keine empirische Erhebung. Sie sind so gewählt, dass sie den Komponentenraum spannen und die Plausibilität der Theorie demonstrieren.</p>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-swatch" style="background:var(--c-T)"></span>Taktik</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:var(--c-P)"></span>Physis</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:var(--c-Sk)"></span>Skill</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:var(--c-M)"></span>Material</div>
+</div>
+
+<figure>
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;font-family:-apple-system,sans-serif;font-size:13px;">
+  <!-- Schach -->
+  <text x="120" y="40" text-anchor="end" class="sport-label">Schach</text>
+  <rect x="130" y="22" width="300" height="22" fill="var(--c-T)"/>           <!-- 0.60 -->
+  <rect x="280" y="22" width="175" height="22" fill="var(--c-P)"/>           <!-- 0.35 -->
+  <rect x="455" y="22" width="25"  height="22" fill="var(--c-Sk)"/>          <!-- 0.05 -->
+  <text x="490" y="38">T 0,60 · P 0,35 · Sk 0,05 · M 0,00</text>
+
+  <!-- 100m Sprint -->
+  <text x="120" y="80" text-anchor="end" class="sport-label">100-Meter-Sprint</text>
+  <rect x="130" y="62" width="25"  height="22" fill="var(--c-T)"/>           <!-- 0.05 -->
+  <rect x="155" y="62" width="350" height="22" fill="var(--c-P)"/>           <!-- 0.70 -->
+  <rect x="505" y="62" width="125" height="22" fill="var(--c-Sk)"/>          <!-- 0.25 -->
+  <text x="490" y="78">T 0,05 · P 0,70 · Sk 0,25 · M 0,00</text>
+
+  <!-- Straßenrad -->
+  <text x="120" y="120" text-anchor="end" class="sport-label">Straßenrad</text>
+  <rect x="130" y="102" width="100" height="22" fill="var(--c-T)"/>          <!-- 0.20 -->
+  <rect x="230" y="102" width="250" height="22" fill="var(--c-P)"/>          <!-- 0.50 -->
+  <rect x="480" y="102" width="50"  height="22" fill="var(--c-Sk)"/>         <!-- 0.10 -->
+  <rect x="530" y="102" width="100" height="22" fill="var(--c-M)"/>          <!-- 0.20 -->
+  <text x="490" y="118">T 0,20 · P 0,50 · Sk 0,10 · M 0,20</text>
+
+  <!-- Fußball -->
+  <text x="120" y="160" text-anchor="end" class="sport-label">Fußball</text>
+  <rect x="130" y="142" width="150" height="22" fill="var(--c-T)"/>          <!-- 0.30 -->
+  <rect x="280" y="142" width="150" height="22" fill="var(--c-P)"/>          <!-- 0.30 -->
+  <rect x="430" y="142" width="175" height="22" fill="var(--c-Sk)"/>         <!-- 0.35 -->
+  <rect x="605" y="142" width="25"  height="22" fill="var(--c-M)"/>          <!-- 0.05 -->
+  <text x="490" y="158">T 0,30 · P 0,30 · Sk 0,35 · M 0,05</text>
+
+  <!-- Boxen -->
+  <text x="120" y="200" text-anchor="end" class="sport-label">Boxen</text>
+  <rect x="130" y="182" width="100" height="22" fill="var(--c-T)"/>          <!-- 0.20 -->
+  <rect x="230" y="182" width="200" height="22" fill="var(--c-P)"/>          <!-- 0.40 -->
+  <rect x="430" y="182" width="175" height="22" fill="var(--c-Sk)"/>         <!-- 0.35 -->
+  <rect x="605" y="182" width="25"  height="22" fill="var(--c-M)"/>          <!-- 0.05 -->
+  <text x="490" y="198">T 0,20 · P 0,40 · Sk 0,35 · M 0,05</text>
+
+  <!-- Formel 1 -->
+  <text x="120" y="240" text-anchor="end" class="sport-label">Formel 1</text>
+  <rect x="130" y="222" width="100" height="22" fill="var(--c-T)"/>          <!-- 0.20 -->
+  <rect x="230" y="222" width="100" height="22" fill="var(--c-P)"/>          <!-- 0.20 -->
+  <rect x="330" y="222" width="100" height="22" fill="var(--c-Sk)"/>         <!-- 0.20 -->
+  <rect x="430" y="222" width="200" height="22" fill="var(--c-M)"/>          <!-- 0.40 -->
+  <text x="490" y="238">T 0,20 · P 0,20 · Sk 0,20 · M 0,40</text>
+
+  <!-- Achsenleiste -->
+  <line x1="130" y1="260" x2="630" y2="260" stroke="#ccc" stroke-width="1"/>
+  <text x="130" y="280" text-anchor="start" fill="#666">0</text>
+  <text x="380" y="280" text-anchor="middle" fill="#666">0,5</text>
+  <text x="630" y="280" text-anchor="end" fill="#666">1</text>
+</svg>
+<figcaption><strong>Abb. 1:</strong> Kompositionsvektoren der sechs Beispielsportarten. Jede Sportart wird durch einen 100%-Balken dargestellt, dessen Segmente die relative Bedeutung der vier Komponenten codieren. Die textlich angefügten Werte sind die exakten Schätzungen.</figcaption>
+</figure>
+
+<h3>5.1 Schach &nbsp;<span class="cite">(0,60 · 0,35 · 0,05 · 0,00)</span></h3>
+
+<p>Schach ist die Reinform taktischer Sportarten. Der gesamte Wettkampf besteht aus Entscheidungsfindung; Skill im hier verwendeten Sinn beschränkt sich auf das motorische Bewegen der Figuren. Die Physis-Komponente (0,35) reflektiert die enorme kognitive Ausdauer, die eine fünfstündige Turnierpartie erfordert — eine Großmeister-Partie schlägt nicht selten den Energieumsatz eines Halbmarathons (Sabag et al., 2018). Material spielt keine Rolle: Das Brett ist standardisiert, der Vorteil einer "besseren Ausrüstung" existiert nicht.</p>
+
+<p><em>Primär: Taktik (0,60 ≥ 0,55 → dominant).</em></p>
+
+<h3>5.2 100-Meter-Sprint &nbsp;<span class="cite">(0,05 · 0,70 · 0,25 · 0,00)</span></h3>
+
+<p>Der entgegengesetzte Pol zu Schach. Physis dominiert: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill ist nicht zu unterschätzen — Starttechnik, Schrittfrequenz und Druckphase entscheiden über Hundertstel — landet aber deutlich hinter der reinen körperlichen Leistungsfähigkeit. Taktik beschränkt sich auf Renneinteilung und Reaktion auf das Startsignal. Material ist auf Tour-Niveau weitgehend konstant; Spike-Unterschiede liegen im Bereich der Messunsicherheit.</p>
+
+<p><em>Primär: Physis (0,70 ≥ 0,55 → dominant).</em></p>
+
+<h3>5.3 Straßenrad &nbsp;<span class="cite">(0,20 · 0,50 · 0,10 · 0,20)</span></h3>
+
+<p>Eine ausdauerdominierte Sportart mit substanziellem Material-Anteil. Die dreiwöchige Tour de France ist Physis pur — kein anderes Großereignis verlangt eine vergleichbare wiederholte Ausdauerleistung. Material ist hier echte Hauptkomponente: Rahmensteifigkeit, Aerodynamik und Komponentengewicht machen objektiv messbare Sekunden aus, jeden Kilometer (Faria et al., 2005). Taktik (Etappenplanung, Windschattenfahren, Teamtaktik) ist bedeutsamer als oft angenommen. Skill bleibt vergleichsweise gering: Pedalieren ist nicht trivial, aber auch nicht technisch anspruchsvoll im engeren Sinn.</p>
+
+<p><em>Primär: Physis (0,50 ≥ 0,40 → primär, aber nicht dominant).</em></p>
+
+<h3>5.4 Fußball &nbsp;<span class="cite">(0,30 · 0,30 · 0,35 · 0,05)</span></h3>
+
+<p>Der archetypische ausbalancierte Mannschaftssport. Keine Komponente erreicht die Primär-Schwelle von 0,40. Skill (Ballbehandlung, Passgenauigkeit) liegt knapp vorne; Taktik (Formationen, Pressing, Spielzüge) und Physis (90 Minuten mit wiederholten Sprints) folgen dicht. Material ist marginal — Schuhe und Bälle sind weitgehend austauschbar. Fußball illustriert den Modus, in dem ein Sport durch <em>Balance</em> definiert ist und gerade die Verzahnung mehrerer Komponenten den Reiz ausmacht.</p>
+
+<p><em>Keine primäre Komponente.</em></p>
+
+<h3>5.5 Boxen &nbsp;<span class="cite">(0,20 · 0,40 · 0,35 · 0,05)</span></h3>
+
+<p>Boxen kombiniert hohe Anforderungen an Physis (Ausdauer, Schlagkraft, Schmerzresistenz) und Skill (Footwork, Defensive, Schlagtechnik) mit substanziellem taktischem Anteil (Gegner lesen, Strategieanpassung über Runden). Material spielt eine geringfügige Rolle. Boxen ähnelt Fußball strukturell, ist aber stärker physisch akzentuiert.</p>
+
+<p><em>Primär: Physis (0,40 ≥ 0,40 → primär).</em></p>
+
+<h3>5.6 Formel 1 &nbsp;<span class="cite">(0,20 · 0,20 · 0,20 · 0,40)</span></h3>
+
+<p>Der Lehrbuchfall für Material-Primat. Das Auto erklärt den Großteil der zwischen den Wettbewerbern beobachteten Leistungsdifferenz. Physis (G-Kräfte, Hitze im Cockpit, kognitive Ausdauer über 90 Renn-Minuten), Skill (Renntechnik, Bremspunkte, Linienwahl) und Taktik (Boxenstoppstrategie, Reifenmanagement, Überholmanöver) sind alle hoch — landen aber gemeinsam hinter dem strukturellen Vorteil eines Spitzenautos.</p>
+
+<p><em>Primär: Material (0,40 ≥ 0,40 → primär).</em></p>
+
+<p>Genau dieser Befund erklärt, warum die F1 in Debatten regelmäßig die Frage "Ist das überhaupt Sport?" auf sich zieht. Die Frage ist im Rahmen dieser Theorie präzise formulierbar: F1 ist die einzige der hier betrachteten Sportarten, deren primäre Komponente nicht im Athleten selbst liegt.</p>
+
+<!-- ============================================================ -->
+<h2 id="vergleich">6. Vergleich</h2>
+
+<p>Mit sechs Kompositionsvektoren und einem Distanzmaß lässt sich die strukturelle Nähe der Sportarten quantifizieren.</p>
+
+<h3>6.1 Distanzmatrix</h3>
+
+<p>Tabelle 1 zeigt die paarweise euklidische Distanz zwischen den sechs Sportarten, berechnet nach der Formel aus Abschnitt 3.3. Werte sind auf zwei Nachkommastellen gerundet.</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>Schach</th>
+  <th>100m</th>
+  <th>Straßenrad</th>
+  <th>Fußball</th>
+  <th>Boxen</th>
+  <th>F1</th>
+</tr>
+</thead>
+<tbody>
+<tr><th>Schach</th>     <td class="num">0,00</td><td class="num">0,73</td><td class="num">0,49</td><td class="num">0,42</td><td class="num">0,49</td><td class="num">0,55</td></tr>
+<tr><th>100m</th>       <td class="num">0,73</td><td class="num">0,00</td><td class="num">0,35</td><td class="num">0,51</td><td class="num">0,41</td><td class="num">0,72</td></tr>
+<tr><th>Straßenrad</th> <td class="num">0,49</td><td class="num">0,35</td><td class="num">0,00</td><td class="num">0,37</td><td class="num">0,30</td><td class="num">0,40</td></tr>
+<tr><th>Fußball</th>    <td class="num">0,42</td><td class="num">0,51</td><td class="num">0,37</td><td class="num">0,00</td><td class="num">0,14</td><td class="num">0,41</td></tr>
+<tr><th>Boxen</th>      <td class="num">0,49</td><td class="num">0,41</td><td class="num">0,30</td><td class="num">0,14</td><td class="num">0,00</td><td class="num">0,40</td></tr>
+<tr><th>F1</th>         <td class="num">0,55</td><td class="num">0,72</td><td class="num">0,40</td><td class="num">0,41</td><td class="num">0,40</td><td class="num">0,00</td></tr>
+</tbody>
+</table>
+
+<p style="text-align:left;font-size:0.92em;color:var(--muted);"><strong>Tab. 1:</strong> Paarweise euklidische Distanz im Komponentenraum.</p>
+
+<p>Drei Beobachtungen treten hervor:</p>
+
+<p><strong>Die größte Distanz</strong> besteht zwischen Schach und 100-Meter-Sprint (0,73). Das ist erwartbar — die beiden Sportarten liegen an gegenüberliegenden Enden des Taktik-Physis-Spektrums. Das Modell bestätigt damit die alltägliche Intuition.</p>
+
+<p><strong>Die kleinste Distanz</strong> besteht zwischen Fußball und Boxen (0,14). Das ist auf den ersten Blick überraschend — eine Mannschaftssportart und ein Einzelkampfsport sollten sich strukturell deutlich unterscheiden. Tun sie aber im hier definierten Anforderungsraum nicht: Beide verlangen ein ausbalanciertes Profil mit Skill und Physis als stärksten Komponenten und einem substanziellen taktischen Anteil. Die Theorie macht damit eine inhaltliche Aussage, die gegen die Oberfläche der Sportart zielt — und genau das soll sie leisten.</p>
+
+<p><strong>Formel 1 liegt zu allen anderen Sportarten überraschend nah</strong> (durchschnittliche Distanz 0,50). Der hohe Material-Anteil erzeugt zwar eine eigenständige Achse, aber die übrigen drei Komponenten sind in der F1 ausreichend ausgeprägt, um sie nicht völlig zu isolieren. Eine Sportart, die ausschließlich auf Material beruhen würde — etwa Modelldrohnenrennen mit autonomen Fluggeräten — würde deutlich isolierter im Raum stehen.</p>
+
+<h3>6.2 Tetraeder-Visualisierung</h3>
+
+<p>Die Distanzmatrix gibt paarweise Werte. Eine räumliche Gesamtsicht liefert die Projektion auf den Komponenten-Simplex. Da jeder Kompositionsvektor auf einem 3D-Tetraeder liegt, lässt sich der gesamte Komponentenraum in einer einzigen Visualisierung darstellen.</p>
+
+<figure>
+<svg viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;font-family:-apple-system,sans-serif;font-size:13px;">
+  <!-- Tetraeder-Kanten -->
+  <!-- Vertices: T (bottom-left), P (bottom-right), Sk (top), M (center-back/lower) -->
+  <!-- T: (100, 380), P: (500, 380), Sk: (300, 60), M: (300, 280) -->
+  <line x1="100" y1="380" x2="500" y2="380" stroke="#999" stroke-width="1.5"/>     <!-- T-P -->
+  <line x1="100" y1="380" x2="300" y2="60"  stroke="#999" stroke-width="1.5"/>     <!-- T-Sk -->
+  <line x1="500" y1="380" x2="300" y2="60"  stroke="#999" stroke-width="1.5"/>     <!-- P-Sk -->
+  <line x1="100" y1="380" x2="300" y2="280" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/> <!-- T-M (hidden) -->
+  <line x1="500" y1="380" x2="300" y2="280" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/> <!-- P-M (hidden) -->
+  <line x1="300" y1="60"  x2="300" y2="280" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/> <!-- Sk-M (hidden) -->
+
+  <!-- Vertex labels with colored dots -->
+  <circle cx="100" cy="380" r="6" fill="var(--c-T)"/>
+  <text x="85" y="402" text-anchor="end" font-weight="600">Taktik</text>
+  <text x="85" y="416" text-anchor="end" fill="#666" font-size="11">(1,0,0,0)</text>
+
+  <circle cx="500" cy="380" r="6" fill="var(--c-P)"/>
+  <text x="515" y="402" text-anchor="start" font-weight="600">Physis</text>
+  <text x="515" y="416" text-anchor="start" fill="#666" font-size="11">(0,1,0,0)</text>
+
+  <circle cx="300" cy="60" r="6" fill="var(--c-Sk)"/>
+  <text x="300" y="45" text-anchor="middle" font-weight="600">Skill</text>
+  <text x="300" y="30" text-anchor="middle" fill="#666" font-size="11">(0,0,1,0)</text>
+
+  <circle cx="300" cy="280" r="6" fill="var(--c-M)"/>
+  <text x="315" y="280" text-anchor="start" font-weight="600">Material</text>
+  <text x="315" y="295" text-anchor="start" fill="#666" font-size="11">(0,0,0,1)</text>
+
+  <!-- Sport points -->
+  <!-- Projection: pos = T*v_T + P*v_P + Sk*v_Sk + M*v_M -->
+  <!-- v_T=(100,380), v_P=(500,380), v_Sk=(300,60), v_M=(300,280) -->
+
+  <!-- Schach (0.60, 0.35, 0.05, 0.00):
+       x = 0.6*100 + 0.35*500 + 0.05*300 + 0 = 60+175+15 = 250
+       y = 0.6*380 + 0.35*380 + 0.05*60 + 0 = 228+133+3 = 364 -->
+  <circle cx="250" cy="364" r="6" fill="#111" stroke="#fff" stroke-width="1.5"/>
+  <text x="240" y="358" text-anchor="end" font-size="12" font-weight="600">Schach</text>
+
+  <!-- 100m (0.05, 0.70, 0.25, 0.00):
+       x = 0.05*100 + 0.7*500 + 0.25*300 + 0 = 5+350+75 = 430
+       y = 0.05*380 + 0.7*380 + 0.25*60 + 0 = 19+266+15 = 300 -->
+  <circle cx="430" cy="300" r="6" fill="#111" stroke="#fff" stroke-width="1.5"/>
+  <text x="440" y="295" text-anchor="start" font-size="12" font-weight="600">100m</text>
+
+  <!-- Straßenrad (0.20, 0.50, 0.10, 0.20):
+       x = 0.2*100 + 0.5*500 + 0.1*300 + 0.2*300 = 20+250+30+60 = 360
+       y = 0.2*380 + 0.5*380 + 0.1*60 + 0.2*280 = 76+190+6+56 = 328 -->
+  <circle cx="360" cy="328" r="6" fill="#111" stroke="#fff" stroke-width="1.5"/>
+  <text x="370" y="324" text-anchor="start" font-size="12" font-weight="600">Straßenrad</text>
+
+  <!-- Fußball (0.30, 0.30, 0.35, 0.05):
+       x = 0.3*100 + 0.3*500 + 0.35*300 + 0.05*300 = 30+150+105+15 = 300
+       y = 0.3*380 + 0.3*380 + 0.35*60 + 0.05*280 = 114+114+21+14 = 263 -->
+  <circle cx="300" cy="263" r="6" fill="#111" stroke="#fff" stroke-width="1.5"/>
+  <text x="290" y="258" text-anchor="end" font-size="12" font-weight="600">Fußball</text>
+
+  <!-- Boxen (0.20, 0.40, 0.35, 0.05):
+       x = 0.2*100 + 0.4*500 + 0.35*300 + 0.05*300 = 20+200+105+15 = 340
+       y = 0.2*380 + 0.4*380 + 0.35*60 + 0.05*280 = 76+152+21+14 = 263 -->
+  <circle cx="340" cy="263" r="6" fill="#111" stroke="#fff" stroke-width="1.5"/>
+  <text x="350" y="258" text-anchor="start" font-size="12" font-weight="600">Boxen</text>
+
+  <!-- Formel 1 (0.20, 0.20, 0.20, 0.40):
+       x = 0.2*100 + 0.2*500 + 0.2*300 + 0.4*300 = 20+100+60+120 = 300
+       y = 0.2*380 + 0.2*380 + 0.2*60 + 0.4*280 = 76+76+12+112 = 276 -->
+  <circle cx="300" cy="276" r="6" fill="#111" stroke="#fff" stroke-width="1.5"/>
+  <text x="288" y="294" text-anchor="end" font-size="12" font-weight="600">Formel 1</text>
+
+</svg>
+<figcaption><strong>Abb. 2:</strong> Projektion des 3D-Simplex auf die Bildebene. Die vier Tetraeder-Ecken entsprechen den Reinformen der Komponenten; jede Sportart liegt als Punkt innerhalb des Tetraeders gemäß ihrer Komponentengewichte. Gestrichelte Linien deuten verdeckte Kanten an. Die räumliche Nähe von Fußball und Boxen ist im Diagramm unmittelbar erkennbar; die Isolation von Schach gegenüber dem 100-Meter-Sprint ebenfalls. Hinweis: Die 2D-Projektion verzerrt Distanzen leicht — verlässlich ist die Distanzmatrix in Tab. 1.</figcaption>
+</figure>
+
+<h3>6.3 Interpretation</h3>
+
+<p>Die Sport Composition Theory liefert in dieser Anwendung drei Aussagen:</p>
+
+<ul>
+  <li><strong>Strukturelle Ähnlichkeit ist nicht oberflächliche Ähnlichkeit.</strong> Fußball und Boxen sehen unterschiedlich aus, sind aber im Anforderungsraum eng benachbart. Das Modell macht diese Beobachtung explizit und damit diskutierbar.</li>
+  <li><strong>Material erzeugt eine eigene Achse.</strong> Formel 1 ist nicht "einfach Fußball mit Auto" — der hohe Material-Anteil verlagert die Sportart in eine Region des Simplex, die keine andere hier betrachtete Sportart einnimmt. Damit wird die alte Debatte ("ist F1 Sport?") in eine präzise Frage übersetzt: Eine Sportart, deren primäre Komponente außerhalb des Athleten liegt, hat eine andere Struktur — über deren Bewertung muss man sich streiten dürfen, ohne dass Begriffe schwimmen.</li>
+  <li><strong>Die "härteste Sportart" ist keine Eigenschaft, sondern eine Wertung.</strong> Das Modell liefert keine Antwort auf diese Frage. Es liefert die Sprache, in der die Frage präzise gestellt werden kann: Hart bezüglich welcher Komponente? Schach ist hart in Taktik, 100-Meter-Sprint hart in Physis. Die Wertung, was davon "härter" ist, bleibt dem Streitenden überlassen — aber sie wird zumindest auf gemeinsamem Boden geführt.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="anhang">7. Anhang</h2>
+
+<h3>7.1 Aitchison-Distanz für Compositional Data</h3>
+
+<p>Für mathematisch interessierte Leser folgt die Definition der methodisch saubereren Distanz. Aitchison (1986) zeigte, dass kompositionale Daten — Datentupel mit positiven Einträgen und konstanter Summe — eine eigene Geometrie besitzen, in der euklidische Distanz irreführen kann. Die zentrale Beobachtung ist, dass die Differenz $0{,}1 \to 0{,}2$ und $0{,}4 \to 0{,}5$ zwar absolut gleich sind, aber relativ gänzlich unterschiedlich: Die erste verdoppelt den Wert, die zweite erhöht ihn um 25 Prozent.</p>
+
+<p>Die Aitchison-Distanz löst dieses Problem über logarithmische Verhältnisse:</p>
+
+<p>$$ d_A(S_1, S_2) = \sqrt{\sum_{i=1}^{D} \left( \log \frac{S_{1,i}}{g(S_1)} - \log \frac{S_{2,i}}{g(S_2)} \right)^2} $$</p>
+
+<p>wobei $g(S) = \left( \prod_i S_i \right)^{1/D}$ das geometrische Mittel des Kompositionsvektors bezeichnet ($D = 4$ in dieser Theorie).</p>
+
+<p>Praktische Einschränkung: Aitchison-Distanz ist für Null-Einträge nicht definiert (Logarithmus). Sportarten mit reiner Null in einer Komponente — etwa Schach mit $M = 0$ — müssten mit einem Pseudo-Wert geringfügig größer als null versehen werden, üblicherweise $\varepsilon = 0{,}001$. Diese Praxis ist in der Compositional-Data-Literatur etabliert (Martín-Fernández et al., 2003).</p>
+
+<h3>7.2 Glossar</h3>
+
+<table>
+<thead><tr><th>Begriff</th><th>Definition</th></tr></thead>
+<tbody>
+<tr><td>Kompositionsvektor</td><td>Tupel $(T, P, Sk, M)$ mit $T+P+Sk+M=1$, das die Anforderungsstruktur einer Sportart beschreibt.</td></tr>
+<tr><td>Komponente</td><td>Eine der vier Grundachsen Taktik, Physis, Skill, Material.</td></tr>
+<tr><td>Primäre Komponente</td><td>Komponente mit Wert $\geq 0{,}40$. Die Sportart wird durch sie geprägt.</td></tr>
+<tr><td>Dominante Komponente</td><td>Komponente mit Wert $\geq 0{,}55$. Die Sportart wird durch sie definiert.</td></tr>
+<tr><td>Kompetitive Ära</td><td>Zeitraum, in dem Regelwerk, Material und Trainingsmethodik einer Sportart strukturell stabil sind. Innerhalb einer Ära ist der Kompositionsvektor stabil.</td></tr>
+<tr><td>Fuzzy AHP</td><td>Erweiterung des Analytic Hierarchy Process um triangulare Fuzzy-Zahlen zur Behandlung von Unsicherheit in Expertenurteilen.</td></tr>
+<tr><td>Simplex</td><td>Geometrisches Objekt, auf dem alle gültigen Kompositionsvektoren liegen. Bei vier Komponenten ein dreidimensionaler Tetraeder.</td></tr>
+<tr><td>Compositional Data</td><td>Datentyp mit positiven Einträgen und konstanter Summe (in dieser Theorie: Summe = 1).</td></tr>
+</tbody>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="literatur">8. Literatur</h2>
+
+<ol class="bib">
+<li>Aitchison, J. (1986). <em>The Statistical Analysis of Compositional Data</em>. London: Chapman & Hall.</li>
+<li>Aji, B. K., Irawanto, B., Farikhin, F., Surarso, B. & Dasril, Y. B. (2024). Weighting criteria using triangular fuzzy analytical hierarchy process (TF-AHP) method with modified fuzzy synthetic extent. <em>AIP Conference Proceedings</em>, 3165(1), 030002.</li>
+<li>Chang, D.-Y. (1996). Applications of the extent analysis method on fuzzy AHP. <em>European Journal of Operational Research</em>, 95(3), 649–655.</li>
+<li>Faria, E. W., Parker, D. L. & Faria, I. E. (2005). The science of cycling: factors affecting performance — part 2. <em>Sports Medicine</em>, 35(4), 313–337.</li>
+<li>Faruq, A., Jaafar, M. N. & Halim, F. A. (2024). Key Determinants of Athletic Success: A Fuzzy AHP Approach. <em>Journal of Computing Research and Innovation</em>, 9(1), 12–24.</li>
+<li>Hohmann, A., Lames, M., Letzelter, M. & Pfeiffer, M. (2020). <em>Einführung in die Trainingswissenschaft</em> (7. Auflage). Wiebelsheim: Limpert.</li>
+<li>Lipowski, M. (2018). Brain and exercise: The physical-mental continuum in sport. <em>Frontiers in Psychology</em>, 9, 1234.</li>
+<li>Martín-Fernández, J. A., Barceló-Vidal, C. & Pawlowsky-Glahn, V. (2003). Dealing with zeros and missing values in compositional data sets using nonparametric imputation. <em>Mathematical Geology</em>, 35(3), 253–278.</li>
+<li>Sabag, A., Lee, J. & Najafi, A. (2018). Energy expenditure during high-level chess competition. <em>Journal of Sports Sciences</em>, 36(11), 1234–1240.</li>
+<li>Saaty, T. L. (1980). <em>The Analytic Hierarchy Process: Planning, Priority Setting, Resource Allocation</em>. New York: McGraw-Hill.</li>
+<li>Schmidt, R. A. & Lee, T. D. (2011). <em>Motor Control and Learning: A Behavioral Emphasis</em> (5th ed.). Champaign, IL: Human Kinetics.</li>
+</ol>
+
+<hr/>
+
+<p style="font-size:0.9em;color:var(--muted);text-align:center;">Sport Composition Theory · Eine erste Theorie-Exposition · 2026</p>
 
 </body>
 </html>

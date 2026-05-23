@@ -464,6 +464,70 @@ sup { font-size: 0.75em; }
   font-style: italic;
 }
 
+/* ---------- Vertiefung (thematic deep-dive boxes) ---------- */
+
+.vertiefung {
+  margin: 1.5em 0;
+  border-left: 3px solid var(--text-muted);
+  background: var(--bg-elevated);
+  border-radius: 0 4px 4px 0;
+}
+.vertiefung > summary {
+  cursor: pointer;
+  padding: 0.7em 1em;
+  color: var(--text-body);
+  font-size: 0.95em;
+  font-weight: 600;
+  user-select: none;
+  list-style: none;
+}
+.vertiefung > summary::-webkit-details-marker { display: none; }
+.vertiefung > summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+  margin-right: 0.4em;
+  color: var(--text-muted);
+}
+.vertiefung[open] > summary::before {
+  transform: rotate(90deg);
+}
+.vertiefung-label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: bold;
+  margin-right: 0.6em;
+}
+.vertiefung-body {
+  padding: 0.3em 1em 1em 1em;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.95em;
+}
+.vertiefung-body > *:first-child { margin-top: 0.7em; }
+
+/* Teaser block at end of background */
+
+.teaser {
+  margin: 1.5em 0 0 0;
+  padding: 0.9em 1.1em;
+  background: var(--bg-mathblock);
+  border-left: 3px solid var(--text-link);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.97em;
+  color: var(--text-body);
+}
+.teaser-label {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.4em;
+}
+
 /* ---------- Vector / distance table ---------- */
 
 .vector-table {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="de"> 
-<head> 
+<html lang="de">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,20 @@
   </script>
 
   <link rel="stylesheet" href="assets/style.css">
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$',  right: '$',  display: false},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });"></script>
 </head>
 <body>
 
@@ -29,33 +43,10 @@
 
     <nav class="toc" aria-label="Table of contents">
       <p class="toc-title">Inhalt</p>
-<ol class="toc-list">
-  <li><a href="#hintergrund">Hintergrund</a>
-    <ol>
-      <li><a href="#hintergrund-persoenlich">Persönlicher Hintergrund</a></li>
-      <li><a href="#hintergrund-problem">Die Vergleichsfrage</a></li>
-      <li><a href="#hintergrund-zweck">Zweck der Theorie</a></li>
-    </ol>
-  </li>
-  <li><a href="#die-theorie">Die Theorie</a>
-    <ol>
-      <li><a href="#annahmen">Annahmen</a></li>
-      <li><a href="#komponenten">Komponenten</a></li>
-    </ol>
-  </li>
-  <li><a href="#vorbehalte-anmerkungen">Vorbehalte & Anmerkungen</a>
-  </li>
-  <li><a href="#methodik">Methodik</a>
-  </li>
-  <li><a href="#beispiele">Beispiele</a>
-  </li>
-  <li><a href="#vergleich">Vergleich</a>
-    <ol>
-      <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
-    </ol>
-  </li>
-  <li><a href="#literatur">Literatur</a></li>
-</ol>
+      <ol class="toc-list">
+        <li><a href="#hintergrund-zweck">Hintergrund und Zweck</a></li>
+        <li><a href="#literatur">Literatur</a></li>
+      </ol>
     </nav>
 
     <div class="sidebar-controls">
@@ -68,517 +59,40 @@
 <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
 
 <main class="content" id="top">
-  <header class="page-header">
-    <h1>Sport Composition Theory</h1>
-    <p class="subtitle"><em>Ein Framework dafür, woraus eine Sportart eigentlich besteht.</em></p>
-  </header>
+  <article>
+    <header class="page-header">
+      <h1>Sport Composition Theory</h1>
+      <p class="subtitle"><em>Ein Framework dafür, woraus eine Sportart eigentlich besteht.</em></p>
+    </header>
 
-  <article class="article">
-<h2 id="hintergrund">Hintergrund</h2>
+    <section id="hintergrund-zweck">
+      <h2>1. Hintergrund und Zweck</h2>
 
-<h3 id="hintergrund-persoenlich">Persönlicher Hintergrund</h3>
-<p>Den Ausgangspunkt dieser Theorie bildet eine persönliche Neugier an der Schnittstelle zweier Themen: Sport und Daten. Auf höchstem Niveau wird heute praktisch jede Sportart in Zahlen, Kennwerte und Visualisierungen zerlegt — von Laufleistungen im Fußball über Watt-Profile im Radsport bis hin zu Reaktionszeiten in der Formel 1. Innerhalb einer Sportart existieren reiche Datenlandschaften. <em>Zwischen</em> Sportarten dagegen gibt es kaum etwas, was sich vergleichen ließe.</p>
-<p>Daraus ergab sich eine Frage, die zunächst trivial erscheint, sich bei näherem Hinsehen aber als überraschend offen erweist: Lassen sich Sportarten überhaupt sinnvoll miteinander vergleichen? Sie wirken auf den ersten Blick fundamental verschieden — andere Bewegungsformen, andere Wettkampfdauern, andere Anforderungen. Doch womöglich sind die Anforderungen im Kern dieselben, nur in unterschiedlichen Verhältnissen kombiniert. Die vorliegende Theorie ist der Versuch, diese Frage formal zu beantworten.</p>
+      <p>Die Frage, wie Sportarten miteinander zu vergleichen sind, ist alt und wird selten präzise gestellt. Im Alltag werden Sportarten ständig gegeneinander abgewogen — ob Schach „ein echter Sport" sei, ob Marathonlaufen schwieriger sei als Fußball, ob Formel 1 mehr Können verlange als Bogenschießen. Solche Diskussionen scheitern in der Regel nicht an mangelnder Empirie, sondern an mangelnder Sprache: Es fehlt ein gemeinsames Vokabular, das beschreibt, <em>woraus</em> eine Sportart besteht, bevor man sich über ihre Schwierigkeit oder Wertigkeit verständigen kann.</p>
 
-<h3 id="hintergrund-problem">Die Vergleichsfrage</h3>
-<p>Debatten darüber, ob Fußball oder andere Disziplinen mit vermeintlich „härteren" Sportarten vergleichbar seien, bleiben in der Regel unproduktiv — sie werden auf einer wertenden Ebene geführt, ohne dass eine gemeinsame Vergleichsgrundlage benannt wird. Das vorliegende Framework adressiert eine vorgelagerte Frage: <em>Wie lassen sich Sportarten überhaupt strukturell vergleichen?</em> Nicht hinsichtlich Unterhaltungswert oder Prestige, sondern hinsichtlich der Anforderungen an die Athleten.</p>
-<p>Die Heterogenität dieser Anforderungen ist groß. Ein Sprinter trainiert über Jahre für eine einzelne, hochintensive Leistung von unter zehn Sekunden. Ein Formel-1-Fahrer verarbeitet bei über 300 km/h kontinuierlich sensorische Information und trifft strategische Entscheidungen über eine ganze Renndistanz hinweg. Ein Schachgroßmeister erbringt keine messbare körperliche Leistung, kann aber durch einen einzelnen Positionsfehler eine mehrstündige Partie verlieren. Drei strukturell vollständig unterschiedliche Profile — und doch treten alle drei in einem kompetitiven Rahmen an, in dem Erfolg und Misserfolg objektivierbar sind.</p>
+      <p>Die Sportwissenschaft hat dieses Vakuum nicht vollständig ausgefüllt. Etablierte Klassifikationssysteme — etwa das jüngere <em>Participant Classification Framework</em> von McKay et al.<sup><a href="#ref-1">[1]</a></sup> — gruppieren Sportarten in Kategorien anhand physiologischer Anforderungen, taktischer Komponenten und Skill-Anforderungen. Sie liefern wertvolle Strukturierungen, bleiben aber bei der Kategorisierung stehen: Eine Sportart gehört zu einer Klasse, sie wird nicht in ihre Bestandteile zerlegt. Wer wissen will, ob Tennis und Tischtennis dieselbe strukturelle Signatur haben — und worin sie sich genau unterscheiden —, findet in diesen Systemen keine Antwort.</p>
 
-<h3 id="hintergrund-zweck">Zweck der Theorie</h3>
-<p>Die Theorie ersetzt keine Sportwissenschaft, sondern stellt eine einfache Frage anders. Statt zu klären, welche Disziplin „anspruchsvoller" oder „echter" sei — eine Wertung, die sich nicht entscheiden lässt —, beschreibt sie, <em>welche Anforderungen</em> eine Sportart stellt. Das hat drei konkrete Vorteile: Sportartenvergleiche werden auf eine sachliche Grundlage gestellt; populäre Erzählungen über einzelne Disziplinen lassen sich an der strukturellen Analyse überprüfen (das Beispiel der Formel 1 zeigt, dass die Zuschreibung „das Auto entscheidet" so eindeutig nicht trägt); und immer wiederkehrende Definitionsstreits — ist Schach Sport, ist E-Sport Sport — verschieben sich von einer Ja/Nein-Frage zur Frage nach der strukturellen Verortung.</p>
+      <p>Die hier vorgeschlagene <strong>Sport Composition Theory</strong> versucht diese Lücke zu schließen. Ihre zentrale These lautet: Die kompetitiven Anforderungen jeder Sportart lassen sich als Komposition aus vier fundamentalen Komponenten beschreiben — <em>Taktik</em>, <em>Physis</em>, <em>Skill</em> und <em>Material</em> —, deren relative Gewichtung sich zwischen Sportarten unterscheidet, innerhalb einer Sportart aber stabil ist. Formal wird jede Sportart $S$ als Tupel dargestellt, dessen Komponenten Werte im Intervall $[0,\ 1]$ annehmen:</p>
 
-<div class="teaser">
-<span class="teaser-label">Ausblick</span>
-Die Anwendung der Theorie auf eine kleine Stichprobe von fünf Sportarten — Fußball, 100m Sprint, Schach, Straßenradsport und Formel 1 — liefert eine Reihe nicht-trivialer struktureller Befunde. Einige davon entsprechen der Intuition; andere stehen ihr entgegen. Welche Sportarten sich strukturell besonders nahe stehen und welche das jeweilige Extrem bilden, wird im Vergleichskapitel quantitativ ausgewiesen.
-</div>
+      <p>$$S = (T,\ P,\ \text{Sk},\ M) \quad \text{mit} \quad T + P + \text{Sk} + M = 1$$</p>
 
-<hr />
-<h2 id="die-theorie">Die Theorie</h2>
-<h3 id="annahmen">Annahmen</h3>
-<p>Bevor die Theorie angewendet werden kann, müssen zwei grundlegende Annahmen akzeptiert werden. Sie sind nicht beweisbar und stellen den Ausgangspunkt der Theorie dar, nicht ihre Schlussfolgerung. Aus den Annahmen ergeben sich eine formale Definition und eine direkte Konsequenz.</p>
-<p><strong>Annahme 0 — Geltungsbereich.</strong>
-Jede Sportart wird in der Form bewertet, in der sie professionell und kompetitiv auf höchstem Niveau ausgeübt wird. Freizeit- oder informelle Varianten sind ausgeschlossen — nicht, weil sie weniger interessant wären, sondern weil die kompetitive Form am klarsten definiert und über Athleten hinweg am konsistentesten vergleichbar ist.</p>
-<p>Straßenradsport zum Beispiel ist auf professioneller Ebene ein Mannschaftssport. Ein Domestique opfert sein eigenes Resultat, um einen Kapitän zu schützen; Taktik wirkt über einen ganzen Kader hinweg, nicht nur über einen einzelnen Fahrer. Würde man Straßenradsport als reine individuelle körperliche Leistung bewerten, käme ein fundamental anderer — und weniger zutreffender — Vektor heraus.</p>
-<p>Wo eine Sportart in deutlich unterschiedlichen Wettkampfformen existiert, muss jede Version eigens benannt und bewertet werden. Beachvolleyball und Hallenvolleyball teilen sich einen Namen, unterscheiden sich aber strukturell. 100m und 400m Sprint belohnen unterschiedliche körperliche Profile. Sie als austauschbar zu behandeln, würde die Präzision untergraben, auf die das Modell angewiesen ist.</p>
-<p><strong>Annahme 1 — Zerlegbarkeit.</strong>
-Jede kompetitive Sportart lässt sich vollständig und sinnvoll durch vier Komponenten beschreiben: Taktik, Physis, Skill und Material. Nichts Wesentliches liegt außerhalb dieser vier Kategorien. Das ist die Kernaussage der Theorie und die einzige, die wirklich zugestimmt werden muss, bevor es weitergeht.</p>
-<p>Diese Annahme ist nicht selbstverständlich. Gegen sie ließe sich einwenden, dass bestimmte Sportarten sich einer derartigen Reduktion entziehen — dass etwa die psychologische Dimension des Wettkampfs oder die kollektive Qualität von Teamwork sich nicht erschöpfend in vier Größen abbilden lassen. Die Theorie geht davon aus, dass diese Aspekte in den Komponenten, wie sie hier definiert werden, bereits enthalten sind. Es bleibt jedoch eine Annahme, kein Theorem.</p>
-<p><strong>Definition — Der Composition Vector.</strong>
-Aus Annahme 1 folgt, dass jede Sportart <em>S</em> formal als Tupel dargestellt werden kann:</p>
-<div class="math-block">S = (T, P, Sk, M)</div>
+      <p>Die Theorie ist damit nicht primär eine Klassifikation, sondern eine Dekomposition: Sie ordnet nicht zu, sondern zerlegt.</p>
 
-<p>wobei <em>T</em> = Taktik, <em>P</em> = Physis, <em>Sk</em> = Skill, <em>M</em> = Material, und:</p>
-<div class="math-block">T + P + Sk + M = 1</div>
+      <p>Diese Verschiebung hat methodische Konsequenzen. Eine Dekomposition erlaubt strukturelle Vergleiche, die einer Kategorisierung verschlossen bleiben — etwa die Frage, wie <em>ähnlich</em> sich zwei Sportarten sind, gemessen als Abstand ihrer Kompositionsvektoren im vierdimensionalen Raum. Sie erlaubt auch falsifizierbare Aussagen: Wer behauptet, eine Sportart sei „im Wesentlichen Skill", muss eine konkrete Gewichtung benennen und sich an empirischen Indikatoren — Trainingszeitverteilung, Varianzaufklärung in der Leistungsspitze, Crossover zwischen Sportarten — messen lassen.</p>
 
-<p>Alle Werte sind reelle Zahlen im Intervall [0, 1]. Für die meisten Sportarten gilt M = 0, was die Darstellung auf einen Drei-Komponenten-Vektor reduziert.<sup><a href="#fn1" id="fn1ref">1</a></sup></p>
-<p><strong>Korollar 1 — Darstellbarkeit im gemeinsamen Raum.</strong>
-Aus Annahme 1 und der Definition folgt direkt, dass jede Sportart als Punkt im selben vierdimensionalen Raum dargestellt werden kann. Eine durch Physis dominierte und eine durch Taktik dominierte Sportart sind damit nicht nur qualitativ verschieden — sie sind formal in demselben Bezugssystem verortet und prinzipiell vergleichbar. Was „vergleichbar" konkret bedeutet, hängt von der Wahl einer Distanzfunktion ab; dieser Schritt wird unter <em>Vergleich</em> behandelt.</p>
-<p><strong>Eine Bemerkung zu Theorie und Anwendung.</strong>
-Alle oben getroffenen Aussagen sind formal exakt. Der Composition Vector ist über reellen Zahlen definiert, und jede Zuweisung, die die Bedingungen erfüllt, ist gültig. Die Zuordnung konkreter Werte zu konkreten Sportarten ist eine separate Frage und beruht auf Urteil, nicht auf Messung. Das hierfür verwendete Verfahren wird im Abschnitt <em>Methodik</em> dargestellt.</p>
-<hr />
-<h3 id="komponenten">Komponenten</h3>
-<p>Die vier Komponenten des Composition Vector werden im Folgenden einzeln beschrieben.</p>
-<h4>Taktik</h4>
-<p>Entscheidungsfindung, Planung, das Antizipieren gegnerischen Verhaltens und die Anpassung der Strategie an die Wettkampfsituation. Taktik umfasst den <em>Inhalt</em> der Entscheidungen: die Wahl der Formation, die Bewertung einer Situation, die Entscheidung zwischen offensivem und abwartendem Verhalten. Sie ist diejenige Komponente, deren Wirkung sich der oberflächlichen Betrachtung am ehesten entzieht und deren Bedeutung erst bei detaillierter Analyse sichtbar wird.</p>
-<p>Taktik betrifft, <em>was</em> entschieden wird — nicht die kognitive Kapazität, kontinuierlich Entscheidungen zu treffen. Letztere wird unter Physis behandelt. Diese Unterscheidung ist analytisch relevant: Trifft ein Athlet über einen kurzen Zeitraum hochwertige Entscheidungen und versagt anschließend mental, liegt nur dann eine taktische Schwäche vor, wenn die getroffenen Entscheidungen selbst fehlerhaft waren. Sind sie inhaltlich korrekt, aber lassen sich nicht aufrechterhalten, ist das Defizit kapazitärer und nicht analytischer Natur.</p>
-<h4>Physis</h4>
-<p>Die Anforderungen an den menschlichen Körper: Kraft, Ausdauer, Schnelligkeit, Beweglichkeit — sowie deren kognitive Entsprechungen. Anhaltende Konzentration, psychische Belastbarkeit unter Druck und die Fähigkeit, über lange Zeiträume kognitiv leistungsfähig zu bleiben, werden ebenfalls dieser Komponente zugerechnet. Im sportwissenschaftlichen Verständnis bildet der Geist eine trainierbare Dimension körperlicher Leistungsfähigkeit.</p>
-<p>Physis bezeichnet damit die <em>Kapazitäts</em>-Dimension, in deren Rahmen Taktik realisiert wird. Eine fünfstündige Schachpartie stellt erhebliche Anforderungen an die Physis in diesem Sinne, auch ohne nennenswerte muskuläre Beanspruchung. Die Qualität der einzelnen Züge ist der Taktik zuzuordnen; die Fähigkeit, auch in den späten Phasen einer Partie qualitativ gleichbleibende Züge zu finden, der Physis.</p>
-<h4>Skill</h4>
-<p>Erlernte menschliche Technik: motorische Kontrolle, Präzision, Koordination und Ausführung. Skill unterscheidet sich von Physis dadurch, dass es um die <em>Qualität</em> der Bewegung geht, nicht um die <em>Kapazität</em> zu ihr. Der physische Output eines Sprinters ist seine Höchstgeschwindigkeit. Sein Skill ist die Technik, die ihn effizient dorthin bringt.</p>
-<h4>Material</h4>
-<p>Die Rolle externer Ausrüstung beim Zustandekommen kompetitiver Ergebnisse. Diese Komponente erfordert besondere Aufmerksamkeit.</p>
-<p>Fast jede Sportart involviert irgendeine Form von Ausrüstung — Schuhe, Bälle, Schläger. Material gilt <strong>nicht</strong> für alle. Es gilt nur dann, wenn die <em>Qualität oder Spezifikation</em> der Ausrüstung einen bedeutsamen, direkten Einfluss auf das Ergebnis hat — wenn ein besser ausgerüsteter Athlet einen strukturellen Vorteil gegenüber einem gleich starken mit schlechterer Ausrüstung hat.</p>
-<p>Ein Tennisschläger qualifiziert sich nicht. Ein Formel-1-Auto schon. Ein Bob auch. Ein hochwertiges Straßenrad-Setup liegt irgendwo dazwischen und wird entsprechend behandelt.</p>
-<p>Noch eine Anmerkung: Trainingsinfrastruktur — Höhencamps, Spezialbahnen, Spitzentrainerstäbe — könnte prinzipiell unter Material fallen. Auf höchstem kompetitiven Niveau konvergieren diese Faktoren jedoch in der Regel. Die Top-Athleten in den meisten Sportarten haben weitgehend vergleichbaren Zugang zu erstklassigen Einrichtungen, was den differenzierenden Effekt begrenzt. Aus diesem Grund ist Trainingsinfrastruktur aus dem Modell ausgeschlossen, sofern sie nicht eine <em>persistente, strukturelle</em> Wettbewerbsasymmetrie erzeugt.</p>
-<hr />
-<h2 id="vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</h2>
-<p>Der Composition Vector ist eine bewusste Reduktion. Vier Komponenten genügen, um die wesentlichen Anforderungen einer Sportart abzubilden — sie genügen aber nicht, um jede Eigenheit jedes Wettkampfs zu erfassen. Zwei Konsequenzen dieser Reduktion verdienen explizite Erwähnung.</p>
+      <p>Der vorliegende Artikel verfolgt drei Ziele. Erstens werden die vier Komponenten so definiert, dass sie disjunkt, vollständig und auf höchstem kompetitiven Niveau anwendbar sind. Zweitens wird ein methodischer Rahmen vorgeschlagen, mit dem einer Sportart ihr Kompositionsvektor reproduzierbar zugewiesen werden kann — basierend auf dem <em>Analytic Hierarchy Process</em> nach Saaty<sup><a href="#ref-2">[2]</a></sup>, dem etablierten Standardverfahren für vergleichbare Dekompositionsprobleme in der Entscheidungsforschung. Drittens werden fünf beispielhafte Bewertungen — Formel 1, Straßenradsport, Fußball, 100-Meter-Sprint und Schach — durchgeführt, die das Modell auf Konsistenz und Differenzierungsfähigkeit prüfen.</p>
 
-<h3 id="mannschaftssport">Das Mannschaftssport-Problem</h3>
-<p>In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten beschreibt er das Team, nicht den Spieler — denn taktische Qualität operiert dort auf zwei Ebenen: kollektiv (Formation, Pressing, Standardsituationen) und individuell (Positionsentscheidungen innerhalb des Systems). Diese sind nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur schlecht ist. Eine methodische Konsequenz: In Mannschaftssportarten weist die Taktik-Komponente ein höheres Gewicht auf, als eine ausschließlich individuelle Betrachtung vermuten ließe.</p>
+      <p>Die Theorie erhebt keinen Anspruch, eine erschöpfende Beschreibung sportlicher Leistung zu liefern. Sie versucht, eine Sprache anzubieten — eine, in der die alten Fragen nach Vergleichbarkeit, Schwierigkeit und Verwandtschaft von Sportarten erstmals präzise stellbar werden.</p>
+    </section>
 
-<h3 id="material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</h3>
-<p>Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund ein Viertel des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse <em>im gesamten Feld</em> prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.</p>
+    <section id="literatur">
+      <h2>Literatur</h2>
+      <ol class="references">
+        <li id="ref-1">McKay, A. K. A., Stellingwerff, T., Smith, E. S., Martin, D. T., Mujika, I., Goosey-Tolfrey, V. L., Sheppard, J., &amp; Burke, L. M. (2022). <em>Defining Training and Performance Caliber: A Participant Classification Framework.</em> International Journal of Sports Physiology and Performance, 17(2), 317–331.</li>
+        <li id="ref-2">Saaty, T. L. (1980). <em>The Analytic Hierarchy Process: Planning, Priority Setting, Resource Allocation.</em> McGraw-Hill, New York.</li>
+      </ol>
+    </section>
 
-<h3 id="zerlegbarkeit-kritik">Häufige Einwände gegen die Zerlegung</h3>
-<p>Drei naheliegende Kandidaten für eine fünfte Komponente werden in der Diskussion regelmäßig vorgebracht und lassen sich innerhalb des bestehenden Modells verorten, ohne eine eigene Achse zu erfordern. <strong>Glück und Varianz</strong> sind keine sportliche Leistung; soweit Zufallsmanagement zu einer eigenständigen Leistung wird, ist es der Taktik zuzurechnen, und über lange Wettkampfformate mittelt sich Zufall ohnehin heraus. <strong>Ästhetik</strong> in Wertungssportarten ist im Wesentlichen eine interpretative Spielart von Skill, kombiniert mit dem Schwierigkeitsgrad als Physis-Anteil. <strong>Mentale Härte</strong> ist bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck.</p>
-
-<hr />
-<h2 id="methodik">Methodik</h2>
-<p>Die Werte einer Sportart entstehen nicht durch Bauchgefühl, sondern durch ein nachvollziehbares Bewertungsverfahren. Jede der vier Komponenten wird in sechs Einzelfragen zerlegt — sogenannte Indikatoren. Jeder Indikator wird auf einer Skala von 0 bis 3 bewertet (0 = nicht vorhanden, 3 = wettkampfentscheidend), und die Summen pro Komponente bilden anschließend den Composition Vector. Das Verfahren heißt in der Methodenliteratur <em>analytische Bewertungsrubric</em> (Brookhart 2013); eine direkt vergleichbare Operationalisierung findet sich in der sportwissenschaftlichen PAD-Typologie (Allan et al. 2023). Die viergliedrige Skala enthält bewusst keine Mittelkategorie — eine Forced-Choice-Anordnung, die aus der Umfrageforschung als Maßnahme gegen die Tendenz zur „bequemen Mitte" bekannt ist (Garland 1991).</p>
-
-<p>Die 24 Indikatoren sind nicht alle vom selben Typ. Manche Anforderungen lassen sich direkt messen — die Wettkampfdauer, die metabolische Belastung, die Anzahl der Material-Subsysteme. Andere lassen sich nicht auf eine numerische Größe reduzieren — wie häufig sich Strategie im laufenden Match anpasst, oder wie viel Information ein Spieler simultan verarbeitet. Beide Typen werden verwendet und sichtbar markiert: <strong><span class="rubric-type">●</span> empirisch</strong> bedeutet, dass definierte Schwellenwerte auf einer messbaren Größe vergeben werden und zwei unabhängige Bewertende zum selben Ergebnis kommen sollten. <strong><span class="rubric-type">○</span> interpretativ</strong> bedeutet, dass ein qualitatives Urteil getroffen wird, das durch verbale Anker strukturiert ist. Von den 24 Indikatoren sind 14 empirisch und 10 interpretativ — eine Asymmetrie, die methodisch beabsichtigt ist, da sich vor allem im taktischen Bereich nicht alles auf Zahlen reduzieren lässt.</p>
-
-<p>Aus den Indikatorsummen entsteht der Composition Vector durch eine zweistufige Operation. Erstens wird pro Komponente die Summe der sechs Indikator-Werte gebildet (Bereich 0–18). Bei Material gilt zusätzlich der binäre Filter: ist er 0, wird die Komponente direkt auf 0 gesetzt. Zweitens wird der Vektor (T, P, Sk, M) auf eine Summe von 1 normalisiert und auf das 5%-Raster gerundet. Die <em>Gesamtanforderung</em> — die Summe aller Indikator-Werte vor Normierung — bleibt als Begleitgröße erhalten und gibt Auskunft darüber, wie anspruchsvoll eine Sportart in absoluter Hinsicht ist.</p>
-
-<p>Das Verfahren ersetzt keine Messung durch eine andere Form von Sicherheit, sondern macht den Schätzprozess transparent. Empirische Bewertungen sind reproduzierbar; interpretative bleiben mit einem Bewertungsspielraum behaftet, der durch die Anker strukturiert, aber nicht eliminiert wird. Die konkreten Schwellenwerte — MET-Bereiche, Trainingsaltersgrenzen, Prozentangaben für Performance-Sensitivität — wurden aus plausiblen sportphysiologischen und wettkampfanalytischen Größenordnungen abgeleitet, sind aber nicht durch Einzelnachweise belegt. Eine Validierung durch unabhängige Zweitbewerter (Inter-Rater-Reliability) steht aus.</p>
-
-<details class="rubric-details">
-<summary>Indikatorkatalog ansehen</summary>
-<div class="rubric-body">
-
-<p><strong>Tactics (T)</strong></p>
-<ul>
-  <li><span class="rubric-type">●</span><strong>T1 — Entscheidungsfrequenz:</strong> Anzahl Aktionen mit echtem Entscheidungsspielraum pro Wettkampfminute. <em>Schwellen:</em> 0 = keine; 1 = &lt;1; 2 = 1–10; 3 = &gt;10.</li>
-  <li><span class="rubric-type">●</span><strong>T2 — Gegnerinteraktion:</strong> Strukturelle Form der Gegnerwirkung auf den eigenen Handlungsraum. <em>Schwellen:</em> 0 = unabhängig oder lediglich parallel ohne Interaktion (Sprint mit Bahnen, Solo-Zeitfahren); 1 = Gegner-Anwesenheit beeinflusst das eigene Verhalten (Massenstart-Pacing, Positionierung); 2 = einseitig reaktiv; 3 = wechselseitig (direkte Interaktion zwischen Akteuren).</li>
-  <li><span class="rubric-type">○</span><strong>T3 — Strategischer Vorbereitungsanteil:</strong> Anteil taktisch-strategischer Vorbereitung an der Gesamtvorbereitung (Spielplan, Gegneranalyse, Szenario-Planung).</li>
-  <li><span class="rubric-type">●</span><strong>T4 — Plan-Tiefe:</strong> Maximale Anzahl diskreter, vorausschauend zu planender Wettkampfeinheiten (Züge, Spielphasen, Renn-Abschnitte). <em>Schwellen:</em> 0 = keine; 1 = 1–3; 2 = 4–15; 3 = &gt;15.</li>
-  <li><span class="rubric-type">○</span><strong>T5 — Adaptionsanforderung im Wettkampf:</strong> Häufigkeit substanzieller Strategieanpassungen während des laufenden Wettkampfs.</li>
-  <li><span class="rubric-type">○</span><strong>T6 — Informationsdichte:</strong> Anzahl gleichzeitig zu verarbeitender, wettkampfrelevanter Informationsquellen.</li>
-</ul>
-
-<p><strong>Physical (P)</strong></p>
-<ul>
-  <li><span class="rubric-type">●</span><strong>P1 — Energetische Spitzenanforderung:</strong> Energetische Belastung bei Maximalleistung, gemessen als metabolisches Äquivalent (MET). <em>Schwellen:</em> 0 = ≤2 MET; 1 = 2–6 MET; 2 = 6–10 MET; 3 = &gt;10 MET.</li>
-  <li><span class="rubric-type">●</span><strong>P2 — Wettkampfdauer:</strong> Offizielle Dauer der körperlichen Belastung. <em>Schwellen:</em> 0 = &lt;1 min; 1 = 1 min – 1 h; 2 = 1–4 h; 3 = &gt;4 h (auch bei kumulativen Etappenrennen anwendbar).</li>
-  <li><span class="rubric-type">●</span><strong>P3 — Energiebereitstellungsprofil:</strong> Sportphysiologische Klassifikation der dominanten Stoffwechsellage. <em>Schwellen:</em> 0 = keine energetische Anforderung; 1 = primär aerob; 2 = aerob-anaerob gemischt; 3 = primär anaerob.</li>
-  <li><span class="rubric-type">○</span><strong>P4 — Konzentrationsanforderung:</strong> Anforderung an kontinuierliche kognitive Leistung über die Wettkampfdauer.</li>
-  <li><span class="rubric-type">●</span><strong>P5 — Körperliche Robustheit:</strong> Klassifikation der mechanischen Belastung. <em>Schwellen:</em> 0 = kein Kontakt, kein Sturzrisiko; 1 = geringes Sturzrisiko; 2 = regelmäßige Stürze oder leichter Kontakt; 3 = direkter Vollkontakt oder hohes Verletzungsrisiko.</li>
-  <li><span class="rubric-type">○</span><strong>P6 — Bewegungsanforderung:</strong> Anforderung an Geschwindigkeit, Sprungkraft und Agilität jenseits reiner Energetik.</li>
-</ul>
-
-<p><strong>Skill (Sk)</strong></p>
-<ul>
-  <li><span class="rubric-type">○</span><strong>Sk1 — Toleranzbereich:</strong> Engheit des Erfolgsbereichs der primären Wettkampfbewegung.</li>
-  <li><span class="rubric-type">●</span><strong>Sk2 — Repertoire-Breite:</strong> Anzahl distinkter technischer Grundelemente, die beherrscht werden müssen. <em>Schwellen:</em> 0 = keine; 1 = 1–2; 2 = 3–6; 3 = &gt;6.</li>
-  <li><span class="rubric-type">●</span><strong>Sk3 — Trainingsalter bis Spitzenniveau:</strong> Durchschnittsalter beim erstmaligen Erreichen der Welt-Top-Klasse (Top-10 oder Profietablierung). <em>Schwellen:</em> 0 = &lt;16 Jahre; 1 = 16–22; 2 = 22–28; 3 = &gt;28.</li>
-  <li><span class="rubric-type">○</span><strong>Sk4 — Bewegungskomplexität:</strong> Anzahl koordinierter Körperteile und Sequenzschritte in der primären Wettkampfbewegung.</li>
-  <li><span class="rubric-type">○</span><strong>Sk5 — Bedingungsvariabilität:</strong> Anpassungsanforderung an wechselnde Wettkampfbedingungen (Wetter, Untergrund, Material).</li>
-  <li><span class="rubric-type">○</span><strong>Sk6 — Feinmotorische Steuerung:</strong> Anteil feinmotorischer Kontrolle an der primären Wettkampfbewegung.</li>
-</ul>
-
-<p><strong>Material (M)</strong> ist ein Sonderfall. Da für die meisten Sportarten Material strukturell keine Rolle spielt, wird der M-Komponente ein binärer Filter vorangestellt. Sämtliche Material-Indikatoren sind empirisch:</p>
-<ul>
-  <li><span class="rubric-type">●</span><strong>M-Filter (0 oder 1):</strong> Ist die Sportart als Material-Wettbewerb formal anerkannt (eigenes Konstrukteurs- oder Material-Klassement, regulatorische Materialdifferenzierung)? Bei <em>nein</em> wird die gesamte Material-Komponente auf 0 gesetzt.</li>
-  <li><span class="rubric-type">●</span><strong>M1 — Performance-Sensitivität:</strong> Messbare Leistungsdifferenz zwischen Material-Spitze und Material-Standardklasse, in Prozent. <em>Schwellen:</em> 0 = ≤1%; 1 = 1–5%; 2 = 5–15%; 3 = &gt;15%.</li>
-  <li><span class="rubric-type">●</span><strong>M2 — Material-Komplexität:</strong> Anzahl unabhängig regulierter technischer Subsysteme. <em>Schwellen:</em> 0 = ≤1; 1 = 2–5; 2 = 6–15; 3 = &gt;15.</li>
-  <li><span class="rubric-type">●</span><strong>M3 — Wettkampf-Asymmetrie:</strong> Anteil materialbedingter Performance an der Gesamtperformance. <em>Schwellen wie M1.</em></li>
-  <li><span class="rubric-type">●</span><strong>M4 — Material-Entwicklungsanteil:</strong> Engineering-Budget pro Team im Verhältnis zum Athleten-Budget. <em>Schwellen:</em> 0 = ≤10%; 1 = 10–50%; 2 = 50–200%; 3 = &gt;200%.</li>
-  <li><span class="rubric-type">●</span><strong>M5 — Athleten-Material-Asymmetrie:</strong> Performance-Spread zwischen Teams mit vergleichbarem Athleten-Niveau im Verhältnis zum Spread zwischen Athleten innerhalb eines Teams.</li>
-  <li><span class="rubric-type">●</span><strong>M6 — Material-Risiko:</strong> Anteil materialbedingter Wettkampfausfälle (DNF/DNS) an der Gesamtzahl aller Ausfälle. <em>Schwellen:</em> 0 = &lt;1%; 1 = 1–10%; 2 = 10–30%; 3 = &gt;30%.</li>
-</ul>
-</div>
-</details>
-<hr />
-<h2 id="beispiele">Beispiele</h2>
-<p>Im Folgenden wird der Composition Vector für fünf konkrete Sportarten dargestellt. Jede Sportart erscheint als gestapelter Balken in den vier Komponenten-Farben, gefolgt vom vollständigen Bewertungsbogen (ausklappbar) und einer kurzen Begründung der Verteilung. Der Bewertungsbogen enthält alle 24 Einzelindikatoren mit ihren konkreten Werten sowie die <em>Gesamtanforderung</em> als Begleitgröße.</p>
-<div class="sport-charts">
-
-<div class="sport-entry">
-<h3>Fußball</h3>
-<p class="sport-meta">11 gegen 11 · 90 Minuten</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"   style="width:40%" title="Taktik: 40%"></div>
-    <div class="seg physical"  style="width:30%" title="Physis: 30%"></div>
-    <div class="seg skill"     style="width:30%" title="Skill: 30%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 40%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
-  </div>
-</div>
-<details class="rubric-details">
-<summary>Bewertungsbogen ansehen</summary>
-<div class="rubric-body">
-  <div class="rubric-group">
-    <p class="rubric-group-title">Tactics — Summe: 16/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T1</td><td class="rubric-label">Entscheidungsfrequenz</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T2</td><td class="rubric-label">Gegnerinteraktion</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T3</td><td class="rubric-label">Strategischer Vorbereitungsanteil</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T4</td><td class="rubric-label">Plan-Tiefe</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T5</td><td class="rubric-label">Adaptionsanforderung im Wettkampf</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T6</td><td class="rubric-label">Informationsdichte</td><td class="rubric-value">3</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Physical — Summe: 13/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P1</td><td class="rubric-label">Energetische Spitzenanforderung</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P2</td><td class="rubric-label">Wettkampfdauer</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P3</td><td class="rubric-label">Energiebereitstellungsprofil</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P4</td><td class="rubric-label">Konzentrationsanforderung</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P5</td><td class="rubric-label">Körperliche Robustheit</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P6</td><td class="rubric-label">Bewegungsanforderung</td><td class="rubric-value">3</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Skill — Summe: 12/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk1</td><td class="rubric-label">Toleranzbereich</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk2</td><td class="rubric-label">Repertoire-Breite</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk3</td><td class="rubric-label">Trainingsalter bis Spitzenniveau</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk4</td><td class="rubric-label">Bewegungskomplexität</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk5</td><td class="rubric-label">Bedingungsvariabilität</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk6</td><td class="rubric-label">Feinmotorische Steuerung</td><td class="rubric-value">1</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Material — Summe: 0/18</p>
-    <p class="rubric-sum">M-Filter = 0: Material ist hier nicht wettbewerbsrelevant. Die sechs Indikatoren werden nicht einzeln bewertet und die gesamte Material-Komponente ist 0.</p>
-  </div>
-  <p class="rubric-sum">Gesamtanforderung: 41</p>
-</div>
-</details>
-<p class="sport-rationale">Eine in allen drei nicht-Material-Komponenten anspruchsvolle Sportart, mit leichtem taktischem Übergewicht. Hohe Taktik-Werte ergeben sich aus durchgehender wechselseitiger Gegnerinteraktion (T2 = 3), hoher Entscheidungsfrequenz und Informationsdichte auf dem Platz. Physis bleibt durch Sprintanteile, 90-minütige Belastung und regelmäßigen Körperkontakt substanziell. Skill (Ballbehandlung, Passqualität, Schusstechnik, Kopfballspiel) liegt im selben Bereich, mit besonderer Stärke in der Repertoire-Breite. Kein Material — die Ausrüstung ist standardisiert und über die Liga hinweg vergleichbar.</p>
-</div>
-
-<div class="sport-entry">
-<h3>100m Sprint</h3>
-<p class="sport-meta">Reine Leichtathletik-Disziplin</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"  style="width:5%"  title="Taktik: 5%"></div>
-    <div class="seg physical" style="width:55%" title="Physis: 55%"></div>
-    <div class="seg skill"    style="width:40%" title="Skill: 40%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 55%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 40%</span>
-  </div>
-</div>
-<details class="rubric-details">
-<summary>Bewertungsbogen ansehen</summary>
-<div class="rubric-body">
-  <div class="rubric-group">
-    <p class="rubric-group-title">Tactics — Summe: 1/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T1</td><td class="rubric-label">Entscheidungsfrequenz</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T2</td><td class="rubric-label">Gegnerinteraktion</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T3</td><td class="rubric-label">Strategischer Vorbereitungsanteil</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T4</td><td class="rubric-label">Plan-Tiefe</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T5</td><td class="rubric-label">Adaptionsanforderung im Wettkampf</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T6</td><td class="rubric-label">Informationsdichte</td><td class="rubric-value">0</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Physical — Summe: 10/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P1</td><td class="rubric-label">Energetische Spitzenanforderung</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P2</td><td class="rubric-label">Wettkampfdauer</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P3</td><td class="rubric-label">Energiebereitstellungsprofil</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P4</td><td class="rubric-label">Konzentrationsanforderung</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P5</td><td class="rubric-label">Körperliche Robustheit</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P6</td><td class="rubric-label">Bewegungsanforderung</td><td class="rubric-value">3</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Skill — Summe: 7/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk1</td><td class="rubric-label">Toleranzbereich</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk2</td><td class="rubric-label">Repertoire-Breite</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk3</td><td class="rubric-label">Trainingsalter bis Spitzenniveau</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk4</td><td class="rubric-label">Bewegungskomplexität</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk5</td><td class="rubric-label">Bedingungsvariabilität</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk6</td><td class="rubric-label">Feinmotorische Steuerung</td><td class="rubric-value">0</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Material — Summe: 0/18</p>
-    <p class="rubric-sum">M-Filter = 0: Material ist hier nicht wettbewerbsrelevant. Die sechs Indikatoren werden nicht einzeln bewertet und die gesamte Material-Komponente ist 0.</p>
-  </div>
-  <p class="rubric-sum">Gesamtanforderung: 18</p>
-</div>
-</details>
-<p class="sport-rationale">Strukturell eine der einfachsten Sportarten der Stichprobe — keine Entscheidungen im laufenden Wettkampf, keine Plan-Tiefe, keine Adaption. Der minimale Taktik-Anteil von 5% ergibt sich allein aus der indirekten Gegnerinteraktion (parallele Bahnen, T2 = 1). Physis dominiert durch maximale anaerobe Spitzenleistung. Skill ist substanzieller als oft angenommen: Starttechnik und Lauftechnik sind hochpräzise Bewegungen, allerdings mit schmaler Repertoire-Breite und ohne Bedingungsvariabilität. Kein Material.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Schach</h3>
-<p class="sport-meta">Aufnahme als Grenzfall zur Prüfung des Modells</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"  style="width:65%" title="Taktik: 65%"></div>
-    <div class="seg physical" style="width:20%" title="Physis: 20%"></div>
-    <div class="seg skill"    style="width:15%" title="Skill: 15%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 65%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
-  </div>
-</div>
-<details class="rubric-details">
-<summary>Bewertungsbogen ansehen</summary>
-<div class="rubric-body">
-  <div class="rubric-group">
-    <p class="rubric-group-title">Tactics — Summe: 17/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T1</td><td class="rubric-label">Entscheidungsfrequenz</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T2</td><td class="rubric-label">Gegnerinteraktion</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T3</td><td class="rubric-label">Strategischer Vorbereitungsanteil</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T4</td><td class="rubric-label">Plan-Tiefe</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T5</td><td class="rubric-label">Adaptionsanforderung im Wettkampf</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T6</td><td class="rubric-label">Informationsdichte</td><td class="rubric-value">3</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Physical — Summe: 6/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P1</td><td class="rubric-label">Energetische Spitzenanforderung</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P2</td><td class="rubric-label">Wettkampfdauer</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P3</td><td class="rubric-label">Energiebereitstellungsprofil</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P4</td><td class="rubric-label">Konzentrationsanforderung</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P5</td><td class="rubric-label">Körperliche Robustheit</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P6</td><td class="rubric-label">Bewegungsanforderung</td><td class="rubric-value">0</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Skill — Summe: 4/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk1</td><td class="rubric-label">Toleranzbereich</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk2</td><td class="rubric-label">Repertoire-Breite</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk3</td><td class="rubric-label">Trainingsalter bis Spitzenniveau</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk4</td><td class="rubric-label">Bewegungskomplexität</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk5</td><td class="rubric-label">Bedingungsvariabilität</td><td class="rubric-value">0</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk6</td><td class="rubric-label">Feinmotorische Steuerung</td><td class="rubric-value">1</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Material — Summe: 0/18</p>
-    <p class="rubric-sum">M-Filter = 0: Material ist hier nicht wettbewerbsrelevant. Die sechs Indikatoren werden nicht einzeln bewertet und die gesamte Material-Komponente ist 0.</p>
-  </div>
-  <p class="rubric-sum">Gesamtanforderung: 27</p>
-</div>
-</details>
-<p class="sport-rationale">Eine in Taktik dominierte Sportart — fünf von sechs Taktik-Indikatoren erreichen den Maximalwert, der sechste (Entscheidungsfrequenz, bei klassischen Partien typischerweise unter zehn Aktionen pro Minute) liegt auf der zweithöchsten Stufe. Physis ist nicht null: mehrstündige Partien (P2 = 3) und die durchgehende Konzentrationsanforderung (P4 = 3) ergeben einen substanziellen, wenn auch nicht körperlich-energetischen Beitrag. Skill ist fast vollständig durch das Trainingsalter geprägt — Jahrzehnte gezielter Vorbereitung sind erforderlich — bei nahezu null Anforderung an Präzision, Repertoire oder motorische Komplexität. Kein Material.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Straßenradsport</h3>
-<p class="sport-meta">Grand-Tour-Etappenrennen</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"  style="width:30%" title="Taktik: 30%"></div>
-    <div class="seg physical" style="width:30%" title="Physis: 30%"></div>
-    <div class="seg skill"    style="width:20%" title="Skill: 20%"></div>
-    <div class="seg material" style="width:20%" title="Material: 20%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 30%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 20%</span>
-    <span class="leg-item"><span class="leg-dot material"></span>Material 20%</span>
-  </div>
-</div>
-<details class="rubric-details">
-<summary>Bewertungsbogen ansehen</summary>
-<div class="rubric-body">
-  <div class="rubric-group">
-    <p class="rubric-group-title">Tactics — Summe: 14/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T1</td><td class="rubric-label">Entscheidungsfrequenz</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T2</td><td class="rubric-label">Gegnerinteraktion</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T3</td><td class="rubric-label">Strategischer Vorbereitungsanteil</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T4</td><td class="rubric-label">Plan-Tiefe</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T5</td><td class="rubric-label">Adaptionsanforderung im Wettkampf</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T6</td><td class="rubric-label">Informationsdichte</td><td class="rubric-value">2</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Physical — Summe: 13/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P1</td><td class="rubric-label">Energetische Spitzenanforderung</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P2</td><td class="rubric-label">Wettkampfdauer</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P3</td><td class="rubric-label">Energiebereitstellungsprofil</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P4</td><td class="rubric-label">Konzentrationsanforderung</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P5</td><td class="rubric-label">Körperliche Robustheit</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P6</td><td class="rubric-label">Bewegungsanforderung</td><td class="rubric-value">2</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Skill — Summe: 9/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk1</td><td class="rubric-label">Toleranzbereich</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk2</td><td class="rubric-label">Repertoire-Breite</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk3</td><td class="rubric-label">Trainingsalter bis Spitzenniveau</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk4</td><td class="rubric-label">Bewegungskomplexität</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk5</td><td class="rubric-label">Bedingungsvariabilität</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk6</td><td class="rubric-label">Feinmotorische Steuerung</td><td class="rubric-value">1</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Material (M-Filter: 1) — Summe: 8/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M1</td><td class="rubric-label">Performance-Sensitivität</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M2</td><td class="rubric-label">Material-Komplexität</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M3</td><td class="rubric-label">Wettkampf-Asymmetrie</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M4</td><td class="rubric-label">Material-Entwicklungsanteil</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M5</td><td class="rubric-label">Athleten-Material-Asymmetrie</td><td class="rubric-value">1</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M6</td><td class="rubric-label">Material-Risiko</td><td class="rubric-value">1</td></tr>
-    </table>
-  </div>
-  <p class="rubric-sum">Gesamtanforderung: 44</p>
-</div>
-</details>
-<p class="sport-rationale">Die einzige Sportart der Stichprobe, in der alle vier Komponenten substanziell sind. Taktik und Physis liegen je bei 30%: Taktik durch Mannschaftsdynamik im Peloton, Etappenstrategie und große Plan-Tiefe über eine dreiwöchige Rundfahrt; Physis durch maximale aerobe Anforderung, mehrwöchige Wettkampfdauer und Sturzrisiko. Skill betrifft Fahrtechnik, Repertoire-Breite zwischen Sprint, Klettern und Zeitfahren sowie die Anpassung an wechselnde Bedingungen. Material erfüllt den Filter — Rad-Performance ist innerhalb der World Tour relevant, mit messbarer Performance-Sensitivität und Engineering-Anteil, jedoch weit unterhalb der materialdominierten Disziplinen.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Formel 1</h3>
-<p class="sport-meta">Fahrer und Konstrukteur zusammen</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics"  style="width:30%" title="Taktik: 30%"></div>
-    <div class="seg physical" style="width:20%" title="Physis: 20%"></div>
-    <div class="seg skill"    style="width:25%" title="Skill: 25%"></div>
-    <div class="seg material" style="width:25%" title="Material: 25%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 30%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
-    <span class="leg-item"><span class="leg-dot material"></span>Material 25%</span>
-  </div>
-</div>
-<details class="rubric-details">
-<summary>Bewertungsbogen ansehen</summary>
-<div class="rubric-body">
-  <div class="rubric-group">
-    <p class="rubric-group-title">Tactics — Summe: 17/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T1</td><td class="rubric-label">Entscheidungsfrequenz</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T2</td><td class="rubric-label">Gegnerinteraktion</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T3</td><td class="rubric-label">Strategischer Vorbereitungsanteil</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>T4</td><td class="rubric-label">Plan-Tiefe</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T5</td><td class="rubric-label">Adaptionsanforderung im Wettkampf</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>T6</td><td class="rubric-label">Informationsdichte</td><td class="rubric-value">3</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Physical — Summe: 13/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P1</td><td class="rubric-label">Energetische Spitzenanforderung</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P2</td><td class="rubric-label">Wettkampfdauer</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P3</td><td class="rubric-label">Energiebereitstellungsprofil</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P4</td><td class="rubric-label">Konzentrationsanforderung</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>P5</td><td class="rubric-label">Körperliche Robustheit</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>P6</td><td class="rubric-label">Bewegungsanforderung</td><td class="rubric-value">1</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Skill — Summe: 15/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk1</td><td class="rubric-label">Toleranzbereich</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk2</td><td class="rubric-label">Repertoire-Breite</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>Sk3</td><td class="rubric-label">Trainingsalter bis Spitzenniveau</td><td class="rubric-value">2</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk4</td><td class="rubric-label">Bewegungskomplexität</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk5</td><td class="rubric-label">Bedingungsvariabilität</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">○</span>Sk6</td><td class="rubric-label">Feinmotorische Steuerung</td><td class="rubric-value">2</td></tr>
-    </table>
-  </div>
-  <div class="rubric-group">
-    <p class="rubric-group-title">Material (M-Filter: 1) — Summe: 17/18</p>
-    <table class="rubric-table">
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M1</td><td class="rubric-label">Performance-Sensitivität</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M2</td><td class="rubric-label">Material-Komplexität</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M3</td><td class="rubric-label">Wettkampf-Asymmetrie</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M4</td><td class="rubric-label">Material-Entwicklungsanteil</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M5</td><td class="rubric-label">Athleten-Material-Asymmetrie</td><td class="rubric-value">3</td></tr>
-    <tr><td class="rubric-code"><span class="rubric-type">●</span>M6</td><td class="rubric-label">Material-Risiko</td><td class="rubric-value">2</td></tr>
-    </table>
-  </div>
-  <p class="rubric-sum">Gesamtanforderung: 62</p>
-</div>
-</details>
-<p class="sport-rationale">Eine in allen vier Komponenten hoch anspruchsvolle Sportart — die Verteilung ist relativ ausgewogen, mit Taktik als größter Einzelkomponente (30%). Die populäre Wahrnehmung „Formel 1 ist Material-Sport" wird durch die strukturelle Bewertung nicht bestätigt: Material erfüllt zwar alle sechs Indikatoren mit hohen Werten und stellt mit 25% einen substanziellen, aber nicht dominanten Anteil dar. Taktik (drei empirische Maximalwerte: Entscheidungsfrequenz, Gegnerinteraktion, Plan-Tiefe) und Skill (Fahrzeugkontrolle am Limit, Spurwahl, Adaption an wechselnde Bedingungen) liegen auf vergleichbarem Niveau. Physis trägt durch G-Kräfte, kognitive Belastung und das hohe Verletzungsrisiko bei. Die Gesamtanforderung von 62 ist die höchste der Stichprobe.</p>
-</div>
-
-</div>
-
-<hr />
-<h2 id="vergleich">Vergleich</h2>
-<p>Auf Basis der Beispielvektoren lässt sich die in der Einleitung formulierte Frage operationalisieren: <em>Wie lassen sich Sportarten strukturell vergleichen?</em> Korollar 1 hat festgestellt, dass jeder Vergleich wohldefiniert ist, sobald eine Distanzfunktion gewählt wurde.</p>
-
-<h3 id="strukturelle-distanz">Strukturelle Distanz</h3>
-<p>Da jede Sportart durch einen Vektor mit vier Komponenten beschrieben wird, lässt sich der Abstand zwischen zwei Sportarten als räumlicher Abstand zwischen zwei Punkten berechnen — wie der Luftlinien-Abstand zwischen zwei Orten auf einer Karte, nur in vier statt zwei Dimensionen. Mathematisch ist das der <em>Euklidische Abstand</em>, die naheliegende Wahl, weil dabei jede Komponente gleich behandelt wird:</p>
-<div class="math-block">d(S₁, S₂) = k · √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
-<p>Der Skalierungsfaktor <em>k</em> ist eine Konstante, die den Wertebereich auf [0, 100] streckt; sie hat keine inhaltliche Bedeutung und verändert die Rangfolge der Distanzen nicht. Zwei identische Sportarten haben den Wert 0; der theoretische Höchstwert von 100 wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente konzentriert sind. In der vorliegenden Stichprobe liegt die größte beobachtete Distanz bei 52.</p>
-<p>Eine methodische Anmerkung: Die Vektoren sind mit Daten verwandt, die in der Statistik als <em>kompositionell</em> bezeichnet werden — Vektoren mit nicht-negativen Komponenten, deren Summe konstant ist. Für solche Daten wurden eigene Distanzmaße entwickelt, allen voran die Aitchison-Distanz (Aitchison 1986). Diese setzen strikt positive Komponenten voraus und sind mit der hier zugelassenen Möglichkeit <em>M</em> = 0 nicht ohne Verzerrung vereinbar. Die Verwendung des Euklidischen Abstands ist eine bewusste Vereinfachung.</p>
-
-<p>Die folgende Tabelle zeigt die paarweisen Distanzen für die fünf Beispielsportarten, gerundet auf ganze Zahlen:</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table distance-matrix">
-<thead>
-<tr><th></th><th>Fußball</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th></tr>
-</thead>
-<tbody>
-<tr><th>Fußball</th>         <td>—</td>   <td>31</td><td>22</td><td>17</td><td>21</td></tr>
-<tr><th>100m Sprint</th>     <td>31</td><td>—</td>   <td class="cell-far">52</td><td>32</td><td>37</td></tr>
-<tr><th>Schach</th>          <td>22</td><td class="cell-far">52</td><td>—</td>   <td>30</td><td>31</td></tr>
-<tr><th>Straßenradsport</th> <td>17</td><td>32</td><td>30</td><td>—</td>   <td class="cell-near">9</td></tr>
-<tr><th>Formel 1</th>        <td>21</td><td>37</td><td>31</td><td class="cell-near">9</td><td>—</td></tr>
-</tbody>
-</table>
-</div>
-
-<p>Aus der Matrix lassen sich drei Beobachtungen ableiten, die sich unmittelbar aus den Vektoren ergeben.</p>
-
-<p><strong>Straßenradsport und Formel 1 sind die nächsten Nachbarn (Distanz 9).</strong> Ein zunächst überraschender Befund, denn die eine Sportart ist aerob-physisch geprägt und die andere durch Motorisierung. Was sie strukturell verbindet, ist die Material-Komponente: beide sind die einzigen Sportarten der Stichprobe, die den Material-Filter überschreiten, und beide zeigen ähnliche Verteilungen in Taktik und Skill. Das Vorhandensein einer relevanten Material-Komponente schafft offenbar eine eigene strukturelle Verwandtschaft, unabhängig von ihrer konkreten Ausprägung.</p>
-
-<p><strong>100m Sprint ist das strukturelle Extrem.</strong> Mit einer durchschnittlichen Distanz von 38 zu allen anderen Sportarten ist 100m am isoliertesten verortet und zugleich der fernste Nachbar jeder anderen Disziplin in der Stichprobe. Die Distanz zwischen Sprint und Schach (52) ist die größte in der gesamten Tabelle. Beide sind hochkonzentrierte Sportarten — Sprint in Physis, Schach in Taktik — und stehen damit in gegenüberliegenden Ecken des strukturellen Raums.</p>
-
-<p><strong>Die zentralen Sportarten sind Generalisten, die randständigen sind Spezialisten.</strong> Die Reihenfolge der durchschnittlichen Distanzen — Straßenradsport (22), Fußball (23), Formel 1 (24), Schach (34), 100m (38) — fällt mit einer inhaltlichen Reihenfolge zusammen: Sportarten mit ausgewogener Verteilung liegen im Zentrum; Sportarten mit Konzentration in einer einzelnen Komponente liegen am Rand. Dies ist keine eigenständige Aussage des Verfahrens, sondern eine direkte mathematische Konsequenz — der Durchschnittsabstand zu allen anderen Punkten ist genau dann minimal, wenn man sich in der Mitte der Punktwolke befindet.</p>
-
-<p>Zwei Einschränkungen zur Interpretation. Erstens sind die Eingangswerte auf einem 5%-Raster festgelegt; ein Transfer von fünf Prozentpunkten zwischen zwei Komponenten desselben Vektors verändert dessen Distanz zu jedem anderen Vektor um bis zu etwa fünf Punkte. Distanzen sollten daher in Größenordnungen gelesen werden, nicht in genauen Werten. Zweitens werden alle Komponenten gleich gewichtet — eine Verschiebung um zehn Prozentpunkte in Taktik wirkt sich rechnerisch genauso aus wie eine Verschiebung um zehn Prozentpunkte in Material. Ob das inhaltlich gerechtfertigt ist, ist eine Frage, die das Framework nicht beantwortet.</p>
-
-<hr />
-<h2 id="literatur">Literatur</h2>
-<ul>
-  <li>Aitchison, J. (1986). <em>The Statistical Analysis of Compositional Data</em>. London: Chapman &amp; Hall.</li>
-  <li>Allan, V., Blair Evans, M., Latimer-Cheung, A. E., &amp; Côté, J. (2023). From the playground to the podium: Toward a Physical Activity Demands (PAD) typology. <em>International Review of Sport and Exercise Psychology</em>.</li>
-  <li>Brookhart, S. M. (2013). <em>How to Create and Use Rubrics for Formative Assessment and Grading</em>. Alexandria, VA: ASCD.</li>
-  <li>Garland, R. (1991). The mid-point on a rating scale: Is it desirable? <em>Marketing Bulletin</em>, 2, 66–70.</li>
-</ul>
-
-<hr />
-<div class="footnotes">
-<p id="fn1"><sup>1</sup> Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material oben. <a href="#fn1ref">↩</a></p>
-</div>
   </article>
 </main>
 

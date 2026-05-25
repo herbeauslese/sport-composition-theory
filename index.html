@@ -49,6 +49,7 @@
       <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
     </ol>
   </li>
+  <li><a href="#methodik-appendix">Methodik-Appendix</a></li>
 </ol>
     </nav>
 
@@ -74,28 +75,27 @@
 <p>Ein Sprinter und ein Formel-1-Fahrer sind beide Spitzensportler, die am Limit menschlicher Leistungsfähigkeit antreten. Aber die Natur dieser Leistung ist grundverschieden. Der Sprinter formt seinen Körper über Jahre darauf, einen einzigen explosiven Output von unter zehn Sekunden zu produzieren. Der Formel-1-Fahrer verarbeitet bei 300 km/h einen Strom sensorischer Eindrücke und trifft in Sekundenbruchteilen Entscheidungen, die sich über eine ganze Rennstrategie hinweg tragen müssen. Und dann ist da der Schachspieler: keine nennenswerte körperliche Leistung, keine Maschine, keine Strecke — nur kognitive Auseinandersetzung über ein Brett, in der ein positioneller Fehler in Zug zwölf bis Zug vierzig still und leise alles auseinandernehmen kann.</p>
 <p>Drei Athleten, drei vollständig verschiedene Profile. Und trotzdem treten alle drei an, gewinnen und verlieren auf Basis von etwas, das sich messen und vergleichen lässt.</p>
 <p>Diese Frage — <em>was</em> genau hier gemessen wird — hat zu dieser Theorie geführt.</p>
+<p>Das Programm dieser Arbeit ist begrenzt und konkret: einen Beschreibungsraum aus vier Komponenten vorschlagen, ein nachvollziehbares Verfahren entwickeln, mit dem konkrete Sportarten in diesem Raum verortet werden, und ein Distanzmaß ableiten, das die strukturelle Verwandtschaft zwischen ihnen sichtbar macht. Was am Ende stehen soll, ist ein Werkzeug — formalisiert genug, um angreifbar zu sein, und bescheiden genug, um zu wissen, was es nicht ist. Es ist keine empirische Studie, kein Urteil darüber, welcher Sport mehr Respekt verdient, und kein Anspruch auf endgültige Wahrheit. Es ist der Versuch, eine Stammtischfrage in ein Format zu bringen, in dem sie sich tatsächlich diskutieren lässt.</p>
 <p><em>Was braucht es, um zu gewinnen? Die Antwort sind immer dieselben Komponenten — nur in unterschiedlichen Verhältnissen.</em></p>
 <hr />
 <h2 id="die-theorie">Die Theorie</h2>
-<h3 id="annahmen">Annahmen</h3>
-<p>Bevor die Theorie angewendet werden kann, müssen zwei grundlegende Annahmen akzeptiert werden. Sie lassen sich nicht beweisen — sie sind der Ausgangspunkt, nicht die Schlussfolgerung. Eine formale Definition und eine direkte Konsequenz folgen aus ihnen.</p>
-<p><strong>Annahme 0 — Geltungsbereich.</strong>
+<h3 id="annahmen">Annahmen und These</h3>
+<p>Bevor die Theorie angewendet werden kann, müssen ihre Bausteine offen liegen. Eine Annahme bildet den Ausgangspunkt — eine Setzung über den Gegenstandsbereich. Darauf folgt die zentrale These der Arbeit, gefolgt von ihrer formalen Definition.</p>
+<p><strong>Annahme — Geltungsbereich.</strong>
 Jede Sportart wird in der Form bewertet, in der sie professionell und kompetitiv auf höchstem Niveau ausgeübt wird. Freizeit- oder informelle Varianten sind ausgeschlossen — nicht, weil sie weniger interessant wären, sondern weil die kompetitive Form am klarsten definiert und über Athleten hinweg am konsistentesten vergleichbar ist.</p>
 <p>Straßenradsport zum Beispiel ist auf professioneller Ebene ein Mannschaftssport. Ein Domestique opfert sein eigenes Resultat, um einen Kapitän zu schützen; Taktik wirkt über einen ganzen Kader hinweg, nicht nur über einen einzelnen Fahrer. Würde man Straßenradsport als reine individuelle körperliche Leistung bewerten, käme ein fundamental anderer — und weniger zutreffender — Vektor heraus.</p>
 <p>Wo eine Sportart in deutlich unterschiedlichen Wettkampfformen existiert, muss jede Version eigens benannt und bewertet werden. Beachvolleyball und Hallenvolleyball teilen sich einen Namen, unterscheiden sich aber strukturell. 100m und 400m Sprint belohnen unterschiedliche körperliche Profile. Sie als austauschbar zu behandeln, würde die Präzision untergraben, auf die das Modell angewiesen ist.</p>
-<p><strong>Annahme 1 — Zerlegbarkeit.</strong>
-Jede kompetitive Sportart lässt sich vollständig und sinnvoll durch vier Komponenten beschreiben: Taktik, Physis, Skill und Material. Nichts Wesentliches liegt außerhalb dieser vier Kategorien. Das ist die Kernaussage der Theorie und die einzige, die wirklich zugestimmt werden muss, bevor es weitergeht.</p>
-<p>Diese Annahme ist nicht selbstverständlich. Man könnte argumentieren, dass bestimmte Sportarten sich der Reduktion widersetzen — dass die psychologische Dimension des Wettkampfs oder die schwer fassbare Qualität von Teamwork sich nicht in vier Zahlen erfassen lässt. Die Theorie geht davon aus, dass diese Dimensionen bereits in den Komponenten enthalten sind, wie sie definiert wurden. Die Annahme wird dennoch als das anerkannt, was sie ist.</p>
+<p><strong>These — Zerlegbarkeit und Vergleichbarkeit.</strong>
+Jede kompetitive Sportart lässt sich vollständig und sinnvoll durch vier Komponenten beschreiben: Taktik, Physis, Skill und Material. Aus dieser Zerlegbarkeit folgt direkt, dass je zwei Sportarten strukturell verglichen werden können — weil sie im selben Beschreibungsraum ausgedrückt werden, ist ihre Ähnlichkeit oder Distanz wohldefiniert. Eine durch Physis dominierte und eine durch Taktik dominierte Sportart sind nicht nur qualitativ verschieden, sondern messbar weit auseinander.</p>
+<p>Das ist die Kernaussage dieser Arbeit. Sie ist keine Selbstverständlichkeit: man könnte argumentieren, dass bestimmte Sportarten sich der Reduktion widersetzen — dass die psychologische Dimension des Wettkampfs oder die schwer fassbare Qualität von Teamwork sich nicht in vier Zahlen erfassen lässt. Die folgenden Kapitel argumentieren dafür, dass diese Dimensionen bereits in den vier Komponenten enthalten sind, wie sie hier definiert werden. Die These ist also keine Annahme im strengen Sinn — sie wird durch das Vorgehen der Arbeit geprüft, nicht vorausgesetzt. Sie wird durch konkrete Sportartenanalysen (Beispiele), durch die Behandlung möglicher Einwände (Vorbehalte) und durch ein methodisches Verfahren (AHP) verteidigt. Der Leser kann am Ende selbst entscheiden, ob er sie für tragfähig hält.</p>
 <p><strong>Definition — Der Composition Vector.</strong>
-Aus Annahme 1 folgt, dass jede Sportart <em>S</em> formal als Tupel dargestellt werden kann:</p>
+Aus der These folgt, dass jede Sportart <em>S</em> formal als Tupel dargestellt werden kann:</p>
 <div class="math-block">S = (T, P, Sk, M)</div>
 
 <p>wobei <em>T</em> = Taktik, <em>P</em> = Physis, <em>Sk</em> = Skill, <em>M</em> = Material, und:</p>
 <div class="math-block">T + P + Sk + M = 1</div>
 
 <p>Alle Werte sind reelle Zahlen im Intervall [0, 1]. Für die meisten Sportarten gilt M = 0, was die Darstellung auf einen Drei-Komponenten-Vektor reduziert.<sup><a href="#fn1" id="fn1ref">1</a></sup></p>
-<p><strong>Korollar 1 — Vergleichbarkeit.</strong>
-Aus Annahme 1 und der Definition folgt direkt, dass je zwei Sportarten sinnvoll verglichen werden können. Weil jede Sportart im selben vierdimensionalen Raum ausgedrückt wird, ist die strukturelle Ähnlichkeit oder Distanz zwischen je zwei Sportarten wohldefiniert. Eine durch Physis dominierte und eine durch Taktik dominierte Sportart sind nicht nur qualitativ verschieden — sie liegen messbar weit auseinander.</p>
 <p><strong>Eine Bemerkung zu Theorie und Anwendung.</strong>
 Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen definiert, und jede Zuweisung, die die Bedingungen erfüllt, ist formal gültig. Konkreten Sportarten konkrete Gewichte zuzuordnen ist eine andere Sache — das ist ein Urteil, keine Messung. Dieser Schritt wird separat behandelt, unter Methodik.</p>
 <hr />
@@ -123,22 +123,25 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <h3 id="material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</h3>
 <p>Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund die Hälfte des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse <em>im gesamten Feld</em> prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.</p>
 <h3 id="zerlegbarkeit-kritik">Kritik an der Zerlegbarkeit</h3>
-<p>Annahme 1 behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten für eine fünfte werden hier kurz behandelt — und an ihrem Platz innerhalb des Modells verortet, statt eine eigene Achse zu bekommen.</p>
+<p>Die These behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten für eine fünfte werden hier kurz behandelt — und an ihrem Platz innerhalb des Modells verortet, statt eine eigene Achse zu bekommen.</p>
 <p><strong>Glück, Varianz, Zufall.</strong> Glück ist keine sportliche Leistung; die Komponenten beschreiben, was vom Athleten <em>verlangt</em> wird. Wo Zufallsmanagement zur Leistung wird — Wahrscheinlichkeiten rechnen, Gegner lesen wie im Poker — ist das Taktik. Über lange Wettkampfformate (eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund) mittelt sich Zufall ohnehin heraus.</p>
 <p><strong>Ästhetik und Wertungssport.</strong> Was Bewerter belohnen, ist im Wesentlichen Skill (saubere Ausführung) plus Physis (Schwierigkeitsgrad). Choreografie und Ausdruck sind eine interpretative Spielart von Skill, keine eigene Achse.</p>
 <p><strong>Mentale Härte.</strong> Bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck. Eine separate Komponente wäre Doppelzählung.</p>
 <p>Diese Antworten widerlegen die Einwände nicht; sie verorten sie innerhalb der bestehenden vier Komponenten. Wer das für unzureichend hält, sollte die Theorie entsprechend erweitern.</p>
 <hr />
 <h2 id="methodik">Methodik</h2>
-<p>Für jede Sportart werden vier Leitfragen angewandt — eine pro Komponente:</p>
+<p>Die konkreten Komponentengewichte für jede Sportart werden mit Fuzzy AHP (Analytic Hierarchy Process; Saaty 1980, Chang 1996) ermittelt — einem Verfahren der Entscheidungstheorie, das paarweise Urteile zwischen Kriterien in eine konsistente Gewichtsverteilung überführt. Die Wahl dieses Verfahrens ist keine Behauptung, dass die Werte dadurch <em>objektiv</em> werden. Sie hat zwei andere Gründe: erstens werden die Urteile, die in die Werte einfließen, sichtbar und überprüfbar; zweitens erzwingt das Verfahren eine Mindestkonsistenz der Urteile untereinander.</p>
+<p>Konkret wird für jede Sportart eine Paarvergleichsmatrix aufgestellt, in der jede der vier Komponenten gegen jede andere abgewogen wird. Die einzelnen Vergleiche folgen vier Leitfragen — eine pro Komponente:</p>
 <p><strong>Taktik:</strong> Wie stark bestimmt ein überlegener strategischer Ansatz — unabhängig von körperlicher Leistungsfähigkeit — den Ausgang eines Wettkampfs?</p>
 <p><strong>Physis:</strong> Wie stark wirkt sich ein messbarer Unterschied in athletischer oder mentaler Konditionierung auf das Ergebnis aus, alles andere gleich gehalten?</p>
 <p><strong>Skill:</strong> Wie sehr wird das Ergebnis durch die Präzision und Qualität erlernter menschlicher Technik bestimmt?</p>
 <p><strong>Material:</strong> Wie sehr würde ein signifikanter Ausrüstungsnachteil — unabhängig vom Athleten — das Ergebnis verändern?</p>
-<p>Die resultierenden Werte sind kuratierte Schätzungen, angegeben auf einem 5%-Raster. Falsche Präzision (23,7% zu schreiben, wenn man <em>grob ein Viertel</em> meint) würde ein Messverfahren suggerieren, das nicht existiert. Die Schätzungen sind durch Beobachtung, Argumentation und die Art von Diskussionen geprägt, die zustande kommen, wenn jemand zu viel Sport schaut und zu viel Zeit zum Nachdenken hat. Sie sind in gutem Glauben angeboten und werden überarbeitet, wenn bessere Argumente auftauchen.</p>
+<p>Die Antworten werden auf der Saaty-Skala (1 = gleich wichtig bis 9 = extrem viel wichtiger) ausgedrückt, in fuzzifizierter Form als Tripel (l, m, u) — Spielraum statt Punkturteil. Aus der Matrix wird der Gewichtsvektor abgeleitet, die Konsistenz geprüft (Consistency Ratio &lt; 0,10), defuzzifiziert und auf das 5%-Raster gerundet. Sportarten ohne strukturellen Materialeinfluss erhalten M = 0; die Vergleichsmatrix reduziert sich entsprechend auf 3×3.</p>
+<p>Die vollständigen Paarvergleichsmatrizen und Berechnungen für jede der sechs Beispielsportarten finden sich im <a href="#methodik-appendix">Methodik-Appendix</a>.</p>
+<p>Die resultierenden Werte sind keine Messungen. Sie sind strukturierte Urteile. AHP macht diese Urteile nicht objektiv — es macht sie konsistent und nachvollziehbar. Die Werte werden auf dem 5%-Raster angegeben; feinere Auflösung würde eine Präzision suggerieren, die in den Eingangsurteilen nicht enthalten ist.</p>
 <hr />
 <h2 id="beispiele">Beispiele</h2>
-<p>Die folgenden Aufschlüsselungen sind aktuelle Schätzungen. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung, warum die Werte so verteilt sind.</p>
+<p>Die folgenden Aufschlüsselungen sind mit dem im Methodik-Abschnitt beschriebenen AHP-Verfahren ermittelt (siehe <a href="#methodik-appendix">Methodik-Appendix</a> für die vollständigen Paarvergleichsmatrizen). Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung, warum die Werte so verteilt sind.</p>
 <div class="sport-charts">
 
 <div class="sport-entry">
@@ -146,17 +149,17 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics"   style="width:45%" title="Taktik: 45%"></div>
-    <div class="seg physical"  style="width:25%" title="Physis: 25%"></div>
+    <div class="seg tactics"   style="width:50%" title="Taktik: 50%"></div>
+    <div class="seg physical"  style="width:20%" title="Physis: 20%"></div>
     <div class="seg skill"     style="width:30%" title="Skill: 30%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 45%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 25%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 50%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span>
     <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
   </div>
 </div>
-<p class="sport-rationale">Auf Profiniveau ein vor allem taktisch entschiedener Sport: Formation, Pressinghöhe, Standardsituationen und Spielplan gegen einen bestimmten Gegner prägen Ergebnisse stärker als individuelle Klasse. Skill bleibt wichtig (Ballbehandlung, Passqualität), Physis ist Voraussetzung, aber selten der entscheidende Unterschied zwischen zwei Topteams. Kein Material — die Ausrüstung ist standardisiert und über die Liga hinweg vergleichbar.</p>
+<p class="sport-rationale">Auf Profiniveau ein vor allem taktisch entschiedener Sport: Formation, Pressinghöhe, Standardsituationen und Spielplan gegen einen bestimmten Gegner prägen Ergebnisse stärker als individuelle Klasse. Skill bleibt wichtig (Ballbehandlung, Passqualität); Physis ist Voraussetzung, aber zwischen zwei top-fitten Mannschaften selten der entscheidende Unterschied. Kein Material — die Ausrüstung ist standardisiert und über die Liga hinweg vergleichbar.</p>
 </div>
 
 <div class="sport-entry">
@@ -164,17 +167,17 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics"   style="width:20%" title="Taktik: 20%"></div>
-    <div class="seg physical"  style="width:35%" title="Physis: 35%"></div>
-    <div class="seg skill"     style="width:45%" title="Skill: 45%"></div>
+    <div class="seg tactics"   style="width:15%" title="Taktik: 15%"></div>
+    <div class="seg physical"  style="width:30%" title="Physis: 30%"></div>
+    <div class="seg skill"     style="width:55%" title="Skill: 55%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 35%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 45%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 15%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 55%</span>
   </div>
 </div>
-<p class="sport-rationale">Skill-getrieben: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie machen den Unterschied zwischen Top-100 und Top-10. Physis ist mit 35% hoch angesetzt, weil Best-of-Five-Matches über mehrere Stunden gehen können und der Wettkampfkalender erbarmungslos ist. Taktik ist real (Aufschlagmuster, Returnposition, Punktaufbau), bleibt aber stark an die individuelle Schlagqualität gekoppelt — strategische Pläne setzen sich nur durch, wenn die Ausführung sie trägt. Material ist 0, da Profis untereinander Zugang zu vergleichbarer Ausrüstung haben.</p>
+<p class="sport-rationale">Skill-dominiert: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie machen den Unterschied zwischen Top-100 und Top-10. Physis ist mit 30% hoch angesetzt, weil Best-of-Five-Matches über mehrere Stunden gehen können und der Wettkampfkalender erbarmungslos ist. Taktik ist real (Aufschlagmuster, Returnposition, Punktaufbau), bleibt aber stark an die individuelle Schlagqualität gekoppelt — strategische Pläne setzen sich nur durch, wenn die Ausführung sie trägt. Material ist 0, da Profis untereinander Zugang zu vergleichbarer Ausrüstung haben.</p>
 </div>
 
 <div class="sport-entry">
@@ -183,16 +186,16 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
     <div class="seg tactics"  style="width:5%"  title="Taktik: 5%"></div>
-    <div class="seg physical" style="width:65%" title="Physis: 65%"></div>
-    <div class="seg skill"    style="width:30%" title="Skill: 30%"></div>
+    <div class="seg physical" style="width:60%" title="Physis: 60%"></div>
+    <div class="seg skill"    style="width:35%" title="Skill: 35%"></div>
   </div>
   <div class="seg-legend">
     <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 65%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 60%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
   </div>
 </div>
-<p class="sport-rationale">Vor allem körperliche Anlage und Konditionierung: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill steckt in der Technik — Startphase, Beschleunigungsmuster, Lauftechnik — und ist substanzieller, als Laien vermuten. Taktik existiert nur in Mikroentscheidungen (Startverhalten, Bahnzuteilung, Rennrhythmus). Nicht 0, weil diese Entscheidungen messbar sind, aber niedrig genug, um klar dominant von Physis überlagert zu sein.</p>
+<p class="sport-rationale">Vor allem körperliche Anlage und Konditionierung: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill steckt in der Technik — Startphase, Beschleunigungsmuster, Lauftechnik — und ist substanzieller, als Laien vermuten. Die 35% reflektieren, dass Lauftechnik auf Spitzenniveau einen messbaren Unterschied macht. Taktik existiert nur in Mikroentscheidungen (Startverhalten, Bahnzuteilung, Rennrhythmus); niedrig, aber nicht null.</p>
 </div>
 
 <div class="sport-entry">
@@ -255,10 +258,10 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 
 </div>
 
-<p><small>* Die Prozentsätze sind kuratierte Schätzungen aus strukturierter qualitativer Analyse. Sie spiegeln die wohlüberlegte Meinung des Autors wider und sollten entsprechend behandelt werden — also ernst, aber nicht zu ernst.</small></p>
+<p><small>* Die Prozentsätze ergeben sich aus paarweisen Urteilen, strukturiert nach Fuzzy AHP. Die Methode macht die Urteile nachvollziehbar und konsistent — nicht objektiv. Die Werte sind ernst gemeint, aber nicht endgültig.</small></p>
 <hr />
 <h2 id="vergleich">Vergleich</h2>
-<p>Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Korollar 1 hat behauptet, dass jeder Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
+<p>Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Die These hat behauptet, dass jeder strukturelle Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
 <p>Die folgenden Beobachtungen sind in zwei Teile gegliedert. Der erste Teil ist strikte Konsequenz der Definition — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Der zweite Teil (folgt später) verlässt diesen rein formalen Rahmen und stellt Fragen, die die Theorie selbst nicht beantwortet.</p>
 <h3 id="strukturelle-distanz">Strukturelle Distanz</h3>
 <p>Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, lässt sich die strukturelle Distanz zwischen je zwei Sportarten als Euklidischer Abstand berechnen:</p>
@@ -272,27 +275,139 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <tr><th></th><th>Fußball</th><th>Tennis</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th></tr>
 </thead>
 <tbody>
-<tr><th>Fußball</th>         <td>—</td>    <td>0.31</td><td>0.57</td><td>0.43</td><td class="cell-near">0.30</td><td>0.64</td></tr>
-<tr><th>Tennis</th>          <td>0.31</td><td>—</td>    <td>0.37</td><td>0.74</td><td>0.35</td><td>0.68</td></tr>
-<tr><th>100m Sprint</th>     <td>0.57</td><td>0.37</td><td>—</td>    <td class="cell-far">0.95</td><td>0.41</td><td>0.81</td></tr>
-<tr><th>Schach</th>          <td>0.43</td><td>0.74</td><td class="cell-far">0.95</td><td>—</td>    <td>0.60</td><td>0.82</td></tr>
-<tr><th>Straßenradsport</th> <td class="cell-near">0.30</td><td>0.35</td><td>0.41</td><td>0.60</td><td>—</td>    <td>0.51</td></tr>
-<tr><th>Formel 1</th>        <td>0.64</td><td>0.68</td><td>0.81</td><td>0.82</td><td>0.51</td><td>—</td></tr>
+<tr><th>Fußball</th>         <td>—</td>    <td>0.44</td><td>0.60</td><td>0.37</td><td class="cell-near">0.35</td><td>0.65</td></tr>
+<tr><th>Tennis</th>          <td>0.44</td><td>—</td>    <td>0.37</td><td>0.82</td><td>0.46</td><td>0.71</td></tr>
+<tr><th>100m Sprint</th>     <td>0.60</td><td>0.37</td><td>—</td>    <td class="cell-far">0.94</td><td>0.41</td><td>0.78</td></tr>
+<tr><th>Schach</th>          <td>0.37</td><td>0.82</td><td class="cell-far">0.94</td><td>—</td>    <td>0.60</td><td>0.82</td></tr>
+<tr><th>Straßenradsport</th> <td class="cell-near">0.35</td><td>0.46</td><td>0.41</td><td>0.60</td><td>—</td>    <td>0.51</td></tr>
+<tr><th>Formel 1</th>        <td>0.65</td><td>0.71</td><td>0.78</td><td>0.82</td><td>0.51</td><td>—</td></tr>
 </tbody>
 </table>
 </div>
 
 <p>Werte sind auf zwei Nachkommastellen gerundet. Sie sollten so gelesen werden: Distanzen unter etwa 0.10 deuten auf strukturelle Ununterscheidbarkeit hin, Distanzen über 0.70 auf grundlegende Verschiedenheit. Alles dazwischen ist Abstufung.</p>
 <p>Aus der Matrix lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
-<p><strong>Fußball und Straßenradsport sind die nächsten Nachbarn.</strong> Mit einer Distanz von 0.30 sind sie das engste Paar in der Stichprobe — ein zunächst überraschender Befund, denn äußerlich haben ein Ballsport mit 22 Spielern auf einem Rasenfeld und ein dreiwöchiges Etappenrennen auf der Straße wenig gemein. Strukturell aber teilen sie viel: beide sind Mannschaftssportarten mit substanzieller taktischer Tiefe, ähnlichen Anteilen körperlicher Anforderung und einer untergeordneten Skill-Komponente. Dass Straßenradsport zusätzlich 15% Material trägt, das Fußball nicht hat, ist der einzige nennenswerte Unterschied — und erklärt, warum die Distanz überhaupt 0.30 beträgt und nicht weniger.</p>
-<p><strong>Schach ist das strukturelle Extrem.</strong> Es taucht in vier der sechs Sportarten als fernster Nachbar auf — gegen Sprint, Tennis, Straßenradsport und Formel 1. Die Distanz zwischen Schach und 100m Sprint (0.95) ist die größte in der gesamten Tabelle und liegt nahe am theoretischen Maximum. Das ist erwartbar: Schach ist die einzige Sportart in der Stichprobe, in der eine einzelne Komponente dominant ist (Taktik mit 80%). Diese Konzentration macht es zu jedem anderen Vektor extrem unähnlich, mit Ausnahme von Sportarten, in denen Taktik <em>ebenfalls</em> schwer wiegt — was unter den Beispielen nur auf Fußball halbwegs zutrifft (Distanz 0.43, der nächste Nachbar von Schach).</p>
-<p><strong>Straßenradsport ist das strukturelle Zentrum.</strong> Mit einer durchschnittlichen Distanz von 0.44 zu allen anderen Sportarten liegt Straßenradsport im Mittel näher an der Gesamtstichprobe als jede andere Disziplin. Fußball folgt knapp dahinter (0.45), Tennis an dritter Stelle (0.49). Am anderen Ende der Skala stehen Schach (0.71) und Formel 1 (0.69) als die strukturell isoliertesten Sportarten. Was diese Beobachtung suggeriert, ist nicht, dass Straßenradsport <em>typisch</em> sei — sondern dass eine breite Verteilung über alle Komponenten, einschließlich eines maßvollen Material-Anteils, ein gewisses strukturelles Schwerezentrum darstellt, von dem aus Spezialisierung (Schach in Richtung Taktik, Sprint in Richtung Physis, Formel 1 in Richtung Material) jeweils messbare Abweichung bedeutet.</p>
+<p><strong>Fußball und Straßenradsport sind die nächsten Nachbarn.</strong> Mit einer Distanz von 0.35 sind sie das engste Paar in der Stichprobe — ein zunächst überraschender Befund, denn äußerlich haben ein Ballsport mit 22 Spielern auf einem Rasenfeld und ein dreiwöchiges Etappenrennen auf der Straße wenig gemein. Strukturell aber teilen sie viel: beide sind Mannschaftssportarten mit hoher taktischer Tiefe, vergleichbarer körperlicher Anforderung und einer untergeordneten Skill-Komponente. Dass Straßenradsport zusätzlich 15% Material trägt, das Fußball nicht hat, erklärt, warum die Distanz überhaupt 0.35 beträgt und nicht weniger.</p>
+<p><strong>Schach ist das strukturelle Extrem.</strong> Es taucht in vier der sechs Sportarten als fernster Nachbar auf — gegen Sprint, Tennis, Straßenradsport und Formel 1. Die Distanz zwischen Schach und 100m Sprint (0.94) ist die größte in der gesamten Tabelle und liegt nahe am theoretischen Maximum. Das ist erwartbar: Schach ist die einzige Sportart in der Stichprobe, in der eine einzelne Komponente dominant ist (Taktik mit 80%). Diese Konzentration macht es zu jedem anderen Vektor extrem unähnlich, mit Ausnahme von Sportarten, in denen Taktik <em>ebenfalls</em> schwer wiegt — und unter den Beispielen ist das nur Fußball. Mit einer Distanz von 0.37 ist Fußball Schachs nächster Nachbar.</p>
+<p><strong>Straßenradsport ist das strukturelle Zentrum.</strong> Mit einer durchschnittlichen Distanz von 0.47 zu allen anderen Sportarten liegt Straßenradsport im Mittel näher an der Gesamtstichprobe als jede andere Disziplin. Fußball folgt knapp dahinter (0.49), Tennis an dritter Stelle (0.56). Am anderen Ende der Skala stehen Schach (0.71) und Formel 1 (0.69) als die strukturell isoliertesten Sportarten. Was diese Beobachtung suggeriert, ist nicht, dass Straßenradsport <em>typisch</em> sei — sondern dass eine breite Verteilung über alle Komponenten, einschließlich eines maßvollen Material-Anteils, ein gewisses strukturelles Schwerezentrum darstellt, von dem aus Spezialisierung (Schach in Richtung Taktik, Sprint in Richtung Physis, Formel 1 in Richtung Material) jeweils messbare Abweichung bedeutet.</p>
 <p>Diese drei Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
 <h4 id="grenzen-berechnung">Grenzen dieser Berechnung</h4>
-<p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat drei methodische Schwächen, die offen benannt werden sollten.</p>
+<p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat methodische Schwächen, die offen benannt werden sollten.</p>
 <p><strong>Die Komponenten werden als gleichwertig behandelt.</strong> Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie das Material-Caveat zeigt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.</p>
-<p><strong>Die Vektoren leben auf einem Simplex, nicht im freien Raum.</strong> Weil T + P + Sk + M = 1 gilt, sind die Vektoren auf einem dreidimensionalen Simplex eingebettet, nicht im vollen 4D-Raum. Das ist keine Schwäche der Distanzformel selbst — der Euklidische Abstand misst korrekt den Abstand auf diesem Simplex — wohl aber ein Hinweis darauf, dass Komponenten nicht unabhängig variieren können. Erhöht sich eine Komponente um 20 Prozentpunkte, müssen die anderen entsprechend nachgeben. Die Distanz misst dies konsistent, aber der Leser sollte sich bewusst sein, dass Bewegungen im Raum eingeschränkt sind.</p>
-<p><strong>Die Eingangswerte sind Schätzungen auf einem 5%-Raster.</strong> Eine Distanz von 0.30 zwischen Fußball und Straßenradsport ist genau so präzise wie die Vektoren, aus denen sie berechnet wurde — also nicht sehr. Eine Verschiebung um 5 Prozentpunkte in einer einzigen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden die Werte in der Tabelle auf zwei Nachkommastellen gerundet dargestellt; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.</p>
+<p><strong>Die Vektoren leben auf einem Simplex, nicht im freien Raum.</strong> Weil T + P + Sk + M = 1 gilt, sind die Vektoren auf einem dreidimensionalen Simplex eingebettet, nicht im vollen 4D-Raum. Das ist keine Schwäche der Distanzformel selbst — der Euklidische Abstand misst korrekt den Abstand auf diesem Simplex — wohl aber ein Hinweis darauf, dass Komponenten nicht unabhängig variieren können. Erhöht sich eine Komponente um 20 Prozentpunkte, müssen die anderen entsprechend nachgeben. Die Distanz misst dies konsistent, aber der Leser sollte sich bewusst sein, dass Bewegungen im Raum eingeschränkt sind. Für Daten dieser Struktur — sogenannte <em>compositional data</em> — existiert mit der Aitchison-Distanz (Aitchison 1986) ein mathematisch passenderes Distanzmaß, das Verhältnisse zwischen Komponenten statt absoluter Differenzen misst. Diese Theorie nutzt die einfachere Euklidische Variante, weil sie für die Größenordnungsvergleiche, die hier gemacht werden, ausreichend ist.</p>
+<p><strong>Die Eingangswerte sind Schätzungen auf einem 5%-Raster.</strong> Die Vektoren entstehen aus paarweisen Urteilen, nicht aus Messungen (siehe Methodik-Appendix). Eine Verschiebung um 5 Prozentpunkte in einer einzelnen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden die Werte in der Tabelle auf zwei Nachkommastellen gerundet dargestellt; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.</p>
+<hr />
+
+<h2 id="methodik-appendix">Methodik-Appendix: AHP-Berechnungen</h2>
+
+<p>Dieser Appendix dokumentiert die Paarvergleichsmatrizen, aus denen die Komponentengewichte der sechs Beispielsportarten abgeleitet wurden. Die Notation folgt der fuzzifizierten Saaty-Skala: ein Tripel (l, m, u) repräsentiert ein Urteil mit unterer Grenze l, mittlerem Wert m und oberer Grenze u. Beispiel: (2, 3, 4) bedeutet <em>etwa dreimal wichtiger, mit Spielraum zwischen zwei- und viermal</em>. Werte unter 1 (etwa 1/3) drücken die umgekehrte Richtung aus.</p>
+
+<p>Der Konsistenzindex (CR) wird über die klassische Eigenwert-Methode (Saaty) berechnet. Werte unter 0,10 gelten als ausreichend konsistent. Die Defuzzifizierung erfolgt per Center-of-Gravity-Methode ((l + m + u) / 3), die Gewichte werden aus dem geometrischen Zeilenmittel der defuzzifizierten Matrix abgeleitet und auf Summe 1 normalisiert.</p>
+
+<p>Bei Sportarten ohne strukturellen Materialeinfluss reduziert sich die Vergleichsmatrix auf 3×3 (T, P, Sk); Material wird extern auf 0 gesetzt und die übrigen Gewichte werden auf die verbleibenden 100% renormalisiert.</p>
+
+<div class="ahp-sport">
+<h4>Fußball</h4>
+<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table ahp-matrix">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+<tbody>
+<tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1, 2, 3)</td></tr>
+<tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
+<tr><th>Sk</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
+</tbody></table></div>
+<p class="ahp-meta">Konsistenz: CR = 0.023 (< 0,10 — Urteile sind konsistent)</p>
+<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.497, P = 0.211, Sk = 0.293</p>
+<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.50, P = 0.20, Sk = 0.30, M = 0.00</p>
+</div>
+
+<div class="ahp-sport">
+<h4>Tennis</h4>
+<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table ahp-matrix">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+<tbody>
+<tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/5, 1/4, 1/3)</td></tr>
+<tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
+<tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
+</tbody></table></div>
+<p class="ahp-meta">Konsistenz: CR = 0.012 (< 0,10 — Urteile sind konsistent)</p>
+<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.160, P = 0.295, Sk = 0.544</p>
+<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.15, P = 0.30, Sk = 0.55, M = 0.00</p>
+</div>
+
+<div class="ahp-sport">
+<h4>100m Sprint</h4>
+<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table ahp-matrix">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+<tbody>
+<tr><th>T</th><td>1</td><td>(1/9, 1/8, 1/7)</td><td>(1/7, 1/6, 1/5)</td></tr>
+<tr><th>P</th><td class="recip">(1/9, 1/8, 1/7)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
+<tr><th>Sk</th><td class="recip">(1/7, 1/6, 1/5)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
+</tbody></table></div>
+<p class="ahp-meta">Konsistenz: CR = 0.015 (< 0,10 — Urteile sind konsistent)</p>
+<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.066, P = 0.595, Sk = 0.339</p>
+<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.05, P = 0.60, Sk = 0.35, M = 0.00</p>
+</div>
+
+<div class="ahp-sport">
+<h4>Schach</h4>
+<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table ahp-matrix">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+<tbody>
+<tr><th>T</th><td>1</td><td>(7, 8, 9)</td><td>(7, 8, 9)</td></tr>
+<tr><th>P</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
+<tr><th>Sk</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
+</tbody></table></div>
+<p class="ahp-meta">Konsistenz: CR = 0.002 (< 0,10 — Urteile sind konsistent)</p>
+<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.800, P = 0.105, Sk = 0.095</p>
+<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.80, P = 0.10, Sk = 0.10, M = 0.00</p>
+</div>
+
+<div class="ahp-sport">
+<h4>Straßenradsport</h4>
+<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table ahp-matrix">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+<tbody>
+<tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(2, 3, 4)</td><td>(1, 2, 3)</td></tr>
+<tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(2, 3, 4)</td><td>(2, 3, 4)</td></tr>
+<tr><th>Sk</th><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
+<tr><th>M</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
+</tbody></table></div>
+<p class="ahp-meta">Konsistenz: CR = 0.014 (< 0,10 — Urteile sind konsistent)</p>
+<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.304, P = 0.430, Sk = 0.132, M = 0.135</p>
+<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.30, P = 0.40, Sk = 0.15, M = 0.15</p>
+</div>
+
+<div class="ahp-sport">
+<h4>Formel 1</h4>
+<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table ahp-matrix">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+<tbody>
+<tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1/2, 1, 2)</td><td>(1/4, 1/3, 1/2)</td></tr>
+<tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/6, 1/5, 1/4)</td></tr>
+<tr><th>Sk</th><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/5, 1/4, 1/3)</td></tr>
+<tr><th>M</th><td class="recip">(1/4, 1/3, 1/2)<sup>−1</sup></td><td class="recip">(1/6, 1/5, 1/4)<sup>−1</sup></td><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td></tr>
+</tbody></table></div>
+<p class="ahp-meta">Konsistenz: CR = 0.003 (< 0,10 — Urteile sind konsistent)</p>
+<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.195, P = 0.102, Sk = 0.158, M = 0.545</p>
+<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.20, P = 0.10, Sk = 0.15, M = 0.55</p>
+</div>
+
 <hr />
 <div class="footnotes">
 <p id="fn1"><sup>1</sup> Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material oben. <a href="#fn1ref">↩</a></p>

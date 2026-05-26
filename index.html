@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -16,6 +16,10 @@
       } catch (e) {}
     })();
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap">
 
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -65,7 +69,7 @@
 <main class="content" id="top">
   <header class="page-header">
     <h1>Sport Composition Theory</h1>
-    <p class="subtitle"><em>Ein Framework dafür, woraus eine Sportart eigentlich besteht.</em></p>
+    <p class="subtitle">Ein Framework dafür, woraus eine Sportart eigentlich besteht.</p>
   </header>
 
   <article class="article">
@@ -95,7 +99,7 @@ Aus der These folgt, dass jede Sportart <em>S</em> formal als Tupel dargestellt 
 <p>wobei <em>T</em> = Taktik, <em>P</em> = Physis, <em>Sk</em> = Skill, <em>M</em> = Material, und:</p>
 <div class="math-block">T + P + Sk + M = 1</div>
 
-<p>Alle Werte sind reelle Zahlen im Intervall [0, 1]. Für die meisten Sportarten gilt M = 0, was die Darstellung auf einen Drei-Komponenten-Vektor reduziert.<sup><a href="#fn1" id="fn1ref">1</a></sup></p>
+<p>Alle Werte sind reelle Zahlen im Intervall [0, 1]. Für die meisten Sportarten gilt M = 0, was die Darstellung auf einen Drei-Komponenten-Vektor reduziert.<label for="sn-1" class="sidenote-toggle"><sup>1</sup></label><input type="checkbox" id="sn-1" class="sidenote-checkbox"><span class="sidenote">Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material weiter unten.</span></p>
 <p><strong>Eine Bemerkung zu Theorie und Anwendung.</strong>
 Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen definiert, und jede Zuweisung, die die Bedingungen erfüllt, ist formal gültig. Konkreten Sportarten konkrete Gewichte zuzuordnen ist eine andere Sache — das ist ein Urteil, keine Messung. Dieser Schritt wird separat behandelt, unter Methodik.</p>
 <hr />
@@ -271,20 +275,64 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <p>Die folgende Tabelle zeigt die paarweisen Distanzen für die sechs Beispielsportarten:</p>
 <div class="distance-matrix-wrap">
 <table class="vector-table distance-matrix">
-<thead>
-<tr><th></th><th>Fußball</th><th>Tennis</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th></tr>
-</thead>
+<thead><tr><th></th>
+<th>Fußball</th>
+<th>Tennis</th>
+<th>100m</th>
+<th>Schach</th>
+<th>Rad</th>
+<th>F1</th>
+</tr></thead>
 <tbody>
-<tr><th>Fußball</th>         <td>—</td>    <td>0.44</td><td>0.60</td><td>0.37</td><td class="cell-near">0.35</td><td>0.65</td></tr>
-<tr><th>Tennis</th>          <td>0.44</td><td>—</td>    <td>0.37</td><td>0.82</td><td>0.46</td><td>0.71</td></tr>
-<tr><th>100m Sprint</th>     <td>0.60</td><td>0.37</td><td>—</td>    <td class="cell-far">0.94</td><td>0.41</td><td>0.78</td></tr>
-<tr><th>Schach</th>          <td>0.37</td><td>0.82</td><td class="cell-far">0.94</td><td>—</td>    <td>0.60</td><td>0.82</td></tr>
-<tr><th>Straßenradsport</th> <td class="cell-near">0.35</td><td>0.46</td><td>0.41</td><td>0.60</td><td>—</td>    <td>0.51</td></tr>
-<tr><th>Formel 1</th>        <td>0.65</td><td>0.71</td><td>0.78</td><td>0.82</td><td>0.51</td><td>—</td></tr>
-</tbody>
-</table>
-</div>
-
+<tr><th>Fußball</th>
+<td class="diag">—</td>
+<td class="heat-0">0.44</td>
+<td class="heat-2">0.60</td>
+<td class="heat-0">0.37</td>
+<td class="heat-0 cell-near">0.35</td>
+<td class="heat-2">0.65</td>
+</tr>
+<tr><th>Tennis</th>
+<td class="heat-0">0.44</td>
+<td class="diag">—</td>
+<td class="heat-0">0.37</td>
+<td class="heat-3">0.82</td>
+<td class="heat-0">0.46</td>
+<td class="heat-3">0.71</td>
+</tr>
+<tr><th>100m Sprint</th>
+<td class="heat-2">0.60</td>
+<td class="heat-0">0.37</td>
+<td class="diag">—</td>
+<td class="heat-4 cell-far">0.94</td>
+<td class="heat-0">0.41</td>
+<td class="heat-3">0.78</td>
+</tr>
+<tr><th>Schach</th>
+<td class="heat-0">0.37</td>
+<td class="heat-3">0.82</td>
+<td class="heat-4 cell-far">0.94</td>
+<td class="diag">—</td>
+<td class="heat-2">0.60</td>
+<td class="heat-3">0.82</td>
+</tr>
+<tr><th>Straßenradsport</th>
+<td class="heat-0 cell-near">0.35</td>
+<td class="heat-0">0.46</td>
+<td class="heat-0">0.41</td>
+<td class="heat-2">0.60</td>
+<td class="diag">—</td>
+<td class="heat-1">0.51</td>
+</tr>
+<tr><th>Formel 1</th>
+<td class="heat-2">0.65</td>
+<td class="heat-3">0.71</td>
+<td class="heat-3">0.78</td>
+<td class="heat-3">0.82</td>
+<td class="heat-1">0.51</td>
+<td class="diag">—</td>
+</tr>
+</tbody></table></div>
 <p>Werte sind auf zwei Nachkommastellen gerundet. Sie sollten so gelesen werden: Distanzen unter etwa 0.10 deuten auf strukturelle Ununterscheidbarkeit hin, Distanzen über 0.70 auf grundlegende Verschiedenheit. Alles dazwischen ist Abstufung.</p>
 <p>Aus der Matrix lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
 <p><strong>Fußball und Straßenradsport sind die nächsten Nachbarn.</strong> Mit einer Distanz von 0.35 sind sie das engste Paar in der Stichprobe — ein zunächst überraschender Befund, denn äußerlich haben ein Ballsport mit 22 Spielern auf einem Rasenfeld und ein dreiwöchiges Etappenrennen auf der Straße wenig gemein. Strukturell aber teilen sie viel: beide sind Mannschaftssportarten mit hoher taktischer Tiefe, vergleichbarer körperlicher Anforderung und einer untergeordneten Skill-Komponente. Dass Straßenradsport zusätzlich 15% Material trägt, das Fußball nicht hat, erklärt, warum die Distanz überhaupt 0.35 beträgt und nicht weniger.</p>
@@ -408,10 +456,6 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
 <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.20, P = 0.10, Sk = 0.15, M = 0.55</p>
 </div>
 
-<hr />
-<div class="footnotes">
-<p id="fn1"><sup>1</sup> Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material oben. <a href="#fn1ref">↩</a></p>
-</div>
   </article>
 </main>
 
@@ -466,6 +510,16 @@ Alles oben Stehende ist exakt. Der Composition Vector ist über reellen Zahlen d
     a.addEventListener('click', function () {
       if (window.matchMedia('(max-width: 1099px)').matches) close();
     });
+  });
+
+  // ---------- Heading anchor links ----------
+  document.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function (h) {
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.className = 'heading-anchor';
+    a.setAttribute('aria-label', 'Link zu diesem Abschnitt');
+    a.textContent = '#';
+    h.insertBefore(a, h.firstChild);
   });
 
   // ---------- Scrollspy: highlight active TOC entry ----------

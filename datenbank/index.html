@@ -39,6 +39,10 @@
   <li><a href="#schach">Schach</a></li>
   <li><a href="#strassenradsport">Straßenradsport</a></li>
   <li><a href="#formel-1">Formel 1</a></li>
+  <li><a href="#boxen">Boxen</a></li>
+  <li><a href="#triathlon">Triathlon</a></li>
+  <li><a href="#baseball">Baseball</a></li>
+  <li><a href="#super-g">Super G</a></li>
   <li><a href="#vergleich">Vergleich aller Sportarten</a></li>
 </ol>
     </nav>
@@ -270,6 +274,143 @@
   </div>
 </details>
 
+<details class="db-row" id="boxen">
+  <summary>
+    <span class="db-row-name">Boxen</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:40%" title="Physis: 40%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 40</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Profi · 12 Runden · 1 gegen 1</p>
+    <p class="sport-rationale">Skill und Physis prägen Boxen fast gleichermaßen, Skill leicht voran. Schlagtechnik, Beinarbeit, Distanzgefühl und Defensive bestimmen den Unterschied zwischen Champions und Mittelfeld. Konditionierte Ausdauer über bis zu 36 Minuten unter Maximalbelastung ist Voraussetzung. Taktik existiert (Gameplan, Stilanpassung, Pacing), bleibt aber kleiner als bei vielen anderen Kampfsportarten. Kein Material — Handschuhe und Ring sind reguliert.</p>
+
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1/5, 1/4, 1/3)</td><td>(1/5, 1/4, 1/3)</td></tr>
+              <tr><th>P</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td><td>(1/2, 2/3, 1)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/2, 2/3, 1)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.010 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.115, P = 0.395, Sk = 0.490</p>
+          <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.10, P = 0.40, Sk = 0.50, M = 0.00</p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="triathlon">
+  <summary>
+    <span class="db-row-name">Triathlon</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 60</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 15</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Olympische Distanz · 1.5 km Schwimmen, 40 km Rad, 10 km Lauf</p>
+    <p class="sport-rationale">Physis-dominiert: drei aufeinanderfolgende Ausdauerdisziplinen über ca. zwei Stunden Volllast. Skill ist real (Schwimm-Effizienz, Wechsel-Technik, Lauftechnik nach Rad), aber klein gegenüber der Konditionierung. Taktik existiert — Windschatten beim olympischen Radfahren erlaubt, Positionierung im Schwimmen. Material ist leicht über null, da Räder und Anzüge zwar reguliert, aber Optimierungen möglich sind.</p>
+
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1/7, 1/6, 1/5)</td><td>(1/2, 1, 2)</td><td>(1, 2, 3)</td></tr>
+              <tr><th>P</th><td class="recip">(1/7, 1/6, 1/5)<sup>−1</sup></td><td>1</td><td>(3, 4, 5)</td><td>(5, 6, 7)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td class="recip">(3, 4, 5)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
+              <tr><th>M</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(5, 6, 7)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.020 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.144, P = 0.627, Sk = 0.147, M = 0.082</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.15, P = 0.60, Sk = 0.15, M = 0.10</p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="baseball">
+  <summary>
+    <span class="db-row-name">Baseball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">MLB · 9 Innings · 9 gegen 9</p>
+    <p class="sport-rationale">Skill und Taktik prägen Baseball fast gleichermaßen. Schlagtechnik gegen Pitches mit 150 km/h ist eine der schwierigsten Skills im Sport; Pitching-Mechanik und Fielding stehen daneben. Taktik ist berühmt für ihre Tiefe — Pitch-Calling, Defensive Shifts, Stealing-Entscheidungen. Physis ist im Vergleich niedrig: Baseball ist kein Ausdauersport, sondern eine Folge kurzer Maximalakte. Material ist standardisiert.</p>
+
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(3, 4, 5)</td><td>(1/2, 2/3, 1)</td></tr>
+              <tr><th>P</th><td class="recip">(3, 4, 5)<sup>−1</sup></td><td>1</td><td>(1/5, 1/4, 1/3)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/2, 2/3, 1)<sup>−1</sup></td><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.013 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.399, P = 0.113, Sk = 0.488</p>
+          <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.40, P = 0.10, Sk = 0.50, M = 0.00</p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="super-g">
+  <summary>
+    <span class="db-row-name">Super G</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div><div class="seg material" style="width:25%" title="Material: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span><span class="db-chip"><span class="db-chip-dot material"></span>M 25</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Alpiner Skirennlauf · ein Lauf · Geschwindigkeiten über 120 km/h</p>
+    <p class="sport-rationale">Skill dominiert auf hohem Niveau: Skitechnik bei Höchstgeschwindigkeit, Linienwahl, Sprungtechnik bei Geländewellen. Material ist substanziell — Ski-Setup, Wachs, Bindung gehören zu den entscheidenden Faktoren, das Gefälle innerhalb des Spitzenfelds ist allerdings enger als bei Formel 1. Physis (Beinkraft, isometrische Belastung) ist Voraussetzung, Taktik ist auf Linienwahl im Voraus begrenzt — kein Gegnerinteraktion im Lauf.</p>
+
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/5, 1/4, 1/3)</td><td>(1/3, 1/2, 1)</td></tr>
+              <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/4, 1/3, 1/2)</td><td>(1/3, 1/2, 1)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/4, 1/3, 1/2)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
+              <tr><th>M</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.008 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.123, P = 0.170, Sk = 0.471, M = 0.236</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.10, P = 0.15, Sk = 0.50, M = 0.25</p>
+      </div>
+    </details>
+  </div>
+</details>
+
+
   </div>
 
   <section id="vergleich">
@@ -288,54 +429,126 @@
 
 <div class="distance-matrix-wrap large">
 <table class="vector-table distance-matrix large">
-<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th></tr></thead>
+<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th><th>Boxen</th><th>Tri</th><th>Bsbll</th><th>S-G</th></tr></thead>
 <tbody>
 <tr><th>Fußball</th>
 <td class="diag">—</td>
-<td class="heat-0">0.44</td>
+<td class="heat-1">0.44</td>
 <td class="heat-2">0.60</td>
-<td class="heat-0">0.37</td>
-<td class="heat-0 cell-near">0.35</td>
-<td class="heat-2">0.65</td>
+<td class="heat-1">0.37</td>
+<td class="heat-1">0.35</td>
+<td class="heat-3">0.65</td>
+<td class="heat-2">0.49</td>
+<td class="heat-2">0.56</td>
+<td class="heat-0">0.24</td>
+<td class="heat-2">0.51</td>
 </tr>
 <tr><th>Tennis</th>
-<td class="heat-0">0.44</td>
+<td class="heat-1">0.44</td>
 <td class="diag">—</td>
-<td class="heat-0">0.37</td>
-<td class="heat-3">0.82</td>
-<td class="heat-0">0.46</td>
+<td class="heat-1">0.37</td>
+<td class="heat-4">0.82</td>
+<td class="heat-2">0.46</td>
 <td class="heat-3">0.71</td>
+<td class="heat-0 cell-near">0.12</td>
+<td class="heat-2">0.51</td>
+<td class="heat-1">0.32</td>
+<td class="heat-1">0.30</td>
 </tr>
 <tr><th>100m Sprint</th>
 <td class="heat-2">0.60</td>
-<td class="heat-0">0.37</td>
+<td class="heat-1">0.37</td>
 <td class="diag">—</td>
 <td class="heat-4 cell-far">0.94</td>
-<td class="heat-0">0.41</td>
-<td class="heat-3">0.78</td>
+<td class="heat-1">0.41</td>
+<td class="heat-4">0.78</td>
+<td class="heat-0">0.25</td>
+<td class="heat-0">0.24</td>
+<td class="heat-3">0.63</td>
+<td class="heat-2">0.54</td>
 </tr>
 <tr><th>Schach</th>
-<td class="heat-0">0.37</td>
-<td class="heat-3">0.82</td>
+<td class="heat-1">0.37</td>
+<td class="heat-4">0.82</td>
 <td class="heat-4 cell-far">0.94</td>
 <td class="diag">—</td>
 <td class="heat-2">0.60</td>
-<td class="heat-3">0.82</td>
+<td class="heat-4">0.82</td>
+<td class="heat-4">0.86</td>
+<td class="heat-4">0.83</td>
+<td class="heat-2">0.57</td>
+<td class="heat-4">0.85</td>
 </tr>
 <tr><th>Straßenradsport</th>
-<td class="heat-0 cell-near">0.35</td>
-<td class="heat-0">0.46</td>
-<td class="heat-0">0.41</td>
+<td class="heat-1">0.35</td>
+<td class="heat-2">0.46</td>
+<td class="heat-1">0.41</td>
 <td class="heat-2">0.60</td>
 <td class="diag">—</td>
-<td class="heat-1">0.51</td>
+<td class="heat-2">0.51</td>
+<td class="heat-1">0.43</td>
+<td class="heat-0">0.25</td>
+<td class="heat-2">0.49</td>
+<td class="heat-2">0.48</td>
 </tr>
 <tr><th>Formel 1</th>
-<td class="heat-2">0.65</td>
+<td class="heat-3">0.65</td>
 <td class="heat-3">0.71</td>
-<td class="heat-3">0.78</td>
-<td class="heat-3">0.82</td>
-<td class="heat-1">0.51</td>
+<td class="heat-4">0.78</td>
+<td class="heat-4">0.82</td>
+<td class="heat-2">0.51</td>
+<td class="diag">—</td>
+<td class="heat-3">0.72</td>
+<td class="heat-3">0.67</td>
+<td class="heat-3">0.68</td>
+<td class="heat-2">0.47</td>
+</tr>
+<tr><th>Boxen</th>
+<td class="heat-2">0.49</td>
+<td class="heat-0 cell-near">0.12</td>
+<td class="heat-0">0.25</td>
+<td class="heat-4">0.86</td>
+<td class="heat-1">0.43</td>
+<td class="heat-3">0.72</td>
+<td class="diag">—</td>
+<td class="heat-1">0.42</td>
+<td class="heat-1">0.42</td>
+<td class="heat-1">0.35</td>
+</tr>
+<tr><th>Triathlon</th>
+<td class="heat-2">0.56</td>
+<td class="heat-2">0.51</td>
+<td class="heat-0">0.24</td>
+<td class="heat-4">0.83</td>
+<td class="heat-0">0.25</td>
+<td class="heat-3">0.67</td>
+<td class="heat-1">0.42</td>
+<td class="diag">—</td>
+<td class="heat-3">0.67</td>
+<td class="heat-2">0.59</td>
+</tr>
+<tr><th>Baseball</th>
+<td class="heat-0">0.24</td>
+<td class="heat-1">0.32</td>
+<td class="heat-3">0.63</td>
+<td class="heat-2">0.57</td>
+<td class="heat-2">0.49</td>
+<td class="heat-3">0.68</td>
+<td class="heat-1">0.42</td>
+<td class="heat-3">0.67</td>
+<td class="diag">—</td>
+<td class="heat-1">0.39</td>
+</tr>
+<tr><th>Super G</th>
+<td class="heat-2">0.51</td>
+<td class="heat-1">0.30</td>
+<td class="heat-2">0.54</td>
+<td class="heat-4">0.85</td>
+<td class="heat-2">0.48</td>
+<td class="heat-2">0.47</td>
+<td class="heat-1">0.35</td>
+<td class="heat-2">0.59</td>
+<td class="heat-1">0.39</td>
 <td class="diag">—</td>
 </tr>
 </tbody></table></div>
@@ -421,7 +634,7 @@
 <script type="module">
 import * as THREE from 'three';
 
-const sportsData = [{"name": "Fußball", "color": "#e63946", "components": [0.5, 0.2, 0.3, 0.0], "slug": "fussball"}, {"name": "Tennis", "color": "#06a77d", "components": [0.15, 0.3, 0.55, 0.0], "slug": "tennis"}, {"name": "100m Sprint", "color": "#f4a261", "components": [0.05, 0.6, 0.35, 0.0], "slug": "100m-sprint"}, {"name": "Schach", "color": "#264653", "components": [0.8, 0.1, 0.1, 0.0], "slug": "schach"}, {"name": "Straßenradsport", "color": "#6f4e7c", "components": [0.3, 0.4, 0.15, 0.15], "slug": "strassenradsport"}, {"name": "Formel 1", "color": "#1d4e89", "components": [0.2, 0.1, 0.15, 0.55], "slug": "formel-1"}];
+const sportsData = [{"name": "Fußball", "color": "#e63946", "components": [0.5, 0.2, 0.3, 0.0], "slug": "fussball"}, {"name": "Tennis", "color": "#06a77d", "components": [0.15, 0.3, 0.55, 0.0], "slug": "tennis"}, {"name": "100m Sprint", "color": "#f4a261", "components": [0.05, 0.6, 0.35, 0.0], "slug": "100m-sprint"}, {"name": "Schach", "color": "#264653", "components": [0.8, 0.1, 0.1, 0.0], "slug": "schach"}, {"name": "Straßenradsport", "color": "#6f4e7c", "components": [0.3, 0.4, 0.15, 0.15], "slug": "strassenradsport"}, {"name": "Formel 1", "color": "#1d4e89", "components": [0.2, 0.1, 0.15, 0.55], "slug": "formel-1"}, {"name": "Boxen", "color": "#c1121f", "components": [0.1, 0.4, 0.5, 0.0], "slug": "boxen"}, {"name": "Triathlon", "color": "#0096c7", "components": [0.15, 0.6, 0.15, 0.1], "slug": "triathlon"}, {"name": "Baseball", "color": "#bc8a3f", "components": [0.4, 0.1, 0.5, 0.0], "slug": "baseball"}, {"name": "Super G", "color": "#8d99ae", "components": [0.1, 0.15, 0.5, 0.25], "slug": "super-g"}];
 
 const cornerLabels = { T: 'Taktik', P: 'Physis', Sk: 'Skill', M: 'Material' };
 
@@ -458,7 +671,7 @@ overlay.style.left = '0';
 overlay.style.width = '100%';
 overlay.style.height = '100%';
 overlay.style.pointerEvents = 'none';
-overlay.style.overflow = 'hidden';
+overlay.style.overflow = 'visible';
 container.style.position = 'relative';
 container.appendChild(overlay);
 
@@ -695,10 +908,9 @@ function animate(now) {
   
   // Ecken-Labels positionieren — knapp außerhalb der Ecke in Richtung Außen
   Object.keys(vertices).forEach(k => {
-    const v = vertices[k].clone();
-    // Knapp nach außen verlängern
+    const v = vertices[k];
     const dir = v.clone().normalize();
-    const outwardPos = v.add(dir.multiplyScalar(0.35));
+    const outwardPos = v.clone().add(dir.multiplyScalar(0.2));
     const p = projectToScreen(outwardPos);
     const el = cornerLabelEls[k];
     el.style.left = p.x + 'px';

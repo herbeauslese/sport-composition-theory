@@ -153,21 +153,38 @@ hr {
 /* ---------- Database page ---------- */
 
 .db-sport {
-  margin: 3em 0;
-  padding-bottom: 2.5em;
+  margin: 1.8em 0;
+  padding-bottom: 1.5em;
   border-bottom: 1px solid var(--border-soft);
 }
 .db-sport:last-of-type { border-bottom: none; }
-.db-sport h2 {
+.db-sport h3 {
   margin-top: 0;
-  margin-bottom: 0.15em;
-  border: none;
-  padding-bottom: 0;
+  margin-bottom: 0.1em;
+  font-size: 1.15em;
+}
+.db-sport .sport-meta {
+  margin-bottom: 0.55em;
+  font-size: 0.8em;
+}
+.db-sport .stacked-bar {
+  height: 18px;
+}
+.db-sport .sport-rationale {
+  margin-top: 0.7em;
+  font-size: 0.9em;
+  line-height: 1.55;
+}
+.db-sport .seg-legend {
+  gap: 4px 14px;
+}
+.db-sport .leg-item {
+  font-size: 0.75em;
 }
 
 /* Ausklappbare Berechnung (<details>) */
 .ahp-details {
-  margin-top: 1.5em;
+  margin-top: 1em;
   border: 1px solid var(--border-soft);
   border-radius: 3px;
   padding: 0;
@@ -175,9 +192,9 @@ hr {
 }
 .ahp-details summary {
   cursor: pointer;
-  padding: 0.7em 1em;
+  padding: 0.55em 0.9em;
   font-family: 'Inter', sans-serif;
-  font-size: 0.85em;
+  font-size: 0.8em;
   font-weight: 500;
   color: var(--text-muted);
   user-select: none;
@@ -204,45 +221,34 @@ hr {
   color: var(--text-body);
 }
 .ahp-content {
-  padding: 1em 1.25em 1.25em;
+  padding: 0.9em 1.1em 1.1em;
 }
 .ahp-content .ahp-label:first-child { margin-top: 0; }
 .ahp-content > *:last-child { margin-bottom: 0; }
 
-/* ---------- Spider chart ---------- */
+/* ---------- 3D Tetraeder ---------- */
 
-.spider-wrap {
+.tetra-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1.5em 0 0.5em;
 }
-.spider-chart {
+.tetra-canvas {
   width: 100%;
   max-width: 500px;
-  height: auto;
+  height: 420px;
+  cursor: grab;
+}
+.tetra-canvas:active {
+  cursor: grabbing;
+}
+.tetra-canvas canvas {
   display: block;
-}
-.spider-grid {
-  fill: none;
-  stroke: var(--border-soft);
-  stroke-width: 1;
-}
-.spider-axis {
-  stroke: var(--border-soft);
-  stroke-width: 1;
-}
-.spider-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  fill: var(--text-body);
-}
-.spider-sport {
-  transition: fill-opacity 0.2s, stroke-opacity 0.2s, stroke-width 0.2s;
+  margin: 0 auto;
 }
 
-.spider-legend {
+.tetra-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6em 1.2em;
@@ -250,24 +256,18 @@ hr {
   margin-top: 1em;
   max-width: 500px;
 }
-.spider-legend-item {
+.tetra-legend-item {
   font-family: 'Inter', sans-serif;
   font-size: 0.85em;
   color: var(--text-body);
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  cursor: default;
-  user-select: none;
-  transition: opacity 0.15s;
 }
-.spider-legend-item:hover {
-  font-weight: 600;
-}
-.spider-legend-swatch {
+.tetra-legend-swatch {
   width: 12px;
   height: 12px;
-  border-radius: 2px;
+  border-radius: 50%;
   display: inline-block;
 }
 

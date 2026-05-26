@@ -12,12 +12,28 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.7;
   background: var(--bg-page);
   color: var(--text-body);
   transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* UI elements (sidebar, navbar, buttons, toc) use the sans-serif */
+.sidebar, .sidebar-toggle, .sidebar-controls, .toc, .toc-title,
+button, code, .ahp-matrix, .vector-table, .math-block,
+.sport-meta, .seg-legend, .leg-item, .ahp-meta, .ahp-label,
+small {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Headings use Inter for clearer visual hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 600;
 }
 
 :target { scroll-margin-top: 1rem; }
@@ -87,7 +103,7 @@ body {
 /* ---------- Layout: floating sidebar + content ---------- */
 
 .content {
-  max-width: 780px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 3rem 1.5rem 4rem 1.5rem;
 }
@@ -97,6 +113,13 @@ body {
     margin-left: calc(220px + 4rem);
     margin-right: auto;
     padding-left: 0;
+  }
+}
+
+/* On very wide screens, leave room for sidenotes on the right */
+@media (min-width: 1400px) {
+  .content {
+    margin-right: 270px;
   }
 }
 
@@ -276,19 +299,49 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-strong);
-  line-height: 1.3;
-  margin-top: 1.8em;
+  line-height: 1.25;
+  margin-top: 2em;
   margin-bottom: 0.5em;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
-h1 { font-size: 2.2em; margin-top: 0; }
+h1 {
+  font-size: 2.6em;
+  margin-top: 0;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
 h2 {
-  font-size: 1.6em;
+  font-size: 1.75em;
   border-bottom: 1px solid var(--border-soft);
   padding-bottom: 0.3em;
+  margin-top: 2.5em;
 }
-h3 { font-size: 1.25em; }
-h4 { font-size: 1.05em; }
+h3 { font-size: 1.3em; margin-top: 2em; }
+h4 { font-size: 1.05em; margin-top: 1.5em; }
+
+/* Hover anchor links for headings with IDs */
+h2[id], h3[id], h4[id] {
+  position: relative;
+}
+.heading-anchor {
+  position: absolute;
+  left: -1.2em;
+  top: 0;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  font-weight: 400;
+  text-decoration: none;
+  padding-right: 0.3em;
+}
+h2[id]:hover .heading-anchor,
+h3[id]:hover .heading-anchor,
+h4[id]:hover .heading-anchor {
+  opacity: 0.5;
+}
+.heading-anchor:hover {
+  opacity: 1 !important;
+}
 
 p { margin: 0 0 1em 0; }
 
@@ -311,12 +364,55 @@ hr {
 
 sup { font-size: 0.75em; }
 
-.page-header h1 { margin-bottom: 0.2em; }
+.page-header {
+  margin-bottom: 3.5em;
+  padding-bottom: 2em;
+  position: relative;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 4px;
+  display: flex;
+  background: linear-gradient(to right,
+    #2d5a3d 0%, #2d5a3d 25%,
+    #8b4513 25%, #8b4513 50%,
+    #1a3a6b 50%, #1a3a6b 75%,
+    #6b2d6b 75%, #6b2d6b 100%);
+  border-radius: 2px;
+}
+:root[data-theme="dark"] .page-header::after {
+  background: linear-gradient(to right,
+    #4ea66c 0%, #4ea66c 25%,
+    #d18d4a 25%, #d18d4a 50%,
+    #5a8fd8 50%, #5a8fd8 75%,
+    #b56fb5 75%, #b56fb5 100%);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .page-header::after {
+    background: linear-gradient(to right,
+      #4ea66c 0%, #4ea66c 25%,
+      #d18d4a 25%, #d18d4a 50%,
+      #5a8fd8 50%, #5a8fd8 75%,
+      #b56fb5 75%, #b56fb5 100%);
+  }
+}
+.page-header h1 {
+  margin-bottom: 0.3em;
+  letter-spacing: -0.03em;
+}
 .page-header .subtitle {
-  font-size: 1.1em;
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25em;
   color: var(--text-muted);
   margin-top: 0;
-  margin-bottom: 2.5em;
+  margin-bottom: 0;
+  line-height: 1.5;
+  max-width: 38em;
 }
 
 /* ---------- Sport entry: stacked bar + rationale ---------- */
@@ -343,13 +439,25 @@ sup { font-size: 0.75em; }
 .stacked-bar {
   display: flex;
   width: 100%;
-  height: 18px;
+  height: 22px;
   border-radius: 3px;
   overflow: hidden;
   gap: 2px;
   background: var(--bg-bar-track);
+  cursor: default;
 }
-.seg { height: 100%; }
+.seg {
+  height: 100%;
+  transition: filter 0.15s ease, transform 0.15s ease;
+  position: relative;
+}
+.seg:hover {
+  filter: brightness(1.15) saturate(1.1);
+  z-index: 2;
+}
+.stacked-bar:hover .seg:not(:hover) {
+  filter: brightness(0.85) saturate(0.7);
+}
 
 .seg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .leg-item {
@@ -415,29 +523,49 @@ sup { font-size: 0.75em; }
   background: transparent;
 }
 
-/* Distance matrix highlights — light */
+/* Distance matrix: heatmap shading (5 bins from near to far) */
+.distance-matrix .diag {
+  color: var(--text-muted);
+  text-align: center;
+}
+.distance-matrix .heat-0 { background: rgba(45, 90, 61, 0.20); }
+.distance-matrix .heat-1 { background: rgba(45, 90, 61, 0.10); }
+.distance-matrix .heat-2 { background: rgba(139, 69, 19, 0.08); }
+.distance-matrix .heat-3 { background: rgba(139, 69, 19, 0.16); }
+.distance-matrix .heat-4 { background: rgba(139, 69, 19, 0.26); }
+
+/* Extrema get a subtle outline as a second visual cue */
 .distance-matrix .cell-near {
-  background: rgba(45, 90, 61, 0.18);
+  outline: 2px solid rgba(45, 90, 61, 0.6);
+  outline-offset: -2px;
   font-weight: bold;
 }
 .distance-matrix .cell-far {
-  background: rgba(139, 69, 19, 0.18);
+  outline: 2px solid rgba(139, 69, 19, 0.6);
+  outline-offset: -2px;
   font-weight: bold;
 }
-/* Distance matrix highlights — dark */
+
+/* Dark mode: brighter heatmap palette */
+:root[data-theme="dark"] .distance-matrix .heat-0 { background: rgba(78, 166, 108, 0.22); }
+:root[data-theme="dark"] .distance-matrix .heat-1 { background: rgba(78, 166, 108, 0.12); }
+:root[data-theme="dark"] .distance-matrix .heat-2 { background: rgba(209, 141, 74, 0.10); }
+:root[data-theme="dark"] .distance-matrix .heat-3 { background: rgba(209, 141, 74, 0.20); }
+:root[data-theme="dark"] .distance-matrix .heat-4 { background: rgba(209, 141, 74, 0.32); }
 :root[data-theme="dark"] .distance-matrix .cell-near {
-  background: rgba(78, 166, 108, 0.22);
+  outline-color: rgba(78, 166, 108, 0.7);
 }
 :root[data-theme="dark"] .distance-matrix .cell-far {
-  background: rgba(209, 141, 74, 0.22);
+  outline-color: rgba(209, 141, 74, 0.7);
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .distance-matrix .cell-near {
-    background: rgba(78, 166, 108, 0.22);
-  }
-  :root:not([data-theme="light"]) .distance-matrix .cell-far {
-    background: rgba(209, 141, 74, 0.22);
-  }
+  :root:not([data-theme="light"]) .distance-matrix .heat-0 { background: rgba(78, 166, 108, 0.22); }
+  :root:not([data-theme="light"]) .distance-matrix .heat-1 { background: rgba(78, 166, 108, 0.12); }
+  :root:not([data-theme="light"]) .distance-matrix .heat-2 { background: rgba(209, 141, 74, 0.10); }
+  :root:not([data-theme="light"]) .distance-matrix .heat-3 { background: rgba(209, 141, 74, 0.20); }
+  :root:not([data-theme="light"]) .distance-matrix .heat-4 { background: rgba(209, 141, 74, 0.32); }
+  :root:not([data-theme="light"]) .distance-matrix .cell-near { outline-color: rgba(78, 166, 108, 0.7); }
+  :root:not([data-theme="light"]) .distance-matrix .cell-far { outline-color: rgba(209, 141, 74, 0.7); }
 }
 
 /* ---------- Math block ---------- */
@@ -451,17 +579,117 @@ sup { font-size: 0.75em; }
   color: var(--text-body);
 }
 
-/* ---------- Footnotes ---------- */
+/* ---------- Sidenotes (Tufte-style) ---------- */
 
-.footnotes {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid var(--border-soft);
-  font-size: 0.82em;
+.sidenote-toggle {
+  cursor: pointer;
+  color: var(--text-link);
+}
+.sidenote-toggle sup {
+  font-size: 0.75em;
+  margin: 0 0.05em;
+}
+.sidenote-checkbox {
+  display: none;
+}
+
+.sidenote {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.85em;
+  line-height: 1.5;
   color: var(--text-muted);
+  font-style: normal;
+}
+
+/* Wide layout: float sidenotes to the right of the text */
+@media (min-width: 1400px) {
+  .sidenote {
+    float: right;
+    clear: right;
+    width: 220px;
+    margin-right: -250px;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 1em;
+    position: relative;
+  }
+  .sidenote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    bottom: 0.3em;
+    width: 2px;
+    background: var(--border-soft);
+  }
+}
+
+/* Narrow layout: hide by default, reveal on click via checkbox hack */
+@media (max-width: 1399px) {
+  .sidenote {
+    display: none;
+    margin: 0.8em 0;
+    padding: 0.6em 0.9em;
+    background: var(--bg-mathblock);
+    border-left: 3px solid var(--border-soft);
+    border-radius: 0 3px 3px 0;
+  }
+  .sidenote-checkbox:checked + .sidenote {
+    display: block;
+  }
+  .sidenote-toggle:hover sup {
+    text-decoration: underline;
+  }
 }
 
 small { color: var(--text-muted); }
+
+/* ---------- AHP Appendix ---------- */
+
+.ahp-sport {
+  margin: 2.2em 0;
+  padding: 1.25em 1.5em;
+  background: var(--bg-mathblock);
+  border-left: 3px solid var(--border-math);
+  border-radius: 0 4px 4px 0;
+}
+.ahp-sport h4 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.ahp-label {
+  font-size: 0.88em;
+  color: var(--text-muted);
+  margin-bottom: 0.3em;
+}
+.ahp-meta {
+  font-size: 0.88em;
+  color: var(--text-muted);
+  margin: 0.4em 0;
+}
+.ahp-result {
+  margin-top: 0.8em;
+  margin-bottom: 0;
+  color: var(--text-body);
+}
+
+.ahp-matrix th,
+.ahp-matrix td {
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.88em;
+}
+.ahp-matrix tbody th {
+  text-align: center;
+  background: transparent;
+  color: var(--text-strong);
+  font-weight: bold;
+}
+.ahp-matrix .recip {
+  color: var(--text-muted);
+  font-style: italic;
+}
 
 /* ---------- Component colours: light mode ---------- */
 

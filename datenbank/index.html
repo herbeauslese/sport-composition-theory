@@ -59,264 +59,218 @@
 
   <article class="article">
 
-  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede zeigt ihre Komponentenzerlegung als Balken, eine kurze Charakterisierung, und — auf Wunsch ausklappbar — die vollständige AHP-Berechnung, aus der die Werte hervorgehen. Unter den Sportarten folgen zwei Übersichtsdarstellungen: ein 3D-Tetraeder mit allen Sportarten als Punkte im Komponentenraum, und die Distanzmatrix für strukturelle Vergleiche.</p>
+  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige AHP-Berechnung. Unter den Sportarten folgt ein interaktiver 3D-Tetraeder, in dem alle Sportarten als Punkte verortet sind, sowie die Distanzmatrix.</p>
 
   <p>Hintergrund zur Theorie selbst, zur Methodik und zu den Vorbehalten findet sich in der <a href="../">Haupttheorie</a>.</p>
 
-  <hr>
+  <h2>Sportarten</h2>
 
-<section class="db-sport" id="fussball">
-  <h3>Fußball</h3>
-  <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
+  <div class="db-list">
+<details class="db-row" id="fussball">
+  <summary>
+    <span class="db-row-name">Fußball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:50%" title="Taktik: 50%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 50</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
+    <p class="sport-rationale">Auf Profiniveau ein vor allem taktisch entschiedener Sport. Formation, Pressinghöhe und Spielplan gegen einen bestimmten Gegner prägen Ergebnisse stärker als individuelle Klasse. Skill bleibt wichtig, Physis ist Voraussetzung. Kein Material — die Ausrüstung ist standardisiert.</p>
 
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-    <div class="seg tactics" style="width:50%" title="Taktik: 50%"></div>
-    <div class="seg physical" style="width:20%" title="Physis: 20%"></div>
-    <div class="seg skill" style="width:30%" title="Skill: 30%"></div>
-    </div>
-    <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 50%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
-    </div>
-  </div>
-
-  <p class="sport-rationale">Auf Profiniveau ein vor allem taktisch entschiedener Sport. Formation, Pressinghöhe und Spielplan gegen einen bestimmten Gegner prägen Ergebnisse stärker als individuelle Klasse. Skill bleibt wichtig, Physis ist Voraussetzung. Kein Material — die Ausrüstung ist standardisiert.</p>
-
-  <details class="ahp-details">
-    <summary>Berechnung anzeigen</summary>
-    <div class="ahp-content">
-      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-      <div class="distance-matrix-wrap">
-      <table class="vector-table ahp-matrix">
-        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-        <tbody>
-          <tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1, 2, 3)</td></tr>
-          <tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
-          <tr><th>Sk</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
-        </tbody>
-      </table>
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1, 2, 3)</td></tr>
+              <tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.023 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.497, P = 0.211, Sk = 0.293</p>
+          <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.50, P = 0.20, Sk = 0.30, M = 0.00</p>
       </div>
-      <p class="ahp-meta">Konsistenz: CR = 0.023 (&lt; 0,10 — Urteile sind konsistent)</p>
-      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.497, P = 0.211, Sk = 0.293</p>
-      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.50, P = 0.20, Sk = 0.30, M = 0.00</p>
-    </div>
-  </details>
-</section>
-
-<section class="db-sport" id="tennis">
-  <h3>Tennis</h3>
-  <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
-
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-    <div class="seg tactics" style="width:15%" title="Taktik: 15%"></div>
-    <div class="seg physical" style="width:30%" title="Physis: 30%"></div>
-    <div class="seg skill" style="width:55%" title="Skill: 55%"></div>
-    </div>
-    <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 15%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 55%</span>
-    </div>
+    </details>
   </div>
+</details>
 
-  <p class="sport-rationale">Skill-dominiert: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie entscheiden auf Spitzenniveau. Physis trägt mit, weil Matches lang und der Kalender erbarmungslos sind. Taktik ist real, aber an die Ausführung gebunden — strategische Pläne setzen sich nur durch, wenn die Schlagqualität sie trägt.</p>
+<details class="db-row" id="tennis">
+  <summary>
+    <span class="db-row-name">Tennis</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
+    <p class="sport-rationale">Skill-dominiert: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie entscheiden auf Spitzenniveau. Physis trägt mit, weil Matches lang und der Kalender erbarmungslos sind. Taktik ist real, aber an die Ausführung gebunden — strategische Pläne setzen sich nur durch, wenn die Schlagqualität sie trägt.</p>
 
-  <details class="ahp-details">
-    <summary>Berechnung anzeigen</summary>
-    <div class="ahp-content">
-      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-      <div class="distance-matrix-wrap">
-      <table class="vector-table ahp-matrix">
-        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-        <tbody>
-          <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/5, 1/4, 1/3)</td></tr>
-          <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
-          <tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
-        </tbody>
-      </table>
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/5, 1/4, 1/3)</td></tr>
+              <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.012 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.160, P = 0.295, Sk = 0.544</p>
+          <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.15, P = 0.30, Sk = 0.55, M = 0.00</p>
       </div>
-      <p class="ahp-meta">Konsistenz: CR = 0.012 (&lt; 0,10 — Urteile sind konsistent)</p>
-      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.160, P = 0.295, Sk = 0.544</p>
-      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.15, P = 0.30, Sk = 0.55, M = 0.00</p>
-    </div>
-  </details>
-</section>
-
-<section class="db-sport" id="100m-sprint">
-  <h3>100m Sprint</h3>
-  <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
-
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-    <div class="seg tactics" style="width:5%" title="Taktik: 5%"></div>
-    <div class="seg physical" style="width:60%" title="Physis: 60%"></div>
-    <div class="seg skill" style="width:35%" title="Skill: 35%"></div>
-    </div>
-    <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 60%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
-    </div>
+    </details>
   </div>
+</details>
 
-  <p class="sport-rationale">Vor allem körperliche Anlage und Konditionierung: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill steckt in der Technik — Startphase, Beschleunigungsmuster, Lauftechnik — und ist substanzieller, als Laien vermuten. Taktik existiert nur in Mikroentscheidungen.</p>
+<details class="db-row" id="100m-sprint">
+  <summary>
+    <span class="db-row-name">100m Sprint</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 5</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 60</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
+    <p class="sport-rationale">Vor allem körperliche Anlage und Konditionierung: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill steckt in der Technik — Startphase, Beschleunigungsmuster, Lauftechnik — und ist substanzieller, als Laien vermuten. Taktik existiert nur in Mikroentscheidungen.</p>
 
-  <details class="ahp-details">
-    <summary>Berechnung anzeigen</summary>
-    <div class="ahp-content">
-      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-      <div class="distance-matrix-wrap">
-      <table class="vector-table ahp-matrix">
-        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-        <tbody>
-          <tr><th>T</th><td>1</td><td>(1/9, 1/8, 1/7)</td><td>(1/7, 1/6, 1/5)</td></tr>
-          <tr><th>P</th><td class="recip">(1/9, 1/8, 1/7)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
-          <tr><th>Sk</th><td class="recip">(1/7, 1/6, 1/5)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
-        </tbody>
-      </table>
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1/9, 1/8, 1/7)</td><td>(1/7, 1/6, 1/5)</td></tr>
+              <tr><th>P</th><td class="recip">(1/9, 1/8, 1/7)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/7, 1/6, 1/5)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.015 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.066, P = 0.595, Sk = 0.339</p>
+          <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.05, P = 0.60, Sk = 0.35, M = 0.00</p>
       </div>
-      <p class="ahp-meta">Konsistenz: CR = 0.015 (&lt; 0,10 — Urteile sind konsistent)</p>
-      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.066, P = 0.595, Sk = 0.339</p>
-      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.05, P = 0.60, Sk = 0.35, M = 0.00</p>
-    </div>
-  </details>
-</section>
-
-<section class="db-sport" id="schach">
-  <h3>Schach</h3>
-  <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
-
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-    <div class="seg tactics" style="width:80%" title="Taktik: 80%"></div>
-    <div class="seg physical" style="width:10%" title="Physis: 10%"></div>
-    <div class="seg skill" style="width:10%" title="Skill: 10%"></div>
-    </div>
-    <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 80%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
-    </div>
+    </details>
   </div>
+</details>
 
-  <p class="sport-rationale">Das strukturelle Extrem: Taktik dominiert deutlich. Schach ist die einzige Beispielsportart mit einer einzelnen Komponente über 50%. Physis (Konzentrationsausdauer, mentale Belastbarkeit über mehrere Stunden) und Skill (Erkennen wiederkehrender Muster, Eröffnungsrepertoire) sind real, aber klein im Vergleich.</p>
+<details class="db-row" id="schach">
+  <summary>
+    <span class="db-row-name">Schach</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:80%" title="Taktik: 80%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:10%" title="Skill: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 80</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
+    <p class="sport-rationale">Das strukturelle Extrem: Taktik dominiert deutlich. Schach ist die einzige Beispielsportart mit einer einzelnen Komponente über 50%. Physis (Konzentrationsausdauer, mentale Belastbarkeit über mehrere Stunden) und Skill (Erkennen wiederkehrender Muster, Eröffnungsrepertoire) sind real, aber klein im Vergleich.</p>
 
-  <details class="ahp-details">
-    <summary>Berechnung anzeigen</summary>
-    <div class="ahp-content">
-      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-      <div class="distance-matrix-wrap">
-      <table class="vector-table ahp-matrix">
-        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-        <tbody>
-          <tr><th>T</th><td>1</td><td>(7, 8, 9)</td><td>(7, 8, 9)</td></tr>
-          <tr><th>P</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
-          <tr><th>Sk</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
-        </tbody>
-      </table>
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(7, 8, 9)</td><td>(7, 8, 9)</td></tr>
+              <tr><th>P</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
+              <tr><th>Sk</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.002 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.800, P = 0.105, Sk = 0.095</p>
+          <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.80, P = 0.10, Sk = 0.10, M = 0.00</p>
       </div>
-      <p class="ahp-meta">Konsistenz: CR = 0.002 (&lt; 0,10 — Urteile sind konsistent)</p>
-      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.800, P = 0.105, Sk = 0.095</p>
-      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.80, P = 0.10, Sk = 0.10, M = 0.00</p>
-    </div>
-  </details>
-</section>
-
-<section class="db-sport" id="strassenradsport">
-  <h3>Straßenradsport</h3>
-  <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
-
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-    <div class="seg tactics" style="width:30%" title="Taktik: 30%"></div>
-    <div class="seg physical" style="width:40%" title="Physis: 40%"></div>
-    <div class="seg skill" style="width:15%" title="Skill: 15%"></div>
-    <div class="seg material" style="width:15%" title="Material: 15%"></div>
-    </div>
-    <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 30%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 40%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
-    <span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
-    </div>
+    </details>
   </div>
+</details>
 
-  <p class="sport-rationale">Ausdauerleistung mit erheblichem taktischen Überbau. Physis ist die Basis. Taktik ist auf Profiniveau ein Teamspiel — Domestiquen-Einsatz, Ausreißerkalkül, Positionierung in entscheidenden Momenten. Skill betrifft Fahrtechnik und Risikomanagement bei Abfahrten. Material ist real, aber innerhalb der World Tour begrenzt.</p>
+<details class="db-row" id="strassenradsport">
+  <summary>
+    <span class="db-row-name">Straßenradsport</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:40%" title="Physis: 40%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 40</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 15</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
+    <p class="sport-rationale">Ausdauerleistung mit erheblichem taktischen Überbau. Physis ist die Basis. Taktik ist auf Profiniveau ein Teamspiel — Domestiquen-Einsatz, Ausreißerkalkül, Positionierung in entscheidenden Momenten. Skill betrifft Fahrtechnik und Risikomanagement bei Abfahrten. Material ist real, aber innerhalb der World Tour begrenzt.</p>
 
-  <details class="ahp-details">
-    <summary>Berechnung anzeigen</summary>
-    <div class="ahp-content">
-      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-      <div class="distance-matrix-wrap">
-      <table class="vector-table ahp-matrix">
-        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
-        <tbody>
-          <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(2, 3, 4)</td><td>(1, 2, 3)</td></tr>
-          <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(2, 3, 4)</td><td>(2, 3, 4)</td></tr>
-          <tr><th>Sk</th><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
-          <tr><th>M</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
-        </tbody>
-      </table>
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(2, 3, 4)</td><td>(1, 2, 3)</td></tr>
+              <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(2, 3, 4)</td><td>(2, 3, 4)</td></tr>
+              <tr><th>Sk</th><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
+              <tr><th>M</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.014 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.304, P = 0.430, Sk = 0.132, M = 0.135</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.30, P = 0.40, Sk = 0.15, M = 0.15</p>
       </div>
-      <p class="ahp-meta">Konsistenz: CR = 0.014 (&lt; 0,10 — Urteile sind konsistent)</p>
-      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.304, P = 0.430, Sk = 0.132, M = 0.135</p>
-      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.30, P = 0.40, Sk = 0.15, M = 0.15</p>
-    </div>
-  </details>
-</section>
-
-<section class="db-sport" id="formel-1">
-  <h3>Formel 1</h3>
-  <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
-
-  <div class="stacked-bar-wrap">
-    <div class="stacked-bar">
-    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div>
-    <div class="seg physical" style="width:10%" title="Physis: 10%"></div>
-    <div class="seg skill" style="width:15%" title="Skill: 15%"></div>
-    <div class="seg material" style="width:55%" title="Material: 55%"></div>
-    </div>
-    <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span>
-    <span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span>
-    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
-    <span class="leg-item"><span class="leg-dot material"></span>Material 55%</span>
-    </div>
+    </details>
   </div>
+</details>
 
-  <p class="sport-rationale">Material-dominiert: über eine Saison hinweg entscheidet die Konstrukteursleistung mehr über das Klassement als jede individuelle Fahrerstärke. Taktik ist substanzielle Größe und teils Teamleistung. Skill differenziert die Fahrer untereinander, ist aber innerhalb des Spitzenfelds enger gestreut als das Materialgefälle.</p>
+<details class="db-row" id="formel-1">
+  <summary>
+    <span class="db-row-name">Formel 1</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:55%" title="Material: 55%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 15</span><span class="db-chip"><span class="db-chip-dot material"></span>M 55</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
+    <p class="sport-rationale">Material-dominiert: über eine Saison hinweg entscheidet die Konstrukteursleistung mehr über das Klassement als jede individuelle Fahrerstärke. Taktik ist substanzielle Größe und teils Teamleistung. Skill differenziert die Fahrer untereinander, ist aber innerhalb des Spitzenfelds enger gestreut als das Materialgefälle.</p>
 
-  <details class="ahp-details">
-    <summary>Berechnung anzeigen</summary>
-    <div class="ahp-content">
-      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-      <div class="distance-matrix-wrap">
-      <table class="vector-table ahp-matrix">
-        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
-        <tbody>
-          <tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1/2, 1, 2)</td><td>(1/4, 1/3, 1/2)</td></tr>
-          <tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/6, 1/5, 1/4)</td></tr>
-          <tr><th>Sk</th><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/5, 1/4, 1/3)</td></tr>
-          <tr><th>M</th><td class="recip">(1/4, 1/3, 1/2)<sup>−1</sup></td><td class="recip">(1/6, 1/5, 1/4)<sup>−1</sup></td><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td></tr>
-        </tbody>
-      </table>
+    <details class="ahp-details">
+      <summary>Berechnung anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+        <div class="distance-matrix-wrap">
+          <table class="vector-table ahp-matrix">
+            <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+            <tbody>
+              <tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1/2, 1, 2)</td><td>(1/4, 1/3, 1/2)</td></tr>
+              <tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/6, 1/5, 1/4)</td></tr>
+              <tr><th>Sk</th><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/5, 1/4, 1/3)</td></tr>
+              <tr><th>M</th><td class="recip">(1/4, 1/3, 1/2)<sup>−1</sup></td><td class="recip">(1/6, 1/5, 1/4)<sup>−1</sup></td><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ahp-meta">Konsistenz: CR = 0.003 (&lt; 0,10 — Urteile sind konsistent)</p>
+        <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.195, P = 0.102, Sk = 0.158, M = 0.545</p>
+        <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.20, P = 0.10, Sk = 0.15, M = 0.55</p>
       </div>
-      <p class="ahp-meta">Konsistenz: CR = 0.003 (&lt; 0,10 — Urteile sind konsistent)</p>
-      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.195, P = 0.102, Sk = 0.158, M = 0.545</p>
-      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.20, P = 0.10, Sk = 0.15, M = 0.55</p>
-    </div>
-  </details>
-</section>
+    </details>
+  </div>
+</details>
 
-
-  <hr>
+  </div>
 
   <section id="vergleich">
   <h2>Vergleich aller Sportarten</h2>
@@ -393,12 +347,10 @@
   </article>
 </main>
 
-<!-- Three.js für Tetraeder-Visualisierung -->
 <script type="importmap">
 {
   "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
   }
 }
 </script>
@@ -453,10 +405,22 @@
     a.textContent = '#';
     h.insertBefore(a, h.firstChild);
   });
+
+  // Wenn ein Link aus der Sidebar auf eine ID einer geschlossenen db-row zeigt,
+  // soll diese automatisch geöffnet werden.
+  function openTargetRow() {
+    var hash = location.hash;
+    if (!hash) return;
+    var el = document.querySelector(hash);
+    if (el && el.classList.contains('db-row')) {
+      el.open = true;
+    }
+  }
+  window.addEventListener('hashchange', openTargetRow);
+  openTargetRow();
 })();
 </script>
 
-<!-- Tetraeder-Modul -->
 <script type="module">
 import * as THREE from 'three';
 
@@ -465,14 +429,11 @@ const sportsData = [{"name": "Fußball", "color": "#e63946", "components": [0.5,
 const container = document.getElementById('tetra-canvas');
 const legendEl = document.getElementById('tetra-legend');
 
-// Größe
 const W = container.clientWidth;
-const H = 420;
+const H = 460;
 
-// Tetraeder-Ecken: reguläres Tetraeder, Centroid im Ursprung.
-// T oben; P, Sk, M auf Kreis um Y-Achse bei y = -R/3, 120° versetzt.
 const R = 2;
-const r = R * Math.sqrt(8/9);  // Radius des Kreises der unteren drei Ecken
+const r = R * Math.sqrt(8/9);
 const vertices = {
   T:  new THREE.Vector3( 0,                          R,    0),
   P:  new THREE.Vector3( r*Math.cos(Math.PI/2),    -R/3, r*Math.sin(Math.PI/2)),
@@ -480,10 +441,8 @@ const vertices = {
   M:  new THREE.Vector3( r*Math.cos(11*Math.PI/6), -R/3, r*Math.sin(11*Math.PI/6))
 };
 
-// Scene, Camera, Renderer
 const scene = new THREE.Scene();
-
-const camera = new THREE.PerspectiveCamera(40, W/H, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(38, W/H, 0.1, 100);
 camera.position.set(0, 1.2, 7);
 camera.lookAt(0, 0, 0);
 
@@ -492,108 +451,192 @@ renderer.setSize(W, H);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 container.appendChild(renderer.domElement);
 
-// Tetraeder-Kanten
+// Beleuchtung für räumlichen Eindruck der Kugeln
+const ambient = new THREE.AmbientLight(0xffffff, 0.55);
+scene.add(ambient);
+const keyLight = new THREE.DirectionalLight(0xffffff, 0.85);
+keyLight.position.set(3, 5, 4);
+scene.add(keyLight);
+const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+fillLight.position.set(-3, -2, -3);
+scene.add(fillLight);
+
 function getThemeColors() {
   var dark = document.documentElement.getAttribute('data-theme') === 'dark' ||
              (document.documentElement.getAttribute('data-theme') !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
   return {
-    edge: dark ? 0x555555 : 0x999999,
-    label: dark ? '#e6edf3' : '#222222'
+    edge: dark ? 0x666666 : 0x555555,
+    face: dark ? 0xffffff : 0x000000,
+    faceOpacity: dark ? 0.025 : 0.018,
+    label: dark ? '#e6edf3' : '#1f2328',
+    drop: dark ? 0x888888 : 0x444444
   };
 }
 
-let edgeMat;
 const tetraGroup = new THREE.Group();
 scene.add(tetraGroup);
 
-function buildEdges() {
-  while (tetraGroup.children.length) tetraGroup.remove(tetraGroup.children[0]);
+// Tetraeder-Flächen (sehr dezent, geben aber Tiefe)
+let faceMeshes = [];
+function buildFaces() {
+  faceMeshes.forEach(m => tetraGroup.remove(m));
+  faceMeshes = [];
   const colors = getThemeColors();
-  edgeMat = new THREE.LineBasicMaterial({ color: colors.edge, transparent: true, opacity: 0.6 });
+  const faces = [
+    ['T','P','Sk'], ['T','Sk','M'], ['T','M','P'], ['P','M','Sk']
+  ];
+  faces.forEach(([a,b,c]) => {
+    const g = new THREE.BufferGeometry().setFromPoints([vertices[a], vertices[b], vertices[c]]);
+    g.setIndex([0,1,2]);
+    g.computeVertexNormals();
+    const m = new THREE.MeshBasicMaterial({
+      color: colors.face,
+      transparent: true,
+      opacity: colors.faceOpacity,
+      side: THREE.DoubleSide,
+      depthWrite: false
+    });
+    const mesh = new THREE.Mesh(g, m);
+    tetraGroup.add(mesh);
+    faceMeshes.push(mesh);
+  });
+}
+
+// Tetraeder-Kanten (kräftiger als vorher)
+let edgeLines = [];
+function buildEdges() {
+  edgeLines.forEach(l => tetraGroup.remove(l));
+  edgeLines = [];
+  const colors = getThemeColors();
+  const edgeMat = new THREE.LineBasicMaterial({ color: colors.edge, transparent: true, opacity: 0.85 });
   const edges = [['T','P'],['T','Sk'],['T','M'],['P','Sk'],['P','M'],['Sk','M']];
   edges.forEach(([a,b]) => {
     const g = new THREE.BufferGeometry().setFromPoints([vertices[a], vertices[b]]);
-    tetraGroup.add(new THREE.Line(g, edgeMat));
+    const line = new THREE.Line(g, edgeMat);
+    tetraGroup.add(line);
+    edgeLines.push(line);
   });
 }
+
+buildFaces();
 buildEdges();
 
-// Ecken-Labels mit Sprites
+// Eck-Labels mit Schatten für Lesbarkeit
 function makeLabelSprite(text, color) {
   const cnv = document.createElement('canvas');
-  cnv.width = 128; cnv.height = 64;
+  cnv.width = 256; cnv.height = 128;
   const ctx = cnv.getContext('2d');
-  ctx.font = 'bold 36px Inter, sans-serif';
-  ctx.fillStyle = color;
+  ctx.font = 'bold 72px Inter, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(text, 64, 32);
+  // Schatten
+  ctx.shadowColor = 'rgba(0,0,0,0.3)';
+  ctx.shadowBlur = 4;
+  ctx.fillStyle = color;
+  ctx.fillText(text, 128, 64);
   const tex = new THREE.CanvasTexture(cnv);
   tex.needsUpdate = true;
-  const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+  const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false });
   const sprite = new THREE.Sprite(mat);
-  sprite.scale.set(0.7, 0.35, 1);
+  sprite.scale.set(0.9, 0.45, 1);
+  sprite.renderOrder = 10;
   return sprite;
 }
 
-const labels = {};
+const labelSprites = {};
 function rebuildLabels() {
   ['T','P','Sk','M'].forEach(k => {
-    if (labels[k]) tetraGroup.remove(labels[k]);
+    if (labelSprites[k]) tetraGroup.remove(labelSprites[k]);
   });
   const colors = getThemeColors();
   ['T','P','Sk','M'].forEach(k => {
     const v = vertices[k];
     const dir = v.clone().normalize();
-    const pos = v.clone().add(dir.multiplyScalar(0.5));
+    const pos = v.clone().add(dir.multiplyScalar(0.45));
     const sp = makeLabelSprite(k, colors.label);
     sp.position.copy(pos);
     tetraGroup.add(sp);
-    labels[k] = sp;
+    labelSprites[k] = sp;
   });
 }
 rebuildLabels();
 
-// Sportart-Punkte
+// Sportart-Kugeln mit Drop-Lines zum Boden für Tiefen-Eindruck
 const pointGroup = new THREE.Group();
 tetraGroup.add(pointGroup);
 
-sportsData.forEach(s => {
-  // Baryzentrische Koordinaten — direkt aus den Komponenten
-  const [t, p, sk, m] = s.components;
-  const pos = new THREE.Vector3()
-    .addScaledVector(vertices.T, t)
-    .addScaledVector(vertices.P, p)
-    .addScaledVector(vertices.Sk, sk)
-    .addScaledVector(vertices.M, m);
-  
-  const geo = new THREE.SphereGeometry(0.08, 16, 16);
-  const mat = new THREE.MeshBasicMaterial({ color: new THREE.Color(s.color) });
-  const mesh = new THREE.Mesh(geo, mat);
-  mesh.position.copy(pos);
-  mesh.userData = { name: s.name, slug: s.slug };
-  pointGroup.add(mesh);
-});
+const dropLines = [];
 
-// Rotation per Maus
-let isDragging = false;
-let prevX = 0, prevY = 0;
-let rotX = 0.2, rotY = 0.5;
+function buildPoints() {
+  while (pointGroup.children.length) pointGroup.remove(pointGroup.children[0]);
+  dropLines.length = 0;
+  const colors = getThemeColors();
+  
+  // Boden-Ebene-Y für Drop-Lines (in der Ebene des Bodens des Tetraeders bei y = -R/3)
+  const floorY = -R/3;
+  
+  sportsData.forEach(s => {
+    const [t, p, sk, m] = s.components;
+    const pos = new THREE.Vector3()
+      .addScaledVector(vertices.T, t)
+      .addScaledVector(vertices.P, p)
+      .addScaledVector(vertices.Sk, sk)
+      .addScaledVector(vertices.M, m);
+    
+    // Sphere mit Material das Licht aufnimmt
+    const geo = new THREE.SphereGeometry(0.11, 24, 24);
+    const sphereMat = new THREE.MeshLambertMaterial({ color: new THREE.Color(s.color) });
+    const mesh = new THREE.Mesh(geo, sphereMat);
+    mesh.position.copy(pos);
+    mesh.userData = { name: s.name, slug: s.slug };
+    
+    // Weißer Ring um die Kugel als Highlight
+    const ringGeo = new THREE.RingGeometry(0.12, 0.14, 24);
+    const ringMat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(s.color),
+      side: THREE.DoubleSide,
+      transparent: true,
+      opacity: 0.45,
+      depthWrite: false
+    });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.position.copy(pos);
+    // Ring soll immer zur Kamera zeigen — wir lassen ihn in der Animation aktualisieren
+    ring.userData.billboard = true;
+    pointGroup.add(ring);
+    
+    pointGroup.add(mesh);
+    
+    // Drop-Line zum Boden — sehr dezent, hilft beim Tiefen-Lesen
+    const lineMat = new THREE.LineBasicMaterial({
+      color: colors.drop,
+      transparent: true,
+      opacity: 0.25
+    });
+    const linePts = [pos.clone(), new THREE.Vector3(pos.x, floorY, pos.z)];
+    const lineGeo = new THREE.BufferGeometry().setFromPoints(linePts);
+    const line = new THREE.Line(lineGeo, lineMat);
+    pointGroup.add(line);
+    dropLines.push(line);
+  });
+}
+buildPoints();
+
+// Drag-Rotation
+let isDragging = false, prevX = 0, prevY = 0;
+let rotX = 0.25, rotY = 0.6;
 
 const canvas = renderer.domElement;
 canvas.addEventListener('mousedown', (e) => { isDragging = true; prevX = e.clientX; prevY = e.clientY; });
 window.addEventListener('mouseup', () => { isDragging = false; });
 window.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
-  const dx = e.clientX - prevX;
-  const dy = e.clientY - prevY;
-  rotY += dx * 0.01;
-  rotX += dy * 0.01;
+  rotY += (e.clientX - prevX) * 0.01;
+  rotX += (e.clientY - prevY) * 0.01;
   rotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotX));
   prevX = e.clientX; prevY = e.clientY;
 });
 
-// Touch
 canvas.addEventListener('touchstart', (e) => {
   if (e.touches.length === 1) {
     isDragging = true;
@@ -605,25 +648,37 @@ canvas.addEventListener('touchend', () => { isDragging = false; });
 canvas.addEventListener('touchmove', (e) => {
   if (!isDragging || e.touches.length !== 1) return;
   e.preventDefault();
-  const dx = e.touches[0].clientX - prevX;
-  const dy = e.touches[0].clientY - prevY;
-  rotY += dx * 0.01;
-  rotX += dy * 0.01;
+  rotY += (e.touches[0].clientX - prevX) * 0.01;
+  rotX += (e.touches[0].clientY - prevY) * 0.01;
   rotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotX));
   prevX = e.touches[0].clientX;
   prevY = e.touches[0].clientY;
 }, { passive: false });
 
-// Animation
+// Animation: Tetraeder rotieren, Ringe immer zur Kamera ausrichten
 function animate() {
   requestAnimationFrame(animate);
   tetraGroup.rotation.x = rotX;
   tetraGroup.rotation.y = rotY;
+  
+  // Ringe billboarden — sie sollen immer zur Kamera schauen
+  pointGroup.children.forEach(child => {
+    if (child.userData && child.userData.billboard) {
+      // Ring befindet sich in tetraGroup's lokalen Koordinaten — wir holen Welt-Position
+      const worldPos = new THREE.Vector3();
+      child.getWorldPosition(worldPos);
+      // Quaternion so setzen, dass der Ring zur Kamera schaut
+      child.lookAt(camera.position);
+      // Die Tetra-Gruppen-Rotation müssen wir kompensieren
+      const inverse = tetraGroup.quaternion.clone().invert();
+      child.quaternion.premultiply(inverse);
+    }
+  });
+  
   renderer.render(scene, camera);
 }
 animate();
 
-// Resize
 window.addEventListener('resize', () => {
   const w = container.clientWidth;
   camera.aspect = w/H;
@@ -631,10 +686,11 @@ window.addEventListener('resize', () => {
   renderer.setSize(w, H);
 });
 
-// Theme-change-Beobachter — Kanten/Labels neu einfärben
 const themeObserver = new MutationObserver(() => {
+  buildFaces();
   buildEdges();
   rebuildLabels();
+  buildPoints();
 });
 themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
@@ -645,7 +701,6 @@ sportsData.forEach(s => {
   item.innerHTML = '<span class="tetra-legend-swatch" style="background:' + s.color + '"></span>' + s.name;
   legendEl.appendChild(item);
 });
-
 </script>
 
 </body>

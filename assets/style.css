@@ -1,7 +1,7 @@
 /* ============================================================
    Sport Composition Theory — minimalist black-and-white edition
    Wide margins. Centered text. Components are the only colour.
-   ============================================================ */
+   ============================================================ */ 
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }

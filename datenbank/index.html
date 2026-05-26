@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">  
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -59,14 +59,14 @@
 
   <article class="article">
 
-  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede zeigt ihre Komponentenzerlegung als Balken, eine kurze Charakterisierung, und — auf Wunsch ausklappbar — die vollständige AHP-Berechnung, aus der die Werte hervorgehen. Unter den Sportarten folgen zwei Übersichtsdarstellungen: ein Spider-Chart, das alle Profile überlagert, und die Distanzmatrix für strukturelle Vergleiche.</p>
+  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede zeigt ihre Komponentenzerlegung als Balken, eine kurze Charakterisierung, und — auf Wunsch ausklappbar — die vollständige AHP-Berechnung, aus der die Werte hervorgehen. Unter den Sportarten folgen zwei Übersichtsdarstellungen: ein 3D-Tetraeder mit allen Sportarten als Punkte im Komponentenraum, und die Distanzmatrix für strukturelle Vergleiche.</p>
 
   <p>Hintergrund zur Theorie selbst, zur Methodik und zu den Vorbehalten findet sich in der <a href="../">Haupttheorie</a>.</p>
 
   <hr>
 
 <section class="db-sport" id="fussball">
-  <h2>Fußball</h2>
+  <h3>Fußball</h3>
   <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
 
   <div class="stacked-bar-wrap">
@@ -107,7 +107,7 @@
 </section>
 
 <section class="db-sport" id="tennis">
-  <h2>Tennis</h2>
+  <h3>Tennis</h3>
   <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
 
   <div class="stacked-bar-wrap">
@@ -148,7 +148,7 @@
 </section>
 
 <section class="db-sport" id="100m-sprint">
-  <h2>100m Sprint</h2>
+  <h3>100m Sprint</h3>
   <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
 
   <div class="stacked-bar-wrap">
@@ -189,7 +189,7 @@
 </section>
 
 <section class="db-sport" id="schach">
-  <h2>Schach</h2>
+  <h3>Schach</h3>
   <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
 
   <div class="stacked-bar-wrap">
@@ -230,7 +230,7 @@
 </section>
 
 <section class="db-sport" id="strassenradsport">
-  <h2>Straßenradsport</h2>
+  <h3>Straßenradsport</h3>
   <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
 
   <div class="stacked-bar-wrap">
@@ -273,7 +273,7 @@
 </section>
 
 <section class="db-sport" id="formel-1">
-  <h2>Formel 1</h2>
+  <h3>Formel 1</h3>
   <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
 
   <div class="stacked-bar-wrap">
@@ -321,46 +321,14 @@
   <section id="vergleich">
   <h2>Vergleich aller Sportarten</h2>
 
-  <h3>Komponentenprofile im Vergleich</h3>
-  <p>Jede Sportart als Polygon im Komponentenraum. Achsen zeigen die vier Komponenten (Taktik oben, Physis rechts, Skill unten, Material links). Eine ausgedehnte Spitze in eine Richtung bedeutet hohes Gewicht in dieser Komponente.</p>
+  <h3>Komponentenraum als Tetraeder</h3>
+  <p>Ein Composition Vector mit vier Komponenten, die auf 1 summieren, liegt mathematisch auf einem 3-Simplex — einem Tetraeder. Jede Ecke entspricht einer reinen Komponente, jede Sportart einem Punkt im Inneren. Ziehen mit der Maus rotiert den Tetraeder.</p>
 
-  <div class="spider-wrap">
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="spider-chart">
-  <g class="spider-grid-layer">
-    <polygon class="spider-grid" points="250.0,205.0 295.0,250.0 250.0,295.0 205.0,250.0" />
-    <polygon class="spider-grid" points="250.0,160.0 340.0,250.0 250.0,340.0 160.0,250.0" />
-    <polygon class="spider-grid" points="250.0,115.0 385.0,250.0 250.0,385.0 115.0,250.0" />
-    <polygon class="spider-grid" points="250.0,70.0 430.0,250.0 250.0,430.0 70.0,250.0" />
-    <line class="spider-axis" x1="250" y1="250" x2="250.0" y2="70.0" />
-    <line class="spider-axis" x1="250" y1="250" x2="430.0" y2="250.0" />
-    <line class="spider-axis" x1="250" y1="250" x2="250.0" y2="430.0" />
-    <line class="spider-axis" x1="250" y1="250" x2="70.0" y2="250.0" />
-  </g>
-  <g class="spider-labels-layer">
-    <text class="spider-label" x="250.0" y="60.0" text-anchor="middle">Taktik</text>
-    <text class="spider-label" x="440.0" y="255.0" text-anchor="start">Physis</text>
-    <text class="spider-label" x="250.0" y="450.0" text-anchor="middle">Skill</text>
-    <text class="spider-label" x="60.0" y="255.0" text-anchor="end">Material</text>
-  </g>
-  <g class="spider-sports-layer">
-    <polygon class="spider-sport" data-sport="fussball" points="250.0,160.0 286.0,250.0 250.0,304.0 250.0,250.0" stroke="#e63946" fill="#e63946" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
-    <polygon class="spider-sport" data-sport="tennis" points="250.0,223.0 304.0,250.0 250.0,349.0 250.0,250.0" stroke="#06a77d" fill="#06a77d" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
-    <polygon class="spider-sport" data-sport="100m-sprint" points="250.0,241.0 358.0,250.0 250.0,313.0 250.0,250.0" stroke="#f4a261" fill="#f4a261" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
-    <polygon class="spider-sport" data-sport="schach" points="250.0,106.0 268.0,250.0 250.0,268.0 250.0,250.0" stroke="#264653" fill="#264653" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
-    <polygon class="spider-sport" data-sport="strassenradsport" points="250.0,196.0 322.0,250.0 250.0,277.0 223.0,250.0" stroke="#6f4e7c" fill="#6f4e7c" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
-    <polygon class="spider-sport" data-sport="formel-1" points="250.0,214.0 268.0,250.0 250.0,277.0 151.0,250.0" stroke="#1d4e89" fill="#1d4e89" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
-  </g>
-</svg>
-<div class="spider-legend">
-    <span class="spider-legend-item" data-sport="fussball"><span class="spider-legend-swatch" style="background:#e63946"></span>Fußball</span>
-    <span class="spider-legend-item" data-sport="tennis"><span class="spider-legend-swatch" style="background:#06a77d"></span>Tennis</span>
-    <span class="spider-legend-item" data-sport="100m-sprint"><span class="spider-legend-swatch" style="background:#f4a261"></span>100m Sprint</span>
-    <span class="spider-legend-item" data-sport="schach"><span class="spider-legend-swatch" style="background:#264653"></span>Schach</span>
-    <span class="spider-legend-item" data-sport="strassenradsport"><span class="spider-legend-swatch" style="background:#6f4e7c"></span>Straßenradsport</span>
-    <span class="spider-legend-item" data-sport="formel-1"><span class="spider-legend-swatch" style="background:#1d4e89"></span>Formel 1</span>
-</div>
+  <div class="tetra-wrap">
+    <div id="tetra-canvas" class="tetra-canvas"></div>
+    <div class="tetra-legend" id="tetra-legend"></div>
   </div>
-  <p class="figure-caption"><strong>Abb. 1</strong>Spider-Chart aller bewerteten Sportarten. Achsenrichtungen: Taktik oben, Physis rechts, Skill unten, Material links. Skala 0–1 in Schritten von 0.25.</p>
+  <p class="figure-caption"><strong>Abb. 1</strong>Komponentenraum als 3D-Tetraeder. Ecken: T (Taktik), P (Physis), Sk (Skill), M (Material). Jede Sportart ist ein Punkt; die Position im Tetraeder entspricht ihrem Composition Vector. Klicken und Ziehen zum Rotieren.</p>
 
   <h3>Strukturelle Distanzen</h3>
   <p>Paarweise Euklidische Distanzen zwischen allen Sportarten. Grüne Färbung deutet auf strukturelle Nähe hin, orange auf Verschiedenheit.</p>
@@ -425,6 +393,16 @@
   </article>
 </main>
 
+<!-- Three.js für Tetraeder-Visualisierung -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
 <script>
 (function () {
   var root = document.documentElement;
@@ -475,32 +453,199 @@
     a.textContent = '#';
     h.insertBefore(a, h.firstChild);
   });
-
-  // Spider chart legend interactivity: hover highlights one polygon
-  var legendItems = document.querySelectorAll('.spider-legend-item');
-  var polys = document.querySelectorAll('.spider-sport');
-  legendItems.forEach(function (item) {
-    item.addEventListener('mouseenter', function () {
-      var s = item.getAttribute('data-sport');
-      polys.forEach(function (p) {
-        if (p.getAttribute('data-sport') === s) {
-          p.setAttribute('fill-opacity', '0.35');
-          p.setAttribute('stroke-width', '3');
-        } else {
-          p.setAttribute('fill-opacity', '0.02');
-          p.setAttribute('stroke-opacity', '0.2');
-        }
-      });
-    });
-    item.addEventListener('mouseleave', function () {
-      polys.forEach(function (p) {
-        p.setAttribute('fill-opacity', '0.08');
-        p.setAttribute('stroke-opacity', '0.85');
-        p.setAttribute('stroke-width', '2');
-      });
-    });
-  });
 })();
+</script>
+
+<!-- Tetraeder-Modul -->
+<script type="module">
+import * as THREE from 'three';
+
+const sportsData = [{"name": "Fußball", "color": "#e63946", "components": [0.5, 0.2, 0.3, 0.0], "slug": "fussball"}, {"name": "Tennis", "color": "#06a77d", "components": [0.15, 0.3, 0.55, 0.0], "slug": "tennis"}, {"name": "100m Sprint", "color": "#f4a261", "components": [0.05, 0.6, 0.35, 0.0], "slug": "100m-sprint"}, {"name": "Schach", "color": "#264653", "components": [0.8, 0.1, 0.1, 0.0], "slug": "schach"}, {"name": "Straßenradsport", "color": "#6f4e7c", "components": [0.3, 0.4, 0.15, 0.15], "slug": "strassenradsport"}, {"name": "Formel 1", "color": "#1d4e89", "components": [0.2, 0.1, 0.15, 0.55], "slug": "formel-1"}];
+
+const container = document.getElementById('tetra-canvas');
+const legendEl = document.getElementById('tetra-legend');
+
+// Größe
+const W = container.clientWidth;
+const H = 420;
+
+// Tetraeder-Ecken: reguläres Tetraeder, Centroid im Ursprung.
+// T oben; P, Sk, M auf Kreis um Y-Achse bei y = -R/3, 120° versetzt.
+const R = 2;
+const r = R * Math.sqrt(8/9);  // Radius des Kreises der unteren drei Ecken
+const vertices = {
+  T:  new THREE.Vector3( 0,                          R,    0),
+  P:  new THREE.Vector3( r*Math.cos(Math.PI/2),    -R/3, r*Math.sin(Math.PI/2)),
+  Sk: new THREE.Vector3( r*Math.cos(7*Math.PI/6),  -R/3, r*Math.sin(7*Math.PI/6)),
+  M:  new THREE.Vector3( r*Math.cos(11*Math.PI/6), -R/3, r*Math.sin(11*Math.PI/6))
+};
+
+// Scene, Camera, Renderer
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(40, W/H, 0.1, 100);
+camera.position.set(0, 1.2, 7);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(W, H);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Tetraeder-Kanten
+function getThemeColors() {
+  var dark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+             (document.documentElement.getAttribute('data-theme') !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  return {
+    edge: dark ? 0x555555 : 0x999999,
+    label: dark ? '#e6edf3' : '#222222'
+  };
+}
+
+let edgeMat;
+const tetraGroup = new THREE.Group();
+scene.add(tetraGroup);
+
+function buildEdges() {
+  while (tetraGroup.children.length) tetraGroup.remove(tetraGroup.children[0]);
+  const colors = getThemeColors();
+  edgeMat = new THREE.LineBasicMaterial({ color: colors.edge, transparent: true, opacity: 0.6 });
+  const edges = [['T','P'],['T','Sk'],['T','M'],['P','Sk'],['P','M'],['Sk','M']];
+  edges.forEach(([a,b]) => {
+    const g = new THREE.BufferGeometry().setFromPoints([vertices[a], vertices[b]]);
+    tetraGroup.add(new THREE.Line(g, edgeMat));
+  });
+}
+buildEdges();
+
+// Ecken-Labels mit Sprites
+function makeLabelSprite(text, color) {
+  const cnv = document.createElement('canvas');
+  cnv.width = 128; cnv.height = 64;
+  const ctx = cnv.getContext('2d');
+  ctx.font = 'bold 36px Inter, sans-serif';
+  ctx.fillStyle = color;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 64, 32);
+  const tex = new THREE.CanvasTexture(cnv);
+  tex.needsUpdate = true;
+  const mat = new THREE.SpriteMaterial({ map: tex, transparent: true });
+  const sprite = new THREE.Sprite(mat);
+  sprite.scale.set(0.7, 0.35, 1);
+  return sprite;
+}
+
+const labels = {};
+function rebuildLabels() {
+  ['T','P','Sk','M'].forEach(k => {
+    if (labels[k]) tetraGroup.remove(labels[k]);
+  });
+  const colors = getThemeColors();
+  ['T','P','Sk','M'].forEach(k => {
+    const v = vertices[k];
+    const dir = v.clone().normalize();
+    const pos = v.clone().add(dir.multiplyScalar(0.5));
+    const sp = makeLabelSprite(k, colors.label);
+    sp.position.copy(pos);
+    tetraGroup.add(sp);
+    labels[k] = sp;
+  });
+}
+rebuildLabels();
+
+// Sportart-Punkte
+const pointGroup = new THREE.Group();
+tetraGroup.add(pointGroup);
+
+sportsData.forEach(s => {
+  // Baryzentrische Koordinaten — direkt aus den Komponenten
+  const [t, p, sk, m] = s.components;
+  const pos = new THREE.Vector3()
+    .addScaledVector(vertices.T, t)
+    .addScaledVector(vertices.P, p)
+    .addScaledVector(vertices.Sk, sk)
+    .addScaledVector(vertices.M, m);
+  
+  const geo = new THREE.SphereGeometry(0.08, 16, 16);
+  const mat = new THREE.MeshBasicMaterial({ color: new THREE.Color(s.color) });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.copy(pos);
+  mesh.userData = { name: s.name, slug: s.slug };
+  pointGroup.add(mesh);
+});
+
+// Rotation per Maus
+let isDragging = false;
+let prevX = 0, prevY = 0;
+let rotX = 0.2, rotY = 0.5;
+
+const canvas = renderer.domElement;
+canvas.addEventListener('mousedown', (e) => { isDragging = true; prevX = e.clientX; prevY = e.clientY; });
+window.addEventListener('mouseup', () => { isDragging = false; });
+window.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  const dx = e.clientX - prevX;
+  const dy = e.clientY - prevY;
+  rotY += dx * 0.01;
+  rotX += dy * 0.01;
+  rotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotX));
+  prevX = e.clientX; prevY = e.clientY;
+});
+
+// Touch
+canvas.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    isDragging = true;
+    prevX = e.touches[0].clientX;
+    prevY = e.touches[0].clientY;
+  }
+});
+canvas.addEventListener('touchend', () => { isDragging = false; });
+canvas.addEventListener('touchmove', (e) => {
+  if (!isDragging || e.touches.length !== 1) return;
+  e.preventDefault();
+  const dx = e.touches[0].clientX - prevX;
+  const dy = e.touches[0].clientY - prevY;
+  rotY += dx * 0.01;
+  rotX += dy * 0.01;
+  rotX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotX));
+  prevX = e.touches[0].clientX;
+  prevY = e.touches[0].clientY;
+}, { passive: false });
+
+// Animation
+function animate() {
+  requestAnimationFrame(animate);
+  tetraGroup.rotation.x = rotX;
+  tetraGroup.rotation.y = rotY;
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize
+window.addEventListener('resize', () => {
+  const w = container.clientWidth;
+  camera.aspect = w/H;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, H);
+});
+
+// Theme-change-Beobachter — Kanten/Labels neu einfärben
+const themeObserver = new MutationObserver(() => {
+  buildEdges();
+  rebuildLabels();
+});
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+// Legende
+sportsData.forEach(s => {
+  const item = document.createElement('span');
+  item.className = 'tetra-legend-item';
+  item.innerHTML = '<span class="tetra-legend-swatch" style="background:' + s.color + '"></span>' + s.name;
+  legendEl.appendChild(item);
+});
+
 </script>
 
 </body>

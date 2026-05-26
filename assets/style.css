@@ -164,10 +164,10 @@ hr {
   list-style: none;
   cursor: pointer;
   display: grid;
-  grid-template-columns: minmax(120px, 1.4fr) minmax(120px, 2.5fr) auto auto;
-  gap: 1em;
+  grid-template-columns: 180px 240px 1fr 20px;
+  gap: 1.5em;
   align-items: center;
-  padding: 0.65em 0.5em;
+  padding: 0.8em 0.8em;
   transition: background 0.12s ease;
 }
 .db-row summary::-webkit-details-marker { display: none; }
@@ -186,9 +186,9 @@ hr {
 }
 .db-row-bar {
   display: flex;
-  width: 100%;
-  height: 12px;
-  border-radius: 2px;
+  width: 240px;
+  height: 14px;
+  border-radius: 3px;
   overflow: hidden;
   gap: 1px;
   background: var(--bg-bar-track);
@@ -201,31 +201,35 @@ hr {
 
 .db-row-values {
   font-family: 'Inter', sans-serif;
-  font-size: 0.75em;
+  font-size: 0.78em;
   color: var(--text-muted);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4em 0.8em;
+  flex-wrap: nowrap;
+  gap: 0.9em;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 .db-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.3em;
+  gap: 0.35em;
 }
 .db-chip-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .db-row-icon {
   font-family: 'Inter', sans-serif;
   font-size: 0.7em;
   color: var(--text-muted);
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease;
   display: inline-block;
+  text-align: center;
+  justify-self: end;
 }
 .db-row[open] .db-row-icon {
   transform: rotate(90deg);
@@ -247,14 +251,26 @@ hr {
   line-height: 1.6;
 }
 
-/* Mobile: Werte verstecken, nur Name und Balken */
+/* Tablet: kleinere Werte-Spalte */
+@media (max-width: 900px) {
+  .db-row summary {
+    grid-template-columns: 140px 200px 1fr 18px;
+    gap: 1em;
+  }
+  .db-row-bar { width: 200px; }
+}
+
+/* Mobile: Werte verstecken, nur Name + Balken + Pfeil */
 @media (max-width: 700px) {
   .db-row summary {
-    grid-template-columns: minmax(110px, 1fr) minmax(100px, 1.8fr) auto;
-    gap: 0.6em;
+    grid-template-columns: minmax(110px, 1.2fr) 1fr 18px;
+    gap: 0.8em;
   }
   .db-row-values {
     display: none;
+  }
+  .db-row-bar {
+    width: 100%;
   }
 }
 
@@ -318,10 +334,23 @@ hr {
   width: 100%;
   max-width: 540px;
   height: 460px;
-  cursor: grab;
+  position: relative;
+  border-radius: 8px;
+  background: radial-gradient(ellipse at center,
+    rgba(0, 0, 0, 0.025) 0%,
+    rgba(0, 0, 0, 0) 70%);
 }
-.tetra-canvas:active {
-  cursor: grabbing;
+:root[data-theme="dark"] .tetra-canvas {
+  background: radial-gradient(ellipse at center,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0) 70%);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tetra-canvas {
+    background: radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0) 70%);
+  }
 }
 .tetra-canvas canvas {
   display: block;

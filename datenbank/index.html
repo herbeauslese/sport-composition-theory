@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Datenbank aller bewerteten Sportarten mit Berechnungen und Visualisierungen.">
+  <title>Datenbank — Sport Composition Theory</title>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap">
+
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false">☰</button>
+
+<aside id="sidebar" class="sidebar" aria-label="Sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-brand db-back"><a href="../#top">← Sport Composition Theory</a></p>
+
+    <nav class="toc" aria-label="Inhalt">
+      <p class="toc-title">Sportarten</p>
+<ol class="toc-list">
+  <li><a href="#fussball">Fußball</a></li>
+  <li><a href="#tennis">Tennis</a></li>
+  <li><a href="#100m-sprint">100m Sprint</a></li>
+  <li><a href="#schach">Schach</a></li>
+  <li><a href="#strassenradsport">Straßenradsport</a></li>
+  <li><a href="#formel-1">Formel 1</a></li>
+  <li><a href="#vergleich">Vergleich aller Sportarten</a></li>
+</ol>
+    </nav>
+
+    <div class="sidebar-controls">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
+    </div>
+  </div>
+</aside>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+<main class="content" id="top">
+  <header class="page-header">
+    <h1>Datenbank</h1>
+    <p class="subtitle">Alle Sportarten, ihre Werte, Berechnungen und Vergleiche.</p>
+  </header>
+
+  <article class="article">
+
+  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede zeigt ihre Komponentenzerlegung als Balken, eine kurze Charakterisierung, und — auf Wunsch ausklappbar — die vollständige AHP-Berechnung, aus der die Werte hervorgehen. Unter den Sportarten folgen zwei Übersichtsdarstellungen: ein Spider-Chart, das alle Profile überlagert, und die Distanzmatrix für strukturelle Vergleiche.</p>
+
+  <p>Hintergrund zur Theorie selbst, zur Methodik und zu den Vorbehalten findet sich in der <a href="../">Haupttheorie</a>.</p>
+
+  <hr>
+
+<section class="db-sport" id="fussball">
+  <h2>Fußball</h2>
+  <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
+
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+    <div class="seg tactics" style="width:50%" title="Taktik: 50%"></div>
+    <div class="seg physical" style="width:20%" title="Physis: 20%"></div>
+    <div class="seg skill" style="width:30%" title="Skill: 30%"></div>
+    </div>
+    <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 50%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 30%</span>
+    </div>
+  </div>
+
+  <p class="sport-rationale">Auf Profiniveau ein vor allem taktisch entschiedener Sport. Formation, Pressinghöhe und Spielplan gegen einen bestimmten Gegner prägen Ergebnisse stärker als individuelle Klasse. Skill bleibt wichtig, Physis ist Voraussetzung. Kein Material — die Ausrüstung ist standardisiert.</p>
+
+  <details class="ahp-details">
+    <summary>Berechnung anzeigen</summary>
+    <div class="ahp-content">
+      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+      <div class="distance-matrix-wrap">
+      <table class="vector-table ahp-matrix">
+        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+        <tbody>
+          <tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1, 2, 3)</td></tr>
+          <tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
+          <tr><th>Sk</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="ahp-meta">Konsistenz: CR = 0.023 (&lt; 0,10 — Urteile sind konsistent)</p>
+      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.497, P = 0.211, Sk = 0.293</p>
+      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.50, P = 0.20, Sk = 0.30, M = 0.00</p>
+    </div>
+  </details>
+</section>
+
+<section class="db-sport" id="tennis">
+  <h2>Tennis</h2>
+  <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
+
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+    <div class="seg tactics" style="width:15%" title="Taktik: 15%"></div>
+    <div class="seg physical" style="width:30%" title="Physis: 30%"></div>
+    <div class="seg skill" style="width:55%" title="Skill: 55%"></div>
+    </div>
+    <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 15%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 55%</span>
+    </div>
+  </div>
+
+  <p class="sport-rationale">Skill-dominiert: Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie entscheiden auf Spitzenniveau. Physis trägt mit, weil Matches lang und der Kalender erbarmungslos sind. Taktik ist real, aber an die Ausführung gebunden — strategische Pläne setzen sich nur durch, wenn die Schlagqualität sie trägt.</p>
+
+  <details class="ahp-details">
+    <summary>Berechnung anzeigen</summary>
+    <div class="ahp-content">
+      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+      <div class="distance-matrix-wrap">
+      <table class="vector-table ahp-matrix">
+        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+        <tbody>
+          <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/5, 1/4, 1/3)</td></tr>
+          <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
+          <tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="ahp-meta">Konsistenz: CR = 0.012 (&lt; 0,10 — Urteile sind konsistent)</p>
+      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.160, P = 0.295, Sk = 0.544</p>
+      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.15, P = 0.30, Sk = 0.55, M = 0.00</p>
+    </div>
+  </details>
+</section>
+
+<section class="db-sport" id="100m-sprint">
+  <h2>100m Sprint</h2>
+  <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
+
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+    <div class="seg tactics" style="width:5%" title="Taktik: 5%"></div>
+    <div class="seg physical" style="width:60%" title="Physis: 60%"></div>
+    <div class="seg skill" style="width:35%" title="Skill: 35%"></div>
+    </div>
+    <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 60%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
+    </div>
+  </div>
+
+  <p class="sport-rationale">Vor allem körperliche Anlage und Konditionierung: Schnellkraft, Reaktionszeit, anaerobe Kapazität. Skill steckt in der Technik — Startphase, Beschleunigungsmuster, Lauftechnik — und ist substanzieller, als Laien vermuten. Taktik existiert nur in Mikroentscheidungen.</p>
+
+  <details class="ahp-details">
+    <summary>Berechnung anzeigen</summary>
+    <div class="ahp-content">
+      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+      <div class="distance-matrix-wrap">
+      <table class="vector-table ahp-matrix">
+        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+        <tbody>
+          <tr><th>T</th><td>1</td><td>(1/9, 1/8, 1/7)</td><td>(1/7, 1/6, 1/5)</td></tr>
+          <tr><th>P</th><td class="recip">(1/9, 1/8, 1/7)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
+          <tr><th>Sk</th><td class="recip">(1/7, 1/6, 1/5)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="ahp-meta">Konsistenz: CR = 0.015 (&lt; 0,10 — Urteile sind konsistent)</p>
+      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.066, P = 0.595, Sk = 0.339</p>
+      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.05, P = 0.60, Sk = 0.35, M = 0.00</p>
+    </div>
+  </details>
+</section>
+
+<section class="db-sport" id="schach">
+  <h2>Schach</h2>
+  <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
+
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+    <div class="seg tactics" style="width:80%" title="Taktik: 80%"></div>
+    <div class="seg physical" style="width:10%" title="Physis: 10%"></div>
+    <div class="seg skill" style="width:10%" title="Skill: 10%"></div>
+    </div>
+    <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 80%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
+    </div>
+  </div>
+
+  <p class="sport-rationale">Das strukturelle Extrem: Taktik dominiert deutlich. Schach ist die einzige Beispielsportart mit einer einzelnen Komponente über 50%. Physis (Konzentrationsausdauer, mentale Belastbarkeit über mehrere Stunden) und Skill (Erkennen wiederkehrender Muster, Eröffnungsrepertoire) sind real, aber klein im Vergleich.</p>
+
+  <details class="ahp-details">
+    <summary>Berechnung anzeigen</summary>
+    <div class="ahp-content">
+      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+      <div class="distance-matrix-wrap">
+      <table class="vector-table ahp-matrix">
+        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
+        <tbody>
+          <tr><th>T</th><td>1</td><td>(7, 8, 9)</td><td>(7, 8, 9)</td></tr>
+          <tr><th>P</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
+          <tr><th>Sk</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="ahp-meta">Konsistenz: CR = 0.002 (&lt; 0,10 — Urteile sind konsistent)</p>
+      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.800, P = 0.105, Sk = 0.095</p>
+      <p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
+      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.80, P = 0.10, Sk = 0.10, M = 0.00</p>
+    </div>
+  </details>
+</section>
+
+<section class="db-sport" id="strassenradsport">
+  <h2>Straßenradsport</h2>
+  <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
+
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+    <div class="seg tactics" style="width:30%" title="Taktik: 30%"></div>
+    <div class="seg physical" style="width:40%" title="Physis: 40%"></div>
+    <div class="seg skill" style="width:15%" title="Skill: 15%"></div>
+    <div class="seg material" style="width:15%" title="Material: 15%"></div>
+    </div>
+    <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 30%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 40%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
+    <span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
+    </div>
+  </div>
+
+  <p class="sport-rationale">Ausdauerleistung mit erheblichem taktischen Überbau. Physis ist die Basis. Taktik ist auf Profiniveau ein Teamspiel — Domestiquen-Einsatz, Ausreißerkalkül, Positionierung in entscheidenden Momenten. Skill betrifft Fahrtechnik und Risikomanagement bei Abfahrten. Material ist real, aber innerhalb der World Tour begrenzt.</p>
+
+  <details class="ahp-details">
+    <summary>Berechnung anzeigen</summary>
+    <div class="ahp-content">
+      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+      <div class="distance-matrix-wrap">
+      <table class="vector-table ahp-matrix">
+        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+        <tbody>
+          <tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(2, 3, 4)</td><td>(1, 2, 3)</td></tr>
+          <tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(2, 3, 4)</td><td>(2, 3, 4)</td></tr>
+          <tr><th>Sk</th><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
+          <tr><th>M</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="ahp-meta">Konsistenz: CR = 0.014 (&lt; 0,10 — Urteile sind konsistent)</p>
+      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.304, P = 0.430, Sk = 0.132, M = 0.135</p>
+      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.30, P = 0.40, Sk = 0.15, M = 0.15</p>
+    </div>
+  </details>
+</section>
+
+<section class="db-sport" id="formel-1">
+  <h2>Formel 1</h2>
+  <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
+
+  <div class="stacked-bar-wrap">
+    <div class="stacked-bar">
+    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div>
+    <div class="seg physical" style="width:10%" title="Physis: 10%"></div>
+    <div class="seg skill" style="width:15%" title="Skill: 15%"></div>
+    <div class="seg material" style="width:55%" title="Material: 55%"></div>
+    </div>
+    <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span>
+    <span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span>
+    <span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span>
+    <span class="leg-item"><span class="leg-dot material"></span>Material 55%</span>
+    </div>
+  </div>
+
+  <p class="sport-rationale">Material-dominiert: über eine Saison hinweg entscheidet die Konstrukteursleistung mehr über das Klassement als jede individuelle Fahrerstärke. Taktik ist substanzielle Größe und teils Teamleistung. Skill differenziert die Fahrer untereinander, ist aber innerhalb des Spitzenfelds enger gestreut als das Materialgefälle.</p>
+
+  <details class="ahp-details">
+    <summary>Berechnung anzeigen</summary>
+    <div class="ahp-content">
+      <p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
+      <div class="distance-matrix-wrap">
+      <table class="vector-table ahp-matrix">
+        <thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
+        <tbody>
+          <tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1/2, 1, 2)</td><td>(1/4, 1/3, 1/2)</td></tr>
+          <tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/6, 1/5, 1/4)</td></tr>
+          <tr><th>Sk</th><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/5, 1/4, 1/3)</td></tr>
+          <tr><th>M</th><td class="recip">(1/4, 1/3, 1/2)<sup>−1</sup></td><td class="recip">(1/6, 1/5, 1/4)<sup>−1</sup></td><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="ahp-meta">Konsistenz: CR = 0.003 (&lt; 0,10 — Urteile sind konsistent)</p>
+      <p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.195, P = 0.102, Sk = 0.158, M = 0.545</p>
+      <p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.20, P = 0.10, Sk = 0.15, M = 0.55</p>
+    </div>
+  </details>
+</section>
+
+
+  <hr>
+
+  <section id="vergleich">
+  <h2>Vergleich aller Sportarten</h2>
+
+  <h3>Komponentenprofile im Vergleich</h3>
+  <p>Jede Sportart als Polygon im Komponentenraum. Achsen zeigen die vier Komponenten (Taktik oben, Physis rechts, Skill unten, Material links). Eine ausgedehnte Spitze in eine Richtung bedeutet hohes Gewicht in dieser Komponente.</p>
+
+  <div class="spider-wrap">
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="spider-chart">
+  <g class="spider-grid-layer">
+    <polygon class="spider-grid" points="250.0,205.0 295.0,250.0 250.0,295.0 205.0,250.0" />
+    <polygon class="spider-grid" points="250.0,160.0 340.0,250.0 250.0,340.0 160.0,250.0" />
+    <polygon class="spider-grid" points="250.0,115.0 385.0,250.0 250.0,385.0 115.0,250.0" />
+    <polygon class="spider-grid" points="250.0,70.0 430.0,250.0 250.0,430.0 70.0,250.0" />
+    <line class="spider-axis" x1="250" y1="250" x2="250.0" y2="70.0" />
+    <line class="spider-axis" x1="250" y1="250" x2="430.0" y2="250.0" />
+    <line class="spider-axis" x1="250" y1="250" x2="250.0" y2="430.0" />
+    <line class="spider-axis" x1="250" y1="250" x2="70.0" y2="250.0" />
+  </g>
+  <g class="spider-labels-layer">
+    <text class="spider-label" x="250.0" y="60.0" text-anchor="middle">Taktik</text>
+    <text class="spider-label" x="440.0" y="255.0" text-anchor="start">Physis</text>
+    <text class="spider-label" x="250.0" y="450.0" text-anchor="middle">Skill</text>
+    <text class="spider-label" x="60.0" y="255.0" text-anchor="end">Material</text>
+  </g>
+  <g class="spider-sports-layer">
+    <polygon class="spider-sport" data-sport="fussball" points="250.0,160.0 286.0,250.0 250.0,304.0 250.0,250.0" stroke="#e63946" fill="#e63946" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
+    <polygon class="spider-sport" data-sport="tennis" points="250.0,223.0 304.0,250.0 250.0,349.0 250.0,250.0" stroke="#06a77d" fill="#06a77d" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
+    <polygon class="spider-sport" data-sport="100m-sprint" points="250.0,241.0 358.0,250.0 250.0,313.0 250.0,250.0" stroke="#f4a261" fill="#f4a261" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
+    <polygon class="spider-sport" data-sport="schach" points="250.0,106.0 268.0,250.0 250.0,268.0 250.0,250.0" stroke="#264653" fill="#264653" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
+    <polygon class="spider-sport" data-sport="strassenradsport" points="250.0,196.0 322.0,250.0 250.0,277.0 223.0,250.0" stroke="#6f4e7c" fill="#6f4e7c" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
+    <polygon class="spider-sport" data-sport="formel-1" points="250.0,214.0 268.0,250.0 250.0,277.0 151.0,250.0" stroke="#1d4e89" fill="#1d4e89" fill-opacity="0.08" stroke-opacity="0.85" stroke-width="2" />
+  </g>
+</svg>
+<div class="spider-legend">
+    <span class="spider-legend-item" data-sport="fussball"><span class="spider-legend-swatch" style="background:#e63946"></span>Fußball</span>
+    <span class="spider-legend-item" data-sport="tennis"><span class="spider-legend-swatch" style="background:#06a77d"></span>Tennis</span>
+    <span class="spider-legend-item" data-sport="100m-sprint"><span class="spider-legend-swatch" style="background:#f4a261"></span>100m Sprint</span>
+    <span class="spider-legend-item" data-sport="schach"><span class="spider-legend-swatch" style="background:#264653"></span>Schach</span>
+    <span class="spider-legend-item" data-sport="strassenradsport"><span class="spider-legend-swatch" style="background:#6f4e7c"></span>Straßenradsport</span>
+    <span class="spider-legend-item" data-sport="formel-1"><span class="spider-legend-swatch" style="background:#1d4e89"></span>Formel 1</span>
+</div>
+  </div>
+  <p class="figure-caption"><strong>Abb. 1</strong>Spider-Chart aller bewerteten Sportarten. Achsenrichtungen: Taktik oben, Physis rechts, Skill unten, Material links. Skala 0–1 in Schritten von 0.25.</p>
+
+  <h3>Strukturelle Distanzen</h3>
+  <p>Paarweise Euklidische Distanzen zwischen allen Sportarten. Grüne Färbung deutet auf strukturelle Nähe hin, orange auf Verschiedenheit.</p>
+
+<div class="distance-matrix-wrap large">
+<table class="vector-table distance-matrix large">
+<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m</th><th>Schach</th><th>Rad</th><th>F1</th></tr></thead>
+<tbody>
+<tr><th>Fußball</th>
+<td class="diag">—</td>
+<td class="heat-0">0.44</td>
+<td class="heat-2">0.60</td>
+<td class="heat-0">0.37</td>
+<td class="heat-0 cell-near">0.35</td>
+<td class="heat-2">0.65</td>
+</tr>
+<tr><th>Tennis</th>
+<td class="heat-0">0.44</td>
+<td class="diag">—</td>
+<td class="heat-0">0.37</td>
+<td class="heat-3">0.82</td>
+<td class="heat-0">0.46</td>
+<td class="heat-3">0.71</td>
+</tr>
+<tr><th>100m Sprint</th>
+<td class="heat-2">0.60</td>
+<td class="heat-0">0.37</td>
+<td class="diag">—</td>
+<td class="heat-4 cell-far">0.94</td>
+<td class="heat-0">0.41</td>
+<td class="heat-3">0.78</td>
+</tr>
+<tr><th>Schach</th>
+<td class="heat-0">0.37</td>
+<td class="heat-3">0.82</td>
+<td class="heat-4 cell-far">0.94</td>
+<td class="diag">—</td>
+<td class="heat-2">0.60</td>
+<td class="heat-3">0.82</td>
+</tr>
+<tr><th>Straßenradsport</th>
+<td class="heat-0 cell-near">0.35</td>
+<td class="heat-0">0.46</td>
+<td class="heat-0">0.41</td>
+<td class="heat-2">0.60</td>
+<td class="diag">—</td>
+<td class="heat-1">0.51</td>
+</tr>
+<tr><th>Formel 1</th>
+<td class="heat-2">0.65</td>
+<td class="heat-3">0.71</td>
+<td class="heat-3">0.78</td>
+<td class="heat-3">0.82</td>
+<td class="heat-1">0.51</td>
+<td class="diag">—</td>
+</tr>
+</tbody></table></div>
+  <p class="figure-caption"><strong>Tabelle 1</strong>Paarweise Euklidische Distanzen im Komponentenraum. Grün = nah, orange = fern. Durchgezogener Rahmen markiert das engste Paar, gestrichelter das fernste.</p>
+
+  </section>
+
+  </article>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  function currentMode() {
+    var a = root.getAttribute('data-theme');
+    return (a === 'light' || a === 'dark') ? a : 'auto';
+  }
+  function cycle(m) {
+    if (m === 'auto')  return 'light';
+    if (m === 'light') return 'dark';
+    return 'auto';
+  }
+  var btn = document.getElementById('theme-toggle');
+  var labels = { auto: 'Theme: Auto', light: 'Theme: Hell', dark: 'Theme: Dunkel' };
+  function refreshLabel() { btn.textContent = labels[currentMode()]; }
+  refreshLabel();
+  btn.addEventListener('click', function () {
+    var next = cycle(currentMode());
+    if (next === 'auto') {
+      root.removeAttribute('data-theme');
+      try { localStorage.removeItem('theme'); } catch (e) {}
+    } else {
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    }
+    refreshLabel();
+  });
+
+  var sidebar  = document.getElementById('sidebar');
+  var toggle   = document.getElementById('sidebar-toggle');
+  var backdrop = document.getElementById('sidebar-backdrop');
+  function open()  { sidebar.classList.add('open');  backdrop.classList.add('visible'); toggle.setAttribute('aria-expanded', 'true'); }
+  function close() { sidebar.classList.remove('open'); backdrop.classList.remove('visible'); toggle.setAttribute('aria-expanded', 'false'); }
+  toggle.addEventListener('click', function () {
+    if (sidebar.classList.contains('open')) close(); else open();
+  });
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+  });
+
+  document.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function (h) {
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.className = 'heading-anchor';
+    a.setAttribute('aria-label', 'Link zu diesem Abschnitt');
+    a.textContent = '#';
+    h.insertBefore(a, h.firstChild);
+  });
+
+  // Spider chart legend interactivity: hover highlights one polygon
+  var legendItems = document.querySelectorAll('.spider-legend-item');
+  var polys = document.querySelectorAll('.spider-sport');
+  legendItems.forEach(function (item) {
+    item.addEventListener('mouseenter', function () {
+      var s = item.getAttribute('data-sport');
+      polys.forEach(function (p) {
+        if (p.getAttribute('data-sport') === s) {
+          p.setAttribute('fill-opacity', '0.35');
+          p.setAttribute('stroke-width', '3');
+        } else {
+          p.setAttribute('fill-opacity', '0.02');
+          p.setAttribute('stroke-opacity', '0.2');
+        }
+      });
+    });
+    item.addEventListener('mouseleave', function () {
+      polys.forEach(function (p) {
+        p.setAttribute('fill-opacity', '0.08');
+        p.setAttribute('stroke-opacity', '0.85');
+        p.setAttribute('stroke-width', '2');
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

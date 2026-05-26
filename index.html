@@ -53,7 +53,7 @@
       <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
     </ol>
   </li>
-  <li><a href="#methodik-appendix">Methodik-Appendix</a></li>
+  <li><a href="datenbank/">Datenbank →</a></li>
 </ol>
     </nav>
 
@@ -141,11 +141,11 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p><strong>Skill:</strong> Wie sehr wird das Ergebnis durch die Präzision und Qualität erlernter menschlicher Technik bestimmt?</p>
 <p><strong>Material:</strong> Wie sehr würde ein signifikanter Ausrüstungsnachteil — unabhängig vom Athleten — das Ergebnis verändern?</p>
 <p>Die Antworten werden auf der Saaty-Skala (1 = gleich wichtig bis 9 = extrem viel wichtiger) ausgedrückt, in fuzzifizierter Form als Tripel (l, m, u) — Spielraum statt Punkturteil. Aus der Matrix wird der Gewichtsvektor abgeleitet, die Konsistenz geprüft (Consistency Ratio &lt; 0,10), defuzzifiziert und auf das 5%-Raster gerundet. Sportarten ohne strukturellen Materialeinfluss erhalten M = 0; die Vergleichsmatrix reduziert sich entsprechend auf 3×3.</p>
-<p>Die vollständigen Paarvergleichsmatrizen und Berechnungen für jede der sechs Beispielsportarten finden sich im <a href="#methodik-appendix">Methodik-Appendix</a>.</p>
+<p>Die vollständigen Paarvergleichsmatrizen und Berechnungen für jede Sportart finden sich in der <a href="datenbank/">Datenbank</a>, wo sie pro Sportart einzeln ausklappbar dokumentiert sind.</p>
 <p>Die resultierenden Werte sind keine Messungen. Sie sind strukturierte Urteile. AHP macht diese Urteile nicht objektiv — es macht sie konsistent und nachvollziehbar. Die Werte werden auf dem 5%-Raster angegeben; feinere Auflösung würde eine Präzision suggerieren, die in den Eingangsurteilen nicht enthalten ist.</p>
 <hr />
 <h2 id="beispiele">Beispiele</h2>
-<p>Die folgenden Aufschlüsselungen sind mit dem im Methodik-Abschnitt beschriebenen AHP-Verfahren ermittelt (siehe <a href="#methodik-appendix">Methodik-Appendix</a> für die vollständigen Paarvergleichsmatrizen). Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung, warum die Werte so verteilt sind.</p>
+<p>Die folgenden Aufschlüsselungen sind mit dem im Methodik-Abschnitt beschriebenen AHP-Verfahren ermittelt. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Die vollständigen Paarvergleichsmatrizen pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>.</p>
 <div class="sport-charts">
 
 <div class="sport-entry">
@@ -344,119 +344,7 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat methodische Schwächen, die offen benannt werden sollten.</p>
 <p><strong>Die Komponenten werden als gleichwertig behandelt.</strong> Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie das Material-Caveat zeigt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.</p>
 <p><strong>Die Vektoren leben auf einem Simplex, nicht im freien Raum.</strong> Weil T + P + Sk + M = 1 gilt, sind die Vektoren auf einem dreidimensionalen Simplex eingebettet, nicht im vollen 4D-Raum. Das ist keine Schwäche der Distanzformel selbst — der Euklidische Abstand misst korrekt den Abstand auf diesem Simplex — wohl aber ein Hinweis darauf, dass Komponenten nicht unabhängig variieren können. Erhöht sich eine Komponente um 20 Prozentpunkte, müssen die anderen entsprechend nachgeben. Die Distanz misst dies konsistent, aber der Leser sollte sich bewusst sein, dass Bewegungen im Raum eingeschränkt sind. Für Daten dieser Struktur — sogenannte <em>compositional data</em> — existiert mit der Aitchison-Distanz (Aitchison 1986) ein mathematisch passenderes Distanzmaß, das Verhältnisse zwischen Komponenten statt absoluter Differenzen misst. Diese Theorie nutzt die einfachere Euklidische Variante, weil sie für die Größenordnungsvergleiche, die hier gemacht werden, ausreichend ist.</p>
-<p><strong>Die Eingangswerte sind Schätzungen auf einem 5%-Raster.</strong> Die Vektoren entstehen aus paarweisen Urteilen, nicht aus Messungen (siehe Methodik-Appendix). Eine Verschiebung um 5 Prozentpunkte in einer einzelnen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden die Werte in der Tabelle auf zwei Nachkommastellen gerundet dargestellt; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.</p>
-<hr />
-
-<h2 id="methodik-appendix">Methodik-Appendix: AHP-Berechnungen</h2>
-
-<p>Dieser Appendix dokumentiert die Paarvergleichsmatrizen, aus denen die Komponentengewichte der sechs Beispielsportarten abgeleitet wurden. Die Notation folgt der fuzzifizierten Saaty-Skala: ein Tripel (l, m, u) repräsentiert ein Urteil mit unterer Grenze l, mittlerem Wert m und oberer Grenze u. Beispiel: (2, 3, 4) bedeutet <em>etwa dreimal wichtiger, mit Spielraum zwischen zwei- und viermal</em>. Werte unter 1 (etwa 1/3) drücken die umgekehrte Richtung aus.</p>
-
-<p>Der Konsistenzindex (CR) wird über die klassische Eigenwert-Methode (Saaty) berechnet. Werte unter 0,10 gelten als ausreichend konsistent. Die Defuzzifizierung erfolgt per Center-of-Gravity-Methode ((l + m + u) / 3), die Gewichte werden aus dem geometrischen Zeilenmittel der defuzzifizierten Matrix abgeleitet und auf Summe 1 normalisiert.</p>
-
-<p>Bei Sportarten ohne strukturellen Materialeinfluss reduziert sich die Vergleichsmatrix auf 3×3 (T, P, Sk); Material wird extern auf 0 gesetzt und die übrigen Gewichte werden auf die verbleibenden 100% renormalisiert.</p>
-
-<div class="ahp-sport">
-<h4>Fußball</h4>
-<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table ahp-matrix">
-<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-<tbody>
-<tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1, 2, 3)</td></tr>
-<tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
-<tr><th>Sk</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
-</tbody></table></div>
-<p class="ahp-meta">Konsistenz: CR = 0.023 (< 0,10 — Urteile sind konsistent)</p>
-<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.497, P = 0.211, Sk = 0.293</p>
-<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.50, P = 0.20, Sk = 0.30, M = 0.00</p>
-</div>
-
-<div class="ahp-sport">
-<h4>Tennis</h4>
-<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table ahp-matrix">
-<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-<tbody>
-<tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/5, 1/4, 1/3)</td></tr>
-<tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td></tr>
-<tr><th>Sk</th><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td></tr>
-</tbody></table></div>
-<p class="ahp-meta">Konsistenz: CR = 0.012 (< 0,10 — Urteile sind konsistent)</p>
-<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.160, P = 0.295, Sk = 0.544</p>
-<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.15, P = 0.30, Sk = 0.55, M = 0.00</p>
-</div>
-
-<div class="ahp-sport">
-<h4>100m Sprint</h4>
-<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table ahp-matrix">
-<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-<tbody>
-<tr><th>T</th><td>1</td><td>(1/9, 1/8, 1/7)</td><td>(1/7, 1/6, 1/5)</td></tr>
-<tr><th>P</th><td class="recip">(1/9, 1/8, 1/7)<sup>−1</sup></td><td>1</td><td>(1, 2, 3)</td></tr>
-<tr><th>Sk</th><td class="recip">(1/7, 1/6, 1/5)<sup>−1</sup></td><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td></tr>
-</tbody></table></div>
-<p class="ahp-meta">Konsistenz: CR = 0.015 (< 0,10 — Urteile sind konsistent)</p>
-<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.066, P = 0.595, Sk = 0.339</p>
-<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.05, P = 0.60, Sk = 0.35, M = 0.00</p>
-</div>
-
-<div class="ahp-sport">
-<h4>Schach</h4>
-<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table ahp-matrix">
-<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead>
-<tbody>
-<tr><th>T</th><td>1</td><td>(7, 8, 9)</td><td>(7, 8, 9)</td></tr>
-<tr><th>P</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
-<tr><th>Sk</th><td class="recip">(7, 8, 9)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
-</tbody></table></div>
-<p class="ahp-meta">Konsistenz: CR = 0.002 (< 0,10 — Urteile sind konsistent)</p>
-<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.800, P = 0.105, Sk = 0.095</p>
-<p class="ahp-meta">Material: 0 (gesetzt nach Definition — kein struktureller Ausrüstungseinfluss).</p>
-<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.80, P = 0.10, Sk = 0.10, M = 0.00</p>
-</div>
-
-<div class="ahp-sport">
-<h4>Straßenradsport</h4>
-<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table ahp-matrix">
-<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
-<tbody>
-<tr><th>T</th><td>1</td><td>(1/3, 1/2, 1)</td><td>(2, 3, 4)</td><td>(1, 2, 3)</td></tr>
-<tr><th>P</th><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(2, 3, 4)</td><td>(2, 3, 4)</td></tr>
-<tr><th>Sk</th><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td>1</td><td>(1/2, 1, 2)</td></tr>
-<tr><th>M</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td class="recip">(2, 3, 4)<sup>−1</sup></td><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td>1</td></tr>
-</tbody></table></div>
-<p class="ahp-meta">Konsistenz: CR = 0.014 (< 0,10 — Urteile sind konsistent)</p>
-<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.304, P = 0.430, Sk = 0.132, M = 0.135</p>
-<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.30, P = 0.40, Sk = 0.15, M = 0.15</p>
-</div>
-
-<div class="ahp-sport">
-<h4>Formel 1</h4>
-<p class="ahp-label">Paarvergleichsmatrix (Tripel: l, m, u):</p>
-<div class="distance-matrix-wrap">
-<table class="vector-table ahp-matrix">
-<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead>
-<tbody>
-<tr><th>T</th><td>1</td><td>(1, 2, 3)</td><td>(1/2, 1, 2)</td><td>(1/4, 1/3, 1/2)</td></tr>
-<tr><th>P</th><td class="recip">(1, 2, 3)<sup>−1</sup></td><td>1</td><td>(1/3, 1/2, 1)</td><td>(1/6, 1/5, 1/4)</td></tr>
-<tr><th>Sk</th><td class="recip">(1/2, 1, 2)<sup>−1</sup></td><td class="recip">(1/3, 1/2, 1)<sup>−1</sup></td><td>1</td><td>(1/5, 1/4, 1/3)</td></tr>
-<tr><th>M</th><td class="recip">(1/4, 1/3, 1/2)<sup>−1</sup></td><td class="recip">(1/6, 1/5, 1/4)<sup>−1</sup></td><td class="recip">(1/5, 1/4, 1/3)<sup>−1</sup></td><td>1</td></tr>
-</tbody></table></div>
-<p class="ahp-meta">Konsistenz: CR = 0.003 (< 0,10 — Urteile sind konsistent)</p>
-<p class="ahp-meta">Roh-Gewichte (nach Defuzzifizierung und Normalisierung): T = 0.195, P = 0.102, Sk = 0.158, M = 0.545</p>
-<p class="ahp-result"><strong>Endwerte (auf 5%-Raster):</strong> T = 0.20, P = 0.10, Sk = 0.15, M = 0.55</p>
-</div>
-
+<p><strong>Die Eingangswerte sind Schätzungen auf einem 5%-Raster.</strong> Die Vektoren entstehen aus paarweisen Urteilen, nicht aus Messungen (die vollständigen Berechnungen pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>). Eine Verschiebung um 5 Prozentpunkte in einer einzelnen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden die Werte in der Tabelle auf zwei Nachkommastellen gerundet dargestellt; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.</p>
   </article>
 </main>
 

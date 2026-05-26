@@ -156,16 +156,9 @@ small { color: var(--text-muted); }
 
 .content {
   max-width: 640px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 4rem 1.5rem 6rem 1.5rem;
-}
-
-/* On very wide screens, leave room for sidenotes on the right */
-@media (min-width: 1400px) {
-  .content {
-    margin-right: 260px;
-    margin-left: 260px;
-  }
 }
 
 /* ---------- Page header / hero ---------- */

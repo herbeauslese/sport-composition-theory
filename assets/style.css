@@ -1,7 +1,7 @@
 /* ============================================================
    Sport Composition Theory — minimalist black-and-white edition
    Wide margins. Centered text. Components are the only colour.
-   ============================================================ */ 
+   ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -164,7 +164,7 @@ hr {
   list-style: none;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 180px 240px 1fr 20px;
+  grid-template-columns: 180px 240px minmax(0, 1fr) 20px;
   gap: 1.5em;
   align-items: center;
   padding: 0.8em 0.8em;
@@ -255,7 +255,7 @@ hr {
 /* Tablet: kleinere Werte-Spalte */
 @media (max-width: 900px) {
   .db-row summary {
-    grid-template-columns: 140px 200px 1fr 18px;
+    grid-template-columns: 140px 200px minmax(0, 1fr) 18px;
     gap: 1em;
   }
   .db-row-bar { width: 200px; }

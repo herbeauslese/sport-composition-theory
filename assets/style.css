@@ -152,37 +152,113 @@ hr {
 
 /* ---------- Database page ---------- */
 
-.db-sport {
-  margin: 1.8em 0;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid var(--border-soft);
-}
-.db-sport:last-of-type { border-bottom: none; }
-.db-sport h3 {
-  margin-top: 0;
-  margin-bottom: 0.1em;
-  font-size: 1.15em;
-}
-.db-sport .sport-meta {
-  margin-bottom: 0.55em;
-  font-size: 0.8em;
-}
-.db-sport .stacked-bar {
-  height: 18px;
-}
-.db-sport .sport-rationale {
-  margin-top: 0.7em;
-  font-size: 0.9em;
-  line-height: 1.55;
-}
-.db-sport .seg-legend {
-  gap: 4px 14px;
-}
-.db-sport .leg-item {
-  font-size: 0.75em;
+.db-list {
+  margin: 1.5em 0 3em 0;
+  border-top: 1px solid var(--border-soft);
 }
 
-/* Ausklappbare Berechnung (<details>) */
+.db-row {
+  border-bottom: 1px solid var(--border-soft);
+}
+.db-row summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(120px, 1.4fr) minmax(120px, 2.5fr) auto auto;
+  gap: 1em;
+  align-items: center;
+  padding: 0.65em 0.5em;
+  transition: background 0.12s ease;
+}
+.db-row summary::-webkit-details-marker { display: none; }
+.db-row summary:hover {
+  background: var(--bg-mathblock);
+}
+.db-row[open] summary {
+  background: var(--bg-mathblock);
+}
+
+.db-row-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95em;
+  color: var(--text-strong);
+}
+.db-row-bar {
+  display: flex;
+  width: 100%;
+  height: 12px;
+  border-radius: 2px;
+  overflow: hidden;
+  gap: 1px;
+  background: var(--bg-bar-track);
+}
+.db-row-bar .seg {
+  height: 100%;
+  transition: filter 0.15s;
+}
+.db-row-bar:hover .seg:hover { filter: brightness(1.15); }
+
+.db-row-values {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75em;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 0.8em;
+  white-space: nowrap;
+}
+.db-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.db-chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.db-row-icon {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7em;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+.db-row[open] .db-row-icon {
+  transform: rotate(90deg);
+}
+
+.db-row-detail {
+  padding: 0.5em 1em 1.25em;
+  border-top: 1px solid var(--border-soft);
+  background: transparent;
+}
+.db-row-detail .sport-meta {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.85em;
+}
+.db-row-detail .sport-rationale {
+  margin-top: 0.5em;
+  font-size: 0.92em;
+  line-height: 1.6;
+}
+
+/* Mobile: Werte verstecken, nur Name und Balken */
+@media (max-width: 700px) {
+  .db-row summary {
+    grid-template-columns: minmax(110px, 1fr) minmax(100px, 1.8fr) auto;
+    gap: 0.6em;
+  }
+  .db-row-values {
+    display: none;
+  }
+}
+
+/* Ausklappbare Berechnung (innere <details>) */
 .ahp-details {
   margin-top: 1em;
   border: 1px solid var(--border-soft);
@@ -202,6 +278,8 @@ hr {
   display: flex;
   align-items: center;
   gap: 0.5em;
+  background: transparent;
+  grid-template-columns: none;
 }
 .ahp-details summary::-webkit-details-marker { display: none; }
 .ahp-details summary::before {
@@ -215,10 +293,12 @@ hr {
 }
 .ahp-details summary:hover {
   color: var(--text-body);
+  background: transparent;
 }
 .ahp-details[open] summary {
   border-bottom: 1px solid var(--border-soft);
   color: var(--text-body);
+  background: transparent;
 }
 .ahp-content {
   padding: 0.9em 1.1em 1.1em;
@@ -236,8 +316,8 @@ hr {
 }
 .tetra-canvas {
   width: 100%;
-  max-width: 500px;
-  height: 420px;
+  max-width: 540px;
+  height: 460px;
   cursor: grab;
 }
 .tetra-canvas:active {
@@ -251,10 +331,10 @@ hr {
 .tetra-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6em 1.2em;
+  gap: 0.5em 1.4em;
   justify-content: center;
-  margin-top: 1em;
-  max-width: 500px;
+  margin-top: 1.2em;
+  max-width: 540px;
 }
 .tetra-legend-item {
   font-family: 'Inter', sans-serif;
@@ -262,13 +342,15 @@ hr {
   color: var(--text-body);
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.45em;
+  white-space: nowrap;
 }
 .tetra-legend-swatch {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 /* Distanzmatrix: vergrößerte Variante für Datenbankseite */

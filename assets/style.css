@@ -150,6 +150,139 @@ hr {
   width: 100%;
 }
 
+/* ---------- Database page ---------- */
+
+.db-sport {
+  margin: 3em 0;
+  padding-bottom: 2.5em;
+  border-bottom: 1px solid var(--border-soft);
+}
+.db-sport:last-of-type { border-bottom: none; }
+.db-sport h2 {
+  margin-top: 0;
+  margin-bottom: 0.15em;
+  border: none;
+  padding-bottom: 0;
+}
+
+/* Ausklappbare Berechnung (<details>) */
+.ahp-details {
+  margin-top: 1.5em;
+  border: 1px solid var(--border-soft);
+  border-radius: 3px;
+  padding: 0;
+  background: transparent;
+}
+.ahp-details summary {
+  cursor: pointer;
+  padding: 0.7em 1em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--text-muted);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.ahp-details summary::-webkit-details-marker { display: none; }
+.ahp-details summary::before {
+  content: '▸';
+  font-size: 0.8em;
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+.ahp-details[open] summary::before {
+  transform: rotate(90deg);
+}
+.ahp-details summary:hover {
+  color: var(--text-body);
+}
+.ahp-details[open] summary {
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-body);
+}
+.ahp-content {
+  padding: 1em 1.25em 1.25em;
+}
+.ahp-content .ahp-label:first-child { margin-top: 0; }
+.ahp-content > *:last-child { margin-bottom: 0; }
+
+/* ---------- Spider chart ---------- */
+
+.spider-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em 0 0.5em;
+}
+.spider-chart {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+.spider-grid {
+  fill: none;
+  stroke: var(--border-soft);
+  stroke-width: 1;
+}
+.spider-axis {
+  stroke: var(--border-soft);
+  stroke-width: 1;
+}
+.spider-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--text-body);
+}
+.spider-sport {
+  transition: fill-opacity 0.2s, stroke-opacity 0.2s, stroke-width 0.2s;
+}
+
+.spider-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em 1.2em;
+  justify-content: center;
+  margin-top: 1em;
+  max-width: 500px;
+}
+.spider-legend-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
+  color: var(--text-body);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  cursor: default;
+  user-select: none;
+  transition: opacity 0.15s;
+}
+.spider-legend-item:hover {
+  font-weight: 600;
+}
+.spider-legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Distanzmatrix: vergrößerte Variante für Datenbankseite */
+.distance-matrix-wrap.large {
+  margin: 1.5em 0;
+}
+.distance-matrix.large {
+  font-size: 0.95em;
+}
+.distance-matrix.large th,
+.distance-matrix.large td {
+  padding: 0.65em 0.85em;
+}
+
 small { color: var(--text-muted); }
 
 .figure-caption {
@@ -233,6 +366,20 @@ small { color: var(--text-muted); }
 }
 .sidebar-brand {
   display: none;
+}
+/* Datenbankseite zeigt eine Brand-Zeile als Rück-Link */
+.sidebar-brand.db-back {
+  display: block;
+  margin: 0 0 1.5em 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8em;
+}
+.sidebar-brand a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.sidebar-brand a:hover {
+  color: var(--text-body);
 }
 
 /* Sidebar hidden on narrow screens */

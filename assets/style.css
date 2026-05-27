@@ -167,35 +167,35 @@ hr {
 }
 
 .mds-axis {
-  stroke: var(--border-soft);
+  stroke: var(--text-muted);
   stroke-width: 1;
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
 .mds-ring {
   fill: none;
-  stroke: var(--border-soft);
+  stroke: var(--text-muted);
   stroke-width: 1;
   stroke-dasharray: 3 4;
-  opacity: 0.45;
+  opacity: 0.25;
 }
 
 .mds-glow {
-  opacity: 0.18;
+  opacity: 0.12;
 }
 
 :root[data-theme="dark"] .mds-glow {
-  opacity: 0.32;
+  opacity: 0.18;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .mds-glow {
-    opacity: 0.32;
+    opacity: 0.18;
   }
 }
 
 .mds-point {
   stroke: var(--bg-page);
-  stroke-width: 2;
+  stroke-width: 1.5;
   transition: r 0.15s, stroke-width 0.15s;
 }
 
@@ -203,11 +203,16 @@ hr {
   cursor: pointer;
 }
 
+/* Label-Halo für Lesbarkeit über jedem Hintergrund */
 .mds-label {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 500;
   fill: var(--text-body);
+  paint-order: stroke fill;
+  stroke: var(--bg-page);
+  stroke-width: 3px;
+  stroke-linejoin: round;
 }
 
 /* ---------- Database page ---------- */

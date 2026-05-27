@@ -173,9 +173,17 @@ hr {
 }
 
 .force-edge {
-  stroke: var(--text-body);
+  stroke: #888;
   stroke-linecap: round;
   pointer-events: none;
+}
+:root[data-theme="dark"] .force-edge {
+  stroke: #bbb;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .force-edge {
+    stroke: #bbb;
+  }
 }
 
 .mds-ring {

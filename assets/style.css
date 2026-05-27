@@ -172,6 +172,12 @@ hr {
   opacity: 0.35;
 }
 
+.force-edge {
+  stroke: var(--text-body);
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
 .mds-ring {
   fill: none;
   stroke: var(--text-muted);

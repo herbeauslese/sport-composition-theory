@@ -2142,57 +2142,24 @@
   <p class="figure-caption"><strong>Abb. 1</strong>Komponentenraum als 3D-Tetraeder. Ecken: Taktik, Physis, Skill, Material. Jede Sportart ist ein Punkt; die Position im Tetraeder entspricht ihrem Composition Vector.</p>
 
   <h3>Strukturelle Distanzen</h3>
-  <p>Die folgende Karte zeigt alle Sportarten als Punkte in einem Netz von Verbindungen. Die Positionen entstehen durch eine Kräftesimulation: Punkte ziehen sich gegenseitig an, mit Stärke proportional zu ihrer strukturellen Ähnlichkeit. Linien zwischen allen Paaren visualisieren das Netz — je dicker und sichtbarer eine Linie, desto enger die strukturelle Verwandtschaft. Cluster zeigen sich als dichte Bereiche, Außenseiter durch dünnere Verbindungen.</p>
+  <p>Die folgende Karte zeigt alle Sportarten als Punkte in einer Kräftesimulation. Punkte ziehen sich an mit Stärke proportional zu ihrer strukturellen Ähnlichkeit; Abstoßung verhindert Überlappung. Verbindungslinien werden nur zwischen sehr nahen Paaren gezogen (strukturelle Distanz unter 0.15) und machen so die engen Cluster sichtbar. Die Achsenrichtungen haben keine inhaltliche Bedeutung — nur Nähe und Distanz zwischen Punkten zählen.</p>
 
   <div class="mds-wrap">
     <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" class="mds-chart" aria-label="Force-directed Graph der Sportarten">
   <line class="mds-axis" x1="70" y1="300.0" x2="530" y2="300.0" />
   <line class="mds-axis" x1="300.0" y1="70" x2="300.0" y2="530" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="530.0" y2="463.8" stroke-width="0.30" opacity="0.050" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="430.0" y2="143.8" stroke-width="0.45" opacity="0.069" />
-  <line class="force-edge" x1="530.0" y1="463.8" x2="286.4" y2="136.2" stroke-width="0.55" opacity="0.089" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="456.0" y2="237.6" stroke-width="0.62" opacity="0.106" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="408.2" y2="404.8" stroke-width="0.83" opacity="0.159" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="286.4" y2="136.2" stroke-width="0.88" opacity="0.171" />
-  <line class="force-edge" x1="530.0" y1="463.8" x2="456.0" y2="237.6" stroke-width="0.95" opacity="0.192" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="340.6" y2="242.1" stroke-width="0.98" opacity="0.199" />
-  <line class="force-edge" x1="530.0" y1="463.8" x2="430.0" y2="143.8" stroke-width="0.98" opacity="0.199" />
-  <line class="force-edge" x1="408.2" y1="404.8" x2="286.4" y2="136.2" stroke-width="1.03" opacity="0.215" />
-  <line class="force-edge" x1="530.0" y1="463.8" x2="340.6" y2="242.1" stroke-width="1.03" opacity="0.215" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="70.0" y2="331.1" stroke-width="1.12" opacity="0.241" />
-  <line class="force-edge" x1="430.0" y1="143.8" x2="248.6" y2="419.4" stroke-width="1.12" opacity="0.241" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="530.0" y2="463.8" stroke-width="1.15" opacity="0.251" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="286.4" y2="136.2" stroke-width="1.15" opacity="0.251" />
-  <line class="force-edge" x1="530.0" y1="463.8" x2="248.6" y2="419.4" stroke-width="1.21" opacity="0.271" />
-  <line class="force-edge" x1="248.6" y1="419.4" x2="286.4" y2="136.2" stroke-width="1.21" opacity="0.271" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="430.0" y2="143.8" stroke-width="1.21" opacity="0.271" />
-  <line class="force-edge" x1="430.0" y1="143.8" x2="408.2" y2="404.8" stroke-width="1.24" opacity="0.282" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="430.0" y2="143.8" stroke-width="1.31" opacity="0.305" />
-  <line class="force-edge" x1="456.0" y1="237.6" x2="408.2" y2="404.8" stroke-width="1.43" opacity="0.345" />
-  <line class="force-edge" x1="456.0" y1="237.6" x2="248.6" y2="419.4" stroke-width="1.43" opacity="0.345" />
-  <line class="force-edge" x1="70.0" y1="331.1" x2="248.6" y2="419.4" stroke-width="1.43" opacity="0.345" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="456.0" y2="237.6" stroke-width="1.47" opacity="0.359" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="286.4" y2="136.2" stroke-width="1.51" opacity="0.374" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="456.0" y2="237.6" stroke-width="1.51" opacity="0.374" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="70.0" y2="331.1" stroke-width="1.51" opacity="0.374" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="530.0" y2="463.8" stroke-width="1.56" opacity="0.390" />
-  <line class="force-edge" x1="340.6" y1="242.1" x2="408.2" y2="404.8" stroke-width="1.70" opacity="0.444" />
-  <line class="force-edge" x1="248.6" y1="419.4" x2="340.6" y2="242.1" stroke-width="1.82" opacity="0.486" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="340.6" y2="242.1" stroke-width="1.82" opacity="0.486" />
-  <line class="force-edge" x1="530.0" y1="463.8" x2="408.2" y2="404.8" stroke-width="1.94" opacity="0.535" />
-  <line class="force-edge" x1="430.0" y1="143.8" x2="286.4" y2="136.2" stroke-width="2.08" opacity="0.592" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="340.6" y2="242.1" stroke-width="2.08" opacity="0.592" />
-  <line class="force-edge" x1="456.0" y1="237.6" x2="286.4" y2="136.2" stroke-width="2.08" opacity="0.592" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="408.2" y2="404.8" stroke-width="2.16" opacity="0.625" />
-  <line class="force-edge" x1="430.0" y1="143.8" x2="340.6" y2="242.1" stroke-width="2.25" opacity="0.662" />
-  <line class="force-edge" x1="248.6" y1="419.4" x2="408.2" y2="404.8" stroke-width="2.36" opacity="0.705" />
-  <line class="force-edge" x1="340.6" y1="242.1" x2="286.4" y2="136.2" stroke-width="2.36" opacity="0.705" />
-  <line class="force-edge" x1="456.0" y1="237.6" x2="430.0" y2="143.8" stroke-width="2.47" opacity="0.754" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="257.9" y2="326.2" stroke-width="2.47" opacity="0.754" />
-  <line class="force-edge" x1="456.0" y1="237.6" x2="340.6" y2="242.1" stroke-width="2.47" opacity="0.754" />
-  <line class="force-edge" x1="257.9" y1="326.2" x2="248.6" y2="419.4" stroke-width="2.61" opacity="0.816" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="408.2" y2="404.8" stroke-width="2.80" opacity="0.900" />
-  <line class="force-edge" x1="331.1" y1="441.5" x2="248.6" y2="419.4" stroke-width="2.80" opacity="0.900" />
+  <circle class="mds-ring" cx="300.0" cy="300.0" r="57.5" />
+  <circle class="mds-ring" cx="300.0" cy="300.0" r="115.0" />
+  <circle class="mds-ring" cx="300.0" cy="300.0" r="172.5" />
+  <circle class="mds-ring" cx="300.0" cy="300.0" r="230.0" />
+  <line class="force-edge" x1="248.6" y1="419.4" x2="408.2" y2="404.8" stroke-width="1.50" opacity="0.350" />
+  <line class="force-edge" x1="340.6" y1="242.1" x2="286.4" y2="136.2" stroke-width="1.50" opacity="0.350" />
+  <line class="force-edge" x1="456.0" y1="237.6" x2="430.0" y2="143.8" stroke-width="2.44" opacity="0.538" />
+  <line class="force-edge" x1="331.1" y1="441.5" x2="257.9" y2="326.2" stroke-width="2.44" opacity="0.538" />
+  <line class="force-edge" x1="456.0" y1="237.6" x2="340.6" y2="242.1" stroke-width="2.44" opacity="0.538" />
+  <line class="force-edge" x1="257.9" y1="326.2" x2="248.6" y2="419.4" stroke-width="3.55" opacity="0.760" />
+  <line class="force-edge" x1="331.1" y1="441.5" x2="408.2" y2="404.8" stroke-width="5.00" opacity="1.050" />
+  <line class="force-edge" x1="331.1" y1="441.5" x2="248.6" y2="419.4" stroke-width="5.00" opacity="1.050" />
   <circle class="mds-glow" cx="331.1" cy="441.5" r="9" fill="#e63946" />
   <circle class="mds-point" cx="331.1" cy="441.5" r="5" fill="#e63946" data-sport="fussball" />
   <circle class="mds-glow" cx="257.9" cy="326.2" r="9" fill="#06a77d" />
@@ -2214,18 +2181,18 @@
   <circle class="mds-glow" cx="286.4" cy="136.2" r="9" fill="#8d99ae" />
   <circle class="mds-point" cx="286.4" cy="136.2" r="5" fill="#8d99ae" data-sport="super-g" />
   <text class="mds-label" x="341.1" y="446.5" text-anchor="start">Fußball</text>
-  <text class="mds-label" x="247.9" y="331.2" text-anchor="end">Tennis</text>
+  <text class="mds-label" x="267.9" y="331.2" text-anchor="start">Tennis</text>
   <text class="mds-label" x="80.0" y="336.1" text-anchor="start">100m Sprint</text>
   <text class="mds-label" x="520.0" y="468.8" text-anchor="end">Schach</text>
-  <text class="mds-label" x="446.0" y="242.6" text-anchor="end">Straßenradsport</text>
+  <text class="mds-label" x="466.0" y="242.6" text-anchor="start">Straßenradsport</text>
   <text class="mds-label" x="420.0" y="148.8" text-anchor="end">Formel 1</text>
   <text class="mds-label" x="238.6" y="424.4" text-anchor="end">Boxen</text>
-  <text class="mds-label" x="350.6" y="247.1" text-anchor="start">Triathlon</text>
+  <text class="mds-label" x="330.6" y="247.1" text-anchor="end">Triathlon</text>
   <text class="mds-label" x="418.2" y="409.8" text-anchor="start">Baseball</text>
-  <text class="mds-label" x="276.4" y="141.2" text-anchor="end">Super G</text>
+  <text class="mds-label" x="296.4" y="141.2" text-anchor="start">Super G</text>
 </svg>
   </div>
-  <p class="figure-caption"><strong>Abb. 2</strong>Force-directed Graph aller bewerteten Sportarten. Positionen entstehen durch Kräftesimulation: Federkräfte ziehen ähnliche Sportarten zueinander, Abstoßung verhindert Überlappung. Verbindungslinien sind nach echter struktureller Distanz gewichtet — dicker und sichtbarer = ähnlicher. Konzentrische Kreise markieren Referenzabstände.</p>
+  <p class="figure-caption"><strong>Abb. 2</strong>Force-directed Graph aller bewerteten Sportarten. Positionen entstehen durch Kräftesimulation: Federkräfte ziehen ähnliche Sportarten zueinander, Abstoßung verhindert Überlappung. Verbindungslinien gibt es nur zwischen Paaren mit struktureller Distanz unter 0.15 — sie markieren die engsten Cluster. Konzentrische Kreise dienen als Referenzabstände; die Achsenrichtungen selbst haben keine inhaltliche Bedeutung.</p>
 
   </section>
 

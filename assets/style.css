@@ -150,6 +150,66 @@ hr {
   width: 100%;
 }
 
+/* ---------- MDS-Visualisierung ---------- */
+
+.mds-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em 0 0.5em;
+}
+
+.mds-chart {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
+.mds-axis {
+  stroke: var(--border-soft);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.mds-ring {
+  fill: none;
+  stroke: var(--border-soft);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.45;
+}
+
+.mds-glow {
+  opacity: 0.18;
+}
+
+:root[data-theme="dark"] .mds-glow {
+  opacity: 0.32;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mds-glow {
+    opacity: 0.32;
+  }
+}
+
+.mds-point {
+  stroke: var(--bg-page);
+  stroke-width: 2;
+  transition: r 0.15s, stroke-width 0.15s;
+}
+
+.mds-point:hover {
+  cursor: pointer;
+}
+
+.mds-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--text-body);
+}
+
 /* ---------- Database page ---------- */
 
 .db-list {

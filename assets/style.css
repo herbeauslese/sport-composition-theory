@@ -3,7 +3,7 @@
    Wide margins. Centered text. Components are the only colour.
    ============================================================ */
 
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; } 
 html { scroll-behavior: smooth; }
 :target { scroll-margin-top: 1rem; }
 

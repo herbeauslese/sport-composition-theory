@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de"> 
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -256,6 +256,60 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 
 <p>Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.41 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe reicht die größte beobachtete Distanz an knapp die Hälfte dieses Maximums heran.</p>
 <p>Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung. Eine visuelle Karte aller bewerteten Sportarten als Force-directed Graph — in dem sich ähnliche Sportarten zu Clustern zusammenfinden — findet sich in der <a href="datenbank/">Datenbank</a>.</p>
+<div class="distance-matrix-wrap">
+<table class="vector-table distance-matrix">
+<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m Sprint</th><th>Schach</th><th>Straßenradsport</th><th>Formel 1</th></tr></thead>
+<tbody>
+<tr><th>Fußball</th>
+<td class="diag">—</td>
+<td class="heat-0 cell-near">0.25</td>
+<td class="heat-2">0.53</td>
+<td class="heat-0">0.31</td>
+<td class="heat-1">0.41</td>
+<td class="heat-2">0.52</td>
+</tr>
+<tr><th>Tennis</th>
+<td class="heat-0 cell-near">0.25</td>
+<td class="diag">—</td>
+<td class="heat-2">0.47</td>
+<td class="heat-2">0.55</td>
+<td class="heat-2">0.48</td>
+<td class="heat-2">0.52</td>
+</tr>
+<tr><th>100m Sprint</th>
+<td class="heat-2">0.53</td>
+<td class="heat-2">0.47</td>
+<td class="diag">—</td>
+<td class="heat-4 cell-far">0.79</td>
+<td class="heat-0">0.35</td>
+<td class="heat-4">0.74</td>
+</tr>
+<tr><th>Schach</th>
+<td class="heat-0">0.31</td>
+<td class="heat-2">0.55</td>
+<td class="heat-4 cell-far">0.79</td>
+<td class="diag">—</td>
+<td class="heat-2">0.56</td>
+<td class="heat-3">0.60</td>
+</tr>
+<tr><th>Straßenradsport</th>
+<td class="heat-1">0.41</td>
+<td class="heat-2">0.48</td>
+<td class="heat-0">0.35</td>
+<td class="heat-2">0.56</td>
+<td class="diag">—</td>
+<td class="heat-2">0.51</td>
+</tr>
+<tr><th>Formel 1</th>
+<td class="heat-2">0.52</td>
+<td class="heat-2">0.52</td>
+<td class="heat-4">0.74</td>
+<td class="heat-3">0.60</td>
+<td class="heat-2">0.51</td>
+<td class="diag">—</td>
+</tr>
+</tbody></table></div>
+<p class="figure-caption"><strong>Tabelle 1</strong>Paarweise euklidische Distanzen der sechs Beispielsportarten im Komponentenraum. Grüne Färbung markiert strukturelle Nähe, orange strukturelle Ferne. Der durchgezogene Rahmen kennzeichnet das engste Paar (Fußball ↔ Tennis, 0.25), der gestrichelte das fernste (100m Sprint ↔ Schach, 0.79).</p>
 <p>Aus den Vektoren lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
 <p><strong>Fußball und Tennis liegen strukturell am nächsten beieinander.</strong> Mit einer Distanz von 0.25 sind sie das ähnlichste Paar der sechs Beispielsportarten — beide werden maßgeblich von Skill getragen, mit Taktik und Physis als substanziellem Unterbau. Fußball ist zugleich die strukturell zentralste der sechs Sportarten: Mit der geringsten durchschnittlichen Distanz zu allen anderen (0.41) liegt es näher an der Mitte des Möglichkeitsraums als jede andere. Das passt zu seinem ausgewogenen Profil — keine Komponente dominiert, also ist es zu keiner Spezialdisziplin extrem weit entfernt.</p>
 

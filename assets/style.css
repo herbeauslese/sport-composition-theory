@@ -229,6 +229,14 @@ hr {
   stroke-linejoin: round;
 }
 
+/* Mobile: SVG wird herunterskaliert, daher Labels im viewBox-Raum vergrößern */
+@media (max-width: 700px) {
+  .mds-label {
+    font-size: 18px;
+    stroke-width: 4px;
+  }
+}
+
 /* ---------- Database page ---------- */
 
 .db-list {
@@ -340,17 +348,28 @@ hr {
   .db-row-bar { width: 200px; }
 }
 
-/* Mobile: Werte verstecken, nur Name + Balken + Pfeil */
+/* Mobile: Werte unter Name+Balken umbrechen statt verstecken */
 @media (max-width: 700px) {
   .db-row summary {
-    grid-template-columns: minmax(110px, 1.2fr) 1fr 18px;
-    gap: 0.8em;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name icon"
+      "bar  bar"
+      "vals vals";
+    gap: 0.5em 0.8em;
+    align-items: center;
+  }
+  .db-row-name { grid-area: name; }
+  .db-row-icon { grid-area: icon; }
+  .db-row-bar {
+    grid-area: bar;
+    width: 100%;
   }
   .db-row-values {
-    display: none;
-  }
-  .db-row-bar {
-    width: 100%;
+    grid-area: vals;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.8em;
   }
 }
 
@@ -974,6 +993,8 @@ small { color: var(--text-muted); }
   margin: 1em 0;
   color: var(--text-body);
   font-size: 0.95em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 /* ---------- AHP Appendix ---------- */

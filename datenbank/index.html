@@ -48,6 +48,11 @@
   <li><a href="#zehnkampf">Zehnkampf</a></li>
   <li><a href="#bob-viererbob">Bob Viererbob</a></li>
   <li><a href="#golf">Golf</a></li>
+  <li><a href="#basketball">Basketball</a></li>
+  <li><a href="#american-football">American Football</a></li>
+  <li><a href="#tischtennis">Tischtennis</a></li>
+  <li><a href="#cricket">Cricket</a></li>
+  <li><a href="#judo">Judo</a></li>
   <li><a href="#vergleich">Vergleich aller Sportarten</a></li>
 </ol>
     </nav>
@@ -68,7 +73,7 @@
 
   <article class="article">
 
-  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige AHP-Berechnung. Unter den Sportarten folgt ein 3D-Tetraeder, in dem alle Sportarten als Punkte verortet sind, sowie die Distanzmatrix.</p>
+  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige Paarvergleichsmatrix samt Konsistenzwert. Unter den Sportarten folgt ein 3D-Tetraeder, in dem alle Sportarten als Punkte verortet sind, sowie ein Force-directed Graph der strukturellen Distanzen.</p>
 
   <p>Hintergrund zur Theorie selbst, zur Methodik und zu den Vorbehalten findet sich in der <a href="../">Haupttheorie</a>.</p>
 
@@ -78,182 +83,25 @@
 <details class="db-row" id="fussball">
   <summary>
     <span class="db-row-name">Fußball</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:35%" title="Taktik: 35%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 35</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
-    <p class="sport-rationale">Eine ausgewogene Mischung aus Taktik, Skill und Physis ohne klaren Schwerpunkt. Auf Profiniveau prägen Formation und Pressinghöhe das Spiel, Skill ist überall im Spielfluss erforderlich, und Physis ist Voraussetzung für 90 Minuten Belastung. Keine einzelne Komponente dominiert. Kein Material — die Ausrüstung ist standardisiert.</p>
-
+    <p class="sport-rationale">Taktik und Skill teilen sich die Spitze, Physis bleibt wichtige Grundlage. Im Paarvergleich entscheidet ein taktischer Vorsprung etwas häufiger als reine Athletik, während Taktik und individuelle Technik gleichauf liegen. Material wurde ausgeschlossen.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">0%</span>
-      </div>
-      <p class="sub-empty-note">Keine relevanten Sub-Aspekte für diese Sportart.</p>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball, Schuhe und Platz sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -262,225 +110,26 @@
 <details class="db-row" id="tennis">
   <summary>
     <span class="db-row-name">Tennis</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span><span class="db-chip"><span class="db-chip-dot material"></span>M 5</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span><span class="db-chip"><span class="db-chip-dot material"></span>M 5</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
-    <p class="sport-rationale">Skill und Physis tragen Tennis gemeinsam, Skill leicht voran. Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie entscheiden auf Spitzenniveau. Physis trägt mit, weil Matches lang sind. Taktik ist substanziell, aber an die Schlagqualität gebunden. Material existiert leicht — Schläger sind nicht vollständig standardisiert.</p>
-
+    <p class="sport-rationale">Skill dominiert klar. Schlagtechnik und Aufschlagpräzision entscheiden im direkten Vergleich deutlich häufiger als taktischer Aufbau oder Physis, die untereinander gleichauf liegen. Material ist mit kleinem, aber echtem Anteil aktiv.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">40%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">5%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/4</td><td class="gt">5</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/3</td><td class="gt">5</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">3</td><td class="diag">1</td><td class="gt">8</td></tr>
+<tr><th>M</th><td class="lt">1/5</td><td class="lt">1/5</td><td class="lt">1/8</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Besaitung sind nicht vollständig vereinheitlicht.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.031</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -489,182 +138,25 @@
 <details class="db-row" id="100m-sprint">
   <summary>
     <span class="db-row-name">100m Sprint</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:50%" title="Physis: 50%"></div><div class="seg skill" style="width:45%" title="Skill: 45%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 5</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 50</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 45</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 5</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 60</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
-    <p class="sport-rationale">Physis und Skill teilen sich den Sport, Taktik ist nahezu null. Schnellkraft, Reaktionszeit und Maximalgeschwindigkeit entscheiden — aber Skill in Lauftechnik, Startphase und Beschleunigungsmuster ist substanzieller, als Laien vermuten. Material spielt keine strukturelle Rolle.</p>
-
+    <p class="sport-rationale">Physis entscheidet — fast alles hängt an zehn Sekunden Maximalleistung. Skill in Startphase und Lauftechnik behauptet den zweiten Platz klar, Taktik spielt praktisch keine Rolle. Material ausgeschlossen.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">5%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">50%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">45%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">0%</span>
-      </div>
-      <p class="sub-empty-note">Keine relevanten Sub-Aspekte für diese Sportart.</p>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/8</td><td class="lt">1/7</td></tr>
+<tr><th>P</th><td class="gt">8</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>Sk</th><td class="gt">7</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Spikes und Bahn sind reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.030</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -673,182 +165,25 @@
 <details class="db-row" id="schach">
   <summary>
     <span class="db-row-name">Schach</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 55</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:65%" title="Taktik: 65%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 65</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
-    <p class="sport-rationale">Taktik dominiert deutlich, mit substanziellem Skill-Anteil. Schach hat das höchste Taktik-Gewicht aller untersuchten Sportarten — Antizipation, Strategie, Entscheidungsdruck und Vorbereitung sind alle maximal. Skill liegt in der Mustererkennung und im Eröffnungsrepertoire — die Lernkurve ist extrem. Physis reduziert sich auf mentale Belastbarkeit.</p>
-
+    <p class="sport-rationale">Taktik dominiert mit weitem Abstand. Strategisches Denken entscheidet praktisch immer gegen körperliche Verfassung und merklich häufiger als die Mustererkennung, die hier als Skill zählt. Material existiert nicht als Faktor.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">55%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">10%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">0%</span>
-      </div>
-      <p class="sub-empty-note">Keine relevanten Sub-Aspekte für diese Sportart.</p>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">7</td><td class="gt">3</td></tr>
+<tr><th>P</th><td class="lt">1/7</td><td class="diag">1</td><td class="lt">1/3</td></tr>
+<tr><th>Sk</th><td class="lt">1/3</td><td class="gt">3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Brett und Figuren haben keinen Einfluss.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.006</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -857,225 +192,26 @@
 <details class="db-row" id="strassenradsport">
   <summary>
     <span class="db-row-name">Straßenradsport</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:20%" title="Skill: 20%"></div><div class="seg material" style="width:25%" title="Material: 25%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 20</span><span class="db-chip"><span class="db-chip-dot material"></span>M 25</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:45%" title="Physis: 45%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 45</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 15</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
-    <p class="sport-rationale">Ausgewogenes Profil mit leichter Taktik-Dominanz. Physis ist die Basis (Etappenausdauer), aber Taktik wirkt auf Teamebene — Domestiquen-Einsatz, Ausreißerkalkül. Skill betrifft Fahrtechnik und Risikomanagement bei Abfahrten. Material ist substanziell, aber innerhalb der World Tour begrenzt vergleichbar zu Formel 1.</p>
-
+    <p class="sport-rationale">Physis trägt den Sport, mit taktischem Überbau. Ausdauerleistung entscheidet häufiger als alles andere; Taktik liegt auf Rang zwei. Skill und Material sind gleichauf — das Rad ist relevant, aber in der World Tour angeglichen.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">20%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="gt">2</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="gt">3</td><td class="gt">3</td></tr>
+<tr><th>Sk</th><td class="lt">1/2</td><td class="lt">1/3</td><td class="diag">1</td><td class="">1</td></tr>
+<tr><th>M</th><td class="lt">1/2</td><td class="lt">1/3</td><td class="">1</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Das Rad ist relevant, aber in der World Tour angeglichen.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.004</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -1084,225 +220,26 @@
 <details class="db-row" id="formel-1">
   <summary>
     <span class="db-row-name">Formel 1</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:30%" title="Material: 30%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span><span class="db-chip"><span class="db-chip-dot material"></span>M 30</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:5%" title="Physis: 5%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:45%" title="Material: 45%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 5</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span><span class="db-chip"><span class="db-chip-dot material"></span>M 45</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
-    <p class="sport-rationale">Material und Taktik gleichauf, Skill substanziell. F1 hat das höchste Materialgewicht — alle sechs Material-Sub-Aspekte sind nahezu maximal. Taktik wirkt über Boxenstrategie und Teamentscheidungen. Skill differenziert die Fahrer auf engem Niveau. Physis ist eng auf mentale Belastbarkeit und G-Kraft-Resistenz fokussiert.</p>
-
+    <p class="sport-rationale">Material ist der stärkste einzelne Faktor. Die Konstrukteursleistung entscheidet häufiger als Fahrer-Taktik oder -Skill, die gleichauf den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">4</td><td class="">1</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="lt">1/4</td><td class="diag">1</td><td class="lt">1/4</td><td class="lt">1/7</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">4</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>M</th><td class="gt">2</td><td class="gt">7</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Die Konstrukteursleistung entscheidet die Saison.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.001</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -1311,182 +248,25 @@
 <details class="db-row" id="boxen">
   <summary>
     <span class="db-row-name">Boxen</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:35%" title="Physis: 35%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 35</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">Profi · 12 Runden · 1 gegen 1</p>
-    <p class="sport-rationale">Drei Komponenten in nahezu ausgewogenem Verhältnis — Taktik, Physis und Skill alle um 30–35%. Schlagtechnik, Konditionierung und Gegnerlesen prägen alle gleich stark. Boxen ist auf höchstem Niveau einer der wenigen Sportarten, in denen alle drei nicht-Material-Komponenten substanziell sind. Kein Material — Handschuhe und Ring sind reguliert.</p>
-
+    <p class="sport-rationale">Skill dominiert, Physis und Taktik folgen. Schlagtechnik und Distanzgefühl entscheiden im Paarvergleich häufiger als Kondition oder das Lesen des Gegners. Boxen bleibt eine der wenigen Sportarten, in der alle drei nicht-Material-Komponenten substanziell sind. Material ausgeschlossen.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">0%</span>
-      </div>
-      <p class="sub-empty-note">Keine relevanten Sub-Aspekte für diese Sportart.</p>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Handschuhe und Ring sind reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.046</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -1495,225 +275,26 @@
 <details class="db-row" id="triathlon">
   <summary>
     <span class="db-row-name">Triathlon</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div><div class="seg material" style="width:20%" title="Material: 20%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span><span class="db-chip"><span class="db-chip-dot material"></span>M 20</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:20%" title="Skill: 20%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 60</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 20</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
-    <p class="sport-meta">Olympische Distanz · 1.5 km Schwimmen, 40 km Rad, 10 km Lauf</p>
-    <p class="sport-rationale">Ein ungewöhnlich ausgewogenes Profil über alle vier Komponenten. Physis ist (entgegen der landläufigen Wahrnehmung) nicht klar dominant — die drei verschiedenen Disziplinen plus Wechseltechniken erzeugen einen substanziellen Skill-Anteil. Material spielt eine Rolle, ist aber regulierter als bei Profi-Radsport. Taktik wirkt durch Pacing und Windschatten.</p>
-
+    <p class="sport-meta">Olympische Distanz · Schwimmen, Rad, Lauf</p>
+    <p class="sport-rationale">Physis dominiert klar — drei aufeinanderfolgende Ausdauerdisziplinen. Skill (Technik in drei Sportarten plus Wechsel) liegt auf Rang zwei. Taktik und Material sind klein, aber vorhanden — Windschatten und Materialwahl spielen eine begrenzte Rolle.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">20%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/4</td><td class="lt">1/2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="gt">4</td><td class="diag">1</td><td class="gt">3</td><td class="gt">4</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="lt">1/3</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>M</th><td class="">1</td><td class="lt">1/4</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Rad und Anzug sind relevant, aber reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -1722,182 +303,25 @@
 <details class="db-row" id="baseball">
   <summary>
     <span class="db-row-name">Baseball</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:60%" title="Skill: 60%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 60</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">MLB · 9 Innings · 9 gegen 9</p>
-    <p class="sport-rationale">Taktik leicht dominant, gefolgt von Skill, Physis substanzieller als landläufig angenommen. Pitch-Calling, Defensive Shifts und Stealing-Entscheidungen prägen das Spiel. Schlagtechnik gegen Pitches mit über 150 km/h gehört zu den schwierigsten Skills im Sport. Physis ist weniger Ausdauer- als Schnellkraft- und Reaktionsleistung. Material ist standardisiert.</p>
-
+    <p class="sport-rationale">Skill ist die dominante Komponente — Schlagtechnik gegen Pitches mit über 150 km/h gehört zu den schwierigsten Bewegungen im Sport. Taktik (Pitch-Calling, Defensive Shifts) liegt auf Rang zwei, deutlich vor der Physis. Material standardisiert.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">40%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">0%</span>
-      </div>
-      <p class="sub-empty-note">Keine relevanten Sub-Aspekte für diese Sportart.</p>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="lt">1/4</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="gt">4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Schläger und Ball sind ligaweit standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.016</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -1906,225 +330,26 @@
 <details class="db-row" id="super-g">
   <summary>
     <span class="db-row-name">Super G</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div><div class="seg material" style="width:30%" title="Material: 30%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span><span class="db-chip"><span class="db-chip-dot material"></span>M 30</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div><div class="seg material" style="width:25%" title="Material: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span><span class="db-chip"><span class="db-chip-dot material"></span>M 25</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
-    <p class="sport-meta">Alpiner Skirennlauf · ein Lauf · Geschwindigkeiten über 120 km/h</p>
-    <p class="sport-rationale">Skill und Material gleichauf dominant, Physis substanziell. Skitechnik bei Höchstgeschwindigkeit und Linienwahl entscheiden, das Materialgefälle innerhalb des Spitzenfelds ist hoch. Physis (vor allem isometrische Beinkraft) ist Voraussetzung, Taktik existiert nur in der Vorbereitung. Beachtenswert: Schach und Super G sind nahezu strukturelle Gegenpole.</p>
-
+    <p class="sport-meta">Alpiner Skirennlauf · ein Lauf</p>
+    <p class="sport-rationale">Skill dominiert, Material substanziell. Skitechnik bei Höchstgeschwindigkeit entscheidet häufiger als das Material, das aber klar vor Physis und Taktik liegt. Im neuen System trennt sich Super G erkennbar vom Viererbob, anders als zuvor.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/5</td><td class="lt">1/3</td></tr>
+<tr><th>P</th><td class="gt">3</td><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">5</td><td class="gt">3</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>M</th><td class="gt">3</td><td class="gt">2</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Ski-Setup und Wachs gehören zu den entscheidenden Faktoren.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.022</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -2133,225 +358,26 @@
 <details class="db-row" id="bowling">
   <summary>
     <span class="db-row-name">Bowling</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:45%" title="Skill: 45%"></div><div class="seg material" style="width:25%" title="Material: 25%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 45</span><span class="db-chip"><span class="db-chip-dot material"></span>M 25</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:60%" title="Skill: 60%"></div><div class="seg material" style="width:20%" title="Material: 20%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 60</span><span class="db-chip"><span class="db-chip-dot material"></span>M 20</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">PBA Tour · 10 Pins · 10 Frames</p>
-    <p class="sport-rationale">Skill-dominiert mit substanziellem Material-Anteil. Auf der PBA-Tour entscheidet vor allem die Wiederholbarkeit des Wurfablaufs und die Präzision der Linie — Lane-Conditions ändern sich im Spielverlauf, und Profis passen sich an. Material ist substanziell: Profis besitzen mehrere Bälle mit unterschiedlichen Oberflächen für unterschiedliche Lane-Öl-Muster. Physis ist niedrig — Mental-Sport mit minimaler Körperarbeit.</p>
-
+    <p class="sport-rationale">Skill-dominiert mit substanziellem Material. Wiederholbarkeit und Präzision des Wurfs entscheiden weit häufiger als alles andere; Material (mehrere Bälle für verschiedene Lane-Muster) liegt klar vor Taktik und Physis, die beide minimal sind.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">45%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/6</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/6</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">6</td><td class="gt">6</td><td class="diag">1</td><td class="gt">4</td></tr>
+<tr><th>M</th><td class="gt">2</td><td class="gt">2</td><td class="lt">1/4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Profis nutzen mehrere Bälle für verschiedene Lane-Öl-Muster.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.004</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -2360,182 +386,25 @@
 <details class="db-row" id="handball">
   <summary>
     <span class="db-row-name">Handball</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:35%" title="Taktik: 35%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 35</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">Profi · 7 gegen 7 · 2 × 30 Minuten</p>
-    <p class="sport-rationale">Strukturell ununterscheidbar von Fußball — beide haben das gleiche Profil (35/30/35/0). Auch Handball ist ein ausgewogener Mannschaftssport, in dem Taktik, Skill und Physis alle substanziell beitragen. Die Unterschiede zwischen Fußball und Handball liegen in Dimensionen, die das Modell nicht erfasst (Spielfläche, Körperkontakt-Intensität, Wurftechnik vs. Fußtechnik). Im 4D-Komponentenraum sind sie identisch.</p>
-
+    <p class="sport-rationale">Strukturell identisch mit Fußball und Basketball (40/20/40/0). Ein ausgewogener Mannschaftssport, in dem Taktik und Skill gleichauf führen und Physis die Grundlage bildet. Die Unterschiede zu den anderen liegen außerhalb der vier Komponenten.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">35%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">0%</span>
-      </div>
-      <p class="sub-empty-note">Keine relevanten Sub-Aspekte für diese Sportart.</p>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball und Halle sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -2544,225 +413,26 @@
 <details class="db-row" id="zehnkampf">
   <summary>
     <span class="db-row-name">Zehnkampf</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:40%" title="Physis: 40%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 40</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:50%" title="Physis: 50%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 50</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">Leichtathletik · 10 Disziplinen über 2 Tage</p>
-    <p class="sport-rationale">Physis-dominiert mit hohem Skill-Anteil. Der Zehnkampf vereint zehn Disziplinen mit teils völlig unterschiedlichen Bewegungsmustern — Skill in Form von Bewegungskomplexität und Lernkurve ist hier maximal. Trotzdem dominiert Physis: Schnellkraft, Schnelligkeit und Ausdauer sind alle hoch. Material ist vorhanden (Speere, Stäbe, Spikes), aber reguliert.</p>
-
+    <p class="sport-rationale">Physis dominiert — zehn Disziplinen verlangen das volle athletische Spektrum. Skill (Bewegungskomplexität über zehn Disziplinen) liegt auf Rang zwei. Taktik und Material sind klein. Material reguliert.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">40%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/5</td><td class="lt">1/3</td><td class="">1</td></tr>
+<tr><th>P</th><td class="gt">5</td><td class="diag">1</td><td class="gt">2</td><td class="gt">5</td></tr>
+<tr><th>Sk</th><td class="gt">3</td><td class="lt">1/2</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>M</th><td class="">1</td><td class="lt">1/5</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Speere, Stäbe und Spikes sind relevant, aber reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.002</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -2771,225 +441,26 @@
 <details class="db-row" id="bob-viererbob">
   <summary>
     <span class="db-row-name">Bob Viererbob</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div><div class="seg material" style="width:30%" title="Material: 30%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span><span class="db-chip"><span class="db-chip-dot material"></span>M 30</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:35%" title="Material: 35%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span><span class="db-chip"><span class="db-chip-dot material"></span>M 35</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">FIBT/IBSF · Viererbob · 4 Läufe</p>
-    <p class="sport-rationale">Strukturell ununterscheidbar von Super G — beide haben (15/25/30/30) als Profil. Bob teilt mit Super G das Hauptmerkmal: dominanter Skill (Pilot-Linienführung bei Höchstgeschwindigkeit) plus substanzielles Material (Schlitten-Aerodynamik, Kufen). Was Bob von Super G unterscheidet — Teamleistung beim Anschub, anaerobe Schnellkraft beim Start — wird im Modell zwar erfasst, hebt das Top-Level-Profil aber nicht messbar von Super G ab.</p>
-
+    <p class="sport-rationale">Skill und Material gleichauf an der Spitze. Die Pilot-Linienführung und der Hightech-Schlitten entscheiden gemeinsam; Physis (Anschub) folgt, Taktik ist minimal.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">15%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">25%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">30%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/4</td><td class="lt">1/3</td></tr>
+<tr><th>P</th><td class="gt">3</td><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">2</td><td class="diag">1</td><td class="">1</td></tr>
+<tr><th>M</th><td class="gt">3</td><td class="gt">2</td><td class="">1</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Der Schlitten ist ein Hightech-Gerät mit großem Gefälle.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.017</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
@@ -2998,229 +469,169 @@
 <details class="db-row" id="golf">
   <summary>
     <span class="db-row-name">Golf</span>
-    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div><div class="seg material" style="width:20%" title="Material: 20%"></div></span>
-    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span><span class="db-chip"><span class="db-chip-dot material"></span>M 20</span></span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
     <span class="db-row-icon" aria-hidden="true">▸</span>
   </summary>
   <div class="db-row-detail">
     <p class="sport-meta">PGA / DP World Tour · 4 Runden à 18 Loch</p>
-    <p class="sport-rationale">Skill-dominiert mit ausgewogener Beteiligung der anderen Komponenten. Skill ist auf Profiniveau maximal: Lernkurve, Präzision und Wiederholbarkeit sind alle hoch. Taktik wirkt durch Course-Management und Schläger-Auswahl, Material durch das individuelle Schläger-Fitting, Physis vor allem durch mentale Belastbarkeit über vier Tage. Eine der ausgewogensten Sportarten — alle vier Komponenten zwischen 20% und 40%.</p>
-
+    <p class="sport-rationale">Skill dominiert klar. Präzision und Wiederholbarkeit des Schwungs entscheiden weit häufiger als Taktik, Material oder Physis. Taktik (Course-Management) und Material (Schläger-Fitting) folgen mit Abstand, Physis ist am kleinsten.</p>
     <details class="ahp-details">
-      <summary>Komponentenaufschlüsselung anzeigen</summary>
+      <summary>Paarvergleichsmatrix anzeigen</summary>
       <div class="ahp-content">
-        <p class="ahp-label">Intensitäten der Sub-Aspekte (Skala 0–1, in Schritten von 0.25):</p>
-        <div class="sub-components">
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot tactics"></span>
-        <span class="sub-comp-name">Taktik</span>
-        <span class="sub-comp-value">20%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Antizipation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Entscheidungsdruck</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Strategische Tiefe</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anpassung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mannschaftskoordination</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Vorbereitung</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill tactics" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot physical"></span>
-        <span class="sub-comp-name">Physis</span>
-        <span class="sub-comp-value">20%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Maximalkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnellkraft</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Ausdauer</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Schnelligkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:0%"></div>
-          </div>
-          <span class="sub-item-value">0.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Beweglichkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Mentale Belastbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill physical" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot skill"></span>
-        <span class="sub-comp-name">Skill</span>
-        <span class="sub-comp-value">40%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Präzision</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Komplexität</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Lernkurve</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Reaktion auf Variation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Timing</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Wiederholbarkeit</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill skill" style="width:100%"></div>
-          </div>
-          <span class="sub-item-value">1.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="sub-component">
-      <div class="sub-component-header">
-        <span class="sub-comp-dot material"></span>
-        <span class="sub-comp-name">Material</span>
-        <span class="sub-comp-value">20%</span>
-      </div>
-      <div class="sub-items">
-        <div class="sub-item">
-          <span class="sub-item-name">Materialgefälle</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Optimierungspotenzial</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialvielfalt</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:75%"></div>
-          </div>
-          <span class="sub-item-value">0.75</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Materialspezifikation</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:50%"></div>
-          </div>
-          <span class="sub-item-value">0.50</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Anteil am Endresultat</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-        <div class="sub-item">
-          <span class="sub-item-name">Verschleißeinfluss</span>
-          <div class="sub-item-bar">
-            <div class="sub-item-fill material" style="width:25%"></div>
-          </div>
-          <span class="sub-item-value">0.25</span>
-        </div>
-      </div>
-    </div>
-        </div>
-        <p class="ahp-meta">Komponentengewichte ergeben sich aus dem Mittelwert der sechs Sub-Aspekte einer Komponente, gefolgt von Normalisierung auf Summe 1.</p>
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="lt">1/4</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/5</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">5</td><td class="diag">1</td><td class="gt">4</td></tr>
+<tr><th>M</th><td class="lt">1/2</td><td class="gt">2</td><td class="lt">1/4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Individuelles Schläger-Fitting ist auf der Tour Standard.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.033</span> <span class="cr-label">(konsistent)</span></p>
       </div>
     </details>
   </div>
 </details>
+
+<details class="db-row" id="basketball">
+  <summary>
+    <span class="db-row-name">Basketball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">NBA / FIBA · 5 gegen 5 · 4 × 10–12 Minuten</p>
+    <p class="sport-rationale">Strukturell identisch mit Fußball und Handball (40/20/40/0). Ein ausgewogener Mannschaftssport: Taktik (Spielsysteme, Matchups) und Skill (Wurf, Dribbling, Passspiel) liegen gleichauf, Physis ist substanzielle Grundlage. Material ausgeschlossen — Ball und Korb sind standardisiert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball, Korb und Schuhe sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="american-football">
+  <summary>
+    <span class="db-row-name">American Football</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 55</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">NFL · 11 gegen 11 · 4 × 15 Minuten</p>
+    <p class="sport-rationale">Die taktischste Mannschaftssportart der Datenbank. Play-Calling, Down-Systeme und Coaching-Schemes entscheiden im Paarvergleich deutlich häufiger als individuelle Physis oder Technik. Bemerkenswert: American Football liegt strukturell näher an Schach als an den meisten anderen Teamsportarten — beide sind hochstrategisch, auf völlig verschiedene Art. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="">1</td></tr>
+<tr><th>Sk</th><td class="lt">1/2</td><td class="">1</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Pads und Helme sind reguliert; zwischen Profiteams entscheidet die Ausrüstung nicht.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.016</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="tischtennis">
+  <summary>
+    <span class="db-row-name">Tischtennis</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:60%" title="Skill: 60%"></div><div class="seg material" style="width:20%" title="Material: 20%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 60</span><span class="db-chip"><span class="db-chip-dot material"></span>M 20</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">ITTF · Einzel · Best of 5 oder 7 Sätze</p>
+    <p class="sport-rationale">Strukturell identisch mit Bowling (10/10/60/20). Skill dominiert überwältigend — Schlagtechnik und Spin-Kontrolle entscheiden weit häufiger als alles andere. Material ist mit substanziellem Anteil aktiv: Beläge und Schläger sind stark personalisiert und beeinflussen Spin und Tempo erheblich. Taktik und Physis sind minimal.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/4</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/4</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">4</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>M</th><td class="gt">2</td><td class="gt">2</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Beläge sind stark personalisiert und beeinflussen Spin und Tempo erheblich.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="cricket">
+  <summary>
+    <span class="db-row-name">Cricket</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:35%" title="Taktik: 35%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 35</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Test / ODI · 11 gegen 11</p>
+    <p class="sport-rationale">Ausgewogenes Profil mit Materialanteil. Taktik (Field-Placements, Bowling-Strategie über lange Matches) und Skill (Batting, Bowling) liegen gleichauf an der Spitze, gefolgt von Physis und Material zu gleichen Teilen. Schläger, Ball und Pitch-Bedingungen beeinflussen das Spiel spürbar.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="">1</td><td class="gt">3</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="lt">1/3</td><td class="">1</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">3</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>M</th><td class="lt">1/3</td><td class="">1</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Ball sind reguliert, beeinflussen das Spiel aber spürbar; Pitch-Bedingungen variieren.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="judo">
+  <summary>
+    <span class="db-row-name">Judo</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Olympisch · 1 gegen 1 · 4 Minuten</p>
+    <p class="sport-rationale">Skill-dominierter Kampfsport. Wurftechnik und Griffkampf entscheiden im Paarvergleich häufiger als reine Kraft oder taktisches Vorgehen. Physis liegt auf Rang zwei, Taktik dahinter. Strukturell nah an Boxen — beide sind technikgetriebene Zweikampfsportarten. Material ausgeschlossen, der Gi ist reglementiert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table">
+<thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/3</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">3</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Der Judogi ist reglementiert; Material entscheidet nicht zwischen Athleten.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+
 
 
 
@@ -3250,67 +661,80 @@
   <circle class="mds-ring" cx="300.0" cy="300.0" r="112.5" />
   <circle class="mds-ring" cx="300.0" cy="300.0" r="168.8" />
   <circle class="mds-ring" cx="300.0" cy="300.0" r="225.0" />
-  <line class="force-edge" x1="233.1" y1="377.4" x2="165.9" y2="214.9" stroke-width="1.50" opacity="0.350" />
-  <line class="force-edge" x1="345.0" y1="202.5" x2="504.4" y2="221.4" stroke-width="1.50" opacity="0.350" />
-  <line class="force-edge" x1="345.0" y1="202.5" x2="499.9" y2="293.0" stroke-width="1.50" opacity="0.350" />
-  <line class="force-edge" x1="345.0" y1="202.5" x2="408.4" y2="248.9" stroke-width="1.97" opacity="0.444" />
-  <line class="force-edge" x1="315.7" y1="111.6" x2="397.0" y2="75.0" stroke-width="1.97" opacity="0.444" />
-  <line class="force-edge" x1="305.4" y1="327.1" x2="170.5" y2="315.8" stroke-width="1.97" opacity="0.444" />
-  <line class="force-edge" x1="225.1" y1="268.7" x2="305.4" y2="327.1" stroke-width="1.97" opacity="0.444" />
-  <line class="force-edge" x1="315.7" y1="111.6" x2="345.0" y2="202.5" stroke-width="1.97" opacity="0.444" />
-  <line class="force-edge" x1="484.2" y1="140.8" x2="408.4" y2="248.9" stroke-width="2.53" opacity="0.555" />
-  <line class="force-edge" x1="305.4" y1="327.1" x2="233.1" y2="377.4" stroke-width="2.53" opacity="0.555" />
-  <line class="force-edge" x1="165.9" y1="214.9" x2="170.5" y2="315.8" stroke-width="3.25" opacity="0.700" />
-  <line class="force-edge" x1="225.1" y1="268.7" x2="165.9" y2="214.9" stroke-width="3.25" opacity="0.700" />
-  <line class="force-edge" x1="233.1" y1="377.4" x2="170.5" y2="315.8" stroke-width="3.25" opacity="0.700" />
-  <line class="force-edge" x1="225.1" y1="268.7" x2="233.1" y2="377.4" stroke-width="3.25" opacity="0.700" />
-  <line class="force-edge" x1="499.9" y1="293.0" x2="504.4" y2="221.4" stroke-width="5.00" opacity="1.050" />
-  <line class="force-edge" x1="225.1" y1="268.7" x2="170.5" y2="315.8" stroke-width="5.00" opacity="1.050" />
-  <circle class="mds-glow" cx="225.1" cy="268.7" r="9" fill="#e63946" />
-  <circle class="mds-point" cx="225.1" cy="268.7" r="5" fill="#e63946" data-sport="fussball" />
-  <circle class="mds-glow" cx="305.4" cy="327.1" r="9" fill="#06a77d" />
-  <circle class="mds-point" cx="305.4" cy="327.1" r="5" fill="#06a77d" data-sport="tennis" />
-  <circle class="mds-glow" cx="353.7" cy="525.0" r="9" fill="#f4a261" />
-  <circle class="mds-point" cx="353.7" cy="525.0" r="5" fill="#f4a261" data-sport="100m-sprint" />
-  <circle class="mds-glow" cx="95.6" cy="106.5" r="9" fill="#264653" />
-  <circle class="mds-point" cx="95.6" cy="106.5" r="5" fill="#264653" data-sport="schach" />
-  <circle class="mds-glow" cx="315.7" cy="111.6" r="9" fill="#6f4e7c" />
-  <circle class="mds-point" cx="315.7" cy="111.6" r="5" fill="#6f4e7c" data-sport="strassenradsport" />
-  <circle class="mds-glow" cx="397.0" cy="75.0" r="9" fill="#1d4e89" />
-  <circle class="mds-point" cx="397.0" cy="75.0" r="5" fill="#1d4e89" data-sport="formel-1" />
-  <circle class="mds-glow" cx="233.1" cy="377.4" r="9" fill="#c1121f" />
-  <circle class="mds-point" cx="233.1" cy="377.4" r="5" fill="#c1121f" data-sport="boxen" />
-  <circle class="mds-glow" cx="345.0" cy="202.5" r="9" fill="#0096c7" />
-  <circle class="mds-point" cx="345.0" cy="202.5" r="5" fill="#0096c7" data-sport="triathlon" />
-  <circle class="mds-glow" cx="165.9" cy="214.9" r="9" fill="#bc8a3f" />
-  <circle class="mds-point" cx="165.9" cy="214.9" r="5" fill="#bc8a3f" data-sport="baseball" />
-  <circle class="mds-glow" cx="499.9" cy="293.0" r="9" fill="#8d99ae" />
-  <circle class="mds-point" cx="499.9" cy="293.0" r="5" fill="#8d99ae" data-sport="super-g" />
-  <circle class="mds-glow" cx="484.2" cy="140.8" r="9" fill="#5a189a" />
-  <circle class="mds-point" cx="484.2" cy="140.8" r="5" fill="#5a189a" data-sport="bowling" />
-  <circle class="mds-glow" cx="170.5" cy="315.8" r="9" fill="#ff6d00" />
-  <circle class="mds-point" cx="170.5" cy="315.8" r="5" fill="#ff6d00" data-sport="handball" />
-  <circle class="mds-glow" cx="407.9" cy="380.3" r="9" fill="#ffd60a" />
-  <circle class="mds-point" cx="407.9" cy="380.3" r="5" fill="#ffd60a" data-sport="zehnkampf" />
-  <circle class="mds-glow" cx="504.4" cy="221.4" r="9" fill="#80b918" />
-  <circle class="mds-point" cx="504.4" cy="221.4" r="5" fill="#80b918" data-sport="bob-viererbob" />
-  <circle class="mds-glow" cx="408.4" cy="248.9" r="9" fill="#ff006e" />
-  <circle class="mds-point" cx="408.4" cy="248.9" r="5" fill="#ff006e" data-sport="golf" />
-  <text class="mds-label" x="235.1" y="273.7" text-anchor="start">Fußball</text>
-  <text class="mds-label" x="315.4" y="332.1" text-anchor="start">Tennis</text>
-  <text class="mds-label" x="363.7" y="530.0" text-anchor="start">100m Sprint</text>
-  <text class="mds-label" x="105.6" y="111.5" text-anchor="start">Schach</text>
-  <text class="mds-label" x="325.7" y="116.6" text-anchor="start">Straßenradsport</text>
-  <text class="mds-label" x="387.0" y="80.0" text-anchor="end">Formel 1</text>
-  <text class="mds-label" x="223.1" y="382.4" text-anchor="end">Boxen</text>
-  <text class="mds-label" x="355.0" y="207.5" text-anchor="start">Triathlon</text>
-  <text class="mds-label" x="155.9" y="219.9" text-anchor="end">Baseball</text>
-  <text class="mds-label" x="489.9" y="298.0" text-anchor="end">Super G</text>
-  <text class="mds-label" x="474.2" y="145.8" text-anchor="end">Bowling</text>
-  <text class="mds-label" x="160.5" y="320.8" text-anchor="end">Handball</text>
-  <text class="mds-label" x="417.9" y="385.3" text-anchor="start">Zehnkampf</text>
-  <text class="mds-label" x="494.4" y="226.4" text-anchor="end">Bob Viererbob</text>
-  <text class="mds-label" x="398.4" y="253.9" text-anchor="end">Golf</text>
+  <line class="force-edge" x1="85.6" y1="479.9" x2="191.6" y2="494.8" stroke-width="1.50" opacity="0.350" />
+  <line class="force-edge" x1="269.4" y1="254.9" x2="209.0" y2="205.9" stroke-width="1.50" opacity="0.350" />
+  <line class="force-edge" x1="508.3" y1="406.3" x2="449.9" y2="334.8" stroke-width="1.50" opacity="0.350" />
+  <line class="force-edge" x1="209.0" y1="205.9" x2="267.5" y2="105.2" stroke-width="1.97" opacity="0.444" />
+  <line class="force-edge" x1="210.7" y1="130.1" x2="209.0" y2="205.9" stroke-width="1.97" opacity="0.444" />
+  <line class="force-edge" x1="269.4" y1="254.9" x2="359.8" y2="250.9" stroke-width="1.97" opacity="0.444" />
+  <line class="force-edge" x1="269.4" y1="254.9" x2="326.5" y2="317.1" stroke-width="1.97" opacity="0.444" />
+  <line class="force-edge" x1="300.6" y1="163.8" x2="267.5" y2="105.2" stroke-width="1.97" opacity="0.444" />
+  <line class="force-edge" x1="300.6" y1="163.8" x2="210.7" y2="130.1" stroke-width="1.97" opacity="0.444" />
+  <line class="force-edge" x1="326.5" y1="317.1" x2="359.8" y2="250.9" stroke-width="3.25" opacity="0.700" />
+  <line class="force-edge" x1="253.8" y1="419.9" x2="179.4" y2="389.0" stroke-width="5.00" opacity="1.050" />
+  <line class="force-edge" x1="210.7" y1="130.1" x2="267.5" y2="105.2" stroke-width="5.00" opacity="1.050" />
+  <line class="force-edge" x1="239.6" y1="366.3" x2="179.4" y2="389.0" stroke-width="5.00" opacity="1.050" />
+  <line class="force-edge" x1="239.6" y1="366.3" x2="253.8" y2="419.9" stroke-width="5.00" opacity="1.050" />
+  <circle class="mds-glow" cx="239.6" cy="366.3" r="9" fill="#e63946" />
+  <circle class="mds-point" cx="239.6" cy="366.3" r="5" fill="#e63946" data-sport="fussball" />
+  <circle class="mds-glow" cx="269.4" cy="254.9" r="9" fill="#06a77d" />
+  <circle class="mds-point" cx="269.4" cy="254.9" r="5" fill="#06a77d" data-sport="tennis" />
+  <circle class="mds-glow" cx="525.0" cy="290.0" r="9" fill="#f4a261" />
+  <circle class="mds-point" cx="525.0" cy="290.0" r="5" fill="#f4a261" data-sport="100m-sprint" />
+  <circle class="mds-glow" cx="85.6" cy="479.9" r="9" fill="#264653" />
+  <circle class="mds-point" cx="85.6" cy="479.9" r="5" fill="#264653" data-sport="schach" />
+  <circle class="mds-glow" cx="398.6" cy="451.3" r="9" fill="#6f4e7c" />
+  <circle class="mds-point" cx="398.6" cy="451.3" r="5" fill="#6f4e7c" data-sport="strassenradsport" />
+  <circle class="mds-glow" cx="75.0" cy="148.3" r="9" fill="#1d4e89" />
+  <circle class="mds-point" cx="75.0" cy="148.3" r="5" fill="#1d4e89" data-sport="formel-1" />
+  <circle class="mds-glow" cx="326.5" cy="317.1" r="9" fill="#c1121f" />
+  <circle class="mds-point" cx="326.5" cy="317.1" r="5" fill="#c1121f" data-sport="boxen" />
+  <circle class="mds-glow" cx="508.3" cy="406.3" r="9" fill="#0096c7" />
+  <circle class="mds-point" cx="508.3" cy="406.3" r="5" fill="#0096c7" data-sport="triathlon" />
+  <circle class="mds-glow" cx="133.9" cy="264.0" r="9" fill="#bc8a3f" />
+  <circle class="mds-point" cx="133.9" cy="264.0" r="5" fill="#bc8a3f" data-sport="baseball" />
+  <circle class="mds-glow" cx="300.6" cy="163.8" r="9" fill="#8d99ae" />
+  <circle class="mds-point" cx="300.6" cy="163.8" r="5" fill="#8d99ae" data-sport="super-g" />
+  <circle class="mds-glow" cx="210.7" cy="130.1" r="9" fill="#5a189a" />
+  <circle class="mds-point" cx="210.7" cy="130.1" r="5" fill="#5a189a" data-sport="bowling" />
+  <circle class="mds-glow" cx="253.8" cy="419.9" r="9" fill="#ff6d00" />
+  <circle class="mds-point" cx="253.8" cy="419.9" r="5" fill="#ff6d00" data-sport="handball" />
+  <circle class="mds-glow" cx="449.9" cy="334.8" r="9" fill="#ffd60a" />
+  <circle class="mds-point" cx="449.9" cy="334.8" r="5" fill="#ffd60a" data-sport="zehnkampf" />
+  <circle class="mds-glow" cx="379.0" cy="137.0" r="9" fill="#80b918" />
+  <circle class="mds-point" cx="379.0" cy="137.0" r="5" fill="#80b918" data-sport="bob-viererbob" />
+  <circle class="mds-glow" cx="209.0" cy="205.9" r="9" fill="#ff006e" />
+  <circle class="mds-point" cx="209.0" cy="205.9" r="5" fill="#ff006e" data-sport="golf" />
+  <circle class="mds-glow" cx="179.4" cy="389.0" r="9" fill="#b5179e" />
+  <circle class="mds-point" cx="179.4" cy="389.0" r="5" fill="#b5179e" data-sport="basketball" />
+  <circle class="mds-glow" cx="191.6" cy="494.8" r="9" fill="#7d4f16" />
+  <circle class="mds-point" cx="191.6" cy="494.8" r="5" fill="#7d4f16" data-sport="american-football" />
+  <circle class="mds-glow" cx="267.5" cy="105.2" r="9" fill="#48cae4" />
+  <circle class="mds-point" cx="267.5" cy="105.2" r="5" fill="#48cae4" data-sport="tischtennis" />
+  <circle class="mds-glow" cx="184.5" cy="316.0" r="9" fill="#a7c957" />
+  <circle class="mds-point" cx="184.5" cy="316.0" r="5" fill="#a7c957" data-sport="cricket" />
+  <circle class="mds-glow" cx="359.8" cy="250.9" r="9" fill="#1b4332" />
+  <circle class="mds-point" cx="359.8" cy="250.9" r="5" fill="#1b4332" data-sport="judo" />
+  <text class="mds-label" x="249.6" y="360.3" text-anchor="start">Fußball</text>
+  <text class="mds-label" x="279.4" y="248.9" text-anchor="start">Tennis</text>
+  <text class="mds-label" x="515.0" y="295.0" text-anchor="end">100m Sprint</text>
+  <text class="mds-label" x="95.6" y="484.9" text-anchor="start">Schach</text>
+  <text class="mds-label" x="408.6" y="456.3" text-anchor="start">Straßenradsport</text>
+  <text class="mds-label" x="85.0" y="153.3" text-anchor="start">Formel 1</text>
+  <text class="mds-label" x="316.5" y="322.1" text-anchor="end">Boxen</text>
+  <text class="mds-label" x="518.3" y="411.3" text-anchor="start">Triathlon</text>
+  <text class="mds-label" x="143.9" y="269.0" text-anchor="start">Baseball</text>
+  <text class="mds-label" x="288.6" y="168.8" text-anchor="end">Super G</text>
+  <text class="mds-label" x="200.7" y="124.1" text-anchor="end">Bowling</text>
+  <text class="mds-label" x="243.8" y="424.9" text-anchor="end">Handball</text>
+  <text class="mds-label" x="439.9" y="339.8" text-anchor="end">Zehnkampf</text>
+  <text class="mds-label" x="389.0" y="142.0" text-anchor="start">Bob Viererbob</text>
+  <text class="mds-label" x="219.0" y="213.9" text-anchor="start">Golf</text>
+  <text class="mds-label" x="189.4" y="401.0" text-anchor="start">Basketball</text>
+  <text class="mds-label" x="181.6" y="499.8" text-anchor="end">American Football</text>
+  <text class="mds-label" x="257.5" y="113.2" text-anchor="end">Tischtennis</text>
+  <text class="mds-label" x="194.5" y="321.0" text-anchor="start">Cricket</text>
+  <text class="mds-label" x="369.8" y="255.9" text-anchor="start">Judo</text>
 </svg>
   </div>
   <p class="figure-caption"><strong>Abb. 2</strong>Force-directed Graph aller bewerteten Sportarten. Positionen entstehen durch Kräftesimulation: Federkräfte ziehen ähnliche Sportarten zueinander, Abstoßung verhindert Überlappung. Verbindungslinien gibt es nur zwischen Paaren mit struktureller Distanz unter 0.15 — sie markieren die engsten Cluster. Konzentrische Kreise dienen als Referenzabstände; die Achsenrichtungen selbst haben keine inhaltliche Bedeutung.</p>
@@ -3395,7 +819,7 @@
 <script type="module">
 import * as THREE from 'three';
 
-const sportsData = [{"name": "Fußball", "color": "#e63946", "components": [0.35, 0.3, 0.35, 0.0], "slug": "fussball"}, {"name": "Tennis", "color": "#06a77d", "components": [0.25, 0.3, 0.4, 0.05], "slug": "tennis"}, {"name": "100m Sprint", "color": "#f4a261", "components": [0.05, 0.5, 0.45, 0.0], "slug": "100m-sprint"}, {"name": "Schach", "color": "#264653", "components": [0.55, 0.1, 0.35, 0.0], "slug": "schach"}, {"name": "Straßenradsport", "color": "#6f4e7c", "components": [0.3, 0.25, 0.2, 0.25], "slug": "strassenradsport"}, {"name": "Formel 1", "color": "#1d4e89", "components": [0.3, 0.15, 0.25, 0.3], "slug": "formel-1"}, {"name": "Boxen", "color": "#c1121f", "components": [0.3, 0.35, 0.35, 0.0], "slug": "boxen"}, {"name": "Triathlon", "color": "#0096c7", "components": [0.25, 0.25, 0.3, 0.2], "slug": "triathlon"}, {"name": "Baseball", "color": "#bc8a3f", "components": [0.4, 0.25, 0.35, 0.0], "slug": "baseball"}, {"name": "Super G", "color": "#8d99ae", "components": [0.15, 0.25, 0.3, 0.3], "slug": "super-g"}, {"name": "Bowling", "color": "#5a189a", "components": [0.15, 0.15, 0.45, 0.25], "slug": "bowling"}, {"name": "Handball", "color": "#ff6d00", "components": [0.35, 0.3, 0.35, 0.0], "slug": "handball"}, {"name": "Zehnkampf", "color": "#ffd60a", "components": [0.15, 0.4, 0.3, 0.15], "slug": "zehnkampf"}, {"name": "Bob Viererbob", "color": "#80b918", "components": [0.15, 0.25, 0.3, 0.3], "slug": "bob-viererbob"}, {"name": "Golf", "color": "#ff006e", "components": [0.2, 0.2, 0.4, 0.2], "slug": "golf"}];
+const sportsData = [{"name": "Fußball", "color": "#e63946", "components": [0.4, 0.2, 0.4, 0.0], "slug": "fussball"}, {"name": "Tennis", "color": "#06a77d", "components": [0.2, 0.2, 0.55, 0.05], "slug": "tennis"}, {"name": "100m Sprint", "color": "#f4a261", "components": [0.05, 0.6, 0.35, 0.0], "slug": "100m-sprint"}, {"name": "Schach", "color": "#264653", "components": [0.65, 0.1, 0.25, 0.0], "slug": "schach"}, {"name": "Straßenradsport", "color": "#6f4e7c", "components": [0.25, 0.45, 0.15, 0.15], "slug": "strassenradsport"}, {"name": "Formel 1", "color": "#1d4e89", "components": [0.25, 0.05, 0.25, 0.45], "slug": "formel-1"}, {"name": "Boxen", "color": "#c1121f", "components": [0.2, 0.3, 0.5, 0.0], "slug": "boxen"}, {"name": "Triathlon", "color": "#0096c7", "components": [0.1, 0.6, 0.2, 0.1], "slug": "triathlon"}, {"name": "Baseball", "color": "#bc8a3f", "components": [0.3, 0.1, 0.6, 0.0], "slug": "baseball"}, {"name": "Super G", "color": "#8d99ae", "components": [0.1, 0.15, 0.5, 0.25], "slug": "super-g"}, {"name": "Bowling", "color": "#5a189a", "components": [0.1, 0.1, 0.6, 0.2], "slug": "bowling"}, {"name": "Handball", "color": "#ff6d00", "components": [0.4, 0.2, 0.4, 0.0], "slug": "handball"}, {"name": "Zehnkampf", "color": "#ffd60a", "components": [0.1, 0.5, 0.3, 0.1], "slug": "zehnkampf"}, {"name": "Bob Viererbob", "color": "#80b918", "components": [0.1, 0.2, 0.35, 0.35], "slug": "bob-viererbob"}, {"name": "Golf", "color": "#ff006e", "components": [0.2, 0.1, 0.55, 0.15], "slug": "golf"}, {"name": "Basketball", "color": "#b5179e", "components": [0.4, 0.2, 0.4, 0.0], "slug": "basketball"}, {"name": "American Football", "color": "#7d4f16", "components": [0.55, 0.2, 0.25, 0.0], "slug": "american-football"}, {"name": "Tischtennis", "color": "#48cae4", "components": [0.1, 0.1, 0.6, 0.2], "slug": "tischtennis"}, {"name": "Cricket", "color": "#a7c957", "components": [0.35, 0.15, 0.35, 0.15], "slug": "cricket"}, {"name": "Judo", "color": "#1b4332", "components": [0.15, 0.3, 0.55, 0.0], "slug": "judo"}];
 
 const cornerLabels = { T: 'Taktik', P: 'Physis', Sk: 'Skill', M: 'Material' };
 

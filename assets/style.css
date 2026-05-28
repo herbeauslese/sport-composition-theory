@@ -177,6 +177,12 @@ hr {
   stroke-linecap: round;
   pointer-events: none;
 }
+.leader-line {
+  stroke: var(--text-muted);
+  stroke-width: 0.75;
+  opacity: 0.4;
+  pointer-events: none;
+}
 :root[data-theme="dark"] .force-edge {
   stroke: #bbb;
 }

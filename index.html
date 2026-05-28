@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Komponenten.">
@@ -43,6 +43,12 @@
     </ol>
   </li>
   <li><a href="#methodik">Methodik</a>
+    <ol>
+      <li><a href="#methodik-leitfrage">Leitfrage</a></li>
+      <li><a href="#methodik-skala">Skala</a></li>
+      <li><a href="#methodik-material">Bedingtes Material</a></li>
+      <li><a href="#methodik-konsistenz">Konsistenzprüfung</a></li>
+    </ol>
   </li>
   <li><a href="#beispiele">Beispiele</a>
   </li>
@@ -121,22 +127,36 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <hr />
 
 <h2 id="methodik">Methodik</h2>
-<p>Die konkreten Komponentengewichte für jede Sportart werden über ein hierarchisches Verfahren ermittelt, das jeder der vier Komponenten sechs Sub-Aspekte zuordnet. Diese Sub-Aspekte sind universell — sie gelten für alle Sportarten gleich — und greifen, wo möglich, auf in der Sportwissenschaft etablierte Klassifikationen zurück.<label for="sn-3" class="sidenote-toggle"><sup>3</sup></label><input type="checkbox" id="sn-3" class="sidenote-checkbox"><span class="sidenote">Die Physis-Sub-Aspekte folgen weitgehend Faigenbaum et al. (2009), <em>Youth Resistance Training: Updated Position Statement Paper</em>, Journal of Strength and Conditioning Research, 23(5 Suppl), S60–S79. Die Taktik-Sub-Aspekte orientieren sich an den Kategorien der Sport-Cognition-Forschung (Antizipation, Entscheidungsdruck, Anpassung). Skill- und Material-Sub-Aspekte sind im Rahmen der Theorie entwickelt.</span></p>
+<p>Die konkreten Komponentengewichte für jede Sportart werden mit dem <em>Analytic Hierarchy Process</em> (AHP) ermittelt — einem etablierten Verfahren der Entscheidungstheorie.<label for="sn-3" class="sidenote-toggle"><sup>3</sup></label><input type="checkbox" id="sn-3" class="sidenote-checkbox"><span class="sidenote">Saaty, T. L. (1980): <em>The Analytic Hierarchy Process</em>. McGraw-Hill, New York. Das Verfahren wird breit in Wirtschaft, Technik und Forschung eingesetzt, um schwer quantifizierbare Kriterien systematisch zu gewichten.</span> Die Grundidee: Statt jeder Komponente direkt eine Prozentzahl zuzuweisen — was kaum begründbar wäre — werden nur <strong>Paarvergleiche</strong> angestellt. Man beantwortet jeweils die Frage, welche von zwei Komponenten häufiger über den Ausgang entscheidet, und wie deutlich. Aus diesen Vergleichen errechnet sich der Gewichtsvektor mathematisch.</p>
 
-<p>Die Sub-Aspekte sind:</p>
-<p><strong>Taktik:</strong> Antizipation, Entscheidungsdruck, Strategische Tiefe, Anpassung, Mannschaftskoordination, Vorbereitung.</p>
-<p><strong>Physis:</strong> Maximalkraft, Schnellkraft, Ausdauer, Schnelligkeit, Beweglichkeit, Mentale Belastbarkeit.</p>
-<p><strong>Skill:</strong> Präzision, Komplexität, Lernkurve, Reaktion auf Variation, Timing, Wiederholbarkeit.</p>
-<p><strong>Material:</strong> Materialgefälle, Optimierungspotenzial, Materialvielfalt, Materialspezifikation, Anteil am Endresultat, Verschleißeinfluss.</p>
+<p>Das Verfahren macht die Werte nicht objektiv. Es macht die Urteile, die in sie einfließen, sichtbar, vergleichbar und auf Widersprüche prüfbar. Vier Festlegungen sorgen dafür, dass die Vergleiche verlässlich und nicht beliebig sind.</p>
 
-<p>Für jede Sportart wird jedem dieser 24 Sub-Aspekte eine Intensität auf einer fünfstufigen Skala (0, 0.25, 0.5, 0.75, 1.0) zugewiesen. Das resultiert in einem Intensitätsprofil mit 24 Werten pro Sportart. Das Gewicht einer Komponente ergibt sich aus dem Mittelwert ihrer sechs Sub-Aspekte; anschließend wird über alle vier Komponenten so normalisiert, dass sich die Werte zu eins summieren, und auf das 5%-Raster gerundet.</p>
+<h3 id="methodik-leitfrage">Eine einzige Leitfrage</h3>
+<p>Jeder Paarvergleich beantwortet exakt dieselbe kontrafaktische Frage:</p>
+<div class="method-callout"><em>„Wenn zwei Konkurrenten auf Weltklasseniveau in allen anderen Komponenten exakt gleich wären — wie viel häufiger entscheidet ein Vorsprung in Komponente A statt in Komponente B über den Ausgang?"</em></div>
+<p>Diese Formulierung isoliert jede Komponente. Sie zwingt zum „alles andere gleich"-Denken und verhindert, dass ein diffuses „Taktik ist halt wichtig" in die Bewertung einfließt. Gefragt wird nicht, wie sichtbar oder spektakulär eine Komponente ist, sondern wie oft sie tatsächlich den Unterschied zwischen Sieg und Niederlage macht.</p>
 
-<p>Innerhalb einer Komponente werden die Sub-Aspekte gleich gewichtet (jeweils 1/6). Das ist eine bewusste Vereinfachung: die Theorie verzichtet darauf, universelle Gewichtsurteile abzugeben — die Behauptung „Ausdauer ist universell wichtiger als Beweglichkeit" wäre selbst eine starke und schwer verteidigbare Annahme.</p>
+<h3 id="methodik-skala">Eine verankerte Skala</h3>
+<p>Die Antwort wird auf einer Skala von 1 bis 9 ausgedrückt, deren Stufen vorab mit Bedeutung belegt sind — damit dieselbe Zahl bei jeder Sportart dasselbe meint:</p>
+<div class="scale-table">
+  <div class="scale-row"><span class="scale-num">1</span><span class="scale-desc">beide gleichermaßen ergebnisentscheidend</span></div>
+  <div class="scale-row"><span class="scale-num">3</span><span class="scale-desc">A entscheidet merklich häufiger</span></div>
+  <div class="scale-row"><span class="scale-num">5</span><span class="scale-desc">A entscheidet klar häufiger als B</span></div>
+  <div class="scale-row"><span class="scale-num">7</span><span class="scale-desc">A dominiert</span></div>
+  <div class="scale-row"><span class="scale-num">9</span><span class="scale-desc">A entscheidet praktisch immer</span></div>
+</div>
+<p>Die geraden Zahlen (2, 4, 6, 8) sind Zwischenstufen. Entscheidet umgekehrt B häufiger, wird der Kehrwert eingetragen (ein Drittel statt drei).</p>
 
-<p>Die resultierenden Werte sind keine Messungen. Sie sind strukturierte Urteile. Das Verfahren macht diese Urteile nicht objektiv — es macht sie zerlegbar und nachvollziehbar: statt eines einzelnen Wertes pro Komponente kann jede Zahl auf ihre sechs Sub-Aspekte zurückgeführt werden. Die vollständigen Intensitätsprofile pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>.</p>
+<h3 id="methodik-material">Material als bedingte Komponente</h3>
+<p>Vor jeder Bewertung steht eine einzige Ja-Nein-Frage: <em>Beeinflusst Materialqualität strukturell das Ergebnis zwischen zwei Weltklasse-Konkurrenten?</em> Bei Fußball lautet die Antwort nein — alle spielen mit demselben standardisierten Ball. Bei Formel 1 lautet sie ja — die Konstrukteursleistung entscheidet über die Saison. Fällt die Antwort negativ aus, wird Material vollständig aus der Rechnung genommen und das Gewicht ist exakt null; es bleibt dann ein Vergleich von nur drei Komponenten. Fällt sie positiv aus, werden alle vier Komponenten verglichen. Das vermeidet, dass eine faktisch irrelevante Komponente durch Rundung ein künstliches Restgewicht erhält.</p>
+
+<h3 id="methodik-konsistenz">Eine Konsistenzprüfung</h3>
+<p>Paarvergleiche können sich widersprechen. Wer urteilt, dass Taktik siebenmal so oft entscheidet wie Physis, und Physis dreimal so oft wie Skill, müsste konsequenterweise Taktik als deutlich überlegen gegenüber Skill einstufen — tut er das nicht, liegt ein Widerspruch vor. AHP berechnet aus dem Grad solcher Widersprüche eine Kennzahl, den <em>Consistency Ratio</em> (CR). Liegt er unter 0,10, gelten die Urteile als hinreichend widerspruchsfrei.<label for="sn-4" class="sidenote-toggle"><sup>4</sup></label><input type="checkbox" id="sn-4" class="sidenote-checkbox"><span class="sidenote">Der Schwellenwert von 0,10 ist die von Saaty (1980) vorgeschlagene Konvention. Alle in dieser Theorie angegebenen Vektoren liegen darunter; die vollständigen Matrizen und CR-Werte finden sich in der Datenbank.</span> Liegt er darüber, werden nicht die Ergebnisse zurechtgebogen, sondern die widersprüchlichen Urteile selbst überarbeitet. Diese Prüfung ist der eigentliche Vertrauensanker des Verfahrens — sie deckt Fehler auf, die eine bloße Schätzung pro Komponente nie sichtbar machen würde.</p>
+
+<p>Die resultierenden Werte sind keine Messungen, sondern strukturierte und konsistenzgeprüfte Urteile. Die vollständigen Paarvergleichsmatrizen und Konsistenzwerte pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>.</p>
 <hr />
 <h2 id="beispiele">Beispiele</h2>
-<p>Die folgenden Aufschlüsselungen sind mit dem im Methodik-Abschnitt beschriebenen Verfahren ermittelt. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Die vollständigen Intensitätsprofile pro Sportart — also die Bewertung der sechs Sub-Aspekte jeder Komponente — finden sich in der <a href="datenbank/">Datenbank</a>.</p>
+<p>Die folgenden Aufschlüsselungen sind mit dem im Methodik-Abschnitt beschriebenen AHP-Verfahren ermittelt. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Die vollständigen Paarvergleichsmatrizen und Konsistenzwerte pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>.</p>
 <div class="sport-charts">
 
 <div class="sport-entry">
@@ -144,13 +164,13 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics" style="width:35%" title="Taktik: 35%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div>
+    <div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 35%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 40%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 40%</span>
   </div>
 </div>
-<p class="sport-rationale">Fußball verteilt sich erstaunlich gleichmäßig auf Taktik, Skill und Physis. Trotz der landläufigen Wahrnehmung als Taktik-Sport trägt keine einzelne Komponente eine klare Mehrheit. Taktik wirkt vor allem über Mannschaftskoordination und Anpassung im Spielverlauf. Skill ist überall im Spielfluss erforderlich. Physis ist Voraussetzung für 90 Minuten unter wechselnder Belastung. Kein Material — die Ausrüstung ist standardisiert.</p>
+<p class="sport-rationale">Taktik und Skill teilen sich die Spitze, Physis bleibt wichtige Grundlage. Im Paarvergleich entscheidet ein taktischer Vorsprung etwas häufiger als reine Athletik (organisierte Teams schlagen athletischere), während Taktik und individuelle Technik etwa gleichauf liegen. Material wurde ausgeschlossen — Ball, Schuhe und Platz sind standardisiert, zwischen zwei Profiteams entscheidet Ausrüstung nicht.</p>
 </div>
 
 <div class="sport-entry">
@@ -158,13 +178,13 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div>
+    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 40%</span><span class="leg-item"><span class="leg-dot material"></span>Material 5%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 55%</span><span class="leg-item"><span class="leg-dot material"></span>Material 5%</span>
   </div>
 </div>
-<p class="sport-rationale">Skill leicht voran, Physis und Taktik beide substanziell. Schlagtechnik, Aufschlagpräzision und Bewegungsökonomie machen den Unterschied. Physis trägt mit, weil Matches lang und der Kalender erbarmungslos sind. Taktik wirkt über Antizipation und Anpassung. Material existiert leicht — Schläger sind nicht vollständig vergleichbar und beeinflussen das Spiel marginal.</p>
+<p class="sport-rationale">Skill dominiert klar. Schlagtechnik und Aufschlagpräzision entscheiden im direkten Vergleich deutlich häufiger als taktischer Aufbau oder Physis, die untereinander etwa gleichauf liegen. Material ist mit einem kleinen, aber echten Anteil aktiv: Schläger und Besaitung sind nicht vollständig vereinheitlicht und beeinflussen das Spiel marginal.</p>
 </div>
 
 <div class="sport-entry">
@@ -172,13 +192,13 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:50%" title="Physis: 50%"></div><div class="seg skill" style="width:45%" title="Skill: 45%"></div>
+    <div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 50%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 45%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 60%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
   </div>
 </div>
-<p class="sport-rationale">Das Physis-Skill-Extrem: alles fokussiert auf zehn Sekunden Maximalleistung. Schnellkraft, Reaktionszeit und anaerobe Kapazität dominieren, aber Skill in Lauftechnik und Startphase ist substanzieller als laienhaft angenommen. Taktik existiert praktisch nicht. Sprint ist eine der Sportarten mit dem niedrigsten Taktik-Wert.</p>
+<p class="sport-rationale">Physis entscheidet — fast alles hängt an zehn Sekunden Maximalleistung. Im Paarvergleich schlägt körperliche Anlage sowohl Taktik (die praktisch keine Rolle spielt) als auch Technik deutlich, wobei Skill in Startphase und Lauftechnik den zweiten Platz klar behauptet. Material ist ausgeschlossen — Spikes und Bahn sind reguliert.</p>
 </div>
 
 <div class="sport-entry">
@@ -186,13 +206,13 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div>
+    <div class="seg tactics" style="width:65%" title="Taktik: 65%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 55%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 65%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
   </div>
 </div>
-<p class="sport-rationale">Die einzige Beispielsportart, in der Taktik klar die dominante Komponente ist — mit weitem Abstand zum Rest. Antizipation, strategische Tiefe und Vorbereitung sind alle maximal. Skill liegt in Mustererkennung und Eröffnungsrepertoire, mit extrem hoher Lernkurve. Physis ist auf Konzentrationsausdauer reduziert. Trotz Taktik-Dominanz bleibt der absolute Taktik-Wert mit 55% deutlich unter dem, was naive Schätzungen vermuten lassen würden.</p>
+<p class="sport-rationale">Taktik dominiert mit weitem Abstand. Im direkten Vergleich entscheidet strategisches Denken praktisch immer gegen körperliche Verfassung und merklich häufiger als die Mustererkennungs-Routine, die hier als Skill zählt. Physis reduziert sich auf Konzentrationsausdauer. Material existiert nicht als Faktor — Brett und Figuren sind ohne Einfluss.</p>
 </div>
 
 <div class="sport-entry">
@@ -200,13 +220,13 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:20%" title="Skill: 20%"></div><div class="seg material" style="width:25%" title="Material: 25%"></div>
+    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:45%" title="Physis: 45%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 30%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 25%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 20%</span><span class="leg-item"><span class="leg-dot material"></span>Material 25%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 45%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span><span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
   </div>
 </div>
-<p class="sport-rationale">Ein erstaunlich ausgewogener Sport, der alle vier Komponenten substanziell trägt. Taktik wirkt auf Teamebene — Domestiquen-Einsatz, Ausreißerkalkül. Physis ist die Ausdauerbasis. Skill betrifft Fahrtechnik und Risikomanagement. Material spielt eine Rolle, ist aber innerhalb der World Tour begrenzt vergleichbar zur Formel 1.</p>
+<p class="sport-rationale">Physis trägt den Sport, mit taktischem Überbau. Ausdauerleistung entscheidet im Paarvergleich häufiger als alles andere; Taktik (Teamarbeit, Ausreißerkalkül) liegt davor auf Rang zwei. Skill und Material sind gleichauf — das Rad ist messbar relevant, aber innerhalb der World Tour technisch angeglichen.</p>
 </div>
 
 <div class="sport-entry">
@@ -214,18 +234,18 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
 <div class="stacked-bar-wrap">
   <div class="stacked-bar">
-    <div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:30%" title="Material: 30%"></div>
+    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:5%" title="Physis: 5%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:45%" title="Material: 45%"></div>
   </div>
   <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 30%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 15%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span><span class="leg-item"><span class="leg-dot material"></span>Material 30%</span>
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 5%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span><span class="leg-item"><span class="leg-dot material"></span>Material 45%</span>
   </div>
 </div>
-<p class="sport-rationale">Material und Taktik tragen Formel 1 gemeinsam, Skill substanziell. F1 hat das höchste Materialgewicht aller Beispielsportarten — Konstrukteursleistung entscheidet über die Saison. Taktik wirkt über Boxenstrategie und Renntempo. Skill differenziert die Fahrer innerhalb des Spitzenfelds. Physis ist eng auf mentale Belastbarkeit und G-Kraft-Resistenz fokussiert.</p>
+<p class="sport-rationale">Material ist der stärkste einzelne Faktor. Im Paarvergleich entscheidet die Konstrukteursleistung häufiger als Fahrer-Taktik oder -Skill, die untereinander gleichauf liegen und gemeinsam den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle — sie ist Voraussetzung, aber selten der Unterschied zwischen Sieg und Niederlage im Spitzenfeld.</p>
 </div>
 
 </div>
 
-<p><small>* Die Prozentsätze ergeben sich aus 24 Sub-Aspekt-Bewertungen pro Sportart (sechs je Komponente). Das Verfahren macht die Urteile zerlegbar und nachvollziehbar — nicht objektiv. Die Werte sind ernst gemeint, aber nicht endgültig.</small></p>
+<p><small>* Die Prozentsätze ergeben sich aus Paarvergleichen, strukturiert nach dem Analytic Hierarchy Process und auf Konsistenz geprüft. Das Verfahren macht die Urteile nachvollziehbar und widerspruchsfrei — nicht objektiv. Die Werte sind ernst gemeint, aber nicht endgültig.</small></p>
 <hr />
 <h2 id="vergleich">Vergleich</h2>
 <p>Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Die These hat behauptet, dass jeder strukturelle Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
@@ -237,11 +257,11 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p>Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.41 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe reicht die größte beobachtete Distanz an knapp die Hälfte dieses Maximums heran.</p>
 <p>Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung. Eine visuelle Karte aller bewerteten Sportarten als Force-directed Graph — in dem sich ähnliche Sportarten zu Clustern zusammenfinden — findet sich in der <a href="datenbank/">Datenbank</a>.</p>
 <p>Aus den Vektoren lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
-<p><strong>Ein großes Cluster ausgewogener Sportarten dominiert die Mitte.</strong> Von fünfzehn untersuchten Sportarten haben zwölf kein einzelnes Komponentengewicht von 45% oder mehr — sie sind strukturell ausgewogen. Besonders eng ist das Cluster um Fußball, Handball, Boxen, Baseball und Tennis: Taktik, Skill und Physis liegen bei allen zwischen 25% und 40%, ohne dass eine Komponente klar dominiert. Zwei Paare sind im Modell sogar strukturell identisch: Fußball und Handball (beide 35/30/35/0) sowie Super G und Viererbob (beide 15/25/30/30). Das ist kein Fehler, sondern eine Aussage — diese Sportarten unterscheiden sich in Dimensionen, die außerhalb der vier Komponenten liegen.</p>
+<p><strong>Fußball und Tennis liegen strukturell am nächsten beieinander.</strong> Mit einer Distanz von 0.25 sind sie das ähnlichste Paar der sechs Beispielsportarten — beide werden maßgeblich von Skill getragen, mit Taktik und Physis als substanziellem Unterbau. Fußball ist zugleich die strukturell zentralste der sechs Sportarten: Mit der geringsten durchschnittlichen Distanz zu allen anderen (0.41) liegt es näher an der Mitte des Möglichkeitsraums als jede andere. Das passt zu seinem ausgewogenen Profil — keine Komponente dominiert, also ist es zu keiner Spezialdisziplin extrem weit entfernt.</p>
 
-<p><strong>100m Sprint und Schach sind die strukturellen Antipoden.</strong> Mit einer Distanz von 0.65 bleiben sie auch in der erweiterten Stichprobe von fünfzehn Sportarten das fernste Paar. Sprint reduziert eine Sportart auf zehn Sekunden Maximalphysis; Schach reduziert sie auf reine Kognition. Es gibt kaum eine Sub-Komponente, in der beide nennenswert übereinstimmen. Beide sind zugleich die strukturell isoliertesten Sportarten überhaupt (durchschnittliche Distanz 0.42 bzw. 0.42 zu allen anderen) — sie definieren die beiden Enden der Achse, an der sich alles andere verorten lässt.</p>
+<p><strong>100m Sprint und Schach sind die strukturellen Antipoden.</strong> Mit einer Distanz von 0.79 sind sie mit Abstand das fernste Paar — und nähern sich damit der theoretischen Obergrenze von √2 ≈ 1.41 stärker an als jedes andere Paar. Sprint reduziert eine Sportart auf zehn Sekunden Maximalphysis; Schach reduziert sie auf reine Kognition. Es gibt kaum eine Dimension, in der beide nennenswert übereinstimmen. Beide sind zugleich die fernsten Nachbarn der jeweils anderen Sportarten — sie spannen die Achse auf, an der sich alles andere relativ verorten lässt.</p>
 
-<p><strong>Triathlon liegt strukturell im Zentrum.</strong> Mit einer durchschnittlichen Distanz von 0.22 zu allen anderen Sportarten ist Triathlon die strukturell „mittlere" Disziplin — knapp gefolgt von Tennis (0.23) und Golf (0.24). Das ist nicht zufällig: Triathlon trägt alle vier Komponenten substanziell, mit moderaten Werten in jeder Richtung. Wer eine Sportart sucht, die das Mittel der gesamten Stichprobe repräsentiert, findet sie hier. Am anderen Ende stehen Sprint und Schach als die isoliertesten Sportarten.</p>
+<p><strong>Material trennt schärfer als jede andere Komponente.</strong> Formel 1 ist mit einer durchschnittlichen Distanz von 0.58 eine der isoliertesten der sechs Sportarten — nicht weil sie in Taktik oder Skill extrem wäre (beide liegen bei moderaten 25%), sondern allein wegen ihres hohen Materialanteils von 45%. Da nur zwei der sechs Beispielsportarten überhaupt Material tragen, wirkt diese Komponente wie eine eigene Achse, die F1 und Straßenradsport von den materialfreien Sportarten wegzieht. Eine einzige dominante Komponente genügt, um eine Sportart an den Rand des Möglichkeitsraums zu rücken — das gilt für Material bei Formel 1 ebenso wie für Taktik bei Schach und Physis beim Sprint.</p>
 <p>Diese drei Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
 <h4 id="grenzen-berechnung">Grenzen dieser Berechnung</h4>
 <p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat methodische Schwächen, die offen benannt werden sollten.</p>

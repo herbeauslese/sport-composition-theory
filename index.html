@@ -42,8 +42,6 @@
       <li><a href="#komponenten">Komponenten</a></li>
     </ol>
   </li>
-  <li><a href="#vorbehalte-anmerkungen">Vorbehalte & Anmerkungen</a>
-  </li>
   <li><a href="#methodik">Methodik</a>
   </li>
   <li><a href="#beispiele">Beispiele</a>
@@ -52,6 +50,8 @@
     <ol>
       <li><a href="#strukturelle-distanz">Strukturelle Distanz</a></li>
     </ol>
+  </li>
+  <li><a href="#vorbehalte-anmerkungen">Vorbehalte & Anmerkungen</a>
   </li>
   <li><a href="datenbank/">Datenbank →</a></li>
 </ol>
@@ -119,20 +119,7 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p>Ein Tennisschläger qualifiziert sich nicht. Ein Formel-1-Auto schon. Ein Bob auch. Ein hochwertiges Straßenrad-Setup liegt irgendwo dazwischen und wird entsprechend behandelt.</p>
 <p>Noch eine Anmerkung: Trainingsinfrastruktur — Höhencamps, Spezialbahnen, Spitzentrainerstäbe — könnte prinzipiell unter Material fallen. Auf höchstem kompetitiven Niveau konvergieren diese Faktoren jedoch in der Regel. Die Top-Athleten in den meisten Sportarten haben weitgehend vergleichbaren Zugang zu erstklassigen Einrichtungen, was den differenzierenden Effekt begrenzt. Aus diesem Grund ist Trainingsinfrastruktur aus dem Modell ausgeschlossen, sofern sie nicht eine <em>persistente, strukturelle</em> Wettbewerbsasymmetrie erzeugt.</p>
 <hr />
-<h2 id="vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</h2>
-<p>Der Composition Vector ist eine bewusste Vereinfachung. Das ist ein Feature, kein Mangel — aber es hat Konsequenzen, die explizit benannt werden sollten.</p>
-<h3 id="mannschaftssport">Das Mannschaftssport-Problem</h3>
-<p>In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten beschreibt er das Team, nicht den Spieler — denn taktische Qualität operiert dort auf zwei Ebenen: kollektiv (Formation, Pressing, Standardsituationen) und individuell (Positionsentscheidungen innerhalb des Systems). Diese sind nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur schlecht ist.</p>
-<p>Eine praktische Folge: Taktik wiegt in Mannschaftssportarten schwerer, als eine naive Lesart vermuten lässt, weil kollektive Organisation individuelle Überlegenheit in anderen Komponenten kompensieren oder neutralisieren kann. Elf individuell überlegene Athleten ohne System verlieren regelmäßig gegen elf organisierte.</p>
-<h3 id="material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</h3>
-<p>Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund die Hälfte des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse <em>im gesamten Feld</em> prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.</p>
-<h3 id="zerlegbarkeit-kritik">Kritik an der Zerlegbarkeit</h3>
-<p>Die These behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten für eine fünfte werden hier kurz behandelt — und an ihrem Platz innerhalb des Modells verortet, statt eine eigene Achse zu bekommen.</p>
-<p><strong>Glück, Varianz, Zufall.</strong> Glück ist keine sportliche Leistung; die Komponenten beschreiben, was vom Athleten <em>verlangt</em> wird. Wo Zufallsmanagement zur Leistung wird — Wahrscheinlichkeiten rechnen, Gegner lesen wie im Poker — ist das Taktik. Über lange Wettkampfformate (eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund) mittelt sich Zufall ohnehin heraus.</p>
-<p><strong>Ästhetik und Wertungssport.</strong> Was Bewerter belohnen, ist im Wesentlichen Skill (saubere Ausführung) plus Physis (Schwierigkeitsgrad). Choreografie und Ausdruck sind eine interpretative Spielart von Skill, keine eigene Achse.</p>
-<p><strong>Mentale Härte.</strong> Bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck. Eine separate Komponente wäre Doppelzählung.</p>
-<p>Diese Antworten widerlegen die Einwände nicht; sie verorten sie innerhalb der bestehenden vier Komponenten. Wer das für unzureichend hält, sollte die Theorie entsprechend erweitern.</p>
-<hr />
+
 <h2 id="methodik">Methodik</h2>
 <p>Die konkreten Komponentengewichte für jede Sportart werden über ein hierarchisches Verfahren ermittelt, das jeder der vier Komponenten sechs Sub-Aspekte zuordnet. Diese Sub-Aspekte sind universell — sie gelten für alle Sportarten gleich — und greifen, wo möglich, auf in der Sportwissenschaft etablierte Klassifikationen zurück.<label for="sn-3" class="sidenote-toggle"><sup>3</sup></label><input type="checkbox" id="sn-3" class="sidenote-checkbox"><span class="sidenote">Die Physis-Sub-Aspekte folgen weitgehend Faigenbaum et al. (2009), <em>Youth Resistance Training: Updated Position Statement Paper</em>, Journal of Strength and Conditioning Research, 23(5 Suppl), S60–S79. Die Taktik-Sub-Aspekte orientieren sich an den Kategorien der Sport-Cognition-Forschung (Antizipation, Entscheidungsdruck, Anpassung). Skill- und Material-Sub-Aspekte sind im Rahmen der Theorie entwickelt.</span></p>
 
@@ -242,46 +229,14 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <hr />
 <h2 id="vergleich">Vergleich</h2>
 <p>Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Die These hat behauptet, dass jeder strukturelle Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
-<p>Die folgenden Beobachtungen sind in zwei Teile gegliedert. Der erste Teil ist strikte Konsequenz der Definition — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Der zweite Teil (folgt später) verlässt diesen rein formalen Rahmen und stellt Fragen, die die Theorie selbst nicht beantwortet.</p>
+<p>Die folgenden Beobachtungen sind strikte Konsequenz der Definition — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
 <h3 id="strukturelle-distanz">Strukturelle Distanz</h3>
 <p>Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, lässt sich die strukturelle Distanz zwischen je zwei Sportarten als Euklidischer Abstand berechnen:</p>
 <div class="math-block">d(S₁, S₂) = √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
 
 <p>Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.41 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe reicht die größte beobachtete Distanz an knapp die Hälfte dieses Maximums heran.</p>
-<p>Die folgende Karte zeigt die strukturellen Verhältnisse für die sechs Beispielsportarten:</p>
-<div class="mds-wrap">
-<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" class="mds-chart" aria-label="Force-directed Graph der Sportarten">
-  <line class="mds-axis" x1="70" y1="300.0" x2="530" y2="300.0" />
-  <line class="mds-axis" x1="300.0" y1="70" x2="300.0" y2="530" />
-  <circle class="mds-ring" cx="300.0" cy="300.0" r="57.5" />
-  <circle class="mds-ring" cx="300.0" cy="300.0" r="115.0" />
-  <circle class="mds-ring" cx="300.0" cy="300.0" r="172.5" />
-  <circle class="mds-ring" cx="300.0" cy="300.0" r="230.0" />
-  <line class="force-edge" x1="379.7" y1="146.6" x2="499.3" y2="183.5" stroke-width="5.00" opacity="1.050" />
-  <line class="force-edge" x1="338.5" y1="410.6" x2="271.0" y2="307.5" stroke-width="5.00" opacity="1.050" />
-  <circle class="mds-glow" cx="338.5" cy="410.6" r="9" fill="#e63946" />
-  <circle class="mds-point" cx="338.5" cy="410.6" r="5" fill="#e63946" data-sport="fussball" />
-  <circle class="mds-glow" cx="271.0" cy="307.5" r="9" fill="#06a77d" />
-  <circle class="mds-point" cx="271.0" cy="307.5" r="5" fill="#06a77d" data-sport="tennis" />
-  <circle class="mds-glow" cx="70.0" cy="315.6" r="9" fill="#f4a261" />
-  <circle class="mds-point" cx="70.0" cy="315.6" r="5" fill="#f4a261" data-sport="100m-sprint" />
-  <circle class="mds-glow" cx="530.0" cy="453.4" r="9" fill="#264653" />
-  <circle class="mds-point" cx="530.0" cy="453.4" r="5" fill="#264653" data-sport="schach" />
-  <circle class="mds-glow" cx="379.7" cy="146.6" r="9" fill="#6f4e7c" />
-  <circle class="mds-point" cx="379.7" cy="146.6" r="5" fill="#6f4e7c" data-sport="strassenradsport" />
-  <circle class="mds-glow" cx="499.3" cy="183.5" r="9" fill="#1d4e89" />
-  <circle class="mds-point" cx="499.3" cy="183.5" r="5" fill="#1d4e89" data-sport="formel-1" />
-  <text class="mds-label" x="348.5" y="415.6" text-anchor="start">Fußball</text>
-  <text class="mds-label" x="281.0" y="312.5" text-anchor="start">Tennis</text>
-  <text class="mds-label" x="80.0" y="320.6" text-anchor="start">100m Sprint</text>
-  <text class="mds-label" x="520.0" y="458.4" text-anchor="end">Schach</text>
-  <text class="mds-label" x="369.7" y="151.6" text-anchor="end">Straßenradsport</text>
-  <text class="mds-label" x="509.3" y="188.5" text-anchor="start">Formel 1</text>
-</svg>
-</div>
-<p class="figure-caption"><strong>Abb. 1</strong>Force-directed Graph der sechs Beispielsportarten. Punkte werden durch Federkräfte zueinander gezogen, Abstoßung verhindert Überlappung. Linien gibt es nur zwischen sehr nahen Paaren (strukturelle Distanz unter 0.15). Konzentrische Kreise dienen als Referenzabstände; die Achsenrichtungen selbst haben keine inhaltliche Bedeutung.</p>
-<p>Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung.</p>
-<p>Aus der Matrix lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
+<p>Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung. Eine visuelle Karte aller bewerteten Sportarten als Force-directed Graph — in dem sich ähnliche Sportarten zu Clustern zusammenfinden — findet sich in der <a href="datenbank/">Datenbank</a>.</p>
+<p>Aus den Vektoren lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
 <p><strong>Ein großes Cluster ausgewogener Sportarten dominiert die Mitte.</strong> Von fünfzehn untersuchten Sportarten haben zwölf kein einzelnes Komponentengewicht von 45% oder mehr — sie sind strukturell ausgewogen. Besonders eng ist das Cluster um Fußball, Handball, Boxen, Baseball und Tennis: Taktik, Skill und Physis liegen bei allen zwischen 25% und 40%, ohne dass eine Komponente klar dominiert. Zwei Paare sind im Modell sogar strukturell identisch: Fußball und Handball (beide 35/30/35/0) sowie Super G und Viererbob (beide 15/25/30/30). Das ist kein Fehler, sondern eine Aussage — diese Sportarten unterscheiden sich in Dimensionen, die außerhalb der vier Komponenten liegen.</p>
 
 <p><strong>100m Sprint und Schach sind die strukturellen Antipoden.</strong> Mit einer Distanz von 0.65 bleiben sie auch in der erweiterten Stichprobe von fünfzehn Sportarten das fernste Paar. Sprint reduziert eine Sportart auf zehn Sekunden Maximalphysis; Schach reduziert sie auf reine Kognition. Es gibt kaum eine Sub-Komponente, in der beide nennenswert übereinstimmen. Beide sind zugleich die strukturell isoliertesten Sportarten überhaupt (durchschnittliche Distanz 0.42 bzw. 0.42 zu allen anderen) — sie definieren die beiden Enden der Achse, an der sich alles andere verorten lässt.</p>
@@ -290,9 +245,25 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p>Diese drei Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
 <h4 id="grenzen-berechnung">Grenzen dieser Berechnung</h4>
 <p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat methodische Schwächen, die offen benannt werden sollten.</p>
-<p><strong>Die Komponenten werden als gleichwertig behandelt.</strong> Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie das Material-Caveat zeigt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.</p>
+<p><strong>Die Komponenten werden als gleichwertig behandelt.</strong> Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie der Abschnitt Vorbehalte am Ende der Seite ausführt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.</p>
 <p><strong>Die Vektoren leben auf einem Simplex, nicht im freien Raum.</strong> Weil T + P + Sk + M = 1 gilt, sind die Vektoren auf einem dreidimensionalen Simplex eingebettet, nicht im vollen 4D-Raum. Das ist keine Schwäche der Distanzformel selbst — der Euklidische Abstand misst korrekt den Abstand auf diesem Simplex — wohl aber ein Hinweis darauf, dass Komponenten nicht unabhängig variieren können. Erhöht sich eine Komponente um 20 Prozentpunkte, müssen die anderen entsprechend nachgeben. Die Distanz misst dies konsistent, aber der Leser sollte sich bewusst sein, dass Bewegungen im Raum eingeschränkt sind. Für Daten dieser Struktur — sogenannte <em>compositional data</em> — existiert mit der Aitchison-Distanz (Aitchison 1986) ein mathematisch passenderes Distanzmaß, das Verhältnisse zwischen Komponenten statt absoluter Differenzen misst. Diese Theorie nutzt die einfachere Euklidische Variante, weil sie für die Größenordnungsvergleiche, die hier gemacht werden, ausreichend ist.</p>
 <p><strong>Die Eingangswerte sind Schätzungen auf einem 5%-Raster.</strong> Die Vektoren entstehen aus Sub-Aspekt-Bewertungen, nicht aus Messungen (die vollständigen Intensitätsprofile pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>). Eine Verschiebung um 5 Prozentpunkte in einer einzelnen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden Distanzen auf zwei Nachkommastellen gerundet angegeben; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.</p>
+
+<hr />
+<h2 id="vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</h2>
+<p>Der Composition Vector ist eine bewusste Vereinfachung. Das ist ein Feature, kein Mangel — aber es hat Konsequenzen, die explizit benannt werden sollten.</p>
+<h3 id="mannschaftssport">Das Mannschaftssport-Problem</h3>
+<p>In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten beschreibt er das Team, nicht den Spieler — denn taktische Qualität operiert dort auf zwei Ebenen: kollektiv (Formation, Pressing, Standardsituationen) und individuell (Positionsentscheidungen innerhalb des Systems). Diese sind nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur schlecht ist.</p>
+<p>Eine praktische Folge: Taktik wiegt in Mannschaftssportarten schwerer, als eine naive Lesart vermuten lässt, weil kollektive Organisation individuelle Überlegenheit in anderen Komponenten kompensieren oder neutralisieren kann. Elf individuell überlegene Athleten ohne System verlieren regelmäßig gegen elf organisierte.</p>
+<h3 id="material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</h3>
+<p>Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund die Hälfte des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse <em>im gesamten Feld</em> prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.</p>
+<h3 id="zerlegbarkeit-kritik">Kritik an der Zerlegbarkeit</h3>
+<p>Die These behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten für eine fünfte werden hier kurz behandelt — und an ihrem Platz innerhalb des Modells verortet, statt eine eigene Achse zu bekommen.</p>
+<p><strong>Glück, Varianz, Zufall.</strong> Glück ist keine sportliche Leistung; die Komponenten beschreiben, was vom Athleten <em>verlangt</em> wird. Wo Zufallsmanagement zur Leistung wird — Wahrscheinlichkeiten rechnen, Gegner lesen wie im Poker — ist das Taktik. Über lange Wettkampfformate (eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund) mittelt sich Zufall ohnehin heraus.</p>
+<p><strong>Ästhetik und Wertungssport.</strong> Was Bewerter belohnen, ist im Wesentlichen Skill (saubere Ausführung) plus Physis (Schwierigkeitsgrad). Choreografie und Ausdruck sind eine interpretative Spielart von Skill, keine eigene Achse.</p>
+<p><strong>Mentale Härte.</strong> Bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck. Eine separate Komponente wäre Doppelzählung.</p>
+<p>Diese Antworten widerlegen die Einwände nicht; sie verorten sie innerhalb der bestehenden vier Komponenten. Wer das für unzureichend hält, sollte die Theorie entsprechend erweitern.</p>
+
   </article>
 </main>
 

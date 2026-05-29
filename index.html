@@ -156,7 +156,8 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p>Die resultierenden Werte sind keine Messungen, sondern strukturierte und konsistenzgeprüfte Urteile. Die vollständigen Paarvergleichsmatrizen und Konsistenzwerte pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>.</p>
 <hr />
 <h2 id="beispiele">Beispiele</h2>
-<p>Die folgenden Aufschlüsselungen sind mit dem im Methodik-Abschnitt beschriebenen AHP-Verfahren ermittelt. Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Die vollständigen Paarvergleichsmatrizen und Konsistenzwerte pro Sportart finden sich in der <a href="datenbank/">Datenbank</a>.</p>
+<p>Die folgenden zehn Sportarten sind so gewählt, dass sie das Spektrum der vier Komponenten möglichst breit abdecken — und das mit Beispielen, die der Leser intuitiv einordnen kann. Vertreten sind die vier Extrempole (Schach für Taktik, Marathon für Physis, Boxen für Skill, Formel 1 für Material), dazu ausgewogene Profile (Fußball, American Football), Mischformen (Tennis, Straßenradsport, Bob) und ein zweiter Physis-Pol mit anderem Charakter (100m Sprint als explosiver Gegenpol zu Marathon). Wer mehr will, findet alle dreißig bewerteten Sportarten in der <a href="datenbank/">Datenbank</a>.</p>
+<p>Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Alle Werte stammen aus dem im Methodik-Abschnitt beschriebenen AHP-Verfahren; die vollständigen Paarvergleichsmatrizen und Konsistenzwerte finden sich ebenfalls in der Datenbank.</p>
 <div class="sport-charts">
 
 <div class="sport-entry">
@@ -243,13 +244,69 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p class="sport-rationale">Material ist der stärkste einzelne Faktor. Im Paarvergleich entscheidet die Konstrukteursleistung häufiger als Fahrer-Taktik oder -Skill, die untereinander gleichauf liegen und gemeinsam den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle — sie ist Voraussetzung, aber selten der Unterschied zwischen Sieg und Niederlage im Spitzenfeld.</p>
 </div>
 
+<div class="sport-entry">
+<h3>Marathon</h3>
+<p class="sport-meta">42,195 km · Straßenlauf</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:75%" title="Physis: 75%"></div><div class="seg skill" style="width:10%" title="Skill: 10%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 15%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 75%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
+  </div>
+</div>
+<p class="sport-rationale">Das physisch extremste Profil unter den zehn Beispielen — Ausdauerleistung entscheidet zu drei Vierteln. Im Paarvergleich dominiert Physis Skill deutlich (Lauftechnik ist relevant, aber nicht im selben Maß) und Taktik fast vollständig — Renntaktik wie Tempoeinteilung und Verpflegung spielt eine Rolle, aber nicht öfter als die reine Ausdauerkapazität. Material wurde ausgeschlossen: Laufschuhe sind reguliert, zwischen Spitzenathleten entscheidet die Ausrüstung nicht.</p>
+</div>
+
+<div class="sport-entry">
+<h3>Boxen</h3>
+<p class="sport-meta">Profi · 12 Runden · 1 gegen 1</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 50%</span>
+  </div>
+</div>
+<p class="sport-rationale">Skill dominiert — Schlagtechnik, Beinarbeit und Distanzgefühl entscheiden im Paarvergleich häufiger als Kondition oder taktisches Lesen des Gegners. Physis folgt vor Taktik, beide aber deutlich hinter Skill. Boxen ist eine der wenigen Sportarten, in der alle drei nicht-Material-Komponenten substanziell vertreten sind. Material wurde ausgeschlossen — Handschuhe und Ring sind reguliert.</p>
+</div>
+
+<div class="sport-entry">
+<h3>American Football</h3>
+<p class="sport-meta">NFL · 11 gegen 11 · 4 × 15 Minuten</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 55%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
+  </div>
+</div>
+<p class="sport-rationale">Die taktischste Mannschaftssportart der Auswahl, vor Fußball und Schach. Play-Calling, Down-Systeme und Coaching-Schemes entscheiden im Paarvergleich deutlich häufiger als individuelle Athletik oder Technik, die untereinander gleichauf liegen. Bemerkenswert: American Football liegt strukturell näher an Schach als an jeder anderen Mannschaftssportart — beide hochstrategisch, auf völlig verschiedene Art. Material wurde ausgeschlossen: Pads und Helme sind reguliert.</p>
+</div>
+
+<div class="sport-entry">
+<h3>Bob Viererbob</h3>
+<p class="sport-meta">FIBT/IBSF · Viererbob · 4 Läufe</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:35%" title="Material: 35%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 10%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span><span class="leg-item"><span class="leg-dot material"></span>Material 35%</span>
+  </div>
+</div>
+<p class="sport-rationale">Skill und Material gleichauf an der Spitze. Die Pilot-Linienführung und der Hightech-Schlitten entscheiden gemeinsam über das Rennen — Bob zeigt, dass Material-Dominanz nicht auf den Motorsport beschränkt ist. Physis (Anschub) folgt, Taktik ist minimal — die meisten Entscheidungen sind Sekundenbruchteile, keine Strategie.</p>
+</div>
+
 </div>
 
 <p><small>* Die Prozentsätze ergeben sich aus Paarvergleichen, strukturiert nach dem Analytic Hierarchy Process und auf Konsistenz geprüft. Das Verfahren macht die Urteile nachvollziehbar und widerspruchsfrei — nicht objektiv. Die Werte sind ernst gemeint, aber nicht endgültig.</small></p>
 <hr />
 <h2 id="vergleich">Vergleich</h2>
-<p>Mit den Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Die These hat behauptet, dass jeder strukturelle Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
-<p>Die folgenden Beobachtungen sind strikte Konsequenz der Definition — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
+<p>Mit den zehn Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Die These hat behauptet, dass jeder strukturelle Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
+<p>Die folgenden Beobachtungen ergeben sich direkt aus den Vektoren — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Welche Beobachtungen daraus interessant sind, ist eine Interpretation; dass die Zahlen sie tragen, ist keine.</p>
 <h3 id="strukturelle-distanz">Strukturelle Distanz</h3>
 <p>Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, lässt sich die strukturelle Distanz zwischen je zwei Sportarten als Euklidischer Abstand berechnen:</p>
 <div class="math-block">d(S₁, S₂) = √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
@@ -258,47 +315,67 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <p>Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung. Eine visuelle Karte aller bewerteten Sportarten als Force-directed Graph — in dem sich ähnliche Sportarten zu Clustern zusammenfinden — findet sich in der <a href="datenbank/">Datenbank</a>.</p>
 <div class="distance-matrix-wrap">
 <table class="vector-table distance-matrix">
-<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m Sprint</th><th>Schach</th><th>Straßenradsport</th><th>Formel 1</th></tr></thead>
+<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m Sprint</th><th>Schach</th><th>Straßenradsport</th><th>Formel 1</th><th>Marathon</th><th>Boxen</th><th>American Football</th><th>Bob Viererbob</th></tr></thead>
 <tbody>
 <tr><th>Fußball</th>
 <td class="diag">—</td>
-<td class="heat-0 cell-near">0.25</td>
+<td class="heat-0">0.25</td>
 <td class="heat-2">0.53</td>
-<td class="heat-0">0.31</td>
+<td class="heat-1">0.31</td>
 <td class="heat-1">0.41</td>
 <td class="heat-2">0.52</td>
+<td class="heat-3">0.67</td>
+<td class="heat-0">0.24</td>
+<td class="heat-0">0.21</td>
+<td class="heat-2">0.46</td>
 </tr>
 <tr><th>Tennis</th>
-<td class="heat-0 cell-near">0.25</td>
+<td class="heat-0">0.25</td>
 <td class="diag">—</td>
 <td class="heat-2">0.47</td>
 <td class="heat-2">0.55</td>
 <td class="heat-2">0.48</td>
 <td class="heat-2">0.52</td>
+<td class="heat-4">0.71</td>
+<td class="heat-0 cell-near">0.12</td>
+<td class="heat-2">0.46</td>
+<td class="heat-1">0.37</td>
 </tr>
 <tr><th>100m Sprint</th>
 <td class="heat-2">0.53</td>
 <td class="heat-2">0.47</td>
 <td class="diag">—</td>
-<td class="heat-4 cell-far">0.79</td>
-<td class="heat-0">0.35</td>
+<td class="heat-4">0.79</td>
+<td class="heat-1">0.35</td>
 <td class="heat-4">0.74</td>
+<td class="heat-1">0.31</td>
+<td class="heat-1">0.37</td>
+<td class="heat-3">0.65</td>
+<td class="heat-2">0.53</td>
 </tr>
 <tr><th>Schach</th>
-<td class="heat-0">0.31</td>
+<td class="heat-1">0.31</td>
 <td class="heat-2">0.55</td>
-<td class="heat-4 cell-far">0.79</td>
+<td class="heat-4">0.79</td>
 <td class="diag">—</td>
-<td class="heat-2">0.56</td>
+<td class="heat-3">0.56</td>
 <td class="heat-3">0.60</td>
+<td class="heat-4">0.83</td>
+<td class="heat-2">0.55</td>
+<td class="heat-0">0.14</td>
+<td class="heat-3">0.67</td>
 </tr>
 <tr><th>Straßenradsport</th>
 <td class="heat-1">0.41</td>
 <td class="heat-2">0.48</td>
-<td class="heat-0">0.35</td>
-<td class="heat-2">0.56</td>
+<td class="heat-1">0.35</td>
+<td class="heat-3">0.56</td>
 <td class="diag">—</td>
 <td class="heat-2">0.51</td>
+<td class="heat-1">0.35</td>
+<td class="heat-1">0.41</td>
+<td class="heat-2">0.43</td>
+<td class="heat-1">0.41</td>
 </tr>
 <tr><th>Formel 1</th>
 <td class="heat-2">0.52</td>
@@ -307,16 +384,72 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <td class="heat-3">0.60</td>
 <td class="heat-2">0.51</td>
 <td class="diag">—</td>
+<td class="heat-4 cell-far">0.85</td>
+<td class="heat-3">0.57</td>
+<td class="heat-3">0.56</td>
+<td class="heat-0">0.25</td>
+</tr>
+<tr><th>Marathon</th>
+<td class="heat-3">0.67</td>
+<td class="heat-4">0.71</td>
+<td class="heat-1">0.31</td>
+<td class="heat-4">0.83</td>
+<td class="heat-1">0.35</td>
+<td class="heat-4 cell-far">0.85</td>
+<td class="diag">—</td>
+<td class="heat-3">0.60</td>
+<td class="heat-3">0.70</td>
+<td class="heat-3">0.70</td>
+</tr>
+<tr><th>Boxen</th>
+<td class="heat-0">0.24</td>
+<td class="heat-0 cell-near">0.12</td>
+<td class="heat-1">0.37</td>
+<td class="heat-2">0.55</td>
+<td class="heat-1">0.41</td>
+<td class="heat-3">0.57</td>
+<td class="heat-3">0.60</td>
+<td class="diag">—</td>
+<td class="heat-2">0.44</td>
+<td class="heat-1">0.41</td>
+</tr>
+<tr><th>American Football</th>
+<td class="heat-0">0.21</td>
+<td class="heat-2">0.46</td>
+<td class="heat-3">0.65</td>
+<td class="heat-0">0.14</td>
+<td class="heat-2">0.43</td>
+<td class="heat-3">0.56</td>
+<td class="heat-3">0.70</td>
+<td class="heat-2">0.44</td>
+<td class="diag">—</td>
+<td class="heat-3">0.58</td>
+</tr>
+<tr><th>Bob Viererbob</th>
+<td class="heat-2">0.46</td>
+<td class="heat-1">0.37</td>
+<td class="heat-2">0.53</td>
+<td class="heat-3">0.67</td>
+<td class="heat-1">0.41</td>
+<td class="heat-0">0.25</td>
+<td class="heat-3">0.70</td>
+<td class="heat-1">0.41</td>
+<td class="heat-3">0.58</td>
+<td class="diag">—</td>
 </tr>
 </tbody></table></div>
-<p class="figure-caption"><strong>Tabelle 1</strong>Paarweise euklidische Distanzen der sechs Beispielsportarten im Komponentenraum. Grüne Färbung markiert strukturelle Nähe, orange strukturelle Ferne. Der durchgezogene Rahmen kennzeichnet das engste Paar (Fußball ↔ Tennis, 0.25), der gestrichelte das fernste (100m Sprint ↔ Schach, 0.79).</p>
-<p>Aus den Vektoren lassen sich drei Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
-<p><strong>Fußball und Tennis liegen strukturell am nächsten beieinander.</strong> Mit einer Distanz von 0.25 sind sie das ähnlichste Paar der sechs Beispielsportarten — beide werden maßgeblich von Skill getragen, mit Taktik und Physis als substanziellem Unterbau. Fußball ist zugleich die strukturell zentralste der sechs Sportarten: Mit der geringsten durchschnittlichen Distanz zu allen anderen (0.41) liegt es näher an der Mitte des Möglichkeitsraums als jede andere. Das passt zu seinem ausgewogenen Profil — keine Komponente dominiert, also ist es zu keiner Spezialdisziplin extrem weit entfernt.</p>
+<p class="figure-caption"><strong>Tabelle 1</strong>Paarweise euklidische Distanzen der zehn Beispielsportarten im Komponentenraum. Grüne Färbung markiert strukturelle Nähe, orange strukturelle Ferne. Der durchgezogene Rahmen kennzeichnet das engste Paar (Tennis ↔ Boxen, 0.12), der gestrichelte das fernste (Formel 1 ↔ Marathon, 0.85).</p>
+<p>Aus den Vektoren lassen sich vier Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
 
-<p><strong>100m Sprint und Schach sind die strukturellen Antipoden.</strong> Mit einer Distanz von 0.79 sind sie mit Abstand das fernste Paar — und nähern sich damit der theoretischen Obergrenze von √2 ≈ 1.41 stärker an als jedes andere Paar. Sprint reduziert eine Sportart auf zehn Sekunden Maximalphysis; Schach reduziert sie auf reine Kognition. Es gibt kaum eine Dimension, in der beide nennenswert übereinstimmen. Beide gehören zu den Sportarten mit der größten durchschnittlichen Distanz zu allen anderen — sie spannen die Achse mit auf, an der sich vieles andere relativ verorten lässt.</p>
+<p><strong>Tennis und Boxen liegen strukturell am nächsten beieinander.</strong> Mit einer Distanz von 0.12 sind sie das ähnlichste Paar — und zugleich ein lehrreiches: Beide sind individuelle Skill-Sportarten mit moderater Physis und wenig Taktik (55/20/20 vs. 50/30/20, plus 5% Material beim Tennis). Was Tennis und Boxen oberflächlich unterscheidet — Schläger statt Fäuste, Sand und Asche statt Ring, kollegiale statt gegnerische Begegnung — taucht im Composition Vector nicht auf. Die Theorie behauptet damit nicht, dass beide Sportarten dasselbe wären; sie sagt nur, dass die strukturelle Anforderung an den Athleten überraschend ähnlich ist.</p>
 
-<p><strong>Material trennt schärfer als jede andere Komponente.</strong> Formel 1 ist mit einer durchschnittlichen Distanz von 0.58 die isolierteste der sechs Sportarten — nicht weil sie in Taktik oder Skill extrem wäre (beide liegen bei moderaten 25%), sondern allein wegen ihres hohen Materialanteils von 45%. Da nur zwei der sechs Beispielsportarten überhaupt Material tragen, wirkt diese Komponente wie eine eigene Achse, die F1 und Straßenradsport von den materialfreien Sportarten wegzieht. Eine einzige dominante Komponente genügt, um eine Sportart an den Rand des Möglichkeitsraums zu rücken — das gilt für Material bei Formel 1 ebenso wie für Taktik bei Schach und Physis beim Sprint.</p>
-<p>Diese drei Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
+<p><strong>Formel 1 und Marathon sind die strukturellen Antipoden.</strong> Mit einer Distanz von 0.85 sind sie das fernste Paar — das sind etwa 60% des theoretischen Maximums √2 ≈ 1.41, das in der Praxis nicht erreicht wird. Formel 1 reduziert Leistung auf das Zusammenspiel mit einer Maschine, Marathon auf reine Ausdauerphysis. Es gibt kaum eine Dimension, in der beide nennenswert übereinstimmen. Marathon ist zugleich die strukturell isolierteste Sportart der zehn (avg 0.64) — sieben von neun Sportarten haben Marathon als fernsten Nachbarn. Das passt zur Lage am Rand des Möglichkeitsraums: 75% Physis ist ein extremes Profil, von dem aus fast alles andere weit entfernt liegt.</p>
+
+<p><strong>Fußball ist die strukturell zentralste Sportart.</strong> Mit einer durchschnittlichen Distanz von 0.40 zu allen anderen liegt es näher an der Mitte des Möglichkeitsraums als jede andere. Das passt zu seinem ausgewogenen Profil: keine Komponente dominiert (40/20/40/0), also ist es zu keiner Spezialdisziplin extrem weit entfernt. American Football ist als zweite Mannschaftssportart (55/20/25/0) auffallend taktiklastiger — was strukturell näher an Schach (65/10/25/0) liegt als an Fußball. Es ist eines der überraschendsten Ergebnisse der Analyse: Die taktischste Mannschaftssportart und die taktischste Einzelsportart der Welt sind, gemessen am Composition Vector, fast Nachbarn (Distanz 0.14).</p>
+
+<p><strong>Material trennt schärfer als jede andere Komponente.</strong> Formel 1 und Bob Viererbob, die zwei Sportarten mit dem höchsten Materialanteil (45% und 35%), liegen mit einer Distanz von 0.25 strukturell nah beieinander — obwohl die eine Motorsport ist und die andere ein Wintersport. Was sie verbindet, ist nicht die Disziplin, sondern die Tatsache, dass in beiden ein Hightech-Gerät über das Ergebnis mitbestimmt. Eine einzige dominante Komponente genügt, um eine Sportart an den Rand des Möglichkeitsraums zu rücken — das gilt für Material bei Formel 1 ebenso wie für Taktik bei Schach, Physis bei Marathon und Skill beim Boxen.</p>
+
+<p>Diese Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
 <h4 id="grenzen-berechnung">Grenzen dieser Berechnung</h4>
 <p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat methodische Schwächen, die offen benannt werden sollten.</p>
 <p><strong>Die Komponenten werden als gleichwertig behandelt.</strong> Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie der Abschnitt Vorbehalte am Ende der Seite ausführt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.</p>
@@ -329,6 +462,7 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 <h3 id="mannschaftssport">Das Mannschaftssport-Problem</h3>
 <p>In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten beschreibt er das Team, nicht den Spieler — denn taktische Qualität operiert dort auf zwei Ebenen: kollektiv (Formation, Pressing, Standardsituationen) und individuell (Positionsentscheidungen innerhalb des Systems). Diese sind nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur schlecht ist.</p>
 <p>Eine praktische Folge: Taktik wiegt in Mannschaftssportarten schwerer, als eine naive Lesart vermuten lässt, weil kollektive Organisation individuelle Überlegenheit in anderen Komponenten kompensieren oder neutralisieren kann. Elf individuell überlegene Athleten ohne System verlieren regelmäßig gegen elf organisierte.</p>
+<p>Das zeigt sich auch direkt in den Werten: In der Datenbank fallen mehrere ausgewogene Mannschaftssportarten — Fußball, Handball, Basketball — strukturell zusammen (alle 40/20/40/0). Aus Sicht der vier Komponenten sind sie ununterscheidbar, obwohl jede für sich ihre eigenen Spielsysteme, Wettkampfformate und Kulturen hat. Was zwischen ihnen unterscheidet, liegt außerhalb dessen, was der Composition Vector erfasst — Spielidee, Regelwerk, Geometrie des Feldes. Die Theorie sagt nicht, dass diese Sportarten austauschbar sind; sie sagt nur, dass die strukturelle Anforderung an den Athleten dieselbe ist. American Football ist mit 55/20/25/0 das taktisch deutlich abweichende Gegenbeispiel — eine Mannschaftssportart, in der die kollektive Strategieebene noch dominanter wirkt.</p>
 <h3 id="material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</h3>
 <p>Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund die Hälfte des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse <em>im gesamten Feld</em> prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.</p>
 <h3 id="zerlegbarkeit-kritik">Kritik an der Zerlegbarkeit</h3>

@@ -1,1370 +1,1415 @@
-/* ============================================================
-   Sport Composition Theory — minimalist black-and-white edition
-   Wide margins. Centered text. Components are the only colour.
-   ============================================================ */
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Datenbank aller bewerteten Sportarten mit Berechnungen und Visualisierungen.">
+  <title>Datenbank — Sport Composition Theory</title>
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; } 
-:target { scroll-margin-top: 1rem; }
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 
-/* ---------- Theme variables: light mode ---------- */
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap">
 
-:root {
-  --bg-page:        #ffffff;
-  --bg-elevated:    #fafafa;
-  --bg-bar-track:   #ececec;
-  --bg-mathblock:   #f5f5f5;
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
 
-  --text-body:      #111111;
-  --text-muted:     #888888;
-  --text-strong:    #000000;
-  --text-link:      #000000;
+<button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false">☰</button>
 
-  --border-soft:    #d8d8d8;
-  --border-row:     #ececec;
-}
+<aside id="sidebar" class="sidebar" aria-label="Sidebar">
+  <div class="sidebar-inner">
+    <p class="sidebar-brand db-back"><a href="../#top">← Sport Composition Theory</a></p>
 
-/* Dark mode (system) */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg-page:        #0a0a0a;
-    --bg-elevated:    #141414;
-    --bg-bar-track:   #1f1f1f;
-    --bg-mathblock:   #161616;
+    <nav class="toc" aria-label="Inhalt">
+      <p class="toc-title">Sportarten</p>
+<ol class="toc-list">
+  <li><a href="#fussball">Fußball</a></li>
+  <li><a href="#tennis">Tennis</a></li>
+  <li><a href="#100m-sprint">100m Sprint</a></li>
+  <li><a href="#schach">Schach</a></li>
+  <li><a href="#strassenradsport">Straßenradsport</a></li>
+  <li><a href="#formel-1">Formel 1</a></li>
+  <li><a href="#boxen">Boxen</a></li>
+  <li><a href="#triathlon">Triathlon</a></li>
+  <li><a href="#baseball">Baseball</a></li>
+  <li><a href="#super-g">Super G</a></li>
+  <li><a href="#bowling">Bowling</a></li>
+  <li><a href="#handball">Handball</a></li>
+  <li><a href="#zehnkampf">Zehnkampf</a></li>
+  <li><a href="#bob-viererbob">Bob Viererbob</a></li>
+  <li><a href="#golf">Golf</a></li>
+  <li><a href="#basketball">Basketball</a></li>
+  <li><a href="#american-football">American Football</a></li>
+  <li><a href="#tischtennis">Tischtennis</a></li>
+  <li><a href="#cricket">Cricket</a></li>
+  <li><a href="#judo">Judo</a></li>
+  <li><a href="#volleyball">Volleyball</a></li>
+  <li><a href="#schwimmen-100m">Schwimmen 100m</a></li>
+  <li><a href="#rugby">Rugby</a></li>
+  <li><a href="#eishockey">Eishockey</a></li>
+  <li><a href="#badminton">Badminton</a></li>
+  <li><a href="#gewichtheben">Gewichtheben</a></li>
+  <li><a href="#marathon">Marathon</a></li>
+  <li><a href="#sportklettern">Sportklettern</a></li>
+  <li><a href="#darts">Darts</a></li>
+  <li><a href="#geraetturnen">Gerätturnen</a></li>
+  <li><a href="#vergleich">Vergleich aller Sportarten</a></li>
+</ol>
+    </nav>
 
-    --text-body:      #ededed;
-    --text-muted:     #777777;
-    --text-strong:    #ffffff;
-    --text-link:      #ffffff;
+    <div class="sidebar-controls">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
+    </div>
+  </div>
+</aside>
 
-    --border-soft:    #2a2a2a;
-    --border-row:     #1f1f1f;
+<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+<main class="content" id="top">
+  <header class="page-header">
+    <h1>Datenbank</h1>
+    <p class="subtitle">Alle Sportarten, ihre Werte, Berechnungen und Vergleiche.</p>
+  </header>
+
+  <article class="article">
+
+  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige Paarvergleichsmatrix samt Konsistenzwert. Unter den Sportarten folgt ein interaktives 3D-Kräftenetz, in dem alle Sportarten als frei angeordnete Punkte verortet sind. Ein Klick auf eine Kugel zeigt ihre Werte; ein Klick auf eine zweite Kugel macht den strukturellen Vergleich sichtbar.</p>
+
+  <p>Hintergrund zur Theorie selbst, zur Methodik und zu den Vorbehalten findet sich in der <a href="../">Haupttheorie</a>.</p>
+
+  <h2>Sportarten</h2>
+
+  <div class="db-list">
+<details class="db-row" id="fussball">
+  <summary>
+    <span class="db-row-name">Fußball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">11 gegen 11 · 90 Minuten</p>
+    <p class="sport-rationale">Taktik und Skill teilen sich die Spitze, Physis bleibt wichtige Grundlage. Im Paarvergleich entscheidet ein taktischer Vorsprung etwas häufiger als reine Athletik, während Taktik und individuelle Technik gleichauf liegen. Material wurde ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball, Schuhe und Platz sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="tennis">
+  <summary>
+    <span class="db-row-name">Tennis</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span><span class="db-chip"><span class="db-chip-dot material"></span>M 5</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Einzel · drei oder fünf Sätze</p>
+    <p class="sport-rationale">Skill dominiert klar. Schlagtechnik und Aufschlagpräzision entscheiden im direkten Vergleich deutlich häufiger als taktischer Aufbau oder Physis, die untereinander gleichauf liegen. Material ist mit kleinem, aber echtem Anteil aktiv.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/4</td><td class="gt">5</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/3</td><td class="gt">5</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">3</td><td class="diag">1</td><td class="gt">8</td></tr>
+<tr><th>M</th><td class="lt">1/5</td><td class="lt">1/5</td><td class="lt">1/8</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Besaitung sind nicht vollständig vereinheitlicht.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.031</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="100m-sprint">
+  <summary>
+    <span class="db-row-name">100m Sprint</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 5</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 60</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Reine Leichtathletik-Disziplin</p>
+    <p class="sport-rationale">Physis entscheidet — fast alles hängt an zehn Sekunden Maximalleistung. Skill in Startphase und Lauftechnik behauptet den zweiten Platz klar, Taktik spielt praktisch keine Rolle. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/8</td><td class="lt">1/7</td></tr>
+<tr><th>P</th><td class="gt">8</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>Sk</th><td class="gt">7</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Spikes und Bahn sind reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.030</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="schach">
+  <summary>
+    <span class="db-row-name">Schach</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:65%" title="Taktik: 65%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 65</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
+    <p class="sport-rationale">Taktik dominiert mit weitem Abstand. Strategisches Denken entscheidet praktisch immer gegen körperliche Verfassung und merklich häufiger als die Mustererkennung, die hier als Skill zählt. Material existiert nicht als Faktor.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">7</td><td class="gt">3</td></tr>
+<tr><th>P</th><td class="lt">1/7</td><td class="diag">1</td><td class="lt">1/3</td></tr>
+<tr><th>Sk</th><td class="lt">1/3</td><td class="gt">3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Brett und Figuren haben keinen Einfluss.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.006</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="strassenradsport">
+  <summary>
+    <span class="db-row-name">Straßenradsport</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:45%" title="Physis: 45%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 45</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 15</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
+    <p class="sport-rationale">Physis trägt den Sport, mit taktischem Überbau. Ausdauerleistung entscheidet häufiger als alles andere; Taktik liegt auf Rang zwei. Skill und Material sind gleichauf — das Rad ist relevant, aber in der World Tour angeglichen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="gt">2</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="gt">3</td><td class="gt">3</td></tr>
+<tr><th>Sk</th><td class="lt">1/2</td><td class="lt">1/3</td><td class="diag">1</td><td class="">1</td></tr>
+<tr><th>M</th><td class="lt">1/2</td><td class="lt">1/3</td><td class="">1</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Das Rad ist relevant, aber in der World Tour angeglichen.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.004</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="formel-1">
+  <summary>
+    <span class="db-row-name">Formel 1</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:5%" title="Physis: 5%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:45%" title="Material: 45%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 5</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span><span class="db-chip"><span class="db-chip-dot material"></span>M 45</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
+    <p class="sport-rationale">Material ist der stärkste einzelne Faktor. Die Konstrukteursleistung entscheidet häufiger als Fahrer-Taktik oder -Skill, die gleichauf den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">4</td><td class="">1</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="lt">1/4</td><td class="diag">1</td><td class="lt">1/4</td><td class="lt">1/7</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">4</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>M</th><td class="gt">2</td><td class="gt">7</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Die Konstrukteursleistung entscheidet die Saison.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.001</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="boxen">
+  <summary>
+    <span class="db-row-name">Boxen</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Profi · 12 Runden · 1 gegen 1</p>
+    <p class="sport-rationale">Skill dominiert, Physis und Taktik folgen. Schlagtechnik und Distanzgefühl entscheiden im Paarvergleich häufiger als Kondition oder das Lesen des Gegners. Boxen bleibt eine der wenigen Sportarten, in der alle drei nicht-Material-Komponenten substanziell sind. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Handschuhe und Ring sind reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.046</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="triathlon">
+  <summary>
+    <span class="db-row-name">Triathlon</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:20%" title="Skill: 20%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 60</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 20</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Olympische Distanz · Schwimmen, Rad, Lauf</p>
+    <p class="sport-rationale">Physis dominiert klar — drei aufeinanderfolgende Ausdauerdisziplinen. Skill (Technik in drei Sportarten plus Wechsel) liegt auf Rang zwei. Taktik und Material sind klein, aber vorhanden — Windschatten und Materialwahl spielen eine begrenzte Rolle.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/4</td><td class="lt">1/2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="gt">4</td><td class="diag">1</td><td class="gt">3</td><td class="gt">4</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="lt">1/3</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>M</th><td class="">1</td><td class="lt">1/4</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Rad und Anzug sind relevant, aber reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="baseball">
+  <summary>
+    <span class="db-row-name">Baseball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:60%" title="Skill: 60%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 60</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">MLB · 9 Innings · 9 gegen 9</p>
+    <p class="sport-rationale">Skill ist die dominante Komponente — Schlagtechnik gegen Pitches mit über 150 km/h gehört zu den schwierigsten Bewegungen im Sport. Taktik (Pitch-Calling, Defensive Shifts) liegt auf Rang zwei, deutlich vor der Physis. Material standardisiert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="lt">1/4</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="gt">4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Schläger und Ball sind ligaweit standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.016</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="super-g">
+  <summary>
+    <span class="db-row-name">Super G</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div><div class="seg material" style="width:25%" title="Material: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span><span class="db-chip"><span class="db-chip-dot material"></span>M 25</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Alpiner Skirennlauf · ein Lauf</p>
+    <p class="sport-rationale">Skill dominiert, Material substanziell. Skitechnik bei Höchstgeschwindigkeit entscheidet häufiger als das Material, das aber klar vor Physis und Taktik liegt. Im neuen System trennt sich Super G erkennbar vom Viererbob, anders als zuvor.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/5</td><td class="lt">1/3</td></tr>
+<tr><th>P</th><td class="gt">3</td><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">5</td><td class="gt">3</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>M</th><td class="gt">3</td><td class="gt">2</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Ski-Setup und Wachs gehören zu den entscheidenden Faktoren.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.022</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="bowling">
+  <summary>
+    <span class="db-row-name">Bowling</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:60%" title="Skill: 60%"></div><div class="seg material" style="width:20%" title="Material: 20%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 60</span><span class="db-chip"><span class="db-chip-dot material"></span>M 20</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">PBA Tour · 10 Pins · 10 Frames</p>
+    <p class="sport-rationale">Skill-dominiert mit substanziellem Material. Wiederholbarkeit und Präzision des Wurfs entscheiden weit häufiger als alles andere; Material (mehrere Bälle für verschiedene Lane-Muster) liegt klar vor Taktik und Physis, die beide minimal sind.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/6</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/6</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">6</td><td class="gt">6</td><td class="diag">1</td><td class="gt">4</td></tr>
+<tr><th>M</th><td class="gt">2</td><td class="gt">2</td><td class="lt">1/4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Profis nutzen mehrere Bälle für verschiedene Lane-Öl-Muster.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.004</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="handball">
+  <summary>
+    <span class="db-row-name">Handball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Profi · 7 gegen 7 · 2 × 30 Minuten</p>
+    <p class="sport-rationale">Strukturell identisch mit Fußball und Basketball (40/20/40/0). Ein ausgewogener Mannschaftssport, in dem Taktik und Skill gleichauf führen und Physis die Grundlage bildet. Die Unterschiede zu den anderen liegen außerhalb der vier Komponenten.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball und Halle sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="zehnkampf">
+  <summary>
+    <span class="db-row-name">Zehnkampf</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:50%" title="Physis: 50%"></div><div class="seg skill" style="width:30%" title="Skill: 30%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 50</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 30</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Leichtathletik · 10 Disziplinen über 2 Tage</p>
+    <p class="sport-rationale">Physis dominiert — zehn Disziplinen verlangen das volle athletische Spektrum. Skill (Bewegungskomplexität über zehn Disziplinen) liegt auf Rang zwei. Taktik und Material sind klein. Material reguliert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/5</td><td class="lt">1/3</td><td class="">1</td></tr>
+<tr><th>P</th><td class="gt">5</td><td class="diag">1</td><td class="gt">2</td><td class="gt">5</td></tr>
+<tr><th>Sk</th><td class="gt">3</td><td class="lt">1/2</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>M</th><td class="">1</td><td class="lt">1/5</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Speere, Stäbe und Spikes sind relevant, aber reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.002</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="bob-viererbob">
+  <summary>
+    <span class="db-row-name">Bob Viererbob</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:35%" title="Material: 35%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span><span class="db-chip"><span class="db-chip-dot material"></span>M 35</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">FIBT/IBSF · Viererbob · 4 Läufe</p>
+    <p class="sport-rationale">Skill und Material gleichauf an der Spitze. Die Pilot-Linienführung und der Hightech-Schlitten entscheiden gemeinsam; Physis (Anschub) folgt, Taktik ist minimal.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/4</td><td class="lt">1/3</td></tr>
+<tr><th>P</th><td class="gt">3</td><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">2</td><td class="diag">1</td><td class="">1</td></tr>
+<tr><th>M</th><td class="gt">3</td><td class="gt">2</td><td class="">1</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Der Schlitten ist ein Hightech-Gerät mit großem Gefälle.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.017</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="golf">
+  <summary>
+    <span class="db-row-name">Golf</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 20</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">PGA / DP World Tour · 4 Runden à 18 Loch</p>
+    <p class="sport-rationale">Skill dominiert klar. Präzision und Wiederholbarkeit des Schwungs entscheiden weit häufiger als Taktik, Material oder Physis. Taktik (Course-Management) und Material (Schläger-Fitting) folgen mit Abstand, Physis ist am kleinsten.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="lt">1/4</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/5</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">5</td><td class="diag">1</td><td class="gt">4</td></tr>
+<tr><th>M</th><td class="lt">1/2</td><td class="gt">2</td><td class="lt">1/4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Individuelles Schläger-Fitting ist auf der Tour Standard.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.033</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="basketball">
+  <summary>
+    <span class="db-row-name">Basketball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 40</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 40</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">NBA / FIBA · 5 gegen 5 · 4 × 10–12 Minuten</p>
+    <p class="sport-rationale">Strukturell identisch mit Fußball und Handball (40/20/40/0). Ein ausgewogener Mannschaftssport: Taktik (Spielsysteme, Matchups) und Skill (Wurf, Dribbling, Passspiel) liegen gleichauf, Physis ist substanzielle Grundlage. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball, Korb und Schuhe sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="american-football">
+  <summary>
+    <span class="db-row-name">American Football</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 55</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">NFL · 11 gegen 11 · 4 × 15 Minuten</p>
+    <p class="sport-rationale">Die taktischste Mannschaftssportart der Datenbank. Play-Calling, Down-Systeme und Coaching-Schemes entscheiden im Paarvergleich deutlich häufiger als individuelle Physis oder Technik. Bemerkenswert: American Football liegt strukturell näher an Schach als an den meisten anderen Teamsportarten — beide hochstrategisch, auf völlig verschiedene Art. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="">1</td></tr>
+<tr><th>Sk</th><td class="lt">1/2</td><td class="">1</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Pads und Helme sind reguliert; zwischen Profiteams entscheidet die Ausrüstung nicht.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.016</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="tischtennis">
+  <summary>
+    <span class="db-row-name">Tischtennis</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:60%" title="Skill: 60%"></div><div class="seg material" style="width:20%" title="Material: 20%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 10</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 60</span><span class="db-chip"><span class="db-chip-dot material"></span>M 20</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">ITTF · Einzel · Best of 5 oder 7 Sätze</p>
+    <p class="sport-rationale">Strukturell identisch mit Bowling (10/10/60/20). Skill dominiert überwältigend — Schlagtechnik und Spin-Kontrolle entscheiden weit häufiger als alles andere. Material ist mit substanziellem Anteil aktiv: Beläge und Schläger sind stark personalisiert. Taktik und Physis sind minimal.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/4</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/4</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">4</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>M</th><td class="gt">2</td><td class="gt">2</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Beläge sind stark personalisiert und beeinflussen Spin und Tempo erheblich.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="cricket">
+  <summary>
+    <span class="db-row-name">Cricket</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:35%" title="Taktik: 35%"></div><div class="seg physical" style="width:15%" title="Physis: 15%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 35</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 15</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span><span class="db-chip"><span class="db-chip-dot material"></span>M 15</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Test / ODI · 11 gegen 11</p>
+    <p class="sport-rationale">Ausgewogenes Profil mit Materialanteil. Taktik (Field-Placements, Bowling-Strategie über lange Matches) und Skill liegen gleichauf an der Spitze, gefolgt von Physis und Material zu gleichen Teilen. Schläger, Ball und Pitch-Bedingungen beeinflussen das Spiel spürbar.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="">1</td><td class="gt">3</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="lt">1/3</td><td class="">1</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">3</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>M</th><td class="lt">1/3</td><td class="">1</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Ball sind reguliert, beeinflussen das Spiel aber spürbar; Pitch-Bedingungen variieren.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="judo">
+  <summary>
+    <span class="db-row-name">Judo</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Olympisch · 1 gegen 1 · 4 Minuten</p>
+    <p class="sport-rationale">Skill-dominierter Kampfsport. Wurftechnik und Griffkampf entscheiden im Paarvergleich häufiger als reine Kraft oder taktisches Vorgehen. Physis liegt auf Rang zwei, Taktik dahinter. Strukturell nah an Boxen. Material ausgeschlossen, der Gi ist reglementiert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/3</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">3</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Der Judogi ist reglementiert; Material entscheidet nicht zwischen Athleten.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="volleyball">
+  <summary>
+    <span class="db-row-name">Volleyball</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 25</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">FIVB · 6 gegen 6 · Best of 5 Sätze</p>
+    <p class="sport-rationale">Skill an der Spitze, Taktik und Physis gleichauf dahinter. Annahme, Zuspiel und Angriffstechnik entscheiden im Paarvergleich häufiger als Spielsystem oder Athletik. Ein technikgetriebener Mannschaftssport, strukturell nah an Boxen. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/2</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">2</td><td class="gt">2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball und Netz sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.00</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="schwimmen-100m">
+  <summary>
+    <span class="db-row-name">Schwimmen 100m</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:55%" title="Physis: 55%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 55</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">100m Freistil · Einzeldisziplin</p>
+    <p class="sport-rationale">Physis dominiert, Technik als starker zweiter Faktor. Über 100 Meter Freistil entscheidet die körperliche Leistung am häufigsten, gefolgt von Wasserlage und Zugtechnik. Taktik spielt praktisch keine Rolle. Strukturell sehr nah am 100m-Sprint — beide reine Maximalleistung. Material reguliert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/7</td><td class="lt">1/5</td></tr>
+<tr><th>P</th><td class="gt">7</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>Sk</th><td class="gt">5</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Anzüge und Becken sind streng reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.012</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="rugby">
+  <summary>
+    <span class="db-row-name">Rugby</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:30%" title="Taktik: 30%"></div><div class="seg physical" style="width:50%" title="Physis: 50%"></div><div class="seg skill" style="width:20%" title="Skill: 20%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 30</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 50</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 20</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Rugby Union · 15 gegen 15</p>
+    <p class="sport-rationale">Physis führt knapp vor Taktik, beide klar vor Skill. Körperliche Wucht und Kondition entscheiden im Paarvergleich am häufigsten, dicht gefolgt von taktischer Organisation. Ein seltenes physisch-taktisches Profil, das es unter den anderen Sportarten so nicht gibt. Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="gt">2</td></tr>
+<tr><th>Sk</th><td class="lt">1/2</td><td class="lt">1/2</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Ball und Ausrüstung sind standardisiert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.046</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="eishockey">
+  <summary>
+    <span class="db-row-name">Eishockey</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:35%" title="Taktik: 35%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 35</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 35</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">NHL/IIHF · 6 gegen 6</p>
+    <p class="sport-rationale">Taktik und Skill gleichauf an der Spitze, mit Material als kleinem Faktor. Spielsystem und Stocktechnik entscheiden häufiger als Physis; Schläger und Kufen tragen einen begrenzten, aber realen Anteil bei. Strukturell nah an Cricket.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">2</td><td class="">1</td><td class="gt">3</td></tr>
+<tr><th>P</th><td class="lt">1/2</td><td class="diag">1</td><td class="lt">1/2</td><td class="gt">3</td></tr>
+<tr><th>Sk</th><td class="">1</td><td class="gt">2</td><td class="diag">1</td><td class="gt">4</td></tr>
+<tr><th>M</th><td class="lt">1/3</td><td class="lt">1/3</td><td class="lt">1/4</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger und Kufen sind relevant, aber ligaweit reguliert.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.017</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="badminton">
+  <summary>
+    <span class="db-row-name">Badminton</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 20</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 55</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">BWF · Einzel · Best of 3 Sätze</p>
+    <p class="sport-rationale">Skill dominiert klar — der schnellste Rückschlagsport der Welt verlangt extreme Schlagpräzision und Handgelenkstechnik. Physis und Material folgen mit Abstand, Taktik dahinter. Strukturell nah an Tennis, aber materialabhängiger.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="">1</td><td class="lt">1/4</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="">1</td><td class="diag">1</td><td class="lt">1/3</td><td class="gt">2</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">3</td><td class="diag">1</td><td class="gt">5</td></tr>
+<tr><th>M</th><td class="lt">1/2</td><td class="lt">1/2</td><td class="lt">1/5</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Schläger sind personalisiert, aber weniger entscheidend als der Spieler.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.008</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="gewichtheben">
+  <summary>
+    <span class="db-row-name">Gewichtheben</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:70%" title="Physis: 70%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 5</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 70</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 25</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Olympisch · Reißen und Stoßen</p>
+    <p class="sport-rationale">Eine der physisch extremsten Sportarten überhaupt — Physis entscheidet fast vollständig. Technik (Reißen und Stoßen verlangen präzise Bewegungsführung) ist der einzige nennenswerte Gegenfaktor. Taktik und Material sind nahezu bedeutungslos.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/9</td><td class="lt">1/5</td></tr>
+<tr><th>P</th><td class="gt">9</td><td class="diag">1</td><td class="gt">3</td></tr>
+<tr><th>Sk</th><td class="gt">5</td><td class="lt">1/3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Hanteln sind genormt.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.025</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="marathon">
+  <summary>
+    <span class="db-row-name">Marathon</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:75%" title="Physis: 75%"></div><div class="seg skill" style="width:10%" title="Skill: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 75</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">42,195 km · Straßenlauf</p>
+    <p class="sport-rationale">Das physisch extremste Profil der gesamten Datenbank. Ausdauerleistung entscheidet zu drei Vierteln; Renntaktik (Tempoeinteilung, Verpflegung) ist der einzige weitere relevante Faktor. Skill spielt kaum eine Rolle, Material ist reguliert.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/6</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="gt">6</td><td class="diag">1</td><td class="gt">6</td></tr>
+<tr><th>Sk</th><td class="lt">1/2</td><td class="lt">1/6</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Laufschuhe sind reguliert; der Athlet entscheidet.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.046</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="sportklettern">
+  <summary>
+    <span class="db-row-name">Sportklettern</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 30</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 50</span><span class="db-chip"><span class="db-chip-dot material"></span>M 5</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Lead-Klettern · Wettkampf</p>
+    <p class="sport-rationale">Skill dominiert, Physis als starker zweiter Faktor. Bewegungstechnik und Routenlesen entscheiden häufiger als reine Kraft; Material (Schuhe, Magnesia) spielt nur eine Randrolle. Strukturell nah an Boxen — beide skill- und kraftbetont.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/2</td><td class="lt">1/4</td><td class="gt">3</td></tr>
+<tr><th>P</th><td class="gt">2</td><td class="diag">1</td><td class="lt">1/2</td><td class="gt">4</td></tr>
+<tr><th>Sk</th><td class="gt">4</td><td class="gt">2</td><td class="diag">1</td><td class="gt">5</td></tr>
+<tr><th>M</th><td class="lt">1/3</td><td class="lt">1/4</td><td class="lt">1/5</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Kletterschuhe und Magnesia spielen eine kleine Rolle.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.027</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="darts">
+  <summary>
+    <span class="db-row-name">Darts</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:5%" title="Physis: 5%"></div><div class="seg skill" style="width:70%" title="Skill: 70%"></div><div class="seg material" style="width:10%" title="Material: 10%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 15</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 5</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 70</span><span class="db-chip"><span class="db-chip-dot material"></span>M 10</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">PDC · 501 · Best of Legs</p>
+    <p class="sport-rationale">Eine der skill-reinsten Sportarten der Datenbank — Wurfpräzision entscheidet überwältigend. Taktik (Checkout-Routen) liegt weit dahinter auf Rang zwei. Physis ist nahezu bedeutungslos; Material (Pfeile) trägt einen kleinen Anteil. Strukturell nah an Bowling.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th><th>M</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="gt">3</td><td class="lt">1/6</td><td class="gt">2</td></tr>
+<tr><th>P</th><td class="lt">1/3</td><td class="diag">1</td><td class="lt">1/8</td><td class="lt">1/2</td></tr>
+<tr><th>Sk</th><td class="gt">6</td><td class="gt">8</td><td class="diag">1</td><td class="gt">5</td></tr>
+<tr><th>M</th><td class="lt">1/2</td><td class="gt">2</td><td class="lt">1/5</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material aktiv (4×4-Vergleich): Pfeile sind personalisiert, aber sekundär gegenüber dem Können.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.037</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="db-row" id="geraetturnen">
+  <summary>
+    <span class="db-row-name">Gerätturnen</span>
+    <span class="db-row-bar"><div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:25%" title="Physis: 25%"></div><div class="seg skill" style="width:65%" title="Skill: 65%"></div></span>
+    <span class="db-row-values"><span class="db-chip"><span class="db-chip-dot tactics"></span>T 10</span><span class="db-chip"><span class="db-chip-dot physical"></span>P 25</span><span class="db-chip"><span class="db-chip-dot skill"></span>Sk 65</span></span>
+    <span class="db-row-icon" aria-hidden="true">▸</span>
+  </summary>
+  <div class="db-row-detail">
+    <p class="sport-meta">Olympisch · Mehrkampf an Geräten</p>
+    <p class="sport-rationale">Skill dominiert klar — Bewegungskomplexität und Präzision an den Geräten entscheiden weit häufiger als Physis, die als kräftiger zweiter Faktor folgt. Taktik ist minimal. Strukturell nah an Judo. Geräte sind genormt, Material ausgeschlossen.</p>
+    <details class="ahp-details">
+      <summary>Paarvergleichsmatrix anzeigen</summary>
+      <div class="ahp-content">
+        <p class="ahp-label">Paarurteile auf der verankerten Skala. Ein Eintrag gibt an, wie viel häufiger die Komponente der Zeile statt der Spalte über den Ausgang entscheidet:</p>
+        <table class="ahp-matrix-table"><thead><tr><th></th><th>T</th><th>P</th><th>Sk</th></tr></thead><tbody>
+<tr><th>T</th><td class="diag">1</td><td class="lt">1/3</td><td class="lt">1/6</td></tr>
+<tr><th>P</th><td class="gt">3</td><td class="diag">1</td><td class="lt">1/3</td></tr>
+<tr><th>Sk</th><td class="gt">6</td><td class="gt">3</td><td class="diag">1</td></tr>
+</tbody></table>
+        <p class="ahp-meta">Material ausgeschlossen, daher 3×3-Vergleich: Geräte sind genormt.</p>
+        <p class="ahp-cr">Consistency Ratio: <span class="cr-ok">0.016</span> <span class="cr-label">(konsistent)</span></p>
+      </div>
+    </details>
+  </div>
+</details>
+
+
+
+
+
+
+
+
+  </div>
+
+  <section id="vergleich">
+  <h2>Vergleich aller Sportarten</h2>
+
+  <h3>Strukturraum als 3D-Netz</h3>
+  <p>Diese Darstellung folgt einem einfachen physikalischen Prinzip: Jede Sportart ist ein freier Punkt, und zwischen je zwei Sportarten wirkt eine Feder, deren Ruhelänge ihrer strukturellen Distanz entspricht. Ähnliche Sportarten ziehen sich zusammen, verschiedene driften auseinander — und das System pendelt sich von selbst in eine Anordnung ein, in der alle Abstände möglichst gut den echten Distanzen entsprechen. Die Achsen haben hier keine Bedeutung; allein die Abstände zwischen den Punkten zählen. Da die Komponenten sich stets zu eins summieren, ist die Struktur exakt dreidimensional — anders als bei der flachen Karte weiter unten geht hier also nichts verloren.</p>
+
+  <div class="tetra-wrap">
+    <div id="tetra-canvas" class="tetra-canvas"></div>
+  </div>
+
+  <div id="comparison-panel" class="comparison-panel comparison-panel--empty" aria-live="polite">
+    <p class="comparison-hint">Tippe eine Kugel im Netz an, um ihre Werte zu sehen. Eine zweite Kugel zeigt den strukturellen Vergleich.</p>
+  </div>
+  <p class="figure-caption"><strong>Abb. 1</strong>Interaktives 3D-Kräftenetz aller bewerteten Sportarten. Jede Sportart ist ein Punkt; ihr Abstand zu jeder anderen entspricht der strukturellen Distanz. Verbindungslinien markieren besonders nahe Paare (Distanz unter 0.15). Ein Klick auf eine Kugel wählt sie aus und zeigt ihre Werte im Panel unten; ein weiterer Klick auf eine andere Kugel ergänzt den Vergleich mit Distanzwert und Komponenten-Gegenüberstellung. Die Anordnung bildet die echten Distanzen nahezu verlustfrei ab (Kruskal-Stress 0.03).</p>
+
+
+  </section>
+
+  </article>
+</main>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
   }
 }
+</script>
 
-/* Dark mode (explicit) */
-:root[data-theme="dark"] {
-  --bg-page:        #0a0a0a;
-  --bg-elevated:    #141414;
-  --bg-bar-track:   #1f1f1f;
-  --bg-mathblock:   #161616;
+<script>
+(function () {
+  var root = document.documentElement;
 
-  --text-body:      #ededed;
-  --text-muted:     #777777;
-  --text-strong:    #ffffff;
-  --text-link:      #ffffff;
-
-  --border-soft:    #2a2a2a;
-  --border-row:     #1f1f1f;
-}
-
-/* ---------- Base typography ---------- */
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
-  font-size: 18px;
-  line-height: 1.7;
-  background: var(--bg-page);
-  color: var(--text-body);
-  transition: background-color 0.2s ease, color 0.2s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.sidebar, .sidebar-toggle, .sidebar-controls, .toc, .toc-title,
-button, code, .ahp-matrix, .vector-table, .math-block,
-.sport-meta, .seg-legend, .leg-item, .ahp-meta, .ahp-label,
-small {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-weight: 600;
-  color: var(--text-strong);
-  line-height: 1.25;
-  margin-top: 2.2em;
-  margin-bottom: 0.5em;
-  letter-spacing: -0.015em;
-}
-h1 {
-  font-size: 2.4em;
-  margin-top: 0;
-  letter-spacing: -0.025em;
-  font-weight: 700;
-}
-h2 {
-  font-size: 1.55em;
-  margin-top: 3em;
-  padding-bottom: 0;
-  border: none;
-}
-h3 { font-size: 1.2em; margin-top: 2.2em; }
-h4 { font-size: 1.05em; margin-top: 1.5em; }
-
-/* Hover anchor links */
-h2[id], h3[id], h4[id] { position: relative; }
-.heading-anchor {
-  position: absolute;
-  left: -1.2em;
-  top: 0;
-  color: var(--text-muted);
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  font-weight: 400;
-  text-decoration: none;
-  padding-right: 0.3em;
-}
-h2[id]:hover .heading-anchor,
-h3[id]:hover .heading-anchor,
-h4[id]:hover .heading-anchor {
-  opacity: 0.4;
-}
-.heading-anchor:hover { opacity: 1 !important; }
-
-p { margin: 0 0 1em 0; }
-
-a {
-  color: var(--text-link);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-a:hover { text-decoration-thickness: 2px; }
-
-strong { color: var(--text-strong); }
-
-blockquote {
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  border-left: 2px solid var(--border-soft);
-  color: var(--text-muted);
-}
-
-hr {
-  border: none;
-  border-top: 1px solid var(--border-soft);
-  margin: 3em 0;
-  width: 100%;
-}
-
-/* ---------- MDS-Visualisierung ---------- */
-
-.mds-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1.5em 0 0.5em;
-}
-
-.mds-chart {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  display: block;
-}
-
-.mds-axis {
-  stroke: var(--text-muted);
-  stroke-width: 1;
-  opacity: 0.35;
-}
-
-.force-edge {
-  stroke: #888;
-  stroke-linecap: round;
-  pointer-events: none;
-}
-.leader-line {
-  stroke: var(--text-muted);
-  stroke-width: 0.75;
-  opacity: 0.4;
-  pointer-events: none;
-}
-:root[data-theme="dark"] .force-edge {
-  stroke: #bbb;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .force-edge {
-    stroke: #bbb;
+  function currentMode() {
+    var a = root.getAttribute('data-theme');
+    return (a === 'light' || a === 'dark') ? a : 'auto';
   }
-}
-
-.mds-ring {
-  fill: none;
-  stroke: var(--text-muted);
-  stroke-width: 1;
-  stroke-dasharray: 3 4;
-  opacity: 0.25;
-}
-
-.mds-glow {
-  opacity: 0.12;
-}
-
-:root[data-theme="dark"] .mds-glow {
-  opacity: 0.18;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .mds-glow {
-    opacity: 0.18;
+  function cycle(m) {
+    if (m === 'auto')  return 'light';
+    if (m === 'light') return 'dark';
+    return 'auto';
   }
-}
+  var btn = document.getElementById('theme-toggle');
+  var labels = { auto: 'Theme: Auto', light: 'Theme: Hell', dark: 'Theme: Dunkel' };
+  function refreshLabel() { btn.textContent = labels[currentMode()]; }
+  refreshLabel();
+  btn.addEventListener('click', function () {
+    var next = cycle(currentMode());
+    if (next === 'auto') {
+      root.removeAttribute('data-theme');
+      try { localStorage.removeItem('theme'); } catch (e) {}
+    } else {
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    }
+    refreshLabel();
+  });
 
-.mds-point {
-  stroke: var(--bg-page);
-  stroke-width: 1.5;
-  transition: r 0.15s, stroke-width 0.15s;
-}
+  var sidebar  = document.getElementById('sidebar');
+  var toggle   = document.getElementById('sidebar-toggle');
+  var backdrop = document.getElementById('sidebar-backdrop');
+  function open()  { sidebar.classList.add('open');  backdrop.classList.add('visible'); toggle.setAttribute('aria-expanded', 'true'); }
+  function close() { sidebar.classList.remove('open'); backdrop.classList.remove('visible'); toggle.setAttribute('aria-expanded', 'false'); }
+  toggle.addEventListener('click', function () {
+    if (sidebar.classList.contains('open')) close(); else open();
+  });
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+  });
 
-.mds-point:hover {
-  cursor: pointer;
-}
+  document.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function (h) {
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.className = 'heading-anchor';
+    a.setAttribute('aria-label', 'Link zu diesem Abschnitt');
+    a.textContent = '#';
+    h.insertBefore(a, h.firstChild);
+  });
 
-/* Label-Halo für Lesbarkeit über jedem Hintergrund */
-.mds-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  fill: var(--text-body);
-  paint-order: stroke fill;
-  stroke: var(--bg-page);
-  stroke-width: 3px;
-  stroke-linejoin: round;
-}
-
-/* Mobile: SVG wird herunterskaliert, daher Labels im viewBox-Raum vergrößern */
-@media (max-width: 700px) {
-  .mds-label {
-    font-size: 18px;
-    stroke-width: 4px;
+  function openTargetRow() {
+    var hash = location.hash;
+    if (!hash) return;
+    var el = document.querySelector(hash);
+    if (el && el.classList.contains('db-row')) {
+      el.open = true;
+    }
   }
+  window.addEventListener('hashchange', openTargetRow);
+  openTargetRow();
+})();
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+const nodeData = [{"name": "Fußball", "color": "#e63946", "slug": "fussball", "pos": [-0.2119, -0.7761, 0.3181], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "Tennis", "color": "#06a77d", "slug": "tennis", "pos": [-0.5726, 0.3075, 0.3763], "c": [0.2, 0.2, 0.55, 0.05]}, {"name": "100m Sprint", "color": "#f4a261", "slug": "100m-sprint", "pos": [1.4089, 0.7165, 0.175], "c": [0.05, 0.6, 0.35, 0.0]}, {"name": "Schach", "color": "#264653", "slug": "schach", "pos": [-0.5746, -2.007, 0.2408], "c": [0.65, 0.1, 0.25, 0.0]}, {"name": "Straßenradsport", "color": "#6f4e7c", "slug": "strassenradsport", "pos": [1.063, -0.5173, -0.605], "c": [0.25, 0.45, 0.15, 0.15]}, {"name": "Formel 1", "color": "#1d4e89", "slug": "formel-1", "pos": [-0.7497, -0.4237, -1.7586], "c": [0.25, 0.05, 0.25, 0.45]}, {"name": "Boxen", "color": "#c1121f", "slug": "boxen", "pos": [-0.0118, 0.2159, 0.4953], "c": [0.2, 0.3, 0.5, 0.0]}, {"name": "Triathlon", "color": "#0096c7", "slug": "triathlon", "pos": [1.6276, 0.1957, -0.3512], "c": [0.1, 0.6, 0.2, 0.1]}, {"name": "Baseball", "color": "#bc8a3f", "slug": "baseball", "pos": [-1.0545, -0.0103, 0.609], "c": [0.3, 0.1, 0.6, 0.0]}, {"name": "Super G", "color": "#8d99ae", "slug": "super-g", "pos": [-0.6909, 0.6252, -0.6091], "c": [0.1, 0.15, 0.5, 0.25]}, {"name": "Bowling", "color": "#5a189a", "slug": "bowling", "pos": [-0.9714, 0.9021, -0.1877], "c": [0.1, 0.1, 0.6, 0.2]}, {"name": "Handball", "color": "#ff6d00", "slug": "handball", "pos": [-0.5021, -0.7473, 0.2219], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "Zehnkampf", "color": "#ffd60a", "slug": "zehnkampf", "pos": [1.0647, 0.346, -0.2201], "c": [0.1, 0.5, 0.3, 0.1]}, {"name": "Bob Viererbob", "color": "#80b918", "slug": "bob-viererbob", "pos": [-0.261, 0.3761, -1.2303], "c": [0.1, 0.2, 0.35, 0.35]}, {"name": "Golf", "color": "#ff006e", "slug": "golf", "pos": [-0.9711, 0.3059, -0.0953], "c": [0.2, 0.1, 0.55, 0.15]}, {"name": "Basketball", "color": "#b5179e", "slug": "basketball", "pos": [-0.3687, -0.67, 0.5775], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "American Football", "color": "#7d4f16", "slug": "american-football", "pos": [-0.1549, -1.5882, 0.2216], "c": [0.55, 0.2, 0.25, 0.0]}, {"name": "Tischtennis", "color": "#48cae4", "slug": "tischtennis", "pos": [-1.1102, 0.6496, -0.3454], "c": [0.1, 0.1, 0.6, 0.2]}, {"name": "Cricket", "color": "#a7c957", "slug": "cricket", "pos": [-0.5224, -0.6197, -0.3745], "c": [0.35, 0.15, 0.35, 0.15]}, {"name": "Judo", "color": "#1b4332", "slug": "judo", "pos": [-0.1652, 0.5872, 0.5425], "c": [0.15, 0.3, 0.55, 0.0]}, {"name": "Volleyball", "color": "#d44ade", "slug": "volleyball", "pos": [-0.3161, -0.0166, 0.4615], "c": [0.25, 0.25, 0.5, 0.0]}, {"name": "Schwimmen 100m", "color": "#5ab85a", "slug": "schwimmen-100m", "pos": [1.1954, 0.3811, 0.3162], "c": [0.1, 0.55, 0.35, 0.0]}, {"name": "Rugby", "color": "#2e2ed9", "slug": "rugby", "pos": [1.1948, -0.621, 0.103], "c": [0.3, 0.5, 0.2, 0.0]}, {"name": "Eishockey", "color": "#5e4ade", "slug": "eishockey", "pos": [-0.2292, -0.6175, -0.0726], "c": [0.35, 0.2, 0.35, 0.1]}, {"name": "Badminton", "color": "#4ade71", "slug": "badminton", "pos": [-0.5348, 0.5453, 0.0326], "c": [0.15, 0.2, 0.55, 0.1]}, {"name": "Gewichtheben", "color": "#de4a85", "slug": "gewichtheben", "pos": [1.9735, 0.5037, 0.1294], "c": [0.05, 0.7, 0.25, 0.0]}, {"name": "Marathon", "color": "#1a6e2e", "slug": "marathon", "pos": [2.3955, -0.1398, -0.0466], "c": [0.15, 0.75, 0.1, 0.0]}, {"name": "Sportklettern", "color": "#a12ed9", "slug": "sportklettern", "pos": [-0.0669, 0.4569, 0.1534], "c": [0.15, 0.3, 0.5, 0.05]}, {"name": "Darts", "color": "#e0a82e", "slug": "darts", "pos": [-1.396, 0.7475, 0.284], "c": [0.15, 0.05, 0.7, 0.1]}, {"name": "Gerätturnen", "color": "#2ed9a1", "slug": "geraetturnen", "pos": [-0.4872, 0.8922, 0.6382], "c": [0.1, 0.25, 0.65, 0.0]}];
+const edgeData = [[0, 11, 0.0], [0, 15, 0.0], [0, 23, 0.122], [1, 6, 0.122], [1, 14, 0.141], [1, 19, 0.122], [1, 20, 0.1], [1, 24, 0.071], [1, 27, 0.122], [2, 21, 0.071], [2, 25, 0.141], [3, 16, 0.141], [6, 19, 0.071], [6, 20, 0.071], [6, 27, 0.071], [7, 12, 0.141], [9, 10, 0.122], [9, 17, 0.122], [10, 14, 0.122], [10, 17, 0.0], [11, 15, 0.0], [11, 23, 0.122], [12, 21, 0.122], [14, 17, 0.122], [14, 24, 0.122], [15, 23, 0.122], [18, 23, 0.071], [19, 20, 0.122], [19, 24, 0.141], [19, 27, 0.071], [19, 29, 0.122], [20, 27, 0.122], [24, 27, 0.122]];
+const distMatrix = [[0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.255, 0.0, 0.4743, 0.5523, 0.4848, 0.5244, 0.1225, 0.5431, 0.1581, 0.2345, 0.2121, 0.255, 0.4062, 0.3742, 0.1414, 0.255, 0.4637, 0.2121, 0.2739, 0.1225, 0.1, 0.4183, 0.4743, 0.255, 0.0707, 0.6042, 0.7141, 0.1225, 0.2236, 0.1581], [0.5339, 0.4743, 0.0, 0.7874, 0.3536, 0.745, 0.3674, 0.1871, 0.6124, 0.5385, 0.5958, 0.5339, 0.1581, 0.5339, 0.5788, 0.5339, 0.6481, 0.5958, 0.5612, 0.3742, 0.4301, 0.0707, 0.3082, 0.5099, 0.469, 0.1414, 0.3082, 0.3536, 0.6671, 0.4637], [0.3082, 0.5523, 0.7874, 0.0, 0.5612, 0.6042, 0.5523, 0.7517, 0.495, 0.6557, 0.6819, 0.3082, 0.6892, 0.6671, 0.5612, 0.3082, 0.1414, 0.6819, 0.3536, 0.6164, 0.495, 0.7176, 0.5339, 0.3464, 0.6, 0.8485, 0.8337, 0.5958, 0.6819, 0.6964], [0.4123, 0.4848, 0.3536, 0.5612, 0.0, 0.5099, 0.4123, 0.2236, 0.5916, 0.495, 0.5916, 0.4123, 0.2236, 0.4062, 0.5339, 0.4123, 0.4301, 0.5916, 0.3742, 0.4637, 0.4301, 0.3082, 0.1732, 0.3391, 0.4848, 0.3674, 0.3536, 0.4062, 0.6892, 0.5788], [0.5196, 0.5244, 0.745, 0.6042, 0.5099, 0.0, 0.5745, 0.6708, 0.5745, 0.3674, 0.4583, 0.5196, 0.5916, 0.255, 0.4301, 0.5196, 0.5612, 0.4583, 0.3464, 0.6042, 0.5523, 0.6964, 0.6403, 0.4062, 0.495, 0.8155, 0.8515, 0.5431, 0.5788, 0.6519], [0.2449, 0.1225, 0.3674, 0.5523, 0.4123, 0.5745, 0.0, 0.4472, 0.2449, 0.3082, 0.3162, 0.2449, 0.3162, 0.4062, 0.255, 0.2449, 0.4416, 0.3162, 0.3, 0.0707, 0.0707, 0.3082, 0.3742, 0.255, 0.1581, 0.495, 0.6042, 0.0707, 0.3391, 0.1871], [0.5477, 0.5431, 0.1871, 0.7517, 0.2236, 0.6708, 0.4472, 0.0, 0.6782, 0.5612, 0.6481, 0.5477, 0.1414, 0.495, 0.6205, 0.5477, 0.6124, 0.6481, 0.5385, 0.4743, 0.495, 0.1871, 0.2449, 0.495, 0.5339, 0.1581, 0.2121, 0.4301, 0.745, 0.5788], [0.2449, 0.1581, 0.6124, 0.495, 0.5916, 0.5745, 0.2449, 0.6782, 0.0, 0.3391, 0.2828, 0.2449, 0.5477, 0.4848, 0.1871, 0.2449, 0.4416, 0.2828, 0.3, 0.255, 0.1871, 0.5523, 0.5657, 0.2915, 0.2121, 0.7382, 0.8337, 0.2739, 0.2121, 0.255], [0.4062, 0.2345, 0.5385, 0.6557, 0.495, 0.3674, 0.3082, 0.5612, 0.3391, 0.0, 0.1225, 0.4062, 0.4301, 0.1871, 0.1581, 0.4062, 0.5745, 0.1225, 0.3082, 0.3, 0.3082, 0.495, 0.5612, 0.3317, 0.1732, 0.6557, 0.7649, 0.255, 0.2739, 0.3082], [0.4243, 0.2121, 0.5958, 0.6819, 0.5916, 0.4583, 0.3162, 0.6481, 0.2828, 0.1225, 0.0, 0.4243, 0.5099, 0.3082, 0.1225, 0.4243, 0.6124, 0.0, 0.3606, 0.2915, 0.3082, 0.5523, 0.6325, 0.3808, 0.1581, 0.7246, 0.8456, 0.2739, 0.1581, 0.255], [0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.4472, 0.4062, 0.1581, 0.6892, 0.2236, 0.5916, 0.3162, 0.1414, 0.5477, 0.4301, 0.5099, 0.4472, 0.0, 0.3937, 0.4848, 0.4472, 0.5523, 0.5099, 0.4359, 0.3391, 0.3674, 0.1225, 0.2449, 0.3937, 0.3937, 0.2345, 0.3391, 0.2915, 0.6042, 0.4416], [0.4637, 0.3742, 0.5339, 0.6671, 0.4062, 0.255, 0.4062, 0.495, 0.4848, 0.1871, 0.3082, 0.4637, 0.3937, 0.0, 0.3162, 0.4637, 0.5788, 0.3082, 0.324, 0.4183, 0.4123, 0.495, 0.5244, 0.3536, 0.324, 0.6205, 0.7, 0.3536, 0.4583, 0.4637], [0.3082, 0.1414, 0.5788, 0.5612, 0.5339, 0.4301, 0.255, 0.6205, 0.1871, 0.1581, 0.1225, 0.3082, 0.4848, 0.3162, 0.0, 0.3082, 0.495, 0.1225, 0.255, 0.255, 0.2236, 0.5244, 0.5612, 0.2739, 0.1225, 0.7036, 0.8062, 0.2345, 0.1732, 0.255], [0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.2121, 0.4637, 0.6481, 0.1414, 0.4301, 0.5612, 0.4416, 0.6124, 0.4416, 0.5745, 0.6124, 0.2121, 0.5523, 0.5788, 0.495, 0.2121, 0.0, 0.6124, 0.2739, 0.5099, 0.3937, 0.5788, 0.3937, 0.2449, 0.5099, 0.7071, 0.6964, 0.4848, 0.6285, 0.6042], [0.4243, 0.2121, 0.5958, 0.6819, 0.5916, 0.4583, 0.3162, 0.6481, 0.2828, 0.1225, 0.0, 0.4243, 0.5099, 0.3082, 0.1225, 0.4243, 0.6124, 0.0, 0.3606, 0.2915, 0.3082, 0.5523, 0.6325, 0.3808, 0.1581, 0.7246, 0.8456, 0.2739, 0.1581, 0.255], [0.1732, 0.2739, 0.5612, 0.3536, 0.3742, 0.3464, 0.3, 0.5385, 0.3, 0.3082, 0.3606, 0.1732, 0.4359, 0.324, 0.255, 0.1732, 0.2739, 0.3606, 0.0, 0.3536, 0.255, 0.495, 0.4123, 0.0707, 0.2915, 0.6519, 0.6964, 0.3082, 0.4183, 0.4301], [0.3082, 0.1225, 0.3742, 0.6164, 0.4637, 0.6042, 0.0707, 0.4743, 0.255, 0.3, 0.2915, 0.3082, 0.3391, 0.4183, 0.255, 0.3082, 0.5099, 0.2915, 0.3536, 0.0, 0.1225, 0.324, 0.4301, 0.3162, 0.1414, 0.5099, 0.6364, 0.0707, 0.3082, 0.1225], [0.1871, 0.1, 0.4301, 0.495, 0.4301, 0.5523, 0.0707, 0.495, 0.1871, 0.3082, 0.3082, 0.1871, 0.3674, 0.4123, 0.2236, 0.1871, 0.3937, 0.3082, 0.255, 0.1225, 0.0, 0.3674, 0.3937, 0.2121, 0.1581, 0.5523, 0.6481, 0.1225, 0.3162, 0.2121], [0.4637, 0.4183, 0.0707, 0.7176, 0.3082, 0.6964, 0.3082, 0.1871, 0.5523, 0.495, 0.5523, 0.4637, 0.1225, 0.495, 0.5244, 0.4637, 0.5788, 0.5523, 0.495, 0.324, 0.3674, 0.0, 0.255, 0.4416, 0.4183, 0.1871, 0.324, 0.3, 0.6205, 0.4243], [0.3742, 0.4743, 0.3082, 0.5339, 0.1732, 0.6403, 0.3742, 0.2449, 0.5657, 0.5612, 0.6325, 0.3742, 0.2449, 0.5244, 0.5612, 0.3742, 0.3937, 0.6325, 0.4123, 0.4301, 0.3937, 0.255, 0.0, 0.3536, 0.495, 0.324, 0.3082, 0.3937, 0.6964, 0.5523], [0.1225, 0.255, 0.5099, 0.3464, 0.3391, 0.4062, 0.255, 0.495, 0.2915, 0.3317, 0.3808, 0.1225, 0.3937, 0.3536, 0.2739, 0.1225, 0.2449, 0.3808, 0.0707, 0.3162, 0.2121, 0.4416, 0.3536, 0.0, 0.2828, 0.6, 0.6442, 0.2739, 0.4301, 0.4062], [0.3082, 0.0707, 0.469, 0.6, 0.4848, 0.495, 0.1581, 0.5339, 0.2121, 0.1732, 0.1581, 0.3082, 0.3937, 0.324, 0.1225, 0.3082, 0.5099, 0.1581, 0.2915, 0.1414, 0.1581, 0.4183, 0.495, 0.2828, 0.0, 0.6, 0.7176, 0.1225, 0.2121, 0.1581], [0.6285, 0.6042, 0.1414, 0.8485, 0.3674, 0.8155, 0.495, 0.1581, 0.7382, 0.6557, 0.7246, 0.6285, 0.2345, 0.6205, 0.7036, 0.6285, 0.7071, 0.7246, 0.6519, 0.5099, 0.5523, 0.1871, 0.324, 0.6, 0.6, 0.0, 0.1871, 0.4848, 0.8031, 0.6042], [0.6745, 0.7141, 0.3082, 0.8337, 0.3536, 0.8515, 0.6042, 0.2121, 0.8337, 0.7649, 0.8456, 0.6745, 0.3391, 0.7, 0.8062, 0.6745, 0.6964, 0.8456, 0.6964, 0.6364, 0.6481, 0.324, 0.3082, 0.6442, 0.7176, 0.1871, 0.0, 0.6042, 0.9274, 0.745], [0.2915, 0.1225, 0.3536, 0.5958, 0.4062, 0.5431, 0.0707, 0.4301, 0.2739, 0.255, 0.2739, 0.2915, 0.2915, 0.3536, 0.2345, 0.2915, 0.4848, 0.2739, 0.3082, 0.0707, 0.1225, 0.3, 0.3937, 0.2739, 0.1225, 0.4848, 0.6042, 0.0, 0.324, 0.1732], [0.4301, 0.2236, 0.6671, 0.6819, 0.6892, 0.5788, 0.3391, 0.745, 0.2121, 0.2739, 0.1581, 0.4301, 0.6042, 0.4583, 0.1732, 0.4301, 0.6285, 0.1581, 0.4183, 0.3082, 0.3162, 0.6205, 0.6964, 0.4301, 0.2121, 0.8031, 0.9274, 0.324, 0.0, 0.2345], [0.3937, 0.1581, 0.4637, 0.6964, 0.5788, 0.6519, 0.1871, 0.5788, 0.255, 0.3082, 0.255, 0.3937, 0.4416, 0.4637, 0.255, 0.3937, 0.6042, 0.255, 0.4301, 0.1225, 0.2121, 0.4243, 0.5523, 0.4062, 0.1581, 0.6042, 0.745, 0.1732, 0.2345, 0.0]];
+
+const container = document.getElementById('tetra-canvas');
+const panel = document.getElementById('comparison-panel');
+
+function clientW() { return container.clientWidth; }
+function clientH() { return container.clientHeight; }
+let W = clientW(), H = clientH();
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(38, W/H, 0.1, 100);
+camera.position.set(0, 0.6, 7);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(W, H);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+const overlay = document.createElement('div');
+overlay.style.position = 'absolute';
+overlay.style.top = '0';
+overlay.style.left = '0';
+overlay.style.width = '100%';
+overlay.style.height = '100%';
+overlay.style.pointerEvents = 'none';
+overlay.style.overflow = 'visible';
+container.style.position = 'relative';
+container.appendChild(overlay);
+
+const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambient);
+const keyLight = new THREE.DirectionalLight(0xffffff, 0.8);
+keyLight.position.set(4, 6, 3);
+scene.add(keyLight);
+const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+fillLight.position.set(-4, -1, -4);
+scene.add(fillLight);
+
+function isDark() {
+  return document.documentElement.getAttribute('data-theme') === 'dark' ||
+         (document.documentElement.getAttribute('data-theme') !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+}
+function getThemeColors() {
+  const dark = isDark();
+  return {
+    edge: dark ? 0xa0a8b0 : 0x4a4a4a,
+    edgeOpacity: dark ? 0.4 : 0.32,
+    sportLabelColor: dark ? '#c9d1d9' : '#444',
+    compareLine: dark ? 0xffffff : 0x111111
+  };
 }
 
-/* ---------- Database page ---------- */
+const netGroup = new THREE.Group();
+scene.add(netGroup);
 
-.db-list {
-  margin: 1.5em 0 3em 0;
-  border-top: 1px solid var(--border-soft);
-}
-
-.db-row {
-  border-bottom: 1px solid var(--border-soft);
-}
-.db-row summary {
-  list-style: none;
-  cursor: pointer;
-  display: grid;
-  grid-template-columns: 180px 240px minmax(0, 1fr) 20px;
-  gap: 1.5em;
-  align-items: center;
-  padding: 0.8em 0.8em;
-  transition: background 0.12s ease;
-}
-.db-row summary::-webkit-details-marker { display: none; }
-.db-row summary:hover {
-  background: var(--bg-mathblock);
-}
-.db-row[open] summary {
-  background: var(--bg-mathblock);
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
 }
 
-.db-row-name {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.95em;
-  color: var(--text-strong);
-}
-.db-row-bar {
-  display: flex;
-  width: 240px;
-  height: 14px;
-  border-radius: 3px;
-  overflow: hidden;
-  gap: 1px;
-  background: var(--bg-bar-track);
-}
-.db-row-bar .seg {
-  height: 100%;
-  transition: filter 0.15s;
-}
-.db-row-bar:hover .seg:hover { filter: brightness(1.15); }
-
-.db-row-values {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78em;
-  color: var(--text-muted);
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  gap: 0.9em;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-.db-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35em;
-}
-.db-chip-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
+function makeGlowSprite(color, dark, big) {
+  const size = 128;
+  const cnv = document.createElement('canvas');
+  cnv.width = size; cnv.height = size;
+  const ctx = cnv.getContext('2d');
+  const grad = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+  const a0 = big ? (dark ? 0.45 : 0.7) : (dark ? 0.25 : 0.5);
+  const a1 = big ? (dark ? 0.20 : 0.30) : (dark ? 0.10 : 0.20);
+  grad.addColorStop(0, hexToRgba(color, a0));
+  grad.addColorStop(0.35, hexToRgba(color, a1));
+  grad.addColorStop(1, hexToRgba(color, 0));
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, size, size);
+  const tex = new THREE.CanvasTexture(cnv);
+  const mat = new THREE.SpriteMaterial({
+    map: tex, transparent: true, depthWrite: false,
+    blending: dark ? THREE.NormalBlending : THREE.AdditiveBlending
+  });
+  const sprite = new THREE.Sprite(mat);
+  sprite.scale.set(big ? 0.55 : 0.32, big ? 0.55 : 0.32, 1);
+  return sprite;
 }
 
-.db-row-icon {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7em;
-  color: var(--text-muted);
-  transition: transform 0.2s ease;
-  display: inline-block;
-  text-align: center;
-  justify-self: end;
+// Edges
+let edgeLines = [];
+function buildEdges() {
+  edgeLines.forEach(l => netGroup.remove(l));
+  edgeLines = [];
+  const colors = getThemeColors();
+  const dmin = Math.min.apply(null, edgeData.map(e => e[2]));
+  const dmax = Math.max.apply(null, edgeData.map(e => e[2]));
+  edgeData.forEach(e => {
+    const a = nodeData[e[0]].pos, b = nodeData[e[1]].pos;
+    const g = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(a[0], a[1], a[2]),
+      new THREE.Vector3(b[0], b[1], b[2])
+    ]);
+    const nz = dmax > dmin ? (e[2]-dmin)/(dmax-dmin) : 0;
+    const op = colors.edgeOpacity * (1 - nz*0.5);
+    const mat = new THREE.LineBasicMaterial({ color: colors.edge, transparent: true, opacity: op });
+    netGroup.add(new THREE.Line(g, mat));
+    edgeLines.push(netGroup.children[netGroup.children.length-1]);
+  });
 }
-.db-row[open] .db-row-icon {
-  transform: rotate(90deg);
+buildEdges();
+
+// Points (interaktiv über Raycasting)
+const pointGroup = new THREE.Group();
+netGroup.add(pointGroup);
+const pointMeshes = []; // {mesh, glow, color, name, slug, index, baseScale}
+
+function buildPoints() {
+  while (pointGroup.children.length) pointGroup.remove(pointGroup.children[0]);
+  pointMeshes.length = 0;
+  const dark = isDark();
+  nodeData.forEach((s, idx) => {
+    const pos = new THREE.Vector3(s.pos[0], s.pos[1], s.pos[2]);
+    const geo = new THREE.SphereGeometry(0.075, 24, 24);
+    const sphereMat = new THREE.MeshStandardMaterial({
+      color: new THREE.Color(s.color),
+      roughness: 0.4, metalness: 0.1,
+      emissive: new THREE.Color(s.color),
+      emissiveIntensity: dark ? 0.05 : 0.12
+    });
+    const mesh = new THREE.Mesh(geo, sphereMat);
+    mesh.position.copy(pos);
+    mesh.userData = { index: idx };
+    pointGroup.add(mesh);
+    const glow = makeGlowSprite(s.color, dark, false);
+    glow.position.copy(pos);
+    pointGroup.add(glow);
+    pointMeshes.push({ mesh, glow, color: s.color, name: s.name, slug: s.slug, index: idx, baseScale: 1 });
+  });
+}
+buildPoints();
+
+// HTML-Labels
+const sportLabelEls = [];
+function buildSportLabels() {
+  sportLabelEls.forEach(el => overlay.removeChild(el));
+  sportLabelEls.length = 0;
+  const colors = getThemeColors();
+  pointMeshes.forEach(p => {
+    const el = document.createElement('div');
+    el.textContent = p.name;
+    el.style.position = 'absolute';
+    el.style.fontFamily = 'Inter, sans-serif';
+    el.style.fontSize = '11px';
+    el.style.fontWeight = '500';
+    el.style.color = colors.sportLabelColor;
+    el.style.transform = 'translate(8px, -50%)';
+    el.style.whiteSpace = 'nowrap';
+    el.style.opacity = '0.85';
+    el.style.pointerEvents = 'none';
+    el.style.transition = 'opacity 0.2s ease, font-weight 0.2s ease, font-size 0.2s ease';
+    overlay.appendChild(el);
+    sportLabelEls.push(el);
+  });
+}
+buildSportLabels();
+
+// Compare-Linie zwischen zwei Auswahl
+let compareLine = null;
+function setCompareLine(idxA, idxB) {
+  if (compareLine) { netGroup.remove(compareLine); compareLine = null; }
+  if (idxA == null || idxB == null) return;
+  const a = nodeData[idxA].pos, b = nodeData[idxB].pos;
+  const g = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(a[0], a[1], a[2]),
+    new THREE.Vector3(b[0], b[1], b[2])
+  ]);
+  const colors = getThemeColors();
+  const mat = new THREE.LineBasicMaterial({ color: colors.compareLine, transparent: true, opacity: 0.9, linewidth: 2 });
+  compareLine = new THREE.Line(g, mat);
+  netGroup.add(compareLine);
 }
 
-.db-row-detail {
-  padding: 0.5em 1em 1.25em;
-  border-top: 1px solid var(--border-soft);
-  background: transparent;
-}
-.db-row-detail .sport-meta {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-size: 0.85em;
-}
-.db-row-detail .sport-rationale {
-  margin-top: 0.5em;
-  font-size: 0.92em;
-  line-height: 1.6;
+// === AUSWAHL-STATE ===
+let selected = []; // Liste von Indizes (max 2)
+
+function clearSelection() {
+  selected = [];
+  updateHighlights();
+  setCompareLine(null, null);
+  renderPanel();
 }
 
-/* Tablet: kleinere Werte-Spalte */
-@media (max-width: 900px) {
-  .db-row summary {
-    grid-template-columns: 140px 200px minmax(0, 1fr) 18px;
-    gap: 1em;
+function toggleSelect(idx) {
+  const i = selected.indexOf(idx);
+  if (i >= 0) {
+    selected.splice(i, 1);
+  } else {
+    if (selected.length >= 2) selected.shift(); // FIFO: ältere Auswahl raus
+    selected.push(idx);
   }
-  .db-row-bar { width: 200px; }
+  updateHighlights();
+  setCompareLine(selected.length === 2 ? selected[0] : null, selected.length === 2 ? selected[1] : null);
+  renderPanel();
 }
 
-/* Mobile: Werte unter Name+Balken umbrechen statt verstecken */
-@media (max-width: 700px) {
-  .db-row summary {
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "name icon"
-      "bar  bar"
-      "vals vals";
-    gap: 0.5em 0.8em;
-    align-items: center;
+function updateHighlights() {
+  const dark = isDark();
+  pointMeshes.forEach(p => {
+    const isSel = selected.indexOf(p.index) >= 0;
+    const hasSel = selected.length > 0;
+    p.mesh.scale.setScalar(isSel ? 1.6 : 1);
+    p.mesh.material.emissiveIntensity = isSel ? (dark ? 0.5 : 0.6) : (dark ? 0.05 : 0.12);
+    if (isSel) {
+      // großen Glow nutzen
+      p.glow.scale.set(0.55, 0.55, 1);
+      p.glow.material.opacity = 1;
+    } else {
+      p.glow.scale.set(0.32, 0.32, 1);
+      p.glow.material.opacity = hasSel ? 0.35 : 1;
+    }
+    p.mesh.material.opacity = hasSel && !isSel ? 0.55 : 1;
+    p.mesh.material.transparent = true;
+  });
+  // Labels: ausgewählte fett, andere gedimmt
+  sportLabelEls.forEach((el, i) => {
+    const isSel = selected.indexOf(i) >= 0;
+    const hasSel = selected.length > 0;
+    el.style.fontWeight = isSel ? '700' : '500';
+    el.style.fontSize = isSel ? '13px' : '11px';
+    el.style.opacity = isSel ? '1' : (hasSel ? '0.45' : '0.85');
+  });
+}
+
+// === PANEL-RENDERING ===
+const COMP_LABEL = ['Taktik', 'Physis', 'Skill', 'Material'];
+const COMP_CSS = ['tactics', 'physical', 'skill', 'material'];
+
+function getCompCssColor(idx) {
+  // Liest die CSS-Variable für die Komponentenfarbe
+  const map = ['--tactics-color', '--physical-color', '--skill-color', '--material-color'];
+  const v = getComputedStyle(document.documentElement).getPropertyValue(map[idx]).trim();
+  return v || '#888';
+}
+
+function renderPanel() {
+  if (selected.length === 0) {
+    panel.className = 'comparison-panel comparison-panel--empty';
+    panel.innerHTML = '<p class="comparison-hint">Tippe eine Kugel im Netz an, um ihre Werte zu sehen. Eine zweite Kugel zeigt den strukturellen Vergleich.</p>';
+    return;
   }
-  .db-row-name { grid-area: name; }
-  .db-row-icon { grid-area: icon; }
-  .db-row-bar {
-    grid-area: bar;
-    width: 100%;
+  if (selected.length === 1) {
+    const n = nodeData[selected[0]];
+    let html = '<div class="cp-header">';
+    html += '<span class="cp-sport"><span class="cp-dot" style="background:' + n.color + '"></span>' + n.name + '</span>';
+    html += '<button class="cp-close" type="button" data-action="clear">Auswahl aufheben</button>';
+    html += '</div>';
+    for (let k = 0; k < 4; k++) {
+      const pct = Math.round(n.c[k] * 100);
+      if (pct === 0) continue;
+      const color = getCompCssColor(k);
+      html += '<div class="cp-single-row">';
+      html += '<span class="cp-row-label">' + COMP_LABEL[k] + '</span>';
+      html += '<div class="cp-bar-cell"><div class="cp-single-bar" style="width:' + pct + '%; background:' + color + '"></div></div>';
+      html += '<span class="cp-single-val">' + pct + '%</span>';
+      html += '</div>';
+    }
+    panel.className = 'comparison-panel comparison-panel--single';
+    panel.innerHTML = html;
+  } else {
+    const a = nodeData[selected[0]], b = nodeData[selected[1]];
+    const d = distMatrix[selected[0]][selected[1]];
+    // Distanz-Label: nah / mittel / fern
+    let dLabel = 'mittel';
+    if (d < 0.15) dLabel = 'sehr nah';
+    else if (d < 0.30) dLabel = 'nah';
+    else if (d < 0.50) dLabel = 'mittel';
+    else if (d < 0.70) dLabel = 'weit';
+    else dLabel = 'sehr weit';
+    
+    let html = '<div class="cp-header">';
+    html += '<span class="cp-sport"><span class="cp-dot" style="background:' + a.color + '"></span>' + a.name + '</span>';
+    html += '<span class="cp-vs">vs</span>';
+    html += '<span class="cp-sport"><span class="cp-dot" style="background:' + b.color + '"></span>' + b.name + '</span>';
+    html += '<button class="cp-close" type="button" data-action="clear">Schließen</button>';
+    html += '</div>';
+    html += '<p class="cp-distance">Strukturelle Distanz: <strong>' + d.toFixed(2) + '</strong><span class="cp-d-label">' + dLabel + '</span></p>';
+    
+    html += '<div class="cp-comparison">';
+    for (let k = 0; k < 4; k++) {
+      const va = Math.round(a.c[k] * 100);
+      const vb = Math.round(b.c[k] * 100);
+      if (va === 0 && vb === 0) continue;
+      const diff = Math.abs(va - vb);
+      const color = getCompCssColor(k);
+      const aligned = diff <= 5 ? ' cp-aligned' : '';
+      html += '<span class="cp-row-label">' + COMP_LABEL[k] + '</span>';
+      html += '<div class="cp-bar-cell' + aligned + '">';
+      html += '<div class="cp-bar" style="width:' + va + '%; background:' + a.color + '" title="' + a.name + ': ' + va + '%"></div>';
+      html += '<div class="cp-bar cp-bar-b" style="width:' + vb + '%; background:' + b.color + '" title="' + b.name + ': ' + vb + '%"></div>';
+      html += '</div>';
+      const diffClass = diff >= 15 ? ' cp-diff-strong' : '';
+      html += '<span class="cp-diff' + diffClass + '">' + (diff === 0 ? '–' : 'Δ ' + diff) + '</span>';
+    }
+    html += '</div>';
+    panel.className = 'comparison-panel comparison-panel--pair';
+    panel.innerHTML = html;
   }
-  .db-row-values {
-    grid-area: vals;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 0.8em;
+  // Close-Button-Listener
+  const btn = panel.querySelector('[data-action="clear"]');
+  if (btn) btn.addEventListener('click', clearSelection);
+}
+renderPanel();
+
+// === RAYCASTING / KLICKS ===
+const raycaster = new THREE.Raycaster();
+const pointerVec = new THREE.Vector2();
+
+function pickAt(clientX, clientY) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointerVec.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+  pointerVec.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(pointerVec, camera);
+  // Vergrößern der Trefferfläche durch threshold? Für Spheres nicht direkt, also nehmen wir alle pointMeshes
+  const meshes = pointMeshes.map(p => p.mesh);
+  const hits = raycaster.intersectObjects(meshes, false);
+  if (hits.length === 0) return null;
+  return hits[0].object.userData.index;
+}
+
+// Drag-Detection: kleiner Schwellwert, sonst Klick
+let pointerDown = null;
+let pointerMoved = false;
+const DRAG_THRESHOLD = 6;
+
+renderer.domElement.addEventListener('pointerdown', (e) => {
+  pointerDown = { x: e.clientX, y: e.clientY, time: performance.now() };
+  pointerMoved = false;
+});
+renderer.domElement.addEventListener('pointermove', (e) => {
+  if (!pointerDown) return;
+  const dx = e.clientX - pointerDown.x;
+  const dy = e.clientY - pointerDown.y;
+  if (Math.hypot(dx, dy) > DRAG_THRESHOLD) pointerMoved = true;
+});
+renderer.domElement.addEventListener('pointerup', (e) => {
+  if (!pointerDown) return;
+  const elapsed = performance.now() - pointerDown.time;
+  if (!pointerMoved && elapsed < 500) {
+    const idx = pickAt(e.clientX, e.clientY);
+    if (idx != null) toggleSelect(idx);
+    else if (selected.length > 0) clearSelection();
   }
-}
-
-/* Ausklappbare Berechnung (innere <details>) */
-.ahp-details {
-  margin-top: 1em;
-  border: 1px solid var(--border-soft);
-  border-radius: 3px;
-  padding: 0;
-  background: transparent;
-}
-.ahp-details summary {
-  cursor: pointer;
-  padding: 0.55em 0.9em;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8em;
-  font-weight: 500;
-  color: var(--text-muted);
-  user-select: none;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  background: transparent;
-  grid-template-columns: none;
-}
-.ahp-details summary::-webkit-details-marker { display: none; }
-.ahp-details summary::before {
-  content: '▸';
-  font-size: 0.8em;
-  transition: transform 0.15s ease;
-  display: inline-block;
-}
-.ahp-details[open] summary::before {
-  transform: rotate(90deg);
-}
-.ahp-details summary:hover {
-  color: var(--text-body);
-  background: transparent;
-}
-.ahp-details[open] summary {
-  border-bottom: 1px solid var(--border-soft);
-  color: var(--text-body);
-  background: transparent;
-}
-.ahp-content {
-  padding: 0.9em 1.1em 1.1em;
-}
-.ahp-content .ahp-label:first-child { margin-top: 0; }
-.ahp-content > *:last-child { margin-bottom: 0; }
-
-/* ---------- 3D Tetraeder ---------- */
-
-.tetra-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1.5em 0 0.5em;
-  width: 100%;
-}
-.tetra-canvas {
-  width: 100%;
-  max-width: 820px;
-  height: 620px;
-  position: relative;
-  border-radius: 8px;
-  background: radial-gradient(ellipse at center,
-    rgba(0, 0, 0, 0.025) 0%,
-    rgba(0, 0, 0, 0) 70%);
-  cursor: grab;
-}
-.tetra-canvas:active { cursor: grabbing; }
-@media (max-width: 700px) {
-  .tetra-canvas {
-    height: 420px;
-  }
-}
-:root[data-theme="dark"] .tetra-canvas {
-  background: radial-gradient(ellipse at center,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0) 70%);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .tetra-canvas {
-    background: radial-gradient(ellipse at center,
-      rgba(255, 255, 255, 0.04) 0%,
-      rgba(255, 255, 255, 0) 70%);
-  }
-}
-.tetra-canvas canvas {
-  display: block;
-  margin: 0 auto;
-}
-
-/* ---------- Comparison-Panel ---------- */
-.comparison-panel {
-  width: 100%;
-  max-width: 820px;
-  margin: 0.8em auto 0;
-  padding: 1.1em 1.3em;
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-  background: var(--bg-mathblock);
-  font-family: 'Inter', sans-serif;
-  font-size: 0.92em;
-  transition: border-color 0.2s ease;
-  min-height: 4em;
-}
-.comparison-panel--empty { color: var(--text-muted); font-style: italic; }
-.comparison-panel--single { border-color: var(--text-body); }
-.comparison-panel--pair   { border-color: var(--text-strong); }
-.comparison-hint { margin: 0; line-height: 1.5; }
-
-.cp-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6em 0.9em;
-  margin-bottom: 0.8em;
-}
-.cp-sport {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  font-weight: 600;
-  color: var(--text-strong);
-  font-size: 1.05em;
-}
-.cp-dot {
-  display: inline-block;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.cp-vs { color: var(--text-muted); font-weight: 500; }
-.cp-close {
-  margin-left: auto;
-  background: transparent;
-  border: 1px solid var(--border-soft);
-  color: var(--text-muted);
-  border-radius: 4px;
-  padding: 0.25em 0.6em;
-  font: inherit;
-  font-size: 0.82em;
-  cursor: pointer;
-}
-.cp-close:hover { color: var(--text-body); border-color: var(--text-muted); }
-
-.cp-distance {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9em;
-  color: var(--text-body);
-  margin: 0 0 0.6em;
-}
-.cp-distance strong {
-  font-variant-numeric: tabular-nums;
-  color: var(--text-strong);
-}
-.cp-distance .cp-d-label {
-  display: inline-block;
-  padding: 0.1em 0.5em;
-  margin-left: 0.4em;
-  background: var(--bg-page);
-  border-radius: 3px;
-  font-size: 0.88em;
-  color: var(--text-muted);
-}
-
-/* Komponenten-Vergleich: gestapelte Balken übereinander */
-.cp-comparison {
-  display: grid;
-  grid-template-columns: 5em 1fr 4.5em;
-  gap: 0.4em 0.7em;
-  align-items: center;
-  margin-top: 0.4em;
-}
-.cp-row-label {
-  font-size: 0.85em;
-  color: var(--text-body);
-  font-weight: 500;
-}
-.cp-bar-cell {
-  position: relative;
-  height: 1.5em;
-  background: var(--bg-page);
-  border-radius: 3px;
-  overflow: hidden;
-}
-/* Beide Balken übereinander, leicht versetzt */
-.cp-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50%;
-  border-radius: 2px;
-  opacity: 0.85;
-}
-.cp-bar.cp-bar-b { top: 50%; }
-.cp-bar-cell.cp-aligned .cp-bar { opacity: 0.65; }
-
-.cp-diff {
-  font-variant-numeric: tabular-nums;
-  font-size: 0.85em;
-  text-align: right;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-.cp-diff.cp-diff-strong { color: var(--text-strong); font-weight: 600; }
-
-/* Single-View: nur ein Balken pro Komponente */
-.cp-single-row {
-  display: grid;
-  grid-template-columns: 5em 1fr 3em;
-  gap: 0.4em 0.7em;
-  align-items: center;
-  margin: 0.3em 0;
-}
-.cp-single-bar {
-  height: 0.9em;
-  border-radius: 2px;
-  opacity: 0.9;
-}
-.cp-single-val {
-  font-variant-numeric: tabular-nums;
-  font-size: 0.85em;
-  color: var(--text-body);
-  text-align: right;
-}
-
-.tetra-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em 1.4em;
-  justify-content: center;
-  margin-top: 1.2em;
-  max-width: 540px;
-}
-.tetra-legend-item {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85em;
-  color: var(--text-body);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-  white-space: nowrap;
-}
-.tetra-legend-swatch {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-/* Distanzmatrix: vergrößerte Variante für Datenbankseite */
-.distance-matrix-wrap.large {
-  margin: 1.5em 0;
-}
-.distance-matrix.large {
-  font-size: 0.95em;
-}
-.distance-matrix.large th,
-.distance-matrix.large td {
-  padding: 0.65em 0.85em;
-}
-
-/* ---------- Paarvergleichsmatrix (flaches AHP) ---------- */
-
-.ahp-matrix-table {
-  border-collapse: collapse;
-  margin: 1em 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9em;
-}
-.ahp-matrix-table th,
-.ahp-matrix-table td {
-  width: 3em;
-  height: 2.4em;
-  text-align: center;
-  border: 1px solid var(--border-soft);
-  font-variant-numeric: tabular-nums;
-}
-.ahp-matrix-table thead th,
-.ahp-matrix-table tbody th {
-  font-weight: 600;
-  color: var(--text-strong);
-  background: var(--bg-mathblock);
-}
-.ahp-matrix-table td.diag {
-  color: var(--text-muted);
-  background: var(--bg-mathblock);
-}
-.ahp-matrix-table td.gt {
-  color: var(--tactics-color, #1d8a4a);
-  font-weight: 600;
-}
-.ahp-matrix-table td.lt {
-  color: var(--text-muted);
-}
-
-.ahp-cr {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85em;
-  color: var(--text-body);
-  margin: 0.8em 0 0.2em;
-}
-.cr-ok { color: #1d8a4a; font-weight: 600; font-variant-numeric: tabular-nums; }
-.cr-bad { color: #c1121f; font-weight: 600; font-variant-numeric: tabular-nums; }
-:root[data-theme="dark"] .cr-ok { color: #4ade80; }
-:root[data-theme="dark"] .cr-bad { color: #f87171; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .cr-ok { color: #4ade80; }
-  :root:not([data-theme="light"]) .cr-bad { color: #f87171; }
-}
-.cr-label { color: var(--text-muted); font-size: 0.9em; }
-
-/* ---------- Sub-Aspekt-Visualisierung (hierarchisches AHP) ---------- */
-
-.sub-components {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4em;
-  margin: 1em 0;
-}
-
-.sub-component {
-  padding: 0;
-}
-
-.sub-component-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5em;
-  margin-bottom: 0.6em;
-  font-family: 'Inter', sans-serif;
-}
-
-.sub-comp-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-  align-self: center;
-}
-
-.sub-comp-name {
-  font-weight: 600;
-  font-size: 0.95em;
-  color: var(--text-strong);
-}
-
-.sub-comp-value {
-  font-size: 0.85em;
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
-  margin-left: auto;
-}
-
-.sub-empty-note {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8em;
-  color: var(--text-muted);
-  font-style: italic;
-  margin: 0.2em 0 0 1.4em;
-}
-
-.sub-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35em;
-  padding-left: 1.4em;
-}
-
-.sub-item {
-  display: grid;
-  grid-template-columns: 160px 1fr 36px;
-  gap: 0.8em;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82em;
-  color: var(--text-body);
-}
-
-.sub-item-name {
-  color: var(--text-muted);
-}
-
-.sub-item-bar {
-  width: 100%;
-  height: 8px;
-  background: var(--bg-bar-track);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.sub-item-fill {
-  height: 100%;
-  transition: filter 0.15s;
-}
-
-.sub-item-value {
-  font-variant-numeric: tabular-nums;
-  font-size: 0.78em;
-  color: var(--text-muted);
-  text-align: right;
-}
-
-@media (max-width: 700px) {
-  .sub-item {
-    grid-template-columns: 130px 1fr 32px;
-    gap: 0.5em;
-    font-size: 0.78em;
-  }
-  .sub-items {
-    padding-left: 1em;
-  }
-}
-
-small { color: var(--text-muted); }
-
-.figure-caption {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8em;
-  color: var(--text-muted);
-  text-align: center;
-  margin-top: 0.6em;
-  margin-bottom: 1.5em;
-  line-height: 1.5;
-  font-style: italic;
-}
-.figure-caption strong {
-  font-style: normal;
-  color: var(--text-body);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.85em;
-  margin-right: 0.3em;
-}
-
-/* ---------- Layout: centered content with wide margins ---------- */
-
-.content {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4rem 1.5rem 6rem 1.5rem;
-}
-
-/* ---------- Page header / hero ---------- */
-
-.page-header {
-  margin-bottom: 4em;
-  padding-bottom: 2em;
-  text-align: center;
-  position: relative;
-}
-.page-header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 2px;
-  background: var(--text-body);
-}
-.page-header h1 {
-  margin-bottom: 0.4em;
-  letter-spacing: -0.03em;
-}
-.page-header .subtitle {
-  font-family: 'Source Serif Pro', Georgia, serif;
-  font-style: italic;
-  font-size: 1.15em;
-  color: var(--text-muted);
-  margin: 0 auto;
-  line-height: 1.5;
-  max-width: 32em;
-}
-
-/* ---------- Sidebar: minimal, no card, no border ---------- */
-
-.sidebar {
-  position: fixed;
-  top: 4rem;
-  left: 2rem;
-  width: 200px;
-  max-height: calc(100vh - 5rem);
-  overflow-y: auto;
-  z-index: 100;
-  transition: transform 0.25s ease;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-.sidebar-inner {
-  padding: 0;
-}
-.sidebar-brand {
-  display: none;
-}
-/* Datenbankseite zeigt eine Brand-Zeile als Rück-Link */
-.sidebar-brand.db-back {
-  display: block;
-  margin: 0 0 1.5em 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8em;
-}
-.sidebar-brand a {
-  color: var(--text-muted);
-  text-decoration: none;
-}
-.sidebar-brand a:hover {
-  color: var(--text-body);
-}
-
-/* Sidebar hidden on narrow screens */
-@media (max-width: 1099px) {
-  .sidebar {
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    width: 240px;
-    max-height: 100vh;
-    height: 100vh;
-    padding: 1.5rem;
-    background: var(--bg-page);
-    border-right: 1px solid var(--border-soft);
-  }
-  .sidebar.open { transform: translateX(0); }
-}
-
-.sidebar-toggle {
-  position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 110;
-  width: 2.4em;
-  height: 2.4em;
-  background: var(--bg-page);
-  border: 1px solid var(--border-soft);
-  color: var(--text-body);
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 1.1em;
-  line-height: 1;
-  padding: 0;
-  display: none;
-  font-family: 'Inter', sans-serif;
-}
-@media (max-width: 1099px) {
-  .sidebar-toggle { display: block; }
-}
-
-.sidebar-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 99;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-.sidebar-backdrop.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ---------- Table of contents: bare list ---------- */
-
-.toc { margin: 0; flex: 1; }
-.toc-title {
-  margin: 0 0 0.8em 0;
-  font-size: 0.7em;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-.toc-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.85em;
-  line-height: 1.6;
-}
-.toc-list ol {
-  margin: 0.2em 0 0.4em 1em;
-  padding: 0;
-  list-style: none;
-  font-size: 0.93em;
-}
-.toc-list li { margin: 0.15em 0; }
-.toc-list a {
-  display: block;
-  padding: 0.1em 0;
-  color: var(--text-muted);
-  text-decoration: none;
-  border: none;
-  transition: color 0.15s;
-}
-.toc-list a:hover {
-  color: var(--text-body);
-  background: transparent;
-}
-.toc-list a.active {
-  color: var(--text-strong);
-  font-weight: 600;
-  background: transparent;
-  border: none;
-}
-
-/* ---------- Sidebar bottom controls: minimal ---------- */
-
-.sidebar-controls {
-  margin-top: 2.5em;
-  padding-top: 1.5em;
-  border-top: 1px solid var(--border-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6em;
-  align-items: flex-start;
-  font-size: 0.8em;
-}
-.sidebar-controls .lang-link {
-  color: var(--text-muted);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--text-muted);
-}
-.sidebar-controls .lang-link:hover {
-  color: var(--text-body);
-  border-bottom-color: var(--text-body);
-}
-.sidebar-controls .theme-toggle {
-  background: transparent;
-  border: 1px solid var(--border-soft);
-  color: var(--text-muted);
-  padding: 0.3em 0.7em;
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 0.95em;
-  line-height: 1;
-  font-family: inherit;
-}
-.sidebar-controls .theme-toggle:hover {
-  color: var(--text-body);
-  border-color: var(--text-body);
-}
-
-/* ---------- Sport entries ---------- */
-
-.sport-charts { margin-top: 1.5em; }
-
-.sport-entry {
-  margin-bottom: 2.5em;
-  padding-bottom: 2em;
-  border-bottom: 1px solid var(--border-soft);
-}
-.sport-entry:last-child { border-bottom: none; }
-.sport-entry h3 { margin-bottom: 0.1em; margin-top: 1em; }
-
-.sport-meta {
-  font-size: 0.85em;
-  color: var(--text-muted);
-  margin-top: 0;
-  margin-bottom: 0.8em;
-  font-style: italic;
-}
-
-.stacked-bar-wrap { display: flex; flex-direction: column; gap: 10px; }
-.stacked-bar {
-  display: flex;
-  width: 100%;
-  height: 24px;
-  border-radius: 2px;
-  overflow: hidden;
-  gap: 2px;
-  background: var(--bg-bar-track);
-}
-.seg {
-  height: 100%;
-  transition: filter 0.15s ease;
-}
-.seg:hover {
-  filter: brightness(1.1);
-}
-.stacked-bar:hover .seg:not(:hover) {
-  filter: brightness(0.75);
-}
-
-.seg-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; }
-.leg-item {
-  font-size: 0.8em;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.leg-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.sport-rationale {
-  margin-top: 1em;
-  font-size: 0.95em;
-  line-height: 1.65;
-  color: var(--text-body);
-}
-
-/* ---------- Tables ---------- */
-
-.vector-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85em;
-  margin-top: 1em;
-  font-family: 'Inter', sans-serif;
-}
-.vector-table th {
-  text-align: left;
-  border-bottom: 1px solid var(--text-body);
-  padding: 0.5em 0.75em;
-  color: var(--text-strong);
-  font-weight: 600;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.vector-table td {
-  padding: 0.4em 0.75em;
-  border-bottom: 1px solid var(--border-row);
-  color: var(--text-body);
-}
-.vector-table tr:last-child td { border-bottom: none; }
-
-.distance-matrix-wrap {
-  overflow-x: auto;
-  margin: 1.5em 0;
-}
-.distance-matrix th {
-  white-space: nowrap;
-  text-transform: none;
-  letter-spacing: 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85em;
-}
-.distance-matrix td {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-  font-family: 'Inter', sans-serif;
-}
-.distance-matrix tbody th {
-  text-align: left;
-  border-bottom: 1px solid var(--border-row);
-  background: transparent;
-  color: var(--text-body);
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 600;
-}
-
-/* Heatmap: vivid shading (5 bins from near to far) */
-.distance-matrix .diag {
-  color: var(--text-muted);
-  text-align: center;
-}
-.distance-matrix .heat-0 { background: rgba(29, 138, 74, 0.22); }
-.distance-matrix .heat-1 { background: rgba(29, 138, 74, 0.11); }
-.distance-matrix .heat-2 { background: rgba(210, 105, 30, 0.10); }
-.distance-matrix .heat-3 { background: rgba(210, 105, 30, 0.20); }
-.distance-matrix .heat-4 { background: rgba(210, 105, 30, 0.32); }
-
-.distance-matrix .cell-near {
-  outline: 2px solid #1d8a4a;
-  outline-offset: -2px;
-  font-weight: 700;
-}
-.distance-matrix .cell-far {
-  outline: 2px dashed #d2691e;
-  outline-offset: -2px;
-  font-weight: 700;
-}
-
-/* Dark mode: brighter heat palette */
-:root[data-theme="dark"] .distance-matrix .heat-0 { background: rgba(74, 222, 128, 0.20); }
-:root[data-theme="dark"] .distance-matrix .heat-1 { background: rgba(74, 222, 128, 0.10); }
-:root[data-theme="dark"] .distance-matrix .heat-2 { background: rgba(251, 146, 60, 0.10); }
-:root[data-theme="dark"] .distance-matrix .heat-3 { background: rgba(251, 146, 60, 0.20); }
-:root[data-theme="dark"] .distance-matrix .heat-4 { background: rgba(251, 146, 60, 0.32); }
-:root[data-theme="dark"] .distance-matrix .cell-near { outline-color: #4ade80; }
-:root[data-theme="dark"] .distance-matrix .cell-far { outline-color: #fb923c; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .distance-matrix .heat-0 { background: rgba(74, 222, 128, 0.20); }
-  :root:not([data-theme="light"]) .distance-matrix .heat-1 { background: rgba(74, 222, 128, 0.10); }
-  :root:not([data-theme="light"]) .distance-matrix .heat-2 { background: rgba(251, 146, 60, 0.10); }
-  :root:not([data-theme="light"]) .distance-matrix .heat-3 { background: rgba(251, 146, 60, 0.20); }
-  :root:not([data-theme="light"]) .distance-matrix .heat-4 { background: rgba(251, 146, 60, 0.32); }
-  :root:not([data-theme="light"]) .distance-matrix .cell-near { outline-color: #4ade80; }
-  :root:not([data-theme="light"]) .distance-matrix .cell-far { outline-color: #fb923c; }
-}
-
-/* ---------- Math block ---------- */
-
-.math-block {
-  font-family: 'Courier New', monospace;
-  background: var(--bg-mathblock);
-  border-left: 2px solid var(--text-body);
-  padding: 0.6em 1em;
-  margin: 1em 0;
-  color: var(--text-body);
-  font-size: 0.95em;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-/* Methodik: hervorgehobene Leitfrage */
-.method-callout {
-  background: var(--bg-mathblock);
-  border-left: 2px solid var(--text-body);
-  padding: 0.9em 1.2em;
-  margin: 1.2em 0;
-  font-family: 'Source Serif Pro', Georgia, serif;
-  font-size: 1.05em;
-  line-height: 1.5;
-  color: var(--text-strong);
-}
-
-/* Methodik: verankerte Skala als Tabelle */
-.scale-table {
-  margin: 1.2em 0;
-  font-family: 'Inter', sans-serif;
-}
-.scale-row {
-  display: grid;
-  grid-template-columns: 2.5em 1fr;
-  gap: 1em;
-  align-items: baseline;
-  padding: 0.4em 0;
-  border-bottom: 1px solid var(--border-soft);
-}
-.scale-row:last-child { border-bottom: none; }
-.scale-num {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: var(--text-strong);
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-.scale-desc {
-  color: var(--text-body);
-  font-size: 0.92em;
-  line-height: 1.4;
-}
-
-/* ---------- AHP Appendix ---------- */
-
-.ahp-sport {
-  margin: 2.5em 0;
-  padding: 1.25em 0 1.25em 1.5em;
-  border-left: 2px solid var(--border-soft);
-}
-.ahp-sport h4 {
-  margin-top: 0;
-  margin-bottom: 0.6em;
-}
-.ahp-label {
-  font-size: 0.85em;
-  color: var(--text-muted);
-  margin-bottom: 0.3em;
-}
-.ahp-meta {
-  font-size: 0.85em;
-  color: var(--text-muted);
-  margin: 0.4em 0;
-}
-.ahp-result {
-  margin-top: 0.8em;
-  margin-bottom: 0;
-  color: var(--text-body);
-}
-.ahp-matrix th,
-.ahp-matrix td {
-  font-family: 'Courier New', monospace;
-  white-space: nowrap;
-  text-align: center;
-  font-size: 0.85em;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.ahp-matrix tbody th {
-  text-align: center;
-  background: transparent;
-  color: var(--text-strong);
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.ahp-matrix .recip {
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-/* ---------- Sidenotes ---------- */
-
-.sidenote-toggle {
-  cursor: pointer;
-  color: var(--text-body);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-}
-.sidenote-toggle sup {
-  font-size: 0.75em;
-  margin: 0 0.05em;
-}
-.sidenote-checkbox { display: none; }
-
-.sidenote {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85em;
-  line-height: 1.55;
-  color: var(--text-muted);
-  font-style: normal;
-}
-
-/* Wide layout: sidenotes float to the right margin */
-@media (min-width: 1400px) {
-  .sidenote {
-    float: right;
-    clear: right;
-    width: 200px;
-    margin-right: -230px;
-    margin-top: 0;
-    margin-bottom: 1em;
-    padding-left: 0.8em;
-    position: relative;
-  }
-  .sidenote::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.3em;
-    bottom: 0.3em;
-    width: 1px;
-    background: var(--border-soft);
-  }
-}
-
-/* Narrow: hidden until toggled */
-@media (max-width: 1399px) {
-  .sidenote {
-    display: none;
-    margin: 0.8em 0;
-    padding: 0.6em 0.9em;
-    background: var(--bg-mathblock);
-    border-left: 2px solid var(--border-soft);
-  }
-  .sidenote-checkbox:checked + .sidenote { display: block; }
-  .sidenote-toggle:hover sup { text-decoration: underline; }
-}
-
-/* ---------- Component colours: vivid for contrast ---------- */
-
-.tactics,  .leg-dot.tactics  { background: #1d8a4a; }   /* vivid green */
-.physical, .leg-dot.physical { background: #d2691e; }   /* vivid orange-brown */
-.skill,    .leg-dot.skill    { background: #1565c0; }   /* vivid blue */
-.material, .leg-dot.material { background: #9c27b0; }   /* vivid purple */
-
-/* Dark mode: brighter still */
-:root[data-theme="dark"] .tactics,
-:root[data-theme="dark"] .leg-dot.tactics  { background: #4ade80; }
-:root[data-theme="dark"] .physical,
-:root[data-theme="dark"] .leg-dot.physical { background: #fb923c; }
-:root[data-theme="dark"] .skill,
-:root[data-theme="dark"] .leg-dot.skill    { background: #60a5fa; }
-:root[data-theme="dark"] .material,
-:root[data-theme="dark"] .leg-dot.material { background: #c084fc; }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .tactics,
-  :root:not([data-theme="light"]) .leg-dot.tactics  { background: #4ade80; }
-  :root:not([data-theme="light"]) .physical,
-  :root:not([data-theme="light"]) .leg-dot.physical { background: #fb923c; }
-  :root:not([data-theme="light"]) .skill,
-  :root:not([data-theme="light"]) .leg-dot.skill    { background: #60a5fa; }
-  :root:not([data-theme="light"]) .material,
-  :root:not([data-theme="light"]) .leg-dot.material { background: #c084fc; }
-}
+  pointerDown = null;
+});
+
+// === ROTATION (pausiert bei Auswahl) ===
+let rotY = 0.4;
+let rotX = 0.16;
+const rotSpeed = 0.0026;
+const rotXSpeed = rotSpeed / 7; // 7× langsamer als Hauptrotation
+const rotXAmplitude = 0.35; // Schwingungs-Amplitude um die Grundneigung
+const rotXBase = 0.16;
+let rotXPhase = 0;
+let lastTime = performance.now();
+
+function projectToScreen(vec3) {
+  const v = vec3.clone();
+  v.applyMatrix4(netGroup.matrixWorld);
+  v.project(camera);
+  const x = (v.x + 1) / 2 * W;
+  const y = (-v.y + 1) / 2 * H;
+  return { x, y, z: v.z };
+}
+
+function animate(now) {
+  requestAnimationFrame(animate);
+  const dt = Math.min(50, now - lastTime);
+  lastTime = now;
+  // Auto-Rotation läuft immer weiter
+  rotY += rotSpeed * (dt / 16.67);
+  rotXPhase += rotXSpeed * (dt / 16.67);
+  // X-Achse schwingt sanft als Sinus um die Grundneigung
+  rotX = rotXBase + Math.sin(rotXPhase) * rotXAmplitude;
+  netGroup.rotation.y = rotY;
+  netGroup.rotation.x = rotX;
+  netGroup.updateMatrixWorld(true);
+
+  pointMeshes.forEach((sp, i) => {
+    const p = projectToScreen(sp.mesh.position);
+    const el = sportLabelEls[i];
+    el.style.left = p.x + 'px';
+    el.style.top = p.y + 'px';
+    const fade = Math.max(0.4, 1 - p.z * 0.6);
+    const isSel = selected.indexOf(i) >= 0;
+    const hasSel = selected.length > 0;
+    const baseOp = isSel ? 1 : (hasSel ? 0.45 : 0.85);
+    el.style.opacity = (baseOp * fade).toFixed(2);
+  });
+
+  renderer.render(scene, camera);
+}
+requestAnimationFrame(animate);
+
+window.addEventListener('resize', () => {
+  W = clientW(); H = clientH();
+  camera.aspect = W/H;
+  camera.updateProjectionMatrix();
+  renderer.setSize(W, H);
+});
+
+const themeObserver = new MutationObserver(() => {
+  buildEdges();
+  buildPoints();
+  buildSportLabels();
+  updateHighlights();
+  if (selected.length === 2) setCompareLine(selected[0], selected[1]);
+  renderPanel();
+});
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+</script>
+
+</body>
+</html>

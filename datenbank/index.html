@@ -83,7 +83,7 @@
 
   <article class="article">
 
-  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige Paarvergleichsmatrix samt Konsistenzwert. Unter den Sportarten folgt ein 3D-Kräftenetz, in dem alle Sportarten als frei angeordnete Punkte verortet sind, sowie eine flache MDS-Karte derselben Struktur.</p>
+  <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige Paarvergleichsmatrix samt Konsistenzwert. Unter den Sportarten folgt ein interaktives 3D-Kräftenetz, in dem alle Sportarten als frei angeordnete Punkte verortet sind. Ein Klick auf eine Kugel zeigt ihre Werte; ein Klick auf eine zweite Kugel macht den strukturellen Vergleich sichtbar.</p>
 
   <p>Hintergrund zur Theorie selbst, zur Methodik und zu den Vorbehalten findet sich in der <a href="../">Haupttheorie</a>.</p>
 
@@ -903,145 +903,12 @@
   <div class="tetra-wrap">
     <div id="tetra-canvas" class="tetra-canvas"></div>
   </div>
-  <p class="figure-caption"><strong>Abb. 1</strong>Strukturraum als 3D-Kräftenetz, frei drehbar durch die Auto-Rotation. Jede Sportart ist ein Punkt; ihr Abstand zu jeder anderen entspricht der strukturellen Distanz. Verbindungslinien markieren besonders nahe Paare (Distanz unter 0.15). Die Anordnung bildet die echten Distanzen nahezu verlustfrei ab (Kruskal-Stress 0.03).</p>
 
-  <h3>Strukturelle Distanzen</h3>
-  <p>Die folgende Karte ist eine MDS-Projektion (Multidimensional Scaling): Sie ordnet die Sportarten so in der Ebene an, dass die Abstände im Bild die echten strukturellen Distanzen so gut wie möglich widerspiegeln. Verbindungslinien werden nur zwischen sehr nahen Paaren gezogen (Distanz unter 0.15) und markieren die engsten Cluster. Die Achsenrichtungen selbst haben keine inhaltliche Bedeutung — nur Nähe und Distanz zwischen Punkten zählen.</p>
-
-  <div class="mds-wrap">
-    <svg viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg" class="mds-chart" aria-label="MDS-Karte aller Sportarten">
-  <line class="mds-axis" x1="95" y1="340.0" x2="585" y2="340.0" />
-  <line class="mds-axis" x1="340.0" y1="95" x2="340.0" y2="585" />
-  <circle class="mds-ring" cx="340.0" cy="340.0" r="61.2" />
-  <circle class="mds-ring" cx="340.0" cy="340.0" r="122.5" />
-  <circle class="mds-ring" cx="340.0" cy="340.0" r="183.8" />
-  <circle class="mds-ring" cx="340.0" cy="340.0" r="245.0" />
-  <line class="force-edge" x1="257.8" y1="198.8" x2="204.1" y2="201.5" stroke-width="1.10" opacity="0.250" />
-  <line class="force-edge" x1="202.7" y1="527.6" x2="257.3" y2="473.5" stroke-width="1.10" opacity="0.250" />
-  <line class="force-edge" x1="203.6" y1="227.2" x2="149.8" y2="229.9" stroke-width="1.10" opacity="0.250" />
-  <line class="force-edge" x1="485.8" y1="242.1" x2="413.1" y2="222.8" stroke-width="1.10" opacity="0.250" />
-  <line class="force-edge" x1="457.9" y1="183.3" x2="530.6" y2="202.7" stroke-width="1.10" opacity="0.250" />
-  <line class="force-edge" x1="230.3" y1="363.2" x2="240.1" y2="348.5" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="230.3" y1="363.2" x2="240.1" y2="348.5" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="230.3" y1="363.2" x2="240.1" y2="348.5" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="257.8" y1="198.8" x2="239.5" y2="262.6" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="413.1" y1="222.8" x2="430.6" y2="210.4" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="239.5" y1="262.6" x2="267.3" y2="209.8" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="149.8" y1="229.9" x2="204.1" y2="201.5" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="203.6" y1="227.2" x2="267.3" y2="209.8" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="204.1" y1="201.5" x2="267.3" y2="209.8" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="149.8" y1="229.9" x2="141.2" y2="167.4" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="141.2" y1="167.4" x2="149.8" y2="229.9" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="203.6" y1="227.2" x2="257.8" y2="198.8" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="203.6" y1="227.2" x2="266.9" y2="235.6" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="257.8" y1="198.8" x2="212.5" y2="152.4" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="187.0" y1="188.1" x2="141.2" y2="167.4" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="187.0" y1="188.1" x2="141.2" y2="167.4" stroke-width="1.45" opacity="0.324" />
-  <line class="force-edge" x1="203.6" y1="227.2" x2="239.5" y2="262.6" stroke-width="1.86" opacity="0.411" />
-  <line class="force-edge" x1="266.9" y1="235.6" x2="257.8" y2="198.8" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="257.8" y1="198.8" x2="267.3" y2="209.8" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="213.3" y1="349.8" x2="240.1" y2="348.5" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="266.9" y1="235.6" x2="267.3" y2="209.8" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="203.6" y1="227.2" x2="204.1" y2="201.5" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="266.9" y1="235.6" x2="239.5" y2="262.6" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="457.9" y1="183.3" x2="430.6" y2="210.4" stroke-width="2.40" opacity="0.525" />
-  <line class="force-edge" x1="230.3" y1="363.2" x2="230.3" y2="363.2" stroke-width="3.70" opacity="0.800" />
-  <line class="force-edge" x1="141.2" y1="167.4" x2="141.2" y2="167.4" stroke-width="3.70" opacity="0.800" />
-  <line class="force-edge" x1="230.3" y1="363.2" x2="230.3" y2="363.2" stroke-width="3.70" opacity="0.800" />
-  <line class="force-edge" x1="230.3" y1="363.2" x2="230.3" y2="363.2" stroke-width="3.70" opacity="0.800" />
-  <circle class="mds-glow" cx="230.3" cy="363.2" r="7" fill="#e63946" />
-  <circle class="mds-point" cx="230.3" cy="363.2" r="4.5" fill="#e63946" data-sport="fussball" />
-  <circle class="mds-glow" cx="203.6" cy="227.2" r="7" fill="#06a77d" />
-  <circle class="mds-point" cx="203.6" cy="227.2" r="4.5" fill="#06a77d" data-sport="tennis" />
-  <circle class="mds-glow" cx="457.9" cy="183.3" r="7" fill="#f4a261" />
-  <circle class="mds-point" cx="457.9" cy="183.3" r="4.5" fill="#f4a261" data-sport="100m-sprint" />
-  <circle class="mds-glow" cx="202.7" cy="527.6" r="7" fill="#264653" />
-  <circle class="mds-point" cx="202.7" cy="527.6" r="4.5" fill="#264653" data-sport="schach" />
-  <circle class="mds-glow" cx="413.3" cy="334.4" r="7" fill="#6f4e7c" />
-  <circle class="mds-point" cx="413.3" cy="334.4" r="4.5" fill="#6f4e7c" data-sport="strassenradsport" />
-  <circle class="mds-glow" cx="179.2" cy="323.1" r="7" fill="#1d4e89" />
-  <circle class="mds-point" cx="179.2" cy="323.1" r="4.5" fill="#1d4e89" data-sport="formel-1" />
-  <circle class="mds-glow" cx="266.9" cy="235.6" r="7" fill="#c1121f" />
-  <circle class="mds-point" cx="266.9" cy="235.6" r="4.5" fill="#c1121f" data-sport="boxen" />
-  <circle class="mds-glow" cx="485.8" cy="242.1" r="7" fill="#0096c7" />
-  <circle class="mds-point" cx="485.8" cy="242.1" r="4.5" fill="#0096c7" data-sport="triathlon" />
-  <circle class="mds-glow" cx="139.5" cy="270.4" r="7" fill="#bc8a3f" />
-  <circle class="mds-point" cx="139.5" cy="270.4" r="4.5" fill="#bc8a3f" data-sport="baseball" />
-  <circle class="mds-glow" cx="187.0" cy="188.1" r="7" fill="#8d99ae" />
-  <circle class="mds-point" cx="187.0" cy="188.1" r="4.5" fill="#8d99ae" data-sport="super-g" />
-  <circle class="mds-glow" cx="141.2" cy="167.4" r="7" fill="#5a189a" />
-  <circle class="mds-point" cx="141.2" cy="167.4" r="4.5" fill="#5a189a" data-sport="bowling" />
-  <circle class="mds-glow" cx="230.3" cy="363.2" r="7" fill="#ff6d00" />
-  <circle class="mds-point" cx="230.3" cy="363.2" r="4.5" fill="#ff6d00" data-sport="handball" />
-  <circle class="mds-glow" cx="413.1" cy="222.8" r="7" fill="#ffd60a" />
-  <circle class="mds-point" cx="413.1" cy="222.8" r="4.5" fill="#ffd60a" data-sport="zehnkampf" />
-  <circle class="mds-glow" cx="242.3" cy="219.8" r="7" fill="#80b918" />
-  <circle class="mds-point" cx="242.3" cy="219.8" r="4.5" fill="#80b918" data-sport="bob-viererbob" />
-  <circle class="mds-glow" cx="149.8" cy="229.9" r="7" fill="#ff006e" />
-  <circle class="mds-point" cx="149.8" cy="229.9" r="4.5" fill="#ff006e" data-sport="golf" />
-  <circle class="mds-glow" cx="230.3" cy="363.2" r="7" fill="#b5179e" />
-  <circle class="mds-point" cx="230.3" cy="363.2" r="4.5" fill="#b5179e" data-sport="basketball" />
-  <circle class="mds-glow" cx="257.3" cy="473.5" r="7" fill="#7d4f16" />
-  <circle class="mds-point" cx="257.3" cy="473.5" r="4.5" fill="#7d4f16" data-sport="american-football" />
-  <circle class="mds-glow" cx="141.2" cy="167.4" r="7" fill="#48cae4" />
-  <circle class="mds-point" cx="141.2" cy="167.4" r="4.5" fill="#48cae4" data-sport="tischtennis" />
-  <circle class="mds-glow" cx="213.3" cy="349.8" r="7" fill="#a7c957" />
-  <circle class="mds-point" cx="213.3" cy="349.8" r="4.5" fill="#a7c957" data-sport="cricket" />
-  <circle class="mds-glow" cx="257.8" cy="198.8" r="7" fill="#1b4332" />
-  <circle class="mds-point" cx="257.8" cy="198.8" r="4.5" fill="#1b4332" data-sport="judo" />
-  <circle class="mds-glow" cx="239.5" cy="262.6" r="7" fill="#d44ade" />
-  <circle class="mds-point" cx="239.5" cy="262.6" r="4.5" fill="#d44ade" data-sport="volleyball" />
-  <circle class="mds-glow" cx="430.6" cy="210.4" r="7" fill="#5ab85a" />
-  <circle class="mds-point" cx="430.6" cy="210.4" r="4.5" fill="#5ab85a" data-sport="schwimmen-100m" />
-  <circle class="mds-glow" cx="430.3" cy="347.7" r="7" fill="#2e2ed9" />
-  <circle class="mds-point" cx="430.3" cy="347.7" r="4.5" fill="#2e2ed9" data-sport="rugby" />
-  <circle class="mds-glow" cx="240.1" cy="348.5" r="7" fill="#5e4ade" />
-  <circle class="mds-point" cx="240.1" cy="348.5" r="4.5" fill="#5e4ade" data-sport="eishockey" />
-  <circle class="mds-glow" cx="204.1" cy="201.5" r="7" fill="#4ade71" />
-  <circle class="mds-point" cx="204.1" cy="201.5" r="4.5" fill="#4ade71" data-sport="badminton" />
-  <circle class="mds-glow" cx="530.6" cy="202.7" r="7" fill="#de4a85" />
-  <circle class="mds-point" cx="530.6" cy="202.7" r="4.5" fill="#de4a85" data-sport="gewichtheben" />
-  <circle class="mds-glow" cx="585.0" cy="285.8" r="7" fill="#1a6e2e" />
-  <circle class="mds-point" cx="585.0" cy="285.8" r="4.5" fill="#1a6e2e" data-sport="marathon" />
-  <circle class="mds-glow" cx="267.3" cy="209.8" r="7" fill="#a12ed9" />
-  <circle class="mds-point" cx="267.3" cy="209.8" r="4.5" fill="#a12ed9" data-sport="sportklettern" />
-  <circle class="mds-glow" cx="95.0" cy="172.5" r="7" fill="#e0a82e" />
-  <circle class="mds-point" cx="95.0" cy="172.5" r="4.5" fill="#e0a82e" data-sport="darts" />
-  <circle class="mds-glow" cx="212.5" cy="152.4" r="7" fill="#2ed9a1" />
-  <circle class="mds-point" cx="212.5" cy="152.4" r="4.5" fill="#2ed9a1" data-sport="geraetturnen" />
-  <text class="mds-label" x="205.6" y="381.9" text-anchor="end">Fußball</text>
-  <text class="mds-label" x="173.2" y="238.4" text-anchor="end">Tennis</text>
-  <text class="mds-label" x="466.5" y="163.4" text-anchor="start">100m Sprint</text>
-  <text class="mds-label" x="186.3" y="549.9" text-anchor="end">Schach</text>
-  <text class="mds-label" x="401.0" y="316.3" text-anchor="end">Straßenradsport</text>
-  <text class="mds-label" x="158.4" y="313.7" text-anchor="end">Formel 1</text>
-  <text class="mds-label" x="282.0" y="264.9" text-anchor="start">Boxen</text>
-  <text class="mds-label" x="510.8" y="255.3" text-anchor="start">Triathlon</text>
-  <text class="mds-label" x="115.0" y="274.3" text-anchor="end">Baseball</text>
-  <text class="mds-label" x="161.0" y="201.4" text-anchor="end">Super G</text>
-  <text class="mds-label" x="122.1" y="190.3" text-anchor="end">Bowling</text>
-  <text class="mds-label" x="224.0" y="342.6" text-anchor="end">Handball</text>
-  <text class="mds-label" x="386.2" y="223.9" text-anchor="end">Zehnkampf</text>
-  <text class="mds-label" x="228.2" y="237.1" text-anchor="end">Bob Viererbob</text>
-  <text class="mds-label" x="125.6" y="230.9" text-anchor="end">Golf</text>
-  <text class="mds-label" x="252.5" y="386.2" text-anchor="start">Basketball</text>
-  <text class="mds-label" x="249.4" y="500.6" text-anchor="end">American Football</text>
-  <text class="mds-label" x="152.8" y="146.5" text-anchor="start">Tischtennis</text>
-  <text class="mds-label" x="184.6" y="349.7" text-anchor="end">Cricket</text>
-  <text class="mds-label" x="246.3" y="177.1" text-anchor="end">Judo</text>
-  <text class="mds-label" x="240.4" y="294.4" text-anchor="middle">Volleyball</text>
-  <text class="mds-label" x="451.0" y="228.7" text-anchor="start">Schwimmen 100m</text>
-  <text class="mds-label" x="446.6" y="371.1" text-anchor="start">Rugby</text>
-  <text class="mds-label" x="267.2" y="339.2" text-anchor="start">Eishockey</text>
-  <text class="mds-label" x="200.2" y="180.9" text-anchor="end">Badminton</text>
-  <text class="mds-label" x="550.4" y="192.2" text-anchor="start">Gewichtheben</text>
-  <text class="mds-label" x="608.9" y="284.5" text-anchor="start">Marathon</text>
-  <text class="mds-label" x="296.1" y="207.1" text-anchor="start">Sportklettern</text>
-  <text class="mds-label" x="74.0" y="163.9" text-anchor="end">Darts</text>
-  <text class="mds-label" x="216.6" y="129.7" text-anchor="start">Gerätturnen</text>
-</svg>
+  <div id="comparison-panel" class="comparison-panel comparison-panel--empty" aria-live="polite">
+    <p class="comparison-hint">Tippe eine Kugel im Netz an, um ihre Werte zu sehen. Eine zweite Kugel zeigt den strukturellen Vergleich.</p>
   </div>
-  <p class="figure-caption"><strong>Abb. 2</strong>MDS-Projektion aller bewerteten Sportarten. Die Positionen bilden die echten strukturellen Distanzen bestmöglich in zwei Dimensionen ab; dünne Verbindungslinien zu den Beschriftungen ordnen Labels ihren Punkten zu. Da die Komponenten sich stets zu eins summieren, ist die Struktur eigentlich dreidimensional — die 2D-Karte gibt daher rund 84% der tatsächlichen Distanzverhältnisse wieder (Kruskal-Stress 0.21). Für die exakten Verhältnisse dient das 3D-Kräftenetz darüber. Verbindungslinien markieren Paare mit Distanz unter 0.15.</p>
+  <p class="figure-caption"><strong>Abb. 1</strong>Interaktives 3D-Kräftenetz aller bewerteten Sportarten. Jede Sportart ist ein Punkt; ihr Abstand zu jeder anderen entspricht der strukturellen Distanz. Verbindungslinien markieren besonders nahe Paare (Distanz unter 0.15). Ein Klick auf eine Kugel wählt sie aus und zeigt ihre Werte im Panel unten; ein weiterer Klick auf eine andere Kugel ergänzt den Vergleich mit Distanzwert und Komponenten-Gegenüberstellung. Die Anordnung bildet die echten Distanzen nahezu verlustfrei ab (Kruskal-Stress 0.03).</p>
+
 
   </section>
 
@@ -1123,12 +990,16 @@
 <script type="module">
 import * as THREE from 'three';
 
-const nodeData = [{"name": "Fußball", "color": "#e63946", "slug": "fussball", "pos": [-0.2119, -0.7761, 0.3181]}, {"name": "Tennis", "color": "#06a77d", "slug": "tennis", "pos": [-0.5726, 0.3075, 0.3763]}, {"name": "100m Sprint", "color": "#f4a261", "slug": "100m-sprint", "pos": [1.4089, 0.7165, 0.175]}, {"name": "Schach", "color": "#264653", "slug": "schach", "pos": [-0.5746, -2.007, 0.2408]}, {"name": "Straßenradsport", "color": "#6f4e7c", "slug": "strassenradsport", "pos": [1.063, -0.5173, -0.605]}, {"name": "Formel 1", "color": "#1d4e89", "slug": "formel-1", "pos": [-0.7497, -0.4237, -1.7586]}, {"name": "Boxen", "color": "#c1121f", "slug": "boxen", "pos": [-0.0118, 0.2159, 0.4953]}, {"name": "Triathlon", "color": "#0096c7", "slug": "triathlon", "pos": [1.6276, 0.1957, -0.3512]}, {"name": "Baseball", "color": "#bc8a3f", "slug": "baseball", "pos": [-1.0545, -0.0103, 0.609]}, {"name": "Super G", "color": "#8d99ae", "slug": "super-g", "pos": [-0.6909, 0.6252, -0.6091]}, {"name": "Bowling", "color": "#5a189a", "slug": "bowling", "pos": [-0.9714, 0.9021, -0.1877]}, {"name": "Handball", "color": "#ff6d00", "slug": "handball", "pos": [-0.5021, -0.7473, 0.2219]}, {"name": "Zehnkampf", "color": "#ffd60a", "slug": "zehnkampf", "pos": [1.0647, 0.346, -0.2201]}, {"name": "Bob Viererbob", "color": "#80b918", "slug": "bob-viererbob", "pos": [-0.261, 0.3761, -1.2303]}, {"name": "Golf", "color": "#ff006e", "slug": "golf", "pos": [-0.9711, 0.3059, -0.0953]}, {"name": "Basketball", "color": "#b5179e", "slug": "basketball", "pos": [-0.3687, -0.67, 0.5775]}, {"name": "American Football", "color": "#7d4f16", "slug": "american-football", "pos": [-0.1549, -1.5882, 0.2216]}, {"name": "Tischtennis", "color": "#48cae4", "slug": "tischtennis", "pos": [-1.1102, 0.6496, -0.3454]}, {"name": "Cricket", "color": "#a7c957", "slug": "cricket", "pos": [-0.5224, -0.6197, -0.3745]}, {"name": "Judo", "color": "#1b4332", "slug": "judo", "pos": [-0.1652, 0.5872, 0.5425]}, {"name": "Volleyball", "color": "#d44ade", "slug": "volleyball", "pos": [-0.3161, -0.0166, 0.4615]}, {"name": "Schwimmen 100m", "color": "#5ab85a", "slug": "schwimmen-100m", "pos": [1.1954, 0.3811, 0.3162]}, {"name": "Rugby", "color": "#2e2ed9", "slug": "rugby", "pos": [1.1948, -0.621, 0.103]}, {"name": "Eishockey", "color": "#5e4ade", "slug": "eishockey", "pos": [-0.2292, -0.6175, -0.0726]}, {"name": "Badminton", "color": "#4ade71", "slug": "badminton", "pos": [-0.5348, 0.5453, 0.0326]}, {"name": "Gewichtheben", "color": "#de4a85", "slug": "gewichtheben", "pos": [1.9735, 0.5037, 0.1294]}, {"name": "Marathon", "color": "#1a6e2e", "slug": "marathon", "pos": [2.3955, -0.1398, -0.0466]}, {"name": "Sportklettern", "color": "#a12ed9", "slug": "sportklettern", "pos": [-0.0669, 0.4569, 0.1534]}, {"name": "Darts", "color": "#e0a82e", "slug": "darts", "pos": [-1.396, 0.7475, 0.284]}, {"name": "Gerätturnen", "color": "#2ed9a1", "slug": "geraetturnen", "pos": [-0.4872, 0.8922, 0.6382]}];
+const nodeData = [{"name": "Fußball", "color": "#e63946", "slug": "fussball", "pos": [-0.2119, -0.7761, 0.3181], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "Tennis", "color": "#06a77d", "slug": "tennis", "pos": [-0.5726, 0.3075, 0.3763], "c": [0.2, 0.2, 0.55, 0.05]}, {"name": "100m Sprint", "color": "#f4a261", "slug": "100m-sprint", "pos": [1.4089, 0.7165, 0.175], "c": [0.05, 0.6, 0.35, 0.0]}, {"name": "Schach", "color": "#264653", "slug": "schach", "pos": [-0.5746, -2.007, 0.2408], "c": [0.65, 0.1, 0.25, 0.0]}, {"name": "Straßenradsport", "color": "#6f4e7c", "slug": "strassenradsport", "pos": [1.063, -0.5173, -0.605], "c": [0.25, 0.45, 0.15, 0.15]}, {"name": "Formel 1", "color": "#1d4e89", "slug": "formel-1", "pos": [-0.7497, -0.4237, -1.7586], "c": [0.25, 0.05, 0.25, 0.45]}, {"name": "Boxen", "color": "#c1121f", "slug": "boxen", "pos": [-0.0118, 0.2159, 0.4953], "c": [0.2, 0.3, 0.5, 0.0]}, {"name": "Triathlon", "color": "#0096c7", "slug": "triathlon", "pos": [1.6276, 0.1957, -0.3512], "c": [0.1, 0.6, 0.2, 0.1]}, {"name": "Baseball", "color": "#bc8a3f", "slug": "baseball", "pos": [-1.0545, -0.0103, 0.609], "c": [0.3, 0.1, 0.6, 0.0]}, {"name": "Super G", "color": "#8d99ae", "slug": "super-g", "pos": [-0.6909, 0.6252, -0.6091], "c": [0.1, 0.15, 0.5, 0.25]}, {"name": "Bowling", "color": "#5a189a", "slug": "bowling", "pos": [-0.9714, 0.9021, -0.1877], "c": [0.1, 0.1, 0.6, 0.2]}, {"name": "Handball", "color": "#ff6d00", "slug": "handball", "pos": [-0.5021, -0.7473, 0.2219], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "Zehnkampf", "color": "#ffd60a", "slug": "zehnkampf", "pos": [1.0647, 0.346, -0.2201], "c": [0.1, 0.5, 0.3, 0.1]}, {"name": "Bob Viererbob", "color": "#80b918", "slug": "bob-viererbob", "pos": [-0.261, 0.3761, -1.2303], "c": [0.1, 0.2, 0.35, 0.35]}, {"name": "Golf", "color": "#ff006e", "slug": "golf", "pos": [-0.9711, 0.3059, -0.0953], "c": [0.2, 0.1, 0.55, 0.15]}, {"name": "Basketball", "color": "#b5179e", "slug": "basketball", "pos": [-0.3687, -0.67, 0.5775], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "American Football", "color": "#7d4f16", "slug": "american-football", "pos": [-0.1549, -1.5882, 0.2216], "c": [0.55, 0.2, 0.25, 0.0]}, {"name": "Tischtennis", "color": "#48cae4", "slug": "tischtennis", "pos": [-1.1102, 0.6496, -0.3454], "c": [0.1, 0.1, 0.6, 0.2]}, {"name": "Cricket", "color": "#a7c957", "slug": "cricket", "pos": [-0.5224, -0.6197, -0.3745], "c": [0.35, 0.15, 0.35, 0.15]}, {"name": "Judo", "color": "#1b4332", "slug": "judo", "pos": [-0.1652, 0.5872, 0.5425], "c": [0.15, 0.3, 0.55, 0.0]}, {"name": "Volleyball", "color": "#d44ade", "slug": "volleyball", "pos": [-0.3161, -0.0166, 0.4615], "c": [0.25, 0.25, 0.5, 0.0]}, {"name": "Schwimmen 100m", "color": "#5ab85a", "slug": "schwimmen-100m", "pos": [1.1954, 0.3811, 0.3162], "c": [0.1, 0.55, 0.35, 0.0]}, {"name": "Rugby", "color": "#2e2ed9", "slug": "rugby", "pos": [1.1948, -0.621, 0.103], "c": [0.3, 0.5, 0.2, 0.0]}, {"name": "Eishockey", "color": "#5e4ade", "slug": "eishockey", "pos": [-0.2292, -0.6175, -0.0726], "c": [0.35, 0.2, 0.35, 0.1]}, {"name": "Badminton", "color": "#4ade71", "slug": "badminton", "pos": [-0.5348, 0.5453, 0.0326], "c": [0.15, 0.2, 0.55, 0.1]}, {"name": "Gewichtheben", "color": "#de4a85", "slug": "gewichtheben", "pos": [1.9735, 0.5037, 0.1294], "c": [0.05, 0.7, 0.25, 0.0]}, {"name": "Marathon", "color": "#1a6e2e", "slug": "marathon", "pos": [2.3955, -0.1398, -0.0466], "c": [0.15, 0.75, 0.1, 0.0]}, {"name": "Sportklettern", "color": "#a12ed9", "slug": "sportklettern", "pos": [-0.0669, 0.4569, 0.1534], "c": [0.15, 0.3, 0.5, 0.05]}, {"name": "Darts", "color": "#e0a82e", "slug": "darts", "pos": [-1.396, 0.7475, 0.284], "c": [0.15, 0.05, 0.7, 0.1]}, {"name": "Gerätturnen", "color": "#2ed9a1", "slug": "geraetturnen", "pos": [-0.4872, 0.8922, 0.6382], "c": [0.1, 0.25, 0.65, 0.0]}];
 const edgeData = [[0, 11, 0.0], [0, 15, 0.0], [0, 23, 0.122], [1, 6, 0.122], [1, 14, 0.141], [1, 19, 0.122], [1, 20, 0.1], [1, 24, 0.071], [1, 27, 0.122], [2, 21, 0.071], [2, 25, 0.141], [3, 16, 0.141], [6, 19, 0.071], [6, 20, 0.071], [6, 27, 0.071], [7, 12, 0.141], [9, 10, 0.122], [9, 17, 0.122], [10, 14, 0.122], [10, 17, 0.0], [11, 15, 0.0], [11, 23, 0.122], [12, 21, 0.122], [14, 17, 0.122], [14, 24, 0.122], [15, 23, 0.122], [18, 23, 0.071], [19, 20, 0.122], [19, 24, 0.141], [19, 27, 0.071], [19, 29, 0.122], [20, 27, 0.122], [24, 27, 0.122]];
+const distMatrix = [[0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.255, 0.0, 0.4743, 0.5523, 0.4848, 0.5244, 0.1225, 0.5431, 0.1581, 0.2345, 0.2121, 0.255, 0.4062, 0.3742, 0.1414, 0.255, 0.4637, 0.2121, 0.2739, 0.1225, 0.1, 0.4183, 0.4743, 0.255, 0.0707, 0.6042, 0.7141, 0.1225, 0.2236, 0.1581], [0.5339, 0.4743, 0.0, 0.7874, 0.3536, 0.745, 0.3674, 0.1871, 0.6124, 0.5385, 0.5958, 0.5339, 0.1581, 0.5339, 0.5788, 0.5339, 0.6481, 0.5958, 0.5612, 0.3742, 0.4301, 0.0707, 0.3082, 0.5099, 0.469, 0.1414, 0.3082, 0.3536, 0.6671, 0.4637], [0.3082, 0.5523, 0.7874, 0.0, 0.5612, 0.6042, 0.5523, 0.7517, 0.495, 0.6557, 0.6819, 0.3082, 0.6892, 0.6671, 0.5612, 0.3082, 0.1414, 0.6819, 0.3536, 0.6164, 0.495, 0.7176, 0.5339, 0.3464, 0.6, 0.8485, 0.8337, 0.5958, 0.6819, 0.6964], [0.4123, 0.4848, 0.3536, 0.5612, 0.0, 0.5099, 0.4123, 0.2236, 0.5916, 0.495, 0.5916, 0.4123, 0.2236, 0.4062, 0.5339, 0.4123, 0.4301, 0.5916, 0.3742, 0.4637, 0.4301, 0.3082, 0.1732, 0.3391, 0.4848, 0.3674, 0.3536, 0.4062, 0.6892, 0.5788], [0.5196, 0.5244, 0.745, 0.6042, 0.5099, 0.0, 0.5745, 0.6708, 0.5745, 0.3674, 0.4583, 0.5196, 0.5916, 0.255, 0.4301, 0.5196, 0.5612, 0.4583, 0.3464, 0.6042, 0.5523, 0.6964, 0.6403, 0.4062, 0.495, 0.8155, 0.8515, 0.5431, 0.5788, 0.6519], [0.2449, 0.1225, 0.3674, 0.5523, 0.4123, 0.5745, 0.0, 0.4472, 0.2449, 0.3082, 0.3162, 0.2449, 0.3162, 0.4062, 0.255, 0.2449, 0.4416, 0.3162, 0.3, 0.0707, 0.0707, 0.3082, 0.3742, 0.255, 0.1581, 0.495, 0.6042, 0.0707, 0.3391, 0.1871], [0.5477, 0.5431, 0.1871, 0.7517, 0.2236, 0.6708, 0.4472, 0.0, 0.6782, 0.5612, 0.6481, 0.5477, 0.1414, 0.495, 0.6205, 0.5477, 0.6124, 0.6481, 0.5385, 0.4743, 0.495, 0.1871, 0.2449, 0.495, 0.5339, 0.1581, 0.2121, 0.4301, 0.745, 0.5788], [0.2449, 0.1581, 0.6124, 0.495, 0.5916, 0.5745, 0.2449, 0.6782, 0.0, 0.3391, 0.2828, 0.2449, 0.5477, 0.4848, 0.1871, 0.2449, 0.4416, 0.2828, 0.3, 0.255, 0.1871, 0.5523, 0.5657, 0.2915, 0.2121, 0.7382, 0.8337, 0.2739, 0.2121, 0.255], [0.4062, 0.2345, 0.5385, 0.6557, 0.495, 0.3674, 0.3082, 0.5612, 0.3391, 0.0, 0.1225, 0.4062, 0.4301, 0.1871, 0.1581, 0.4062, 0.5745, 0.1225, 0.3082, 0.3, 0.3082, 0.495, 0.5612, 0.3317, 0.1732, 0.6557, 0.7649, 0.255, 0.2739, 0.3082], [0.4243, 0.2121, 0.5958, 0.6819, 0.5916, 0.4583, 0.3162, 0.6481, 0.2828, 0.1225, 0.0, 0.4243, 0.5099, 0.3082, 0.1225, 0.4243, 0.6124, 0.0, 0.3606, 0.2915, 0.3082, 0.5523, 0.6325, 0.3808, 0.1581, 0.7246, 0.8456, 0.2739, 0.1581, 0.255], [0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.4472, 0.4062, 0.1581, 0.6892, 0.2236, 0.5916, 0.3162, 0.1414, 0.5477, 0.4301, 0.5099, 0.4472, 0.0, 0.3937, 0.4848, 0.4472, 0.5523, 0.5099, 0.4359, 0.3391, 0.3674, 0.1225, 0.2449, 0.3937, 0.3937, 0.2345, 0.3391, 0.2915, 0.6042, 0.4416], [0.4637, 0.3742, 0.5339, 0.6671, 0.4062, 0.255, 0.4062, 0.495, 0.4848, 0.1871, 0.3082, 0.4637, 0.3937, 0.0, 0.3162, 0.4637, 0.5788, 0.3082, 0.324, 0.4183, 0.4123, 0.495, 0.5244, 0.3536, 0.324, 0.6205, 0.7, 0.3536, 0.4583, 0.4637], [0.3082, 0.1414, 0.5788, 0.5612, 0.5339, 0.4301, 0.255, 0.6205, 0.1871, 0.1581, 0.1225, 0.3082, 0.4848, 0.3162, 0.0, 0.3082, 0.495, 0.1225, 0.255, 0.255, 0.2236, 0.5244, 0.5612, 0.2739, 0.1225, 0.7036, 0.8062, 0.2345, 0.1732, 0.255], [0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.2121, 0.4637, 0.6481, 0.1414, 0.4301, 0.5612, 0.4416, 0.6124, 0.4416, 0.5745, 0.6124, 0.2121, 0.5523, 0.5788, 0.495, 0.2121, 0.0, 0.6124, 0.2739, 0.5099, 0.3937, 0.5788, 0.3937, 0.2449, 0.5099, 0.7071, 0.6964, 0.4848, 0.6285, 0.6042], [0.4243, 0.2121, 0.5958, 0.6819, 0.5916, 0.4583, 0.3162, 0.6481, 0.2828, 0.1225, 0.0, 0.4243, 0.5099, 0.3082, 0.1225, 0.4243, 0.6124, 0.0, 0.3606, 0.2915, 0.3082, 0.5523, 0.6325, 0.3808, 0.1581, 0.7246, 0.8456, 0.2739, 0.1581, 0.255], [0.1732, 0.2739, 0.5612, 0.3536, 0.3742, 0.3464, 0.3, 0.5385, 0.3, 0.3082, 0.3606, 0.1732, 0.4359, 0.324, 0.255, 0.1732, 0.2739, 0.3606, 0.0, 0.3536, 0.255, 0.495, 0.4123, 0.0707, 0.2915, 0.6519, 0.6964, 0.3082, 0.4183, 0.4301], [0.3082, 0.1225, 0.3742, 0.6164, 0.4637, 0.6042, 0.0707, 0.4743, 0.255, 0.3, 0.2915, 0.3082, 0.3391, 0.4183, 0.255, 0.3082, 0.5099, 0.2915, 0.3536, 0.0, 0.1225, 0.324, 0.4301, 0.3162, 0.1414, 0.5099, 0.6364, 0.0707, 0.3082, 0.1225], [0.1871, 0.1, 0.4301, 0.495, 0.4301, 0.5523, 0.0707, 0.495, 0.1871, 0.3082, 0.3082, 0.1871, 0.3674, 0.4123, 0.2236, 0.1871, 0.3937, 0.3082, 0.255, 0.1225, 0.0, 0.3674, 0.3937, 0.2121, 0.1581, 0.5523, 0.6481, 0.1225, 0.3162, 0.2121], [0.4637, 0.4183, 0.0707, 0.7176, 0.3082, 0.6964, 0.3082, 0.1871, 0.5523, 0.495, 0.5523, 0.4637, 0.1225, 0.495, 0.5244, 0.4637, 0.5788, 0.5523, 0.495, 0.324, 0.3674, 0.0, 0.255, 0.4416, 0.4183, 0.1871, 0.324, 0.3, 0.6205, 0.4243], [0.3742, 0.4743, 0.3082, 0.5339, 0.1732, 0.6403, 0.3742, 0.2449, 0.5657, 0.5612, 0.6325, 0.3742, 0.2449, 0.5244, 0.5612, 0.3742, 0.3937, 0.6325, 0.4123, 0.4301, 0.3937, 0.255, 0.0, 0.3536, 0.495, 0.324, 0.3082, 0.3937, 0.6964, 0.5523], [0.1225, 0.255, 0.5099, 0.3464, 0.3391, 0.4062, 0.255, 0.495, 0.2915, 0.3317, 0.3808, 0.1225, 0.3937, 0.3536, 0.2739, 0.1225, 0.2449, 0.3808, 0.0707, 0.3162, 0.2121, 0.4416, 0.3536, 0.0, 0.2828, 0.6, 0.6442, 0.2739, 0.4301, 0.4062], [0.3082, 0.0707, 0.469, 0.6, 0.4848, 0.495, 0.1581, 0.5339, 0.2121, 0.1732, 0.1581, 0.3082, 0.3937, 0.324, 0.1225, 0.3082, 0.5099, 0.1581, 0.2915, 0.1414, 0.1581, 0.4183, 0.495, 0.2828, 0.0, 0.6, 0.7176, 0.1225, 0.2121, 0.1581], [0.6285, 0.6042, 0.1414, 0.8485, 0.3674, 0.8155, 0.495, 0.1581, 0.7382, 0.6557, 0.7246, 0.6285, 0.2345, 0.6205, 0.7036, 0.6285, 0.7071, 0.7246, 0.6519, 0.5099, 0.5523, 0.1871, 0.324, 0.6, 0.6, 0.0, 0.1871, 0.4848, 0.8031, 0.6042], [0.6745, 0.7141, 0.3082, 0.8337, 0.3536, 0.8515, 0.6042, 0.2121, 0.8337, 0.7649, 0.8456, 0.6745, 0.3391, 0.7, 0.8062, 0.6745, 0.6964, 0.8456, 0.6964, 0.6364, 0.6481, 0.324, 0.3082, 0.6442, 0.7176, 0.1871, 0.0, 0.6042, 0.9274, 0.745], [0.2915, 0.1225, 0.3536, 0.5958, 0.4062, 0.5431, 0.0707, 0.4301, 0.2739, 0.255, 0.2739, 0.2915, 0.2915, 0.3536, 0.2345, 0.2915, 0.4848, 0.2739, 0.3082, 0.0707, 0.1225, 0.3, 0.3937, 0.2739, 0.1225, 0.4848, 0.6042, 0.0, 0.324, 0.1732], [0.4301, 0.2236, 0.6671, 0.6819, 0.6892, 0.5788, 0.3391, 0.745, 0.2121, 0.2739, 0.1581, 0.4301, 0.6042, 0.4583, 0.1732, 0.4301, 0.6285, 0.1581, 0.4183, 0.3082, 0.3162, 0.6205, 0.6964, 0.4301, 0.2121, 0.8031, 0.9274, 0.324, 0.0, 0.2345], [0.3937, 0.1581, 0.4637, 0.6964, 0.5788, 0.6519, 0.1871, 0.5788, 0.255, 0.3082, 0.255, 0.3937, 0.4416, 0.4637, 0.255, 0.3937, 0.6042, 0.255, 0.4301, 0.1225, 0.2121, 0.4243, 0.5523, 0.4062, 0.1581, 0.6042, 0.745, 0.1732, 0.2345, 0.0]];
 
 const container = document.getElementById('tetra-canvas');
-const W = container.clientWidth;
-const H = 460;
+const panel = document.getElementById('comparison-panel');
+
+function clientW() { return container.clientWidth; }
+function clientH() { return container.clientHeight; }
+let W = clientW(), H = clientH();
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(38, W/H, 0.1, 100);
@@ -1165,11 +1036,12 @@ function isDark() {
          (document.documentElement.getAttribute('data-theme') !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 }
 function getThemeColors() {
-  var dark = isDark();
+  const dark = isDark();
   return {
     edge: dark ? 0xa0a8b0 : 0x4a4a4a,
     edgeOpacity: dark ? 0.4 : 0.32,
-    sportLabelColor: dark ? '#c9d1d9' : '#444'
+    sportLabelColor: dark ? '#c9d1d9' : '#444',
+    compareLine: dark ? 0xffffff : 0x111111
   };
 }
 
@@ -1177,41 +1049,36 @@ const netGroup = new THREE.Group();
 scene.add(netGroup);
 
 function hexToRgba(hex, alpha) {
-  const r_ = parseInt(hex.slice(1,3), 16);
-  const g_ = parseInt(hex.slice(3,5), 16);
-  const b_ = parseInt(hex.slice(5,7), 16);
-  return 'rgba(' + r_ + ',' + g_ + ',' + b_ + ',' + alpha + ')';
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
 }
 
-function makeGlowSprite(color, dark) {
+function makeGlowSprite(color, dark, big) {
   const size = 128;
   const cnv = document.createElement('canvas');
   cnv.width = size; cnv.height = size;
   const ctx = cnv.getContext('2d');
   const grad = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
-  if (dark) {
-    grad.addColorStop(0,   hexToRgba(color, 0.25));
-    grad.addColorStop(0.35, hexToRgba(color, 0.10));
-    grad.addColorStop(1,   hexToRgba(color, 0));
-  } else {
-    grad.addColorStop(0,   hexToRgba(color, 0.5));
-    grad.addColorStop(0.35, hexToRgba(color, 0.20));
-    grad.addColorStop(1,   hexToRgba(color, 0));
-  }
+  const a0 = big ? (dark ? 0.45 : 0.7) : (dark ? 0.25 : 0.5);
+  const a1 = big ? (dark ? 0.20 : 0.30) : (dark ? 0.10 : 0.20);
+  grad.addColorStop(0, hexToRgba(color, a0));
+  grad.addColorStop(0.35, hexToRgba(color, a1));
+  grad.addColorStop(1, hexToRgba(color, 0));
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, size, size);
   const tex = new THREE.CanvasTexture(cnv);
-  tex.needsUpdate = true;
   const mat = new THREE.SpriteMaterial({
     map: tex, transparent: true, depthWrite: false,
     blending: dark ? THREE.NormalBlending : THREE.AdditiveBlending
   });
   const sprite = new THREE.Sprite(mat);
-  sprite.scale.set(0.32, 0.32, 1);
+  sprite.scale.set(big ? 0.55 : 0.32, big ? 0.55 : 0.32, 1);
   return sprite;
 }
 
-// Verbindungslinien (nahe Paare)
+// Edges
 let edgeLines = [];
 function buildEdges() {
   edgeLines.forEach(l => netGroup.remove(l));
@@ -1228,25 +1095,24 @@ function buildEdges() {
     const nz = dmax > dmin ? (e[2]-dmin)/(dmax-dmin) : 0;
     const op = colors.edgeOpacity * (1 - nz*0.5);
     const mat = new THREE.LineBasicMaterial({ color: colors.edge, transparent: true, opacity: op });
-    const line = new THREE.Line(g, mat);
-    netGroup.add(line);
-    edgeLines.push(line);
+    netGroup.add(new THREE.Line(g, mat));
+    edgeLines.push(netGroup.children[netGroup.children.length-1]);
   });
 }
 buildEdges();
 
-// Sportart-Punkte an Force-Positionen
+// Points (interaktiv über Raycasting)
 const pointGroup = new THREE.Group();
 netGroup.add(pointGroup);
-const sportPointPositions = [];
+const pointMeshes = []; // {mesh, glow, color, name, slug, index, baseScale}
 
 function buildPoints() {
   while (pointGroup.children.length) pointGroup.remove(pointGroup.children[0]);
-  sportPointPositions.length = 0;
+  pointMeshes.length = 0;
   const dark = isDark();
-  nodeData.forEach(s => {
+  nodeData.forEach((s, idx) => {
     const pos = new THREE.Vector3(s.pos[0], s.pos[1], s.pos[2]);
-    const geo = new THREE.SphereGeometry(0.065, 24, 24);
+    const geo = new THREE.SphereGeometry(0.075, 24, 24);
     const sphereMat = new THREE.MeshStandardMaterial({
       color: new THREE.Color(s.color),
       roughness: 0.4, metalness: 0.1,
@@ -1255,11 +1121,12 @@ function buildPoints() {
     });
     const mesh = new THREE.Mesh(geo, sphereMat);
     mesh.position.copy(pos);
+    mesh.userData = { index: idx };
     pointGroup.add(mesh);
-    const glow = makeGlowSprite(s.color, dark);
+    const glow = makeGlowSprite(s.color, dark, false);
     glow.position.copy(pos);
     pointGroup.add(glow);
-    sportPointPositions.push({ pos: pos.clone(), color: s.color, name: s.name, slug: s.slug });
+    pointMeshes.push({ mesh, glow, color: s.color, name: s.name, slug: s.slug, index: idx, baseScale: 1 });
   });
 }
 buildPoints();
@@ -1270,7 +1137,7 @@ function buildSportLabels() {
   sportLabelEls.forEach(el => overlay.removeChild(el));
   sportLabelEls.length = 0;
   const colors = getThemeColors();
-  sportPointPositions.forEach(p => {
+  pointMeshes.forEach(p => {
     const el = document.createElement('div');
     el.textContent = p.name;
     el.style.position = 'absolute';
@@ -1281,11 +1148,207 @@ function buildSportLabels() {
     el.style.transform = 'translate(8px, -50%)';
     el.style.whiteSpace = 'nowrap';
     el.style.opacity = '0.85';
+    el.style.pointerEvents = 'none';
+    el.style.transition = 'opacity 0.2s ease, font-weight 0.2s ease, font-size 0.2s ease';
     overlay.appendChild(el);
     sportLabelEls.push(el);
   });
 }
 buildSportLabels();
+
+// Compare-Linie zwischen zwei Auswahl
+let compareLine = null;
+function setCompareLine(idxA, idxB) {
+  if (compareLine) { netGroup.remove(compareLine); compareLine = null; }
+  if (idxA == null || idxB == null) return;
+  const a = nodeData[idxA].pos, b = nodeData[idxB].pos;
+  const g = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(a[0], a[1], a[2]),
+    new THREE.Vector3(b[0], b[1], b[2])
+  ]);
+  const colors = getThemeColors();
+  const mat = new THREE.LineBasicMaterial({ color: colors.compareLine, transparent: true, opacity: 0.9, linewidth: 2 });
+  compareLine = new THREE.Line(g, mat);
+  netGroup.add(compareLine);
+}
+
+// === AUSWAHL-STATE ===
+let selected = []; // Liste von Indizes (max 2)
+
+function clearSelection() {
+  selected = [];
+  updateHighlights();
+  setCompareLine(null, null);
+  renderPanel();
+}
+
+function toggleSelect(idx) {
+  const i = selected.indexOf(idx);
+  if (i >= 0) {
+    selected.splice(i, 1);
+  } else {
+    if (selected.length >= 2) selected.shift(); // FIFO: ältere Auswahl raus
+    selected.push(idx);
+  }
+  updateHighlights();
+  setCompareLine(selected.length === 2 ? selected[0] : null, selected.length === 2 ? selected[1] : null);
+  renderPanel();
+}
+
+function updateHighlights() {
+  const dark = isDark();
+  pointMeshes.forEach(p => {
+    const isSel = selected.indexOf(p.index) >= 0;
+    const hasSel = selected.length > 0;
+    p.mesh.scale.setScalar(isSel ? 1.6 : 1);
+    p.mesh.material.emissiveIntensity = isSel ? (dark ? 0.5 : 0.6) : (dark ? 0.05 : 0.12);
+    if (isSel) {
+      // großen Glow nutzen
+      p.glow.scale.set(0.55, 0.55, 1);
+      p.glow.material.opacity = 1;
+    } else {
+      p.glow.scale.set(0.32, 0.32, 1);
+      p.glow.material.opacity = hasSel ? 0.35 : 1;
+    }
+    p.mesh.material.opacity = hasSel && !isSel ? 0.55 : 1;
+    p.mesh.material.transparent = true;
+  });
+  // Labels: ausgewählte fett, andere gedimmt
+  sportLabelEls.forEach((el, i) => {
+    const isSel = selected.indexOf(i) >= 0;
+    const hasSel = selected.length > 0;
+    el.style.fontWeight = isSel ? '700' : '500';
+    el.style.fontSize = isSel ? '13px' : '11px';
+    el.style.opacity = isSel ? '1' : (hasSel ? '0.45' : '0.85');
+  });
+}
+
+// === PANEL-RENDERING ===
+const COMP_LABEL = ['Taktik', 'Physis', 'Skill', 'Material'];
+const COMP_CSS = ['tactics', 'physical', 'skill', 'material'];
+
+function getCompCssColor(idx) {
+  // Liest die CSS-Variable für die Komponentenfarbe
+  const map = ['--tactics-color', '--physical-color', '--skill-color', '--material-color'];
+  const v = getComputedStyle(document.documentElement).getPropertyValue(map[idx]).trim();
+  return v || '#888';
+}
+
+function renderPanel() {
+  if (selected.length === 0) {
+    panel.className = 'comparison-panel comparison-panel--empty';
+    panel.innerHTML = '<p class="comparison-hint">Tippe eine Kugel im Netz an, um ihre Werte zu sehen. Eine zweite Kugel zeigt den strukturellen Vergleich.</p>';
+    return;
+  }
+  if (selected.length === 1) {
+    const n = nodeData[selected[0]];
+    let html = '<div class="cp-header">';
+    html += '<span class="cp-sport"><span class="cp-dot" style="background:' + n.color + '"></span>' + n.name + '</span>';
+    html += '<button class="cp-close" type="button" data-action="clear">Auswahl aufheben</button>';
+    html += '</div>';
+    for (let k = 0; k < 4; k++) {
+      const pct = Math.round(n.c[k] * 100);
+      if (pct === 0) continue;
+      const color = getCompCssColor(k);
+      html += '<div class="cp-single-row">';
+      html += '<span class="cp-row-label">' + COMP_LABEL[k] + '</span>';
+      html += '<div class="cp-bar-cell"><div class="cp-single-bar" style="width:' + pct + '%; background:' + color + '"></div></div>';
+      html += '<span class="cp-single-val">' + pct + '%</span>';
+      html += '</div>';
+    }
+    panel.className = 'comparison-panel comparison-panel--single';
+    panel.innerHTML = html;
+  } else {
+    const a = nodeData[selected[0]], b = nodeData[selected[1]];
+    const d = distMatrix[selected[0]][selected[1]];
+    // Distanz-Label: nah / mittel / fern
+    let dLabel = 'mittel';
+    if (d < 0.15) dLabel = 'sehr nah';
+    else if (d < 0.30) dLabel = 'nah';
+    else if (d < 0.50) dLabel = 'mittel';
+    else if (d < 0.70) dLabel = 'weit';
+    else dLabel = 'sehr weit';
+    
+    let html = '<div class="cp-header">';
+    html += '<span class="cp-sport"><span class="cp-dot" style="background:' + a.color + '"></span>' + a.name + '</span>';
+    html += '<span class="cp-vs">vs</span>';
+    html += '<span class="cp-sport"><span class="cp-dot" style="background:' + b.color + '"></span>' + b.name + '</span>';
+    html += '<button class="cp-close" type="button" data-action="clear">Schließen</button>';
+    html += '</div>';
+    html += '<p class="cp-distance">Strukturelle Distanz: <strong>' + d.toFixed(2) + '</strong><span class="cp-d-label">' + dLabel + '</span></p>';
+    
+    html += '<div class="cp-comparison">';
+    for (let k = 0; k < 4; k++) {
+      const va = Math.round(a.c[k] * 100);
+      const vb = Math.round(b.c[k] * 100);
+      if (va === 0 && vb === 0) continue;
+      const diff = Math.abs(va - vb);
+      const color = getCompCssColor(k);
+      const aligned = diff <= 5 ? ' cp-aligned' : '';
+      html += '<span class="cp-row-label">' + COMP_LABEL[k] + '</span>';
+      html += '<div class="cp-bar-cell' + aligned + '">';
+      html += '<div class="cp-bar" style="width:' + va + '%; background:' + a.color + '" title="' + a.name + ': ' + va + '%"></div>';
+      html += '<div class="cp-bar cp-bar-b" style="width:' + vb + '%; background:' + b.color + '" title="' + b.name + ': ' + vb + '%"></div>';
+      html += '</div>';
+      const diffClass = diff >= 15 ? ' cp-diff-strong' : '';
+      html += '<span class="cp-diff' + diffClass + '">' + (diff === 0 ? '–' : 'Δ ' + diff) + '</span>';
+    }
+    html += '</div>';
+    panel.className = 'comparison-panel comparison-panel--pair';
+    panel.innerHTML = html;
+  }
+  // Close-Button-Listener
+  const btn = panel.querySelector('[data-action="clear"]');
+  if (btn) btn.addEventListener('click', clearSelection);
+}
+renderPanel();
+
+// === RAYCASTING / KLICKS ===
+const raycaster = new THREE.Raycaster();
+const pointerVec = new THREE.Vector2();
+
+function pickAt(clientX, clientY) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointerVec.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+  pointerVec.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(pointerVec, camera);
+  // Vergrößern der Trefferfläche durch threshold? Für Spheres nicht direkt, also nehmen wir alle pointMeshes
+  const meshes = pointMeshes.map(p => p.mesh);
+  const hits = raycaster.intersectObjects(meshes, false);
+  if (hits.length === 0) return null;
+  return hits[0].object.userData.index;
+}
+
+// Drag-Detection: kleiner Schwellwert, sonst Klick
+let pointerDown = null;
+let pointerMoved = false;
+const DRAG_THRESHOLD = 6;
+
+renderer.domElement.addEventListener('pointerdown', (e) => {
+  pointerDown = { x: e.clientX, y: e.clientY, time: performance.now() };
+  pointerMoved = false;
+});
+renderer.domElement.addEventListener('pointermove', (e) => {
+  if (!pointerDown) return;
+  const dx = e.clientX - pointerDown.x;
+  const dy = e.clientY - pointerDown.y;
+  if (Math.hypot(dx, dy) > DRAG_THRESHOLD) pointerMoved = true;
+});
+renderer.domElement.addEventListener('pointerup', (e) => {
+  if (!pointerDown) return;
+  const elapsed = performance.now() - pointerDown.time;
+  if (!pointerMoved && elapsed < 500) {
+    const idx = pickAt(e.clientX, e.clientY);
+    if (idx != null) toggleSelect(idx);
+    else if (selected.length > 0) clearSelection();
+  }
+  pointerDown = null;
+});
+
+// === ROTATION (pausiert bei Auswahl) ===
+let rotY = 0.4;
+const rotSpeed = 0.0026;
+let lastTime = performance.now();
 
 function projectToScreen(vec3) {
   const v = vec3.clone();
@@ -1296,26 +1359,28 @@ function projectToScreen(vec3) {
   return { x, y, z: v.z };
 }
 
-let rotY = 0.4;
-const rotSpeed = 0.0026;
-let lastTime = performance.now();
-
 function animate(now) {
   requestAnimationFrame(animate);
   const dt = Math.min(50, now - lastTime);
   lastTime = now;
-  rotY += rotSpeed * (dt / 16.67);
+  // Auto-Rotation nur wenn keine Auswahl
+  if (selected.length === 0) {
+    rotY += rotSpeed * (dt / 16.67);
+  }
   netGroup.rotation.y = rotY;
   netGroup.rotation.x = 0.16;
   netGroup.updateMatrixWorld(true);
 
-  sportPointPositions.forEach((sp, i) => {
-    const p = projectToScreen(sp.pos);
+  pointMeshes.forEach((sp, i) => {
+    const p = projectToScreen(sp.mesh.position);
     const el = sportLabelEls[i];
     el.style.left = p.x + 'px';
     el.style.top = p.y + 'px';
     const fade = Math.max(0.4, 1 - p.z * 0.6);
-    el.style.opacity = (0.85 * fade).toFixed(2);
+    const isSel = selected.indexOf(i) >= 0;
+    const hasSel = selected.length > 0;
+    const baseOp = isSel ? 1 : (hasSel ? 0.45 : 0.85);
+    el.style.opacity = (baseOp * fade).toFixed(2);
   });
 
   renderer.render(scene, camera);
@@ -1323,16 +1388,19 @@ function animate(now) {
 requestAnimationFrame(animate);
 
 window.addEventListener('resize', () => {
-  const w = container.clientWidth;
-  camera.aspect = w/H;
+  W = clientW(); H = clientH();
+  camera.aspect = W/H;
   camera.updateProjectionMatrix();
-  renderer.setSize(w, H);
+  renderer.setSize(W, H);
 });
 
 const themeObserver = new MutationObserver(() => {
   buildEdges();
   buildPoints();
   buildSportLabels();
+  updateHighlights();
+  if (selected.length === 2) setCompareLine(selected[0], selected[1]);
+  renderPanel();
 });
 themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 </script>

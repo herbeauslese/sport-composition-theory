@@ -907,7 +907,7 @@
   <div id="comparison-panel" class="comparison-panel comparison-panel--empty" aria-live="polite">
     <p class="comparison-hint">Tippe eine Kugel im Netz an, um ihre Werte zu sehen. Eine zweite Kugel zeigt den strukturellen Vergleich.</p>
   </div>
-  <p class="figure-caption"><strong>Abb. 1</strong>Interaktives 3D-Kräftenetz aller bewerteten Sportarten. Jede Sportart ist ein Punkt; ihr Abstand zu jeder anderen entspricht der strukturellen Distanz. Verbindungslinien markieren besonders nahe Paare (Distanz unter 0.15). Farbige Nebelhüllen heben die vier strukturellen Cluster hervor: <span style="color:#e0644a">rot</span> für ausgewogene Mannschaftssportarten, <span style="color:#4a9fd9">blau</span> für skill-dominierte Sportarten, <span style="color:#f4a82a">orange</span> für physis-dominierte Sportarten, <span style="color:#5db364">grün</span> für das taktische Schach/American-Football-Paar. Sportarten außerhalb aller Cluster (Marathon, Formel 1, Bob, Straßenradsport) sind strukturelle Einzelgänger. Ein Klick auf eine Kugel wählt sie aus und zeigt ihre Werte im Panel unten; ein weiterer Klick auf eine andere Kugel ergänzt den Vergleich mit Distanzwert und Komponenten-Gegenüberstellung. Die Anordnung bildet die echten Distanzen nahezu verlustfrei ab (Kruskal-Stress 0.03).</p>
+  <p class="figure-caption"><strong>Abb. 1</strong>Interaktives 3D-Kräftenetz aller bewerteten Sportarten. Jede Sportart ist ein Punkt; ihr Abstand zu jeder anderen entspricht der strukturellen Distanz. Verbindungslinien markieren besonders nahe Paare (Distanz unter 0.15). Vier strukturelle Cluster werden durch farbige konvexe Hüllen und gefärbte Verbindungslinien hervorgehoben: <span style="color:#e0644a">rot</span> für ausgewogene Mannschaftssportarten, <span style="color:#4a9fd9">blau</span> für skill-dominierte Sportarten, <span style="color:#f4a82a">orange</span> für physis-dominierte Sportarten, <span style="color:#5db364">grün</span> für das taktische Schach/American-Football-Paar. Sportarten außerhalb aller Cluster (Marathon, Formel 1, Bob, Straßenradsport) sind strukturelle Einzelgänger. Ein Klick auf eine Kugel wählt sie aus und zeigt ihre Werte im Panel unten; ein weiterer Klick auf eine andere Kugel ergänzt den Vergleich mit Distanzwert und Komponenten-Gegenüberstellung. Die Anordnung bildet die echten Distanzen nahezu verlustfrei ab (Kruskal-Stress 0.03).</p>
 
 
   </section>
@@ -993,7 +993,6 @@ import * as THREE from 'three';
 const nodeData = [{"name": "Fußball", "color": "#e63946", "slug": "fussball", "pos": [-0.2119, -0.7761, 0.3181], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "Tennis", "color": "#06a77d", "slug": "tennis", "pos": [-0.5726, 0.3075, 0.3763], "c": [0.2, 0.2, 0.55, 0.05]}, {"name": "100m Sprint", "color": "#f4a261", "slug": "100m-sprint", "pos": [1.4089, 0.7165, 0.175], "c": [0.05, 0.6, 0.35, 0.0]}, {"name": "Schach", "color": "#264653", "slug": "schach", "pos": [-0.5746, -2.007, 0.2408], "c": [0.65, 0.1, 0.25, 0.0]}, {"name": "Straßenradsport", "color": "#6f4e7c", "slug": "strassenradsport", "pos": [1.063, -0.5173, -0.605], "c": [0.25, 0.45, 0.15, 0.15]}, {"name": "Formel 1", "color": "#1d4e89", "slug": "formel-1", "pos": [-0.7497, -0.4237, -1.7586], "c": [0.25, 0.05, 0.25, 0.45]}, {"name": "Boxen", "color": "#c1121f", "slug": "boxen", "pos": [-0.0118, 0.2159, 0.4953], "c": [0.2, 0.3, 0.5, 0.0]}, {"name": "Triathlon", "color": "#0096c7", "slug": "triathlon", "pos": [1.6276, 0.1957, -0.3512], "c": [0.1, 0.6, 0.2, 0.1]}, {"name": "Baseball", "color": "#bc8a3f", "slug": "baseball", "pos": [-1.0545, -0.0103, 0.609], "c": [0.3, 0.1, 0.6, 0.0]}, {"name": "Super G", "color": "#8d99ae", "slug": "super-g", "pos": [-0.6909, 0.6252, -0.6091], "c": [0.1, 0.15, 0.5, 0.25]}, {"name": "Bowling", "color": "#5a189a", "slug": "bowling", "pos": [-0.9714, 0.9021, -0.1877], "c": [0.1, 0.1, 0.6, 0.2]}, {"name": "Handball", "color": "#ff6d00", "slug": "handball", "pos": [-0.5021, -0.7473, 0.2219], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "Zehnkampf", "color": "#ffd60a", "slug": "zehnkampf", "pos": [1.0647, 0.346, -0.2201], "c": [0.1, 0.5, 0.3, 0.1]}, {"name": "Bob Viererbob", "color": "#80b918", "slug": "bob-viererbob", "pos": [-0.261, 0.3761, -1.2303], "c": [0.1, 0.2, 0.35, 0.35]}, {"name": "Golf", "color": "#ff006e", "slug": "golf", "pos": [-0.9711, 0.3059, -0.0953], "c": [0.2, 0.1, 0.55, 0.15]}, {"name": "Basketball", "color": "#b5179e", "slug": "basketball", "pos": [-0.3687, -0.67, 0.5775], "c": [0.4, 0.2, 0.4, 0.0]}, {"name": "American Football", "color": "#7d4f16", "slug": "american-football", "pos": [-0.1549, -1.5882, 0.2216], "c": [0.55, 0.2, 0.25, 0.0]}, {"name": "Tischtennis", "color": "#48cae4", "slug": "tischtennis", "pos": [-1.1102, 0.6496, -0.3454], "c": [0.1, 0.1, 0.6, 0.2]}, {"name": "Cricket", "color": "#a7c957", "slug": "cricket", "pos": [-0.5224, -0.6197, -0.3745], "c": [0.35, 0.15, 0.35, 0.15]}, {"name": "Judo", "color": "#1b4332", "slug": "judo", "pos": [-0.1652, 0.5872, 0.5425], "c": [0.15, 0.3, 0.55, 0.0]}, {"name": "Volleyball", "color": "#d44ade", "slug": "volleyball", "pos": [-0.3161, -0.0166, 0.4615], "c": [0.25, 0.25, 0.5, 0.0]}, {"name": "Schwimmen 100m", "color": "#5ab85a", "slug": "schwimmen-100m", "pos": [1.1954, 0.3811, 0.3162], "c": [0.1, 0.55, 0.35, 0.0]}, {"name": "Rugby", "color": "#2e2ed9", "slug": "rugby", "pos": [1.1948, -0.621, 0.103], "c": [0.3, 0.5, 0.2, 0.0]}, {"name": "Eishockey", "color": "#5e4ade", "slug": "eishockey", "pos": [-0.2292, -0.6175, -0.0726], "c": [0.35, 0.2, 0.35, 0.1]}, {"name": "Badminton", "color": "#4ade71", "slug": "badminton", "pos": [-0.5348, 0.5453, 0.0326], "c": [0.15, 0.2, 0.55, 0.1]}, {"name": "Gewichtheben", "color": "#de4a85", "slug": "gewichtheben", "pos": [1.9735, 0.5037, 0.1294], "c": [0.05, 0.7, 0.25, 0.0]}, {"name": "Marathon", "color": "#1a6e2e", "slug": "marathon", "pos": [2.3955, -0.1398, -0.0466], "c": [0.15, 0.75, 0.1, 0.0]}, {"name": "Sportklettern", "color": "#a12ed9", "slug": "sportklettern", "pos": [-0.0669, 0.4569, 0.1534], "c": [0.15, 0.3, 0.5, 0.05]}, {"name": "Darts", "color": "#e0a82e", "slug": "darts", "pos": [-1.396, 0.7475, 0.284], "c": [0.15, 0.05, 0.7, 0.1]}, {"name": "Gerätturnen", "color": "#2ed9a1", "slug": "geraetturnen", "pos": [-0.4872, 0.8922, 0.6382], "c": [0.1, 0.25, 0.65, 0.0]}];
 const edgeData = [[0, 11, 0.0], [0, 15, 0.0], [0, 23, 0.122], [1, 6, 0.122], [1, 14, 0.141], [1, 19, 0.122], [1, 20, 0.1], [1, 24, 0.071], [1, 27, 0.122], [2, 21, 0.071], [2, 25, 0.141], [3, 16, 0.141], [6, 19, 0.071], [6, 20, 0.071], [6, 27, 0.071], [7, 12, 0.141], [9, 10, 0.122], [9, 17, 0.122], [10, 14, 0.122], [10, 17, 0.0], [11, 15, 0.0], [11, 23, 0.122], [12, 21, 0.122], [14, 17, 0.122], [14, 24, 0.122], [15, 23, 0.122], [18, 23, 0.071], [19, 20, 0.122], [19, 24, 0.141], [19, 27, 0.071], [19, 29, 0.122], [20, 27, 0.122], [24, 27, 0.122]];
 const distMatrix = [[0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.255, 0.0, 0.4743, 0.5523, 0.4848, 0.5244, 0.1225, 0.5431, 0.1581, 0.2345, 0.2121, 0.255, 0.4062, 0.3742, 0.1414, 0.255, 0.4637, 0.2121, 0.2739, 0.1225, 0.1, 0.4183, 0.4743, 0.255, 0.0707, 0.6042, 0.7141, 0.1225, 0.2236, 0.1581], [0.5339, 0.4743, 0.0, 0.7874, 0.3536, 0.745, 0.3674, 0.1871, 0.6124, 0.5385, 0.5958, 0.5339, 0.1581, 0.5339, 0.5788, 0.5339, 0.6481, 0.5958, 0.5612, 0.3742, 0.4301, 0.0707, 0.3082, 0.5099, 0.469, 0.1414, 0.3082, 0.3536, 0.6671, 0.4637], [0.3082, 0.5523, 0.7874, 0.0, 0.5612, 0.6042, 0.5523, 0.7517, 0.495, 0.6557, 0.6819, 0.3082, 0.6892, 0.6671, 0.5612, 0.3082, 0.1414, 0.6819, 0.3536, 0.6164, 0.495, 0.7176, 0.5339, 0.3464, 0.6, 0.8485, 0.8337, 0.5958, 0.6819, 0.6964], [0.4123, 0.4848, 0.3536, 0.5612, 0.0, 0.5099, 0.4123, 0.2236, 0.5916, 0.495, 0.5916, 0.4123, 0.2236, 0.4062, 0.5339, 0.4123, 0.4301, 0.5916, 0.3742, 0.4637, 0.4301, 0.3082, 0.1732, 0.3391, 0.4848, 0.3674, 0.3536, 0.4062, 0.6892, 0.5788], [0.5196, 0.5244, 0.745, 0.6042, 0.5099, 0.0, 0.5745, 0.6708, 0.5745, 0.3674, 0.4583, 0.5196, 0.5916, 0.255, 0.4301, 0.5196, 0.5612, 0.4583, 0.3464, 0.6042, 0.5523, 0.6964, 0.6403, 0.4062, 0.495, 0.8155, 0.8515, 0.5431, 0.5788, 0.6519], [0.2449, 0.1225, 0.3674, 0.5523, 0.4123, 0.5745, 0.0, 0.4472, 0.2449, 0.3082, 0.3162, 0.2449, 0.3162, 0.4062, 0.255, 0.2449, 0.4416, 0.3162, 0.3, 0.0707, 0.0707, 0.3082, 0.3742, 0.255, 0.1581, 0.495, 0.6042, 0.0707, 0.3391, 0.1871], [0.5477, 0.5431, 0.1871, 0.7517, 0.2236, 0.6708, 0.4472, 0.0, 0.6782, 0.5612, 0.6481, 0.5477, 0.1414, 0.495, 0.6205, 0.5477, 0.6124, 0.6481, 0.5385, 0.4743, 0.495, 0.1871, 0.2449, 0.495, 0.5339, 0.1581, 0.2121, 0.4301, 0.745, 0.5788], [0.2449, 0.1581, 0.6124, 0.495, 0.5916, 0.5745, 0.2449, 0.6782, 0.0, 0.3391, 0.2828, 0.2449, 0.5477, 0.4848, 0.1871, 0.2449, 0.4416, 0.2828, 0.3, 0.255, 0.1871, 0.5523, 0.5657, 0.2915, 0.2121, 0.7382, 0.8337, 0.2739, 0.2121, 0.255], [0.4062, 0.2345, 0.5385, 0.6557, 0.495, 0.3674, 0.3082, 0.5612, 0.3391, 0.0, 0.1225, 0.4062, 0.4301, 0.1871, 0.1581, 0.4062, 0.5745, 0.1225, 0.3082, 0.3, 0.3082, 0.495, 0.5612, 0.3317, 0.1732, 0.6557, 0.7649, 0.255, 0.2739, 0.3082], [0.4243, 0.2121, 0.5958, 0.6819, 0.5916, 0.4583, 0.3162, 0.6481, 0.2828, 0.1225, 0.0, 0.4243, 0.5099, 0.3082, 0.1225, 0.4243, 0.6124, 0.0, 0.3606, 0.2915, 0.3082, 0.5523, 0.6325, 0.3808, 0.1581, 0.7246, 0.8456, 0.2739, 0.1581, 0.255], [0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.4472, 0.4062, 0.1581, 0.6892, 0.2236, 0.5916, 0.3162, 0.1414, 0.5477, 0.4301, 0.5099, 0.4472, 0.0, 0.3937, 0.4848, 0.4472, 0.5523, 0.5099, 0.4359, 0.3391, 0.3674, 0.1225, 0.2449, 0.3937, 0.3937, 0.2345, 0.3391, 0.2915, 0.6042, 0.4416], [0.4637, 0.3742, 0.5339, 0.6671, 0.4062, 0.255, 0.4062, 0.495, 0.4848, 0.1871, 0.3082, 0.4637, 0.3937, 0.0, 0.3162, 0.4637, 0.5788, 0.3082, 0.324, 0.4183, 0.4123, 0.495, 0.5244, 0.3536, 0.324, 0.6205, 0.7, 0.3536, 0.4583, 0.4637], [0.3082, 0.1414, 0.5788, 0.5612, 0.5339, 0.4301, 0.255, 0.6205, 0.1871, 0.1581, 0.1225, 0.3082, 0.4848, 0.3162, 0.0, 0.3082, 0.495, 0.1225, 0.255, 0.255, 0.2236, 0.5244, 0.5612, 0.2739, 0.1225, 0.7036, 0.8062, 0.2345, 0.1732, 0.255], [0.0, 0.255, 0.5339, 0.3082, 0.4123, 0.5196, 0.2449, 0.5477, 0.2449, 0.4062, 0.4243, 0.0, 0.4472, 0.4637, 0.3082, 0.0, 0.2121, 0.4243, 0.1732, 0.3082, 0.1871, 0.4637, 0.3742, 0.1225, 0.3082, 0.6285, 0.6745, 0.2915, 0.4301, 0.3937], [0.2121, 0.4637, 0.6481, 0.1414, 0.4301, 0.5612, 0.4416, 0.6124, 0.4416, 0.5745, 0.6124, 0.2121, 0.5523, 0.5788, 0.495, 0.2121, 0.0, 0.6124, 0.2739, 0.5099, 0.3937, 0.5788, 0.3937, 0.2449, 0.5099, 0.7071, 0.6964, 0.4848, 0.6285, 0.6042], [0.4243, 0.2121, 0.5958, 0.6819, 0.5916, 0.4583, 0.3162, 0.6481, 0.2828, 0.1225, 0.0, 0.4243, 0.5099, 0.3082, 0.1225, 0.4243, 0.6124, 0.0, 0.3606, 0.2915, 0.3082, 0.5523, 0.6325, 0.3808, 0.1581, 0.7246, 0.8456, 0.2739, 0.1581, 0.255], [0.1732, 0.2739, 0.5612, 0.3536, 0.3742, 0.3464, 0.3, 0.5385, 0.3, 0.3082, 0.3606, 0.1732, 0.4359, 0.324, 0.255, 0.1732, 0.2739, 0.3606, 0.0, 0.3536, 0.255, 0.495, 0.4123, 0.0707, 0.2915, 0.6519, 0.6964, 0.3082, 0.4183, 0.4301], [0.3082, 0.1225, 0.3742, 0.6164, 0.4637, 0.6042, 0.0707, 0.4743, 0.255, 0.3, 0.2915, 0.3082, 0.3391, 0.4183, 0.255, 0.3082, 0.5099, 0.2915, 0.3536, 0.0, 0.1225, 0.324, 0.4301, 0.3162, 0.1414, 0.5099, 0.6364, 0.0707, 0.3082, 0.1225], [0.1871, 0.1, 0.4301, 0.495, 0.4301, 0.5523, 0.0707, 0.495, 0.1871, 0.3082, 0.3082, 0.1871, 0.3674, 0.4123, 0.2236, 0.1871, 0.3937, 0.3082, 0.255, 0.1225, 0.0, 0.3674, 0.3937, 0.2121, 0.1581, 0.5523, 0.6481, 0.1225, 0.3162, 0.2121], [0.4637, 0.4183, 0.0707, 0.7176, 0.3082, 0.6964, 0.3082, 0.1871, 0.5523, 0.495, 0.5523, 0.4637, 0.1225, 0.495, 0.5244, 0.4637, 0.5788, 0.5523, 0.495, 0.324, 0.3674, 0.0, 0.255, 0.4416, 0.4183, 0.1871, 0.324, 0.3, 0.6205, 0.4243], [0.3742, 0.4743, 0.3082, 0.5339, 0.1732, 0.6403, 0.3742, 0.2449, 0.5657, 0.5612, 0.6325, 0.3742, 0.2449, 0.5244, 0.5612, 0.3742, 0.3937, 0.6325, 0.4123, 0.4301, 0.3937, 0.255, 0.0, 0.3536, 0.495, 0.324, 0.3082, 0.3937, 0.6964, 0.5523], [0.1225, 0.255, 0.5099, 0.3464, 0.3391, 0.4062, 0.255, 0.495, 0.2915, 0.3317, 0.3808, 0.1225, 0.3937, 0.3536, 0.2739, 0.1225, 0.2449, 0.3808, 0.0707, 0.3162, 0.2121, 0.4416, 0.3536, 0.0, 0.2828, 0.6, 0.6442, 0.2739, 0.4301, 0.4062], [0.3082, 0.0707, 0.469, 0.6, 0.4848, 0.495, 0.1581, 0.5339, 0.2121, 0.1732, 0.1581, 0.3082, 0.3937, 0.324, 0.1225, 0.3082, 0.5099, 0.1581, 0.2915, 0.1414, 0.1581, 0.4183, 0.495, 0.2828, 0.0, 0.6, 0.7176, 0.1225, 0.2121, 0.1581], [0.6285, 0.6042, 0.1414, 0.8485, 0.3674, 0.8155, 0.495, 0.1581, 0.7382, 0.6557, 0.7246, 0.6285, 0.2345, 0.6205, 0.7036, 0.6285, 0.7071, 0.7246, 0.6519, 0.5099, 0.5523, 0.1871, 0.324, 0.6, 0.6, 0.0, 0.1871, 0.4848, 0.8031, 0.6042], [0.6745, 0.7141, 0.3082, 0.8337, 0.3536, 0.8515, 0.6042, 0.2121, 0.8337, 0.7649, 0.8456, 0.6745, 0.3391, 0.7, 0.8062, 0.6745, 0.6964, 0.8456, 0.6964, 0.6364, 0.6481, 0.324, 0.3082, 0.6442, 0.7176, 0.1871, 0.0, 0.6042, 0.9274, 0.745], [0.2915, 0.1225, 0.3536, 0.5958, 0.4062, 0.5431, 0.0707, 0.4301, 0.2739, 0.255, 0.2739, 0.2915, 0.2915, 0.3536, 0.2345, 0.2915, 0.4848, 0.2739, 0.3082, 0.0707, 0.1225, 0.3, 0.3937, 0.2739, 0.1225, 0.4848, 0.6042, 0.0, 0.324, 0.1732], [0.4301, 0.2236, 0.6671, 0.6819, 0.6892, 0.5788, 0.3391, 0.745, 0.2121, 0.2739, 0.1581, 0.4301, 0.6042, 0.4583, 0.1732, 0.4301, 0.6285, 0.1581, 0.4183, 0.3082, 0.3162, 0.6205, 0.6964, 0.4301, 0.2121, 0.8031, 0.9274, 0.324, 0.0, 0.2345], [0.3937, 0.1581, 0.4637, 0.6964, 0.5788, 0.6519, 0.1871, 0.5788, 0.255, 0.3082, 0.255, 0.3937, 0.4416, 0.4637, 0.255, 0.3937, 0.6042, 0.255, 0.4301, 0.1225, 0.2121, 0.4243, 0.5523, 0.4062, 0.1581, 0.6042, 0.745, 0.1732, 0.2345, 0.0]];
-const clusterData = [{"center": [-0.536, 0.497, 0.133], "radius": 0.769, "color": "#4a9fd9", "label": "Skill-Cluster", "memberCount": 11}, {"center": [-0.367, -0.686, 0.134], "radius": 0.536, "color": "#e0644a", "label": "Teamsport-Cluster", "memberCount": 5}, {"center": [1.454, 0.429, 0.01], "radius": 0.538, "color": "#f4a82a", "label": "Physis-Cluster", "memberCount": 5}, {"center": [-0.365, -1.798, 0.231], "radius": 0.297, "color": "#5db364", "label": "Taktik-Cluster", "memberCount": 2}];
 
 const container = document.getElementById('tetra-canvas');
 const panel = document.getElementById('comparison-panel');
@@ -1079,64 +1078,56 @@ function makeGlowSprite(color, dark, big) {
   return sprite;
 }
 
-function makeNebulaSprite(color, scale, dark) {
-  const size = 256;
-  const cnv = document.createElement('canvas');
-  cnv.width = size; cnv.height = size;
-  const ctx = cnv.getContext('2d');
-  const grad = ctx.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
-  // Sehr weicher, breiter Verlauf
-  if (dark) {
-    grad.addColorStop(0,   hexToRgba(color, 0.28));
-    grad.addColorStop(0.3, hexToRgba(color, 0.15));
-    grad.addColorStop(0.6, hexToRgba(color, 0.06));
-    grad.addColorStop(1,   hexToRgba(color, 0));
-  } else {
-    grad.addColorStop(0,   hexToRgba(color, 0.22));
-    grad.addColorStop(0.3, hexToRgba(color, 0.12));
-    grad.addColorStop(0.6, hexToRgba(color, 0.05));
-    grad.addColorStop(1,   hexToRgba(color, 0));
-  }
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, size, size);
-  const tex = new THREE.CanvasTexture(cnv);
-  const mat = new THREE.SpriteMaterial({
-    map: tex, transparent: true, depthWrite: false,
-    blending: dark ? THREE.AdditiveBlending : THREE.NormalBlending
-  });
-  const sprite = new THREE.Sprite(mat);
-  sprite.scale.set(scale, scale, 1);
-  return sprite;
-}
+const hullData = [{"color": "#4a9fd9", "label": "Skill-Cluster", "vertices": [[-0.5936800680506945, 0.1975351195367494, 0.5172374180112616], [0.12366434959316852, 0.14318689660125378, 0.5889067015946137], [-0.7271251674605193, 0.6551304139680849, -0.7828581870363419], [-1.0874051559248574, 1.0099800454674701, -0.27316753529139626], [-1.1195982861307332, 0.24051779299793824, -0.17323218862430623], [-1.2456963024284702, 0.6855320571406762, -0.45831430067910683], [-0.045921599158025406, 0.6160770056436833, 0.6741768075161148], [-0.2550099299200044, -0.15925872463685076, 0.5526948004143242], [-0.5325338182659028, 0.6228652202625176, -0.1298145960989196], [0.11226505226860994, 0.4414452225218968, 0.16121241951565468], [-0.4734851169681834, 1.0027078608667526, 0.7796210545501553]], "faces": [[7, 10, 1], [3, 10, 5], [3, 2, 5], [3, 2, 10], [9, 2, 10], [9, 7, 1], [9, 7, 2], [0, 7, 10], [4, 2, 5], [4, 7, 2], [4, 0, 7], [4, 10, 5], [4, 0, 10], [6, 10, 1], [6, 9, 1], [6, 9, 10]]}, {"color": "#e0644a", "label": "Teamsport-Cluster", "vertices": [[-0.10330468364401563, -0.8391576056124901, 0.4470604421517052], [-0.6432462041010557, -0.8111518542361917, 0.3135552768718922], [-0.369446422160077, -0.6634606928149781, 0.757379627294196], [-0.5746370437156898, -0.5973932979066728, -0.5453031097654977], [-0.13302193561203704, -0.5695576872126833, -0.21699984271178396]], "faces": [[4, 0, 3], [2, 4, 3], [2, 4, 0], [1, 0, 3], [1, 2, 3], [1, 2, 0]]}, {"color": "#f4a82a", "label": "Physis-Cluster", "vertices": [[1.384653008724212, 0.8712142905208193, 0.2637444179805769], [1.6950246966511837, 0.10523328810887933, -0.4914486517621641], [0.9122400557490955, 0.3136533663949329, -0.3101536545256806], [1.080091551899573, 0.3599216252232222, 0.4527849121919602], [2.147200140627963, 0.5288114201916533, 0.16937096098149437]], "faces": [[3, 0, 2], [3, 0, 4], [1, 0, 2], [1, 0, 4], [1, 3, 2], [1, 3, 4]]}, {"color": "#5db364", "label": "Taktik-Cluster", "vertices": [[-0.5645461830724608, -2.007, 0.46057015440042703], [-0.5846538169275391, -2.007, 0.021029845599572966], [-0.1649538169275392, -1.5882, 0.0018298455995729712], [-0.14484618307246083, -1.5882, 0.44137015440042704]], "faces": [[0, 1, 2], [0, 2, 3]]}];
+const nodeCluster = [1, 0, 2, 3, null, null, 0, 2, null, 0, 0, 1, 2, null, 0, 1, 3, 0, 1, 0, 0, 2, null, 1, 0, 2, null, 0, null, 0];
+const edgeCluster = [1, 1, 1, 0, 0, 0, 0, 0, 0, 2, 2, 3, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 2, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0];
+const clusterColors = ["#4a9fd9", "#e0644a", "#f4a82a", "#5db364"];
 
-// Cluster-Nebel: weiche farbige Hüllen für jedes Cluster
-const nebulaGroup = new THREE.Group();
-netGroup.add(nebulaGroup);
-// Wichtig: Nebel zuerst rendern, damit er hinter Punkten/Kanten liegt
-nebulaGroup.renderOrder = -1;
+// === KONVEXE HÜLLEN um Cluster (Hybrid: dünne farbige Kante + Hauch Füllung) ===
+const hullGroup = new THREE.Group();
+netGroup.add(hullGroup);
+hullGroup.renderOrder = -1;
 
-function buildNebula() {
-  while (nebulaGroup.children.length) nebulaGroup.remove(nebulaGroup.children[0]);
+function buildHulls() {
+  while (hullGroup.children.length) hullGroup.remove(hullGroup.children[0]);
   const dark = isDark();
-  clusterData.forEach(c => {
-    // Nebel-Radius: deutlich größer als Cluster-Radius, damit Mitglieder umhüllt werden
-    const baseScale = (c.radius + 0.7) * 2.4;
-    // Drei überlagerte Sprites mit kleinen Offsets für organische Wirkung
-    const offsets = [
-      [0, 0, 0],
-      [c.radius * 0.25, c.radius * 0.15, c.radius * 0.1],
-      [-c.radius * 0.2, -c.radius * 0.2, -c.radius * 0.1],
-    ];
-    offsets.forEach((off, idx) => {
-      const sprite = makeNebulaSprite(c.color, baseScale * (1 - idx * 0.1), dark);
-      sprite.position.set(c.center[0] + off[0], c.center[1] + off[1], c.center[2] + off[2]);
-      sprite.renderOrder = -1;
-      nebulaGroup.add(sprite);
+  hullData.forEach(h => {
+    // Geometrie aus Vertices + Faces aufbauen
+    const geom = new THREE.BufferGeometry();
+    const flatPositions = [];
+    const flatIndices = [];
+    h.vertices.forEach(v => flatPositions.push(v[0], v[1], v[2]));
+    h.faces.forEach(f => flatIndices.push(f[0], f[1], f[2]));
+    geom.setAttribute('position', new THREE.Float32BufferAttribute(flatPositions, 3));
+    geom.setIndex(flatIndices);
+    geom.computeVertexNormals();
+
+    // Sehr transparente Füllung (nur Hauch von Farbe)
+    const fillMat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(h.color),
+      transparent: true,
+      opacity: dark ? 0.07 : 0.06,
+      side: THREE.DoubleSide,
+      depthWrite: false
     });
+    const fillMesh = new THREE.Mesh(geom, fillMat);
+    fillMesh.renderOrder = -1;
+    hullGroup.add(fillMesh);
+
+    // Dünne farbige Kanten (eigentliche Cluster-Markierung)
+    const edgesGeom = new THREE.EdgesGeometry(geom, 1); // 1 Grad: alle Kanten zeigen
+    const edgeMat = new THREE.LineBasicMaterial({
+      color: new THREE.Color(h.color),
+      transparent: true,
+      opacity: dark ? 0.55 : 0.5,
+      depthWrite: false
+    });
+    const edgeLine = new THREE.LineSegments(edgesGeom, edgeMat);
+    edgeLine.renderOrder = -1;
+    hullGroup.add(edgeLine);
   });
 }
-buildNebula();
-
+buildHulls();
 
 // Edges
 let edgeLines = [];
@@ -1146,15 +1137,24 @@ function buildEdges() {
   const colors = getThemeColors();
   const dmin = Math.min.apply(null, edgeData.map(e => e[2]));
   const dmax = Math.max.apply(null, edgeData.map(e => e[2]));
-  edgeData.forEach(e => {
+  edgeData.forEach((e, ei) => {
     const a = nodeData[e[0]].pos, b = nodeData[e[1]].pos;
     const g = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(a[0], a[1], a[2]),
       new THREE.Vector3(b[0], b[1], b[2])
     ]);
     const nz = dmax > dmin ? (e[2]-dmin)/(dmax-dmin) : 0;
-    const op = colors.edgeOpacity * (1 - nz*0.5);
-    const mat = new THREE.LineBasicMaterial({ color: colors.edge, transparent: true, opacity: op });
+    // Cluster-interne Kanten in Cluster-Farbe, sonst grau
+    const ci = edgeCluster[ei];
+    let lineColor, lineOp;
+    if (ci !== null && ci !== undefined) {
+      lineColor = new THREE.Color(clusterColors[ci]);
+      lineOp = 0.75 * (1 - nz*0.4);
+    } else {
+      lineColor = new THREE.Color(colors.edge);
+      lineOp = colors.edgeOpacity * (1 - nz*0.5);
+    }
+    const mat = new THREE.LineBasicMaterial({ color: lineColor, transparent: true, opacity: lineOp });
     netGroup.add(new THREE.Line(g, mat));
     edgeLines.push(netGroup.children[netGroup.children.length-1]);
   });
@@ -1280,11 +1280,6 @@ function updateHighlights() {
     el.style.fontWeight = isSel ? '700' : '500';
     el.style.fontSize = isSel ? '13px' : '11px';
     el.style.opacity = isSel ? '1' : (hasSel ? '0.45' : '0.85');
-  });
-  // Nebel bei Auswahl abdunkeln, sonst voll
-  const hasSel = selected.length > 0;
-  nebulaGroup.children.forEach(s => {
-    s.material.opacity = hasSel ? 0.35 : 1.0;
   });
 }
 
@@ -1466,7 +1461,7 @@ window.addEventListener('resize', () => {
 });
 
 const themeObserver = new MutationObserver(() => {
-  buildNebula();
+  buildHulls();
   buildEdges();
   buildPoints();
   buildSportLabels();

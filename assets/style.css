@@ -256,18 +256,18 @@ hr {
 .db-row summary {
   list-style: none;
   cursor: pointer;
-  display: grid;
-  grid-template-columns: 180px minmax(180px, 1fr) 250px 20px;
-  gap: 1.5em;
+  display: flex;
   align-items: center;
-  padding: 0.8em 0.8em;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.7em 0.9em;
   transition: background 0.12s ease;
 }
 .db-row summary::-webkit-details-marker { display: none; }
 .db-row summary:hover {
   background: var(--bg-mathblock);
 }
-.db-row[open] summary {
+.db-row[open] > summary {
   background: var(--bg-mathblock);
 }
 
@@ -276,6 +276,7 @@ hr {
   font-weight: 600;
   font-size: 0.95em;
   color: var(--text-strong);
+  flex: 1;
 }
 .db-row-bar {
   display: flex;
@@ -304,6 +305,53 @@ hr {
   font-variant-numeric: tabular-nums;
   min-width: 0;
 }
+
+/* Kompakte Ansicht (erscheint nach erstem Aufklappen) */
+.db-row-compact {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 250px;
+  gap: 1.5em;
+  align-items: center;
+  padding: 0.6em 0.9em 0.8em 1.9em;
+}
+@media (max-width: 900px) {
+  .db-row-compact {
+    grid-template-columns: minmax(140px, 1fr) 210px;
+    gap: 1em;
+  }
+  .db-row-compact .db-row-values { font-size: 0.74em; gap: 0.7em; }
+}
+
+/* Innere Info-Details (zweite Ausklapp-Ebene) */
+.db-row-info {
+  margin: 0 0.9em 0.6em 1.9em;
+}
+.db-row-info > summary.db-row-info-summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  padding: 0.4em 0.7em;
+  border: 1px solid var(--border-soft);
+  border-radius: 4px;
+  background: transparent;
+  display: inline-block;
+  transition: color 0.12s, border-color 0.12s;
+}
+.db-row-info > summary.db-row-info-summary::-webkit-details-marker { display: none; }
+.db-row-info > summary.db-row-info-summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.db-row-info[open] > summary.db-row-info-summary::before {
+  transform: rotate(90deg);
+}
+.db-row-info > summary.db-row-info-summary:hover {
+  color: var(--text-body);
+  border-color: var(--text-muted);
+}
 .db-chip {
   display: inline-flex;
   align-items: center;
@@ -326,13 +374,12 @@ hr {
   text-align: center;
   justify-self: end;
 }
-.db-row[open] .db-row-icon {
+.db-row[open] > summary .db-row-icon {
   transform: rotate(90deg);
 }
 
 .db-row-detail {
   padding: 0.5em 1em 1.25em;
-  border-top: 1px solid var(--border-soft);
   background: transparent;
 }
 .db-row-detail .sport-meta {
@@ -349,34 +396,23 @@ hr {
 /* Tablet: kompaktere Spalten */
 @media (max-width: 900px) {
   .db-row summary {
-    grid-template-columns: 140px minmax(140px, 1fr) 210px 18px;
-    gap: 1em;
+    padding: 0.6em 0.8em;
   }
-  .db-row-values { font-size: 0.74em; gap: 0.7em; }
 }
 
-/* Mobile: Werte unter Name+Balken umbrechen statt verstecken */
+/* Mobile: Bar und Werte gestapelt im Compact-Bereich */
 @media (max-width: 700px) {
-  .db-row summary {
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "name icon"
-      "bar  bar"
-      "vals vals";
-    gap: 0.5em 0.8em;
-    align-items: center;
+  .db-row-compact {
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    padding: 0.5em 0.9em 0.7em 1.6em;
   }
-  .db-row-name { grid-area: name; }
-  .db-row-icon { grid-area: icon; }
-  .db-row-bar {
-    grid-area: bar;
-    width: 100%;
-  }
-  .db-row-values {
-    grid-area: vals;
-    justify-content: flex-start;
+  .db-row-compact .db-row-values {
     flex-wrap: wrap;
-    gap: 0.8em;
+    justify-content: flex-start;
+  }
+  .db-row-info {
+    margin-left: 1.6em;
   }
 }
 
@@ -436,6 +472,61 @@ hr {
   align-items: center;
   margin: 1.5em 0 0.5em;
   width: 100%;
+}
+
+/* Kontroll-Leiste über dem 3D-Canvas */
+.tetra-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  width: 100%;
+  max-width: 820px;
+  margin-bottom: 0.6em;
+  padding: 0 0.2em;
+  justify-content: flex-end;
+  font-family: 'Inter', sans-serif;
+}
+.tetra-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  font-size: 0.85em;
+  color: var(--text-body);
+  user-select: none;
+}
+.tetra-toggle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--border-soft);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.18s ease;
+  margin: 0;
+  flex-shrink: 0;
+}
+.tetra-toggle input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-page);
+  transition: transform 0.18s ease;
+}
+.tetra-toggle input[type="checkbox"]:checked {
+  background: var(--text-body);
+}
+.tetra-toggle input[type="checkbox"]:checked::after {
+  transform: translateX(16px);
+}
+.tetra-toggle-label {
+  font-weight: 500;
 }
 .tetra-canvas {
   width: 100%;

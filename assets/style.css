@@ -464,7 +464,7 @@ hr {
 .ahp-content .ahp-label:first-child { margin-top: 0; }
 .ahp-content > *:last-child { margin-bottom: 0; }
 
-/* ---------- 3D Tetraeder ---------- */
+/* ---------- 2D-MDS Karte ---------- */
 
 .tetra-wrap {
   display: flex;
@@ -474,18 +474,80 @@ hr {
   width: 100%;
 }
 
-/* Kontroll-Leiste über dem 3D-Canvas */
-.tetra-controls {
+/* Kontroll-Leiste über der Karte */
+.mds-controls {
   display: flex;
   align-items: center;
-  gap: 1.2em;
+  gap: 1em;
   width: 100%;
   max-width: 820px;
   margin-bottom: 0.6em;
   padding: 0 0.2em;
-  justify-content: flex-end;
   font-family: 'Inter', sans-serif;
+  flex-wrap: wrap;
 }
+.mds-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+}
+.mds-search {
+  width: 100%;
+  padding: 0.5em 0.8em;
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+  background: var(--bg-page);
+  color: var(--text-body);
+  font: inherit;
+  font-size: 0.9em;
+  transition: border-color 0.15s ease;
+}
+.mds-search:focus {
+  outline: none;
+  border-color: var(--text-body);
+}
+.mds-search::placeholder {
+  color: var(--text-muted);
+}
+.mds-search-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--bg-page);
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.mds-search-suggestions:empty {
+  display: none;
+}
+.mds-search-suggestions li {
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  font-size: 0.88em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--text-body);
+}
+.mds-search-suggestions li:hover {
+  background: var(--bg-mathblock);
+}
+.mds-search-suggestions .ss-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 .tetra-toggle {
   display: inline-flex;
   align-items: center;
@@ -494,6 +556,7 @@ hr {
   font-size: 0.85em;
   color: var(--text-body);
   user-select: none;
+  margin-left: auto;
 }
 .tetra-toggle input[type="checkbox"] {
   appearance: none;
@@ -528,38 +591,92 @@ hr {
 .tetra-toggle-label {
   font-weight: 500;
 }
-.tetra-canvas {
+
+/* SVG-Karten-Container */
+.mds-canvas {
   width: 100%;
   max-width: 820px;
-  height: 620px;
-  position: relative;
   border-radius: 8px;
   background: radial-gradient(ellipse at center,
     rgba(0, 0, 0, 0.025) 0%,
     rgba(0, 0, 0, 0) 70%);
-  cursor: grab;
+  overflow: visible;
 }
-.tetra-canvas:active { cursor: grabbing; }
-@media (max-width: 700px) {
-  .tetra-canvas {
-    height: 420px;
-  }
-}
-:root[data-theme="dark"] .tetra-canvas {
+:root[data-theme="dark"] .mds-canvas {
   background: radial-gradient(ellipse at center,
     rgba(255, 255, 255, 0.04) 0%,
     rgba(255, 255, 255, 0) 70%);
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .tetra-canvas {
+  :root:not([data-theme="light"]) .mds-canvas {
     background: radial-gradient(ellipse at center,
       rgba(255, 255, 255, 0.04) 0%,
       rgba(255, 255, 255, 0) 70%);
   }
 }
-.tetra-canvas canvas {
-  display: block;
-  margin: 0 auto;
+
+/* SVG-Elemente */
+.mds-svg { display: block; }
+.mds-edge {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+}
+.mds-leader {
+  stroke: var(--text-muted);
+  stroke-width: 0.8;
+  stroke-opacity: 0.35;
+  stroke-dasharray: 2 2;
+}
+.mds-circle {
+  transition: r 0.18s ease, fill-opacity 0.18s ease;
+}
+.mds-circle:hover {
+  filter: brightness(1.2);
+}
+.mds-circle:focus {
+  outline: none;
+}
+.mds-glow {
+  transition: r 0.18s ease, fill-opacity 0.18s ease;
+}
+.mds-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  fill: var(--text-body);
+  font-weight: 500;
+  transition: font-size 0.15s ease, fill-opacity 0.15s ease;
+}
+.mds-label-selected {
+  font-weight: 700;
+  font-size: 16px;
+  fill: var(--text-strong);
+}
+.mds-label-dim {
+  fill-opacity: 0.4;
+}
+.mds-compare-line {
+  stroke: var(--text-strong);
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+  stroke-opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .mds-controls {
+    gap: 0.6em;
+  }
+  .mds-search-wrap {
+    min-width: 0;
+    flex: 1 1 100%;
+    max-width: none;
+    order: 2;
+  }
+  .tetra-toggle {
+    order: 1;
+    margin-left: 0;
+  }
+  .mds-label { font-size: 13px; }
+  .mds-label-selected { font-size: 15px; }
 }
 
 /* ---------- Comparison-Panel ---------- */

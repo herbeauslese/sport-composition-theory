@@ -475,21 +475,10 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 
 <div class="scatter-wrap">
   <div id="scatter-canvas" class="scatter-canvas"></div>
-  <p class="figure-caption"><strong>Abb. 2</strong> Lesbarkeit (x) und Expertenmehrwert (y) der zehn Beispielsportarten. Punktgröße = Ereignisdichte R (geschätzt). Die gestrichelten Linien teilen den Raum in vier Zonen: <em>Sofortsport</em> (hohe Lesbarkeit, geringer Expertenzuwachs), <em>Kenner-Sport</em> (niedrige Lesbarkeit, hoher Expertenzuwachs), <em>Breite Anziehungskraft</em> (beides hoch) und <em>Nischen-Profil</em>. Schach und American Football liegen im selben Quadranten — beide strukturell opak für Laien, beide reich für Kundige.</p>
+  <p class="figure-caption"><strong>Abb. 2</strong> Lesbarkeit (x) und Expertenmehrwert (y) der zehn Beispielsportarten. Punktgröße = Ereignisdichte R (geschätzt). Die gestrichelten Linien teilen den Raum in vier Zonen: <em>Sofortsport</em> (hohe Lesbarkeit, geringer Expertenzuwachs), <em>Kenner-Sport</em> (niedrige Lesbarkeit, hoher Expertenzuwachs), <em>Breite Anziehungskraft</em> (beides hoch) und <em>Nischen-Profil</em>. Schach und American Football liegen im selben Quadranten — beide strukturell opak für Laien, beide reich für Kundige. Hover über einen Punkt für Details zur Ereignisdichte.</p>
 </div>
 
-<p>Eine zweite Darstellung zeigt, wie sich der wahrgenommene Unterhaltungswert U entlang einer gedachten Achse vom Laien zum Experten entwickelt. U ist definiert als gewichtete Mischung aus L und E, wobei mit zunehmendem Wissen der Anteil von E wächst:</p>
-
-<div class="math-block">U(x) = L · (1 − 0.5·x) + E · x</div>
-
-<p>mit x ∈ [0, 1] als Expertise-Parameter (0 = Laie, 1 = Experte). Das ergibt für jede Sportart eine Kurve.</p>
-
-<div class="linechart-wrap">
-  <div id="linechart-canvas" class="linechart-canvas"></div>
-  <p class="figure-caption"><strong>Abb. 3</strong> Entwicklung des wahrgenommenen Unterhaltungswerts U von Laie (links) bis Experte (rechts). Steigende Kurven: Sportarten, die mit Wissen gewinnen. Fallende Kurven: anfangs beeindruckend, strukturell aber flach. Horizontale Kurven: breit zugänglich, wenig Tiefengewinn.</p>
-</div>
-
-<p>Einige Muster verdienen eine kurze Anmerkung. <strong>American Football und Schach</strong> verlaufen nahezu spiegelbildlich zu <strong>100m Sprint und Bob Viererbob</strong>: Erstere starten tief und steigen steil, Letztere starten hoch und fallen. Das ist strukturell zwingend — hohe Taktik-Anteile kosten Lesbarkeit, liefern aber Expertenmehrwert, während Kraft- und Materialdominanz das Umgekehrte bewirkt. <strong>Boxen</strong> ist das einzige Beispiel mit nahezu horizontaler Kurve auf hohem Niveau: unmittelbar wahrnehmbar und trotzdem für Kundige aufschlussreich, ohne in eine Richtung zu kippen. <strong>Marathon</strong> verläuft durchgehend niedrig und leicht fallend — nicht weil der Sport langweilig wäre, sondern weil 75% Physis fast vollständig in Ausdauer liegen, die für kein Publikum direkt sichtbar ist und auch mit Expertise wenig neue Beobachtungsebenen öffnet.</p>
+<p>Die Position im Streudiagramm lässt sich in wenigen Beobachtungen zusammenfassen. Hohe Taktik-Anteile kosten Lesbarkeit, liefern aber Expertenmehrwert — deshalb liegen <strong>Schach und American Football</strong> trotz grundverschiedener Natur im selben Quadranten. Das Umgekehrte gilt für <strong>100m Sprint und Bob Viererbob</strong>: sofort eindrucksvoll, aber strukturell flach. <strong>Boxen</strong> ist das einzige Beispiel, das weit rechts und gleichzeitig weit oben liegt — zugänglich und trotzdem aufschlussreich für Kundige. <strong>Marathon</strong> landet nicht wegen fehlender athletischer Tiefe im Nischen-Profil, sondern weil 75% Physis fast vollständig in Ausdauer liegen, die für kein Publikum direkt sichtbar ist.</p>
 
 <p>Nicht im Modell enthalten sind Faktoren, die den Unterhaltungswert in der Praxis stark prägen: Qualität einzelner Begegnungen, Team- oder Athletenloyalität, kultureller Kontext und das Live-Erlebnis. Diese Kennzahlen beschreiben die strukturelle Zugänglichkeit einer Sportart, nicht den emotionalen Wert eines konkreten Ereignisses. Entsprechend sollten L, E und U als Orientierungsgrößen gelesen werden, nicht als Messung.</p>
 
@@ -621,25 +610,25 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
 (function() {
   var sports = [
     { name: "Fußball",           L: 0.409, E: 0.665, R: 0.20, color: "#e63946",
-      curve: [0.409, 0.527, 0.645, 0.762, 0.870] },
+      rDesc: "~2–3 Tore pro Stunde, aber viele sichtbare Zweikämpfe und Chancen" },
     { name: "Tennis",            L: 0.784, E: 0.414, R: 0.65, color: "#06a77d",
-      curve: [0.784, 0.788, 0.792, 0.800, 0.805] },
+      rDesc: "~40–60 Punkte pro Stunde, jeder Ballwechsel klar abgegrenzt" },
     { name: "100m Sprint",       L: 1.000, E: 0.000, R: 0.05, color: "#f4a261",
-      curve: [1.000, 0.875, 0.750, 0.625, 0.500] },
+      rDesc: "Ein einziger Entscheidungsmoment — der Lauf selbst" },
     { name: "Schach",            L: 0.000, E: 1.000, R: 0.10, color: "#264653",
-      curve: [0.000, 0.250, 0.500, 0.750, 1.000] },
+      rDesc: "Einzelne Züge sichtbar, Entscheidungsmomente für Laien kaum erkennbar" },
     { name: "Straßenradsport",   L: 0.213, E: 0.216, R: 0.15, color: "#6f4e7c",
-      curve: [0.213, 0.227, 0.242, 0.268, 0.323] },
+      rDesc: "Stunden ohne sichtbares Ereignis, Entscheidungen im Windschattenspiel verborgen" },
     { name: "Formel 1",          L: 0.412, E: 0.288, R: 0.30, color: "#1d4e89",
-      curve: [0.412, 0.423, 0.438, 0.463, 0.494] },
+      rDesc: "Überholmanöver und Boxenstopps (~20–30 pro Rennen) als klare Ereignisse" },
     { name: "Marathon",          L: 0.138, E: 0.000, R: 0.05, color: "#1a6e2e",
-      curve: [0.138, 0.122, 0.107, 0.087, 0.069] },
+      rDesc: "Nahezu keine sichtbaren Ereignisse — Tempo ändert sich minimal über 42 km" },
     { name: "Boxen",             L: 0.749, E: 0.378, R: 0.75, color: "#c1121f",
-      curve: [0.749, 0.751, 0.752, 0.752, 0.752] },
+      rDesc: "~100–200 Schlagabtausche pro Kampf, jeder Treffer sofort wahrnehmbar" },
     { name: "American Football", L: 0.205, E: 0.820, R: 0.80, color: "#7d4f16",
-      curve: [0.205, 0.391, 0.576, 0.761, 0.923] },
+      rDesc: "~130–150 Plays pro Spiel, jeder ein klares, separates Ereignis" },
     { name: "Bob Viererbob",     L: 0.732, E: 0.090, R: 0.05, color: "#80b918",
-      curve: [0.732, 0.661, 0.591, 0.523, 0.456] },
+      rDesc: "Vier Läufe, kaum Variation — Spannung im Sekunden-Vergleich erschöpft sich rasch" },
   ];
 
   var isDark = function() {
@@ -650,183 +639,294 @@ Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald
   };
 
   /* =========================================================
-     SCATTER CHART
+     INTERACTIVE SCATTER (Canvas + overlay tooltip)
   ========================================================= */
-  function buildScatter() {
-    var el = document.getElementById('scatter-canvas');
-    if (!el) return;
-    var dark = isDark();
-    var tc = dark ? '#ededed' : '#111111';
-    var mc = dark ? '#2a2a2a' : '#d8d8d8';
-    var bg = dark ? '#141414' : '#fafafa';
+  var canvas, ctx, tooltip, hoveredIdx;
 
-    var W = 520, H = 420;
-    var pad = { l: 52, r: 20, t: 20, b: 48 };
+  function getColors() {
+    var dark = isDark();
+    return {
+      bg:      dark ? '#141414' : '#fafafa',
+      grid:    dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)',
+      axis:    dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.18)',
+      text:    dark ? '#ededed' : '#111111',
+      textMut: dark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.35)',
+      qdash:   dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.14)',
+      qlabel:  dark ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.20)',
+    };
+  }
+
+  function toPx(L, E, pad, cw, ch) {
+    return { x: pad.l + L * cw, y: pad.t + (1 - E) * ch };
+  }
+
+  function dotRadius(R) { return 7 + R * 20; }
+
+  function draw() {
+    if (!canvas) return;
+    var W = canvas.width, H = canvas.height;
+    var pad = { l: 48, r: 22, t: 24, b: 50 };
     var cw = W - pad.l - pad.r;
     var ch = H - pad.t - pad.b;
+    var c = getColors();
+    var dpr = window.devicePixelRatio || 1;
 
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:' + W + 'px;display:block;margin:0 auto;">';
+    ctx.clearRect(0, 0, W, H);
 
     /* background */
-    svg += '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="' + bg + '" rx="6"/>';
+    ctx.fillStyle = c.bg;
+    ctx.fillRect(0, 0, W, H);
 
     /* quadrant fills */
-    var mx = pad.l + cw * 0.45;
-    var my = pad.t + ch * (1 - 0.45);
-    var qa = dark ? 'rgba(255,255,255,0.025)' : 'rgba(0,0,0,0.018)';
-    var qb = dark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.032)';
-    /* top-right (Breite Anziehungskraft) slightly brighter */
-    svg += '<rect x="' + mx + '" y="' + pad.t + '" width="' + (pad.l+cw-mx) + '" height="' + (my-pad.t) + '" fill="' + qb + '"/>';
-    /* bottom-left (Nische) slightly darker */
-    svg += '<rect x="' + pad.l + '" y="' + my + '" width="' + (mx-pad.l) + '" height="' + (pad.t+ch-my) + '" fill="' + qa + '"/>';
+    var qx = pad.l + cw * 0.45;
+    var qy = pad.t + ch * (1 - 0.45);
+    ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.025)' : 'rgba(0,0,0,0.018)';
+    ctx.fillRect(qx, pad.t, W - qx - pad.r, qy - pad.t);       /* top-right */
+    ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.015)' : 'rgba(0,0,0,0.012)';
+    ctx.fillRect(pad.l, qy, qx - pad.l, H - qy - pad.b);       /* bottom-left */
 
     /* quadrant dividers */
-    svg += '<line x1="' + mx + '" y1="' + pad.t + '" x2="' + mx + '" y2="' + (pad.t+ch) + '" stroke="' + mc + '" stroke-width="1" stroke-dasharray="4 3"/>';
-    svg += '<line x1="' + pad.l + '" y1="' + my + '" x2="' + (pad.l+cw) + '" y2="' + my + '" stroke="' + mc + '" stroke-width="1" stroke-dasharray="4 3"/>';
+    ctx.setLineDash([4, 3]);
+    ctx.strokeStyle = c.qdash;
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(qx, pad.t); ctx.lineTo(qx, pad.t + ch); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad.l, qy); ctx.lineTo(pad.l + cw, qy); ctx.stroke();
+    ctx.setLineDash([]);
 
     /* quadrant labels */
-    var ql = dark ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.22)';
-    var qfont = 'font-family="Inter,sans-serif" font-size="10" fill="' + ql + '"';
-    svg += '<text ' + qfont + ' x="' + (pad.l+4) + '" y="' + (pad.t+13) + '">Kenner-Sport</text>';
-    svg += '<text ' + qfont + ' x="' + (mx+4) + '" y="' + (pad.t+13) + '">Breite Anziehungskraft</text>';
-    svg += '<text ' + qfont + ' x="' + (pad.l+4) + '" y="' + (pad.t+ch-4) + '">Nischen-Profil</text>';
-    svg += '<text ' + qfont + ' x="' + (mx+4) + '" y="' + (pad.t+ch-4) + '">Sofortsport</text>';
+    ctx.font = '500 10px Inter, sans-serif';
+    ctx.fillStyle = c.qlabel;
+    ctx.textAlign = 'left';
+    ctx.fillText('Kenner-Sport', pad.l + 5, pad.t + 14);
+    ctx.fillText('Nischen-Profil', pad.l + 5, pad.t + ch - 5);
+    ctx.textAlign = 'right';
+    ctx.fillText('Breite Anziehungskraft', pad.l + cw - 4, pad.t + 14);
+    ctx.fillText('Sofortsport', pad.l + cw - 4, pad.t + ch - 5);
 
     /* axes */
-    svg += '<line x1="' + pad.l + '" y1="' + (pad.t+ch) + '" x2="' + (pad.l+cw) + '" y2="' + (pad.t+ch) + '" stroke="' + mc + '" stroke-width="1"/>';
-    svg += '<line x1="' + pad.l + '" y1="' + pad.t + '" x2="' + pad.l + '" y2="' + (pad.t+ch) + '" stroke="' + mc + '" stroke-width="1"/>';
+    ctx.strokeStyle = c.axis;
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ch); ctx.lineTo(pad.l + cw, pad.t + ch); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + ch); ctx.stroke();
 
-    /* axis ticks */
+    /* ticks + tick labels */
+    ctx.font = '500 9px Inter, sans-serif';
+    ctx.fillStyle = c.textMut;
     for (var ti = 0; ti <= 4; ti++) {
       var tx = pad.l + cw * ti / 4;
       var ty = pad.t + ch * (1 - ti / 4);
-      var tv = (ti / 4).toFixed(2);
-      svg += '<line x1="' + tx + '" y1="' + (pad.t+ch) + '" x2="' + tx + '" y2="' + (pad.t+ch+4) + '" stroke="' + mc + '" stroke-width="1"/>';
-      svg += '<text font-family="Inter,sans-serif" font-size="9" fill="' + tc + '" opacity="0.5" text-anchor="middle" x="' + tx + '" y="' + (pad.t+ch+14) + '">' + tv + '</text>';
-      svg += '<line x1="' + (pad.l-4) + '" y1="' + ty + '" x2="' + pad.l + '" y2="' + ty + '" stroke="' + mc + '" stroke-width="1"/>';
-      svg += '<text font-family="Inter,sans-serif" font-size="9" fill="' + tc + '" opacity="0.5" text-anchor="end" dominant-baseline="middle" x="' + (pad.l-7) + '" y="' + ty + '">' + tv + '</text>';
+      /* x tick */
+      ctx.strokeStyle = c.axis; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(tx, pad.t + ch); ctx.lineTo(tx, pad.t + ch + 4); ctx.stroke();
+      ctx.textAlign = 'center';
+      ctx.fillText((ti / 4).toFixed(2), tx, pad.t + ch + 14);
+      /* y tick */
+      ctx.beginPath(); ctx.moveTo(pad.l - 4, ty); ctx.lineTo(pad.l, ty); ctx.stroke();
+      ctx.textAlign = 'right';
+      ctx.fillText((ti / 4).toFixed(2), pad.l - 7, ty + 3);
     }
 
     /* axis labels */
-    svg += '<text font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="' + tc + '" text-anchor="middle" x="' + (pad.l + cw/2) + '" y="' + (H-6) + '">Lesbarkeit L</text>';
-    svg += '<text font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="' + tc + '" text-anchor="middle" transform="rotate(-90,' + 13 + ',' + (pad.t+ch/2) + ')" x="' + 13 + '" y="' + (pad.t+ch/2) + '">Expertenmehrwert E</text>';
+    ctx.font = '600 11px Inter, sans-serif';
+    ctx.fillStyle = c.text;
+    ctx.textAlign = 'center';
+    ctx.fillText('Lesbarkeit L', pad.l + cw / 2, H - 6);
+    ctx.save();
+    ctx.translate(13, pad.t + ch / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('Expertenmehrwert E', 0, 0);
+    ctx.restore();
 
     /* points */
-    sports.forEach(function(s) {
-      var cx = pad.l + s.L * cw;
-      var cy = pad.t + (1 - s.E) * ch;
-      var r = 6 + s.R * 18;
+    sports.forEach(function(s, i) {
+      var p = toPx(s.L, s.E, pad, cw, ch);
+      var r = dotRadius(s.R);
+      var isHov = (i === hoveredIdx);
 
       /* glow */
-      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r+5) + '" fill="' + s.color + '" opacity="0.15"/>';
+      ctx.globalAlpha = isHov ? 0.30 : 0.14;
+      ctx.fillStyle = s.color;
+      ctx.beginPath(); ctx.arc(p.x, p.y, r + 7, 0, Math.PI * 2); ctx.fill();
+      ctx.globalAlpha = 1;
+
       /* dot */
-      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + s.color + '" opacity="0.9"/>';
+      ctx.fillStyle = s.color;
+      ctx.globalAlpha = isHov ? 1.0 : 0.88;
+      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
+      ctx.globalAlpha = 1;
 
-      /* label placement */
-      var lx = cx, ly = cy - r - 5;
-      var anchor = 'middle';
-      /* collision avoidance: push labels by heuristic */
-      if (s.name === '100m Sprint') { lx = cx - r - 4; anchor = 'end'; ly = cy + 4; }
-      if (s.name === 'Schach')      { lx = cx + r + 4; anchor = 'start'; ly = cy + 4; }
-      if (s.name === 'Marathon')    { lx = cx; ly = cy + r + 12; }
-      if (s.name === 'Straßenradsport') { lx = cx; ly = cy - r - 5; }
-      if (s.name === 'American Football') { lx = cx; ly = cy - r - 5; }
-      if (s.name === 'Boxen')       { lx = cx + r + 4; anchor = 'start'; ly = cy + 4; }
-      if (s.name === 'Bob Viererbob') { lx = cx; ly = cy - r - 5; }
-      if (s.name === 'Formel 1')    { lx = cx; ly = cy + r + 12; }
-      if (s.name === 'Tennis')      { lx = cx; ly = cy - r - 5; }
-      if (s.name === 'Fußball')     { lx = cx - r - 4; anchor = 'end'; ly = cy + 4; }
+      /* ring on hover */
+      if (isHov) {
+        ctx.strokeStyle = s.color;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r + 4, 0, Math.PI * 2); ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
 
-      /* halo for legibility */
-      svg += '<text font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="' + anchor + '" x="' + lx + '" y="' + ly + '" paint-order="stroke fill" stroke="' + bg + '" stroke-width="3" stroke-linejoin="round" fill="' + tc + '">' + s.name + '</text>';
+      /* label */
+      ctx.font = isHov ? '700 11px Inter, sans-serif' : '500 10px Inter, sans-serif';
+      ctx.fillStyle = isHov ? s.color : c.text;
+      ctx.globalAlpha = isHov ? 1 : 0.85;
+
+      /* compute label anchor */
+      var lx = p.x, ly = p.y - r - 5;
+      ctx.textAlign = 'center';
+
+      /* per-sport nudges to avoid overlap */
+      if (s.name === 'Schach')            { lx = p.x + r + 4; ly = p.y + 4; ctx.textAlign = 'left'; }
+      if (s.name === '100m Sprint')        { lx = p.x - r - 4; ly = p.y + 4; ctx.textAlign = 'right'; }
+      if (s.name === 'Boxen')              { lx = p.x + r + 4; ly = p.y + 4; ctx.textAlign = 'left'; }
+      if (s.name === 'Marathon')           { ly = p.y + r + 13; }
+      if (s.name === 'Formel 1')           { ly = p.y + r + 13; }
+      if (s.name === 'American Football')  { ly = p.y - r - 5; }
+      if (s.name === 'Bob Viererbob')      { ly = p.y - r - 5; }
+
+      /* halo */
+      ctx.strokeStyle = c.bg;
+      ctx.lineWidth = 3;
+      ctx.lineJoin = 'round';
+      ctx.strokeText(s.name, lx, ly);
+      ctx.fillText(s.name, lx, ly);
+      ctx.globalAlpha = 1;
     });
-
-    svg += '</svg>';
-    el.innerHTML = svg;
   }
 
-  /* =========================================================
-     LINE CHART
-  ========================================================= */
-  function buildLineChart() {
-    var el = document.getElementById('linechart-canvas');
-    if (!el) return;
-    var dark = isDark();
-    var tc = dark ? '#ededed' : '#111111';
-    var mc = dark ? '#2a2a2a' : '#d8d8d8';
-    var bg = dark ? '#141414' : '#fafafa';
-
-    var W = 560, H = 380;
-    var pad = { l: 48, r: 130, t: 20, b: 48 };
+  /* hit test */
+  function hitTest(mx, my) {
+    if (!canvas) return -1;
+    var W = canvas.width, H = canvas.height;
+    var pad = { l: 48, r: 22, t: 24, b: 50 };
     var cw = W - pad.l - pad.r;
     var ch = H - pad.t - pad.b;
-
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:' + W + 'px;display:block;margin:0 auto;">';
-    svg += '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="' + bg + '" rx="6"/>';
-
-    /* grid lines */
-    for (var gi = 0; gi <= 4; gi++) {
-      var gy = pad.t + ch * gi / 4;
-      svg += '<line x1="' + pad.l + '" y1="' + gy + '" x2="' + (pad.l+cw) + '" y2="' + gy + '" stroke="' + mc + '" stroke-width="0.75" opacity="0.7"/>';
-      var gv = (1 - gi/4).toFixed(2);
-      svg += '<text font-family="Inter,sans-serif" font-size="9" fill="' + tc + '" opacity="0.5" text-anchor="end" dominant-baseline="middle" x="' + (pad.l-6) + '" y="' + gy + '">' + gv + '</text>';
+    var dpr = window.devicePixelRatio || 1;
+    /* mx/my are already in CSS pixels from the event; canvas dims are CSS px too since we set style */
+    for (var i = 0; i < sports.length; i++) {
+      var p = toPx(sports[i].L, sports[i].E, pad, cw, ch);
+      var r = dotRadius(sports[i].R) + 6;
+      if (Math.hypot(mx - p.x, my - p.y) <= r) return i;
     }
-
-    /* axes */
-    svg += '<line x1="' + pad.l + '" y1="' + (pad.t+ch) + '" x2="' + (pad.l+cw) + '" y2="' + (pad.t+ch) + '" stroke="' + mc + '" stroke-width="1"/>';
-    svg += '<line x1="' + pad.l + '" y1="' + pad.t + '" x2="' + pad.l + '" y2="' + (pad.t+ch) + '" stroke="' + mc + '" stroke-width="1"/>';
-
-    /* x axis labels */
-    var xLabels = ['Laie', '', '', '', 'Experte'];
-    for (var xi = 0; xi < 5; xi++) {
-      var xx = pad.l + cw * xi / 4;
-      svg += '<line x1="' + xx + '" y1="' + (pad.t+ch) + '" x2="' + xx + '" y2="' + (pad.t+ch+4) + '" stroke="' + mc + '" stroke-width="1"/>';
-      if (xLabels[xi]) {
-        svg += '<text font-family="Inter,sans-serif" font-size="10" fill="' + tc + '" opacity="0.7" text-anchor="middle" x="' + xx + '" y="' + (pad.t+ch+16) + '">' + xLabels[xi] + '</text>';
-      }
-    }
-
-    /* axis labels */
-    svg += '<text font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="' + tc + '" text-anchor="middle" x="' + (pad.l+cw/2) + '" y="' + (H-6) + '">Expertise</text>';
-    svg += '<text font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="' + tc + '" text-anchor="middle" transform="rotate(-90,' + 13 + ',' + (pad.t+ch/2) + ')" x="' + 13 + '" y="' + (pad.t+ch/2) + '">Unterhaltungswert U</text>';
-
-    /* lines */
-    var labelOffsets = {
-      'Schach':            0,
-      'American Football': 0,
-      'Fußball':           0,
-      'Tennis':            0,
-      'Boxen':             0,
-      '100m Sprint':       -8,
-      'Formel 1':          +8,
-      'Bob Viererbob':     0,
-      'Straßenradsport':   0,
-      'Marathon':          0,
-    };
-    sports.forEach(function(s) {
-      var pts = s.curve.map(function(u, i) {
-        return (pad.l + cw * i / 4) + ',' + (pad.t + (1-u) * ch);
-      }).join(' ');
-      svg += '<polyline points="' + pts + '" fill="none" stroke="' + s.color + '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" opacity="0.88"/>';
-
-      /* end dot */
-      var lastX = pad.l + cw;
-      var lastY = pad.t + (1 - s.curve[4]) * ch;
-      var labelY = lastY + (labelOffsets[s.name] || 0);
-      svg += '<circle cx="' + lastX + '" cy="' + lastY + '" r="3.5" fill="' + s.color + '"/>';
-
-      /* end label */
-      svg += '<text font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="' + s.color + '" dominant-baseline="middle" x="' + (lastX+8) + '" y="' + labelY + '">' + s.name + '</text>';
-    });
-
-    svg += '</svg>';
-    el.innerHTML = svg;
+    return -1;
   }
 
-  function buildAll() { buildScatter(); buildLineChart(); }
-  buildAll();
+  function showTooltip(idx, mx, my) {
+    if (!tooltip) return;
+    var s = sports[idx];
+    var Rp = Math.round(s.R * 100);
+    tooltip.innerHTML =
+      '<span class="stt-name" style="color:' + s.color + '">' + s.name + '</span>' +
+      '<span class="stt-row"><span class="stt-key">Lesbarkeit</span><span class="stt-val">' + s.L.toFixed(2) + '</span></span>' +
+      '<span class="stt-row"><span class="stt-key">Expertenmehrwert</span><span class="stt-val">' + s.E.toFixed(2) + '</span></span>' +
+      '<span class="stt-row"><span class="stt-key">Ereignisdichte R</span><span class="stt-val">' + Rp + ' %</span></span>' +
+      '<span class="stt-desc">' + s.rDesc + '</span>';
+    tooltip.style.display = 'block';
 
-  /* re-render on theme change */
+    /* position: below-right of cursor, clamp to canvas */
+    var rect = canvas.getBoundingClientRect();
+    var tx = mx + 14, ty = my + 14;
+    var tw = tooltip.offsetWidth || 220;
+    var th = tooltip.offsetHeight || 90;
+    if (tx + tw > canvas.offsetWidth) tx = mx - tw - 10;
+    if (ty + th > canvas.offsetHeight) ty = my - th - 10;
+    tooltip.style.left = tx + 'px';
+    tooltip.style.top  = ty + 'px';
+  }
+
+  function hideTooltip() {
+    if (tooltip) tooltip.style.display = 'none';
+  }
+
+  function buildScatter() {
+    var wrap = document.getElementById('scatter-canvas');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+
+    /* outer container keeps aspect ratio and allows tooltip positioning */
+    var container = document.createElement('div');
+    container.style.cssText = 'position:relative;width:100%;';
+    wrap.appendChild(container);
+
+    canvas = document.createElement('canvas');
+    var W = container.offsetWidth || 700;
+    var H = Math.round(W * 0.55);
+    if (H < 320) H = 320;
+    canvas.width  = W;
+    canvas.height = H;
+    canvas.style.cssText = 'display:block;width:100%;height:auto;border-radius:6px;cursor:default;';
+    container.appendChild(canvas);
+    ctx = canvas.getContext('2d');
+
+    tooltip = document.createElement('div');
+    tooltip.className = 'scatter-tooltip';
+    tooltip.style.display = 'none';
+    container.appendChild(tooltip);
+
+    hoveredIdx = -1;
+    draw();
+
+    canvas.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      /* scale mouse to canvas coords */
+      var scaleX = canvas.width  / rect.width;
+      var scaleY = canvas.height / rect.height;
+      var mx = (e.clientX - rect.left) * scaleX;
+      var my = (e.clientY - rect.top)  * scaleY;
+      var idx = hitTest(mx, my);
+      if (idx !== hoveredIdx) {
+        hoveredIdx = idx;
+        canvas.style.cursor = idx >= 0 ? 'pointer' : 'default';
+        draw();
+      }
+      if (idx >= 0) {
+        /* tooltip in CSS px (not canvas px) */
+        var cssMx = e.clientX - rect.left;
+        var csMy  = e.clientY - rect.top;
+        showTooltip(idx, cssMx, csMy);
+      } else {
+        hideTooltip();
+      }
+    });
+
+    canvas.addEventListener('mouseleave', function() {
+      hoveredIdx = -1;
+      draw();
+      hideTooltip();
+    });
+
+    /* touch support */
+    canvas.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      var t = e.touches[0];
+      var rect = canvas.getBoundingClientRect();
+      var scaleX = canvas.width  / rect.width;
+      var scaleY = canvas.height / rect.height;
+      var mx = (t.clientX - rect.left) * scaleX;
+      var my = (t.clientY - rect.top)  * scaleY;
+      var idx = hitTest(mx, my);
+      hoveredIdx = (idx === hoveredIdx) ? -1 : idx;
+      draw();
+      if (hoveredIdx >= 0) showTooltip(hoveredIdx, t.clientX - rect.left, t.clientY - rect.top);
+      else hideTooltip();
+    }, { passive: false });
+  }
+
+  function buildAll() {
+    buildScatter();
+  }
+
+  /* wait for layout */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildAll);
+  } else {
+    buildAll();
+  }
+
+  window.addEventListener('resize', function() {
+    if (_resizeTimer) clearTimeout(_resizeTimer);
+    _resizeTimer = setTimeout(buildAll, 120);
+  });
+  var _resizeTimer;
+
   var obs = new MutationObserver(buildAll);
   obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', buildAll);

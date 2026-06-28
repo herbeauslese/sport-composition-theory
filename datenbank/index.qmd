@@ -5,7 +5,7 @@ lang: de
 ---
 
 ```{=html}
-  <article class="article">
+  <article class="article"> 
 
   <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige Paarvergleichsmatrix samt Konsistenzwert. Unter den Sportarten folgt ein interaktives 3D-Kräftenetz, in dem alle Sportarten als frei angeordnete Punkte verortet sind. Ein Klick auf eine Kugel zeigt ihre Werte; ein Klick auf eine zweite Kugel macht den strukturellen Vergleich sichtbar.</p>
 

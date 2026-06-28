@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sport Composition Theory</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-93e9f07486020c7dacd1216c651b18ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b712377d63dd94b2e42b606273f88bdc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-93e9f07486020c7dacd1216c651b18ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Sport Composition Theory</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Theorie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./datenbank/index.html"> 
+<span class="menu-text">Datenbank</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Inhalt</h2>
+   
+  <ul>
+  <li><a href="#hintergrund" id="toc-hintergrund" class="nav-link active" data-scroll-target="#hintergrund">Hintergrund</a></li>
+  <li><a href="#die-theorie" id="toc-die-theorie" class="nav-link" data-scroll-target="#die-theorie">Die Theorie</a>
+  <ul class="collapse">
+  <li><a href="#annahmen" id="toc-annahmen" class="nav-link" data-scroll-target="#annahmen">Annahmen und These</a></li>
+  <li><a href="#komponenten" id="toc-komponenten" class="nav-link" data-scroll-target="#komponenten">Komponenten</a></li>
+  </ul></li>
+  <li><a href="#methodik" id="toc-methodik" class="nav-link" data-scroll-target="#methodik">Methodik</a>
+  <ul class="collapse">
+  <li><a href="#methodik-leitfrage" id="toc-methodik-leitfrage" class="nav-link" data-scroll-target="#methodik-leitfrage">Leitfrage</a></li>
+  <li><a href="#methodik-skala" id="toc-methodik-skala" class="nav-link" data-scroll-target="#methodik-skala">Skala</a></li>
+  <li><a href="#methodik-material" id="toc-methodik-material" class="nav-link" data-scroll-target="#methodik-material">Bedingtes Material</a></li>
+  <li><a href="#methodik-hierarchie" id="toc-methodik-hierarchie" class="nav-link" data-scroll-target="#methodik-hierarchie">Hierarchische Verfeinerung</a></li>
+  <li><a href="#methodik-konsistenz" id="toc-methodik-konsistenz" class="nav-link" data-scroll-target="#methodik-konsistenz">Konsistenzprüfung</a></li>
+  </ul></li>
+  <li><a href="#beispiele" id="toc-beispiele" class="nav-link" data-scroll-target="#beispiele">Beispiele</a></li>
+  <li><a href="#vergleich" id="toc-vergleich" class="nav-link" data-scroll-target="#vergleich">Vergleich</a>
+  <ul class="collapse">
+  <li><a href="#strukturelle-distanz" id="toc-strukturelle-distanz" class="nav-link" data-scroll-target="#strukturelle-distanz">Strukturelle Distanz</a></li>
+  <li><a href="#zuschauerperspektive" id="toc-zuschauerperspektive" class="nav-link" data-scroll-target="#zuschauerperspektive">Zuschauerperspektive</a></li>
+  </ul></li>
+  <li><a href="#vorbehalte-anmerkungen" id="toc-vorbehalte-anmerkungen" class="nav-link" data-scroll-target="#vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</a>
+  <ul class="collapse">
+  <li><a href="#mannschaftssport" id="toc-mannschaftssport" class="nav-link" data-scroll-target="#mannschaftssport">Das Mannschaftssport-Problem</a></li>
+  <li><a href="#material-asymmetrie" id="toc-material-asymmetrie" class="nav-link" data-scroll-target="#material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</a></li>
+  <li><a href="#zerlegbarkeit-kritik" id="toc-zerlegbarkeit-kritik" class="nav-link" data-scroll-target="#zerlegbarkeit-kritik">Kritik an der Zerlegbarkeit</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sport Composition Theory</h1>
+<p class="subtitle lead">Sportarten lassen sich vergleichen. Man muss nur wissen, woraus sie bestehen.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="hintergrund" class="level2">
+<h2 class="anchored" data-anchor-id="hintergrund">Hintergrund</h2>
+<p>Eine Frage, die in Sportdebatten immer wieder auftaucht: Sind Fußballer eigentlich „richtige” Sportler? Oder ist ihr Sport im Vergleich zu Sprintern, Turnern oder Boxern weniger anspruchsvoll? Solche Diskussionen enden meistens damit, dass beide Seiten ihre Position lauter wiederholen.</p>
+<p>Was an der Frage reizvoll ist, ist nicht die Antwort. Es ist die Frage, die darunter liegt: <em>Wie vergleicht man Sportarten eigentlich?</em> Nicht in der Frage, welche spannender ist, welche fordernder, welche prestigeträchtiger. Sondern strukturell. Was braucht es, um in etwas gut zu sein? Welche Art von Anforderungen — im weitesten Sinne — stellt eine Sportart an den Athleten?</p>
+<p>Ein Sprinter und ein Formel-1-Fahrer sind beide Spitzensportler, die am Limit menschlicher Leistungsfähigkeit antreten. Aber die Natur dieser Leistung ist grundverschieden. Der Sprinter formt seinen Körper über Jahre darauf, einen einzigen explosiven Output von unter zehn Sekunden zu produzieren. Der Formel-1-Fahrer verarbeitet bei 300 km/h einen Strom sensorischer Eindrücke und trifft in Sekundenbruchteilen Entscheidungen, die sich über eine ganze Rennstrategie hinweg tragen müssen. Und dann ist da der Schachspieler: keine nennenswerte körperliche Leistung, keine Maschine, keine Strecke — nur kognitive Auseinandersetzung über ein Brett, in der ein positioneller Fehler in Zug zwölf bis Zug vierzig still und leise alles auseinandernehmen kann.</p>
+<p>Drei Athleten, drei vollständig verschiedene Profile. Und trotzdem treten alle drei an, gewinnen und verlieren auf Basis von etwas, das sich messen und vergleichen lässt.</p>
+<p>Diese Frage — <em>was</em> genau hier gemessen wird — hat zu dieser Theorie geführt.</p>
+<p>Diese Arbeit versucht, sie systematisch zu beantworten. Sie schlägt vier Komponenten vor, mit denen sich jede Sportart beschreiben lässt, ein Verfahren, wie man konkrete Werte dafür findet, und eine Art, die Sportarten dann miteinander zu vergleichen. Sie ist keine wissenschaftliche Studie, kein Urteil über besser oder schlechter, kein Anspruch auf die letzte Wahrheit. Sie ist der Versuch, eine Stammtischfrage so zu fassen, dass man sie tatsächlich diskutieren kann.</p>
+<p><em>Was braucht es, um zu gewinnen? Die Antwort sind immer dieselben Komponenten — nur in unterschiedlichen Verhältnissen.</em></p>
+<hr>
+</section>
+<section id="die-theorie" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="die-theorie">Die Theorie</h2>
+<section id="annahmen" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="annahmen">Annahmen und These</h3>
+<p>Drei Bausteine: eine Annahme, die These selbst, und die formale Definition, die daraus folgt.</p>
+<p><strong>Annahme — Geltungsbereich.</strong> Jede Sportart wird in der Form bewertet, in der sie professionell und kompetitiv auf höchstem Niveau ausgeübt wird. Freizeit- oder informelle Varianten sind ausgeschlossen — nicht, weil sie weniger interessant wären, sondern weil die kompetitive Form am klarsten definiert und über Athleten hinweg am konsistentesten vergleichbar ist.</p>
+<p>Straßenradsport zum Beispiel ist auf professioneller Ebene ein Mannschaftssport. Ein Domestique<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> opfert sein eigenes Resultat, um einen Kapitän zu schützen; Taktik wirkt über einen ganzen Kader hinweg, nicht nur über einen einzelnen Fahrer. Würde man Straßenradsport als reine individuelle körperliche Leistung bewerten, käme ein fundamental anderer — und weniger zutreffender — Vektor heraus.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Französisch: „Hausbediensteter”. Im Profi-Radsport bezeichnet der Begriff einen Fahrer, dessen Aufgabe nicht das eigene Ergebnis ist, sondern die Unterstützung des Teamkapitäns — Windschatten geben, Verpflegung holen, Tempo machen oder Ausreißer einfangen.</p></div></div><p>Wo eine Sportart in deutlich unterschiedlichen Wettkampfformen existiert, muss jede Version eigens benannt und bewertet werden. Beachvolleyball und Hallenvolleyball teilen sich einen Namen, unterscheiden sich aber strukturell. 100m und 400m Sprint belohnen unterschiedliche körperliche Profile. Sie als austauschbar zu behandeln, würde die Theorie ungenau machen.</p>
+<p><strong>These.</strong> Jede Sportart lässt sich durch vier Komponenten beschreiben — Taktik, Physis, Skill, Material. Damit werden Sportarten auch strukturell vergleichbar.</p>
+<p>Das ist die Kernbehauptung dieser Arbeit. Selbstverständlich ist sie nicht — die folgenden Kapitel argumentieren dafür: durch konkrete Sportartenanalysen, durch die Behandlung möglicher Einwände, und durch ein methodisches Verfahren zur Wertermittlung.</p>
+<p><strong>Definition — Der Composition Vector.</strong> Aus der These folgt eine einfache Schreibweise. Jede Sportart wird als Vektor ausgedrückt:</p>
+<div class="math-block">S = (T, P, Sk, M)</div>
+<p>wobei <em>T</em> = Taktik, <em>P</em> = Physis, <em>Sk</em> = Skill, <em>M</em> = Material, und:</p>
+<div class="math-block">T + P + Sk + M = 1</div>
+<p>Alle Werte sind reelle Zahlen im Intervall [0, 1]. Für die meisten Sportarten gilt M = 0, was die Darstellung auf einen Drei-Komponenten-Vektor reduziert.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material weiter unten.</p></div></div><p><strong>Eine Bemerkung zu Theorie und Anwendung.</strong> Alles oben Stehende ist exakt — solange wir bei der Mathematik bleiben. Sobald wir aber konkreten Sportarten Werte zuordnen, wird es ein Urteil, keine Messung. Wie das gemacht wird, kommt im Methodik-Kapitel.</p>
+<hr>
+</section>
+<section id="komponenten" class="level3">
+<h3 class="anchored" data-anchor-id="komponenten">Komponenten</h3>
+<p>Die vier Komponenten des Composition Vector werden im Folgenden einzeln beschrieben.</p>
+<section id="taktik" class="level4">
+<h4 class="anchored" data-anchor-id="taktik">Taktik</h4>
+<p>Entscheidungsfindung, Planung, das Lesen von Gegnern und das Anpassen der Strategie in Echtzeit. Taktik umfasst den <em>Inhalt</em> der Entscheidungen: die Wahl der Formation, das Lesen einer Situation, die Entscheidung anzugreifen oder zu warten. Es ist die Komponente, die für den Gelegenheitszuschauer am unsichtbarsten und für den ernsthaften Beobachter am entscheidendsten ist.</p>
+<p>Taktik betrifft <em>was</em> entschieden wird, nicht die kognitive Kapazität, über die Zeit weiter zu entscheiden. Letzteres gehört zur Physis, und die Unterscheidung ist wichtig: ein Athlet, der zehn Minuten lang brillante Entscheidungen trifft und dann mental zusammenbricht, hat nur dann ein Taktik-Problem, wenn die Entscheidungen selbst schlecht waren. Wenn die Entscheidungen korrekt waren, aber irgendwann ausgingen, ist das Problem Kapazität, nicht Urteilsvermögen.</p>
+</section>
+<section id="physis" class="level4">
+<h4 class="anchored" data-anchor-id="physis">Physis</h4>
+<p>Die Anforderungen an den menschlichen Körper: Kraft, Ausdauer, Schnelligkeit, Beweglichkeit — und ihre mentalen Entsprechungen. Anhaltende Konzentration, psychische Belastbarkeit unter Druck und die Fähigkeit, über lange Zeiträume kognitiv leistungsfähig zu bleiben, zählen ebenfalls hierher. Der Geist ist Teil des Körpers, und im Sport wird er entsprechend trainiert.</p>
+<p>Das ist die kognitive <em>Kapazitäts</em>-Dimension, die Taktik ergänzt. Eine fünfstündige Schachpartie stellt enorme Anforderungen an die Physis in diesem Sinn, auch wenn kein Muskel ernsthaft beansprucht wird. Die Qualität der gespielten Züge ist Taktik; die Fähigkeit, in Zug sechzig immer noch gute Züge zu finden, ist Physis.</p>
+</section>
+<section id="skill" class="level4">
+<h4 class="anchored" data-anchor-id="skill">Skill</h4>
+<p>Erlernte menschliche Technik: motorische Kontrolle, Präzision, Koordination und Ausführung. Skill unterscheidet sich von Physis dadurch, dass es um die <em>Qualität</em> der Bewegung geht, nicht um die <em>Kapazität</em> zu ihr. Der physische Output eines Sprinters ist seine Höchstgeschwindigkeit. Sein Skill ist die Technik, die ihn effizient dorthin bringt.</p>
+</section>
+<section id="material" class="level4">
+<h4 class="anchored" data-anchor-id="material">Material</h4>
+<p>Die Rolle externer Ausrüstung beim Zustandekommen kompetitiver Ergebnisse. Diese Komponente erfordert besondere Aufmerksamkeit.</p>
+<p>Fast jede Sportart involviert irgendeine Form von Ausrüstung — Schuhe, Bälle, Schläger. Material gilt <strong>nicht</strong> für alle. Es gilt nur dann, wenn die <em>Qualität oder Spezifikation</em> der Ausrüstung einen bedeutsamen, direkten Einfluss auf das Ergebnis hat — wenn ein besser ausgerüsteter Athlet einen strukturellen Vorteil gegenüber einem gleich starken mit schlechterer Ausrüstung hat.</p>
+<p>Ein Tennisschläger qualifiziert sich nicht. Ein Formel-1-Auto schon. Ein Bob auch. Ein hochwertiges Straßenrad-Setup liegt irgendwo dazwischen und wird entsprechend behandelt.</p>
+<p>Noch eine Anmerkung: Trainingsinfrastruktur — Höhencamps, Spezialbahnen, Spitzentrainerstäbe — könnte prinzipiell unter Material fallen. Auf höchstem kompetitiven Niveau konvergieren diese Faktoren jedoch in der Regel. Die Top-Athleten in den meisten Sportarten haben weitgehend vergleichbaren Zugang zu erstklassigen Einrichtungen, was den differenzierenden Effekt begrenzt. Aus diesem Grund ist Trainingsinfrastruktur aus dem Modell ausgeschlossen, sofern sie nicht eine <em>persistente, strukturelle</em> Wettbewerbsasymmetrie erzeugt.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="methodik" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="methodik">Methodik</h2>
+<p>Die konkreten Komponentengewichte für jede Sportart werden mit dem <em>Analytic Hierarchy Process</em> (AHP) ermittelt — einem etablierten Verfahren der Entscheidungstheorie.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Die Grundidee: Statt jeder Komponente direkt eine Prozentzahl zuzuweisen — was kaum begründbar wäre — werden nur <strong>Paarvergleiche</strong> angestellt. Man beantwortet jeweils die Frage, welche von zwei Komponenten häufiger über den Ausgang entscheidet, und wie deutlich. Aus diesen Vergleichen errechnet sich der Gewichtsvektor mathematisch.</p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Saaty, T. L. (1980): <em>The Analytic Hierarchy Process</em>. McGraw-Hill, New York. Das Verfahren wird breit in Wirtschaft, Technik und Forschung eingesetzt, um schwer quantifizierbare Kriterien systematisch zu gewichten.</p></div></div><p>Das Verfahren macht die Werte nicht objektiv. Es macht die Urteile, die in sie einfließen, sichtbar, vergleichbar und auf Widersprüche prüfbar. Vier Festlegungen sorgen dafür, dass die Vergleiche verlässlich und nicht beliebig sind.</p>
+<section id="methodik-leitfrage" class="level3">
+<h3 class="anchored" data-anchor-id="methodik-leitfrage">Leitfrage</h3>
+<p>Jeder Paarvergleich beantwortet exakt dieselbe kontrafaktische Frage:</p>
+<div class="method-callout"><em>„Wenn zwei Konkurrenten auf Weltklasseniveau in allen anderen Komponenten exakt gleich wären — wie viel häufiger entscheidet ein Vorsprung in Komponente A statt in Komponente B über den Ausgang?"</em></div>
+<p>Diese Formulierung isoliert jede Komponente. Sie zwingt zum „alles andere gleich”-Denken und verhindert, dass ein diffuses „Taktik ist halt wichtig” in die Bewertung einfließt. Gefragt wird nicht, wie sichtbar oder spektakulär eine Komponente ist, sondern wie oft sie tatsächlich den Unterschied zwischen Sieg und Niederlage macht.</p>
+</section>
+<section id="methodik-skala" class="level3">
+<h3 class="anchored" data-anchor-id="methodik-skala">Skala</h3>
+<p>Die Antwort wird auf einer Skala von 1 bis 9 ausgedrückt, deren Stufen vorab mit Bedeutung belegt sind — damit dieselbe Zahl bei jeder Sportart dasselbe meint:</p>
+<div class="scale-table">
+  <div class="scale-row"><span class="scale-num">1</span><span class="scale-desc">beide gleichermaßen ergebnisentscheidend</span></div>
+  <div class="scale-row"><span class="scale-num">3</span><span class="scale-desc">A entscheidet merklich häufiger</span></div>
+  <div class="scale-row"><span class="scale-num">5</span><span class="scale-desc">A entscheidet klar häufiger als B</span></div>
+  <div class="scale-row"><span class="scale-num">7</span><span class="scale-desc">A dominiert</span></div>
+  <div class="scale-row"><span class="scale-num">9</span><span class="scale-desc">A entscheidet praktisch immer</span></div>
+</div>
+<p>Die geraden Zahlen (2, 4, 6, 8) sind Zwischenstufen. Entscheidet umgekehrt B häufiger, wird der Kehrwert eingetragen (ein Drittel statt drei).</p>
+</section>
+<section id="methodik-material" class="level3">
+<h3 class="anchored" data-anchor-id="methodik-material">Bedingtes Material</h3>
+<p>Vor jeder Bewertung steht eine einzige Ja-Nein-Frage: <em>Beeinflusst Materialqualität strukturell das Ergebnis zwischen zwei Weltklasse-Konkurrenten?</em> Bei Fußball lautet die Antwort nein — alle spielen mit demselben standardisierten Ball. Bei Formel 1 lautet sie ja — die Konstrukteursleistung entscheidet über die Saison. Fällt die Antwort negativ aus, wird Material vollständig aus der Rechnung genommen und das Gewicht ist exakt null; es bleibt dann ein Vergleich von nur drei Komponenten. Fällt sie positiv aus, werden alle vier Komponenten verglichen. Das vermeidet, dass eine faktisch irrelevante Komponente durch Rundung ein künstliches Restgewicht erhält.</p>
+</section>
+<section id="methodik-hierarchie" class="level3">
+<h3 class="anchored" data-anchor-id="methodik-hierarchie">Hierarchische Verfeinerung</h3>
+<p>Die vier Hauptkomponenten sind selbst noch grobe Buckets. „Skill” bei Schach (reine Mustererkennung) und „Skill” bei Boxen (motorische Schlagtechnik plus Gegnerlesen) sind völlig verschiedene Phänomene; ohne weitere Auflösung erzwingt das künstliche Identitäten. Daher werden Skill und Physis in einem zweiten AHP-Schritt feiner aufgespalten:</p>
+<ul class="method-list">
+  <li><strong>Skill</strong> → motorisch (Bewegungspräzision, Schlagtechnik) vs. kognitiv (Mustererkennung, Entscheidung)</li>
+  <li><strong>Physis</strong> → Ausdauer (aerob) vs. Kraft (maximal/explosiv) vs. Schnelligkeit (Reaktion, Agilität)</li>
+</ul>
+<p>Taktik und Material bleiben unverteilt — Taktik wäre nur künstlich in „kollektiv” und „individuell” trennbar, Material ist binär genug. Pro Sportart kommen damit ein zusätzlicher Skill-Paarvergleich und drei Physis-Paarvergleiche hinzu; jede Sub-Matrix bekommt eine eigene Konsistenzprüfung. Das Endprodukt ist ein <strong>siebendimensionaler Vektor</strong>: Taktik, Skill-motorisch, Skill-kognitiv, Physis-Ausdauer, Physis-Kraft, Physis-Schnelligkeit, Material. Die vier Hauptkomponenten in der Visualisierung bleiben sichtbar; die Sub-Verteilung erscheint in der Datenbank-Detailansicht jeder Sportart.</p>
+</section>
+<section id="methodik-konsistenz" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="methodik-konsistenz">Konsistenzprüfung</h3>
+<p>Paarvergleiche können sich widersprechen. Wer urteilt, dass Taktik siebenmal so oft entscheidet wie Physis, und Physis dreimal so oft wie Skill, müsste konsequenterweise Taktik als deutlich überlegen gegenüber Skill einstufen — tut er das nicht, liegt ein Widerspruch vor. AHP berechnet aus dem Grad solcher Widersprüche eine Kennzahl, den <em>Consistency Ratio</em> (CR). Liegt er unter 0,10, gelten die Urteile als hinreichend widerspruchsfrei.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Liegt er darüber, werden nicht die Ergebnisse zurechtgebogen, sondern die widersprüchlichen Urteile selbst überarbeitet. Diese Prüfung ist der eigentliche Vertrauensanker des Verfahrens — sie deckt Fehler auf, die eine bloße Schätzung pro Komponente nie sichtbar machen würde.</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Der Schwellenwert von 0,10 ist die von Saaty (1980) vorgeschlagene Konvention. Alle in dieser Theorie angegebenen Vektoren liegen darunter; die vollständigen Matrizen und CR-Werte finden sich in der Datenbank.</p></div></div><p>Die resultierenden Werte sind keine Messungen, sondern strukturierte und konsistenzgeprüfte Urteile. Die vollständigen Paarvergleichsmatrizen und Konsistenzwerte pro Sportart finden sich in der <a href="./datenbank/index.html">Datenbank</a>.</p>
+<hr>
+</section>
+</section>
+<section id="beispiele" class="level2">
+<h2 class="anchored" data-anchor-id="beispiele">Beispiele</h2>
+<p>Die folgenden zehn Sportarten sind so gewählt, dass sie das Spektrum der vier Komponenten möglichst breit abdecken — und das mit Beispielen, die der Leser intuitiv einordnen kann. Vertreten sind die vier Extrempole (Schach für Taktik, Marathon für Physis, Boxen für Skill, Formel 1 für Material), dazu ausgewogene Profile (Fußball, American Football), Mischformen (Tennis, Straßenradsport, Bob) und ein zweiter Physis-Pol mit anderem Charakter (100m Sprint als explosiver Gegenpol zu Marathon). Wer mehr will, findet alle fünfzig bewerteten Sportarten in der <a href="./datenbank/index.html">Datenbank</a>.</p>
+<p>Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Alle Werte stammen aus dem im Methodik-Abschnitt beschriebenen AHP-Verfahren; die vollständigen Paarvergleichsmatrizen und Konsistenzwerte finden sich ebenfalls in der Datenbank.</p>
+<div class="sport-charts">
+
+<div class="sport-entry">
+<h3 class="anchored">Fußball</h3>
+<p class="sport-meta">11 gegen 11 · 90 Minuten</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 40%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 40%</span>
+  </div>
+</div>
+<p class="sport-rationale">Taktik und Skill teilen sich die Spitze, Physis bleibt wichtige Grundlage. Im Paarvergleich entscheidet ein taktischer Vorsprung etwas häufiger als reine Athletik (organisierte Teams schlagen athletischere), während Taktik und individuelle Technik etwa gleichauf liegen. Material wurde ausgeschlossen — Ball, Schuhe und Platz sind standardisiert, zwischen zwei Profiteams entscheidet Ausrüstung nicht.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Tennis</h3>
+<p class="sport-meta">Einzel · drei oder fünf Sätze</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 55%</span><span class="leg-item"><span class="leg-dot material"></span>Material 5%</span>
+  </div>
+</div>
+<p class="sport-rationale">Skill dominiert klar. Schlagtechnik und Aufschlagpräzision entscheiden im direkten Vergleich deutlich häufiger als taktischer Aufbau oder Physis, die untereinander etwa gleichauf liegen. Material ist mit einem kleinen, aber echten Anteil aktiv: Schläger und Besaitung sind nicht vollständig vereinheitlicht und beeinflussen das Spiel marginal.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">100m Sprint</h3>
+<p class="sport-meta">Reine Leichtathletik-Disziplin</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 60%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
+  </div>
+</div>
+<p class="sport-rationale">Physis entscheidet — fast alles hängt an zehn Sekunden Maximalleistung. Im Paarvergleich schlägt körperliche Anlage sowohl Taktik (die praktisch keine Rolle spielt) als auch Technik deutlich, wobei Skill in Startphase und Lauftechnik den zweiten Platz klar behauptet. Material ist ausgeschlossen — Spikes und Bahn sind reguliert.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Schach</h3>
+<p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:65%" title="Taktik: 65%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 65%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
+  </div>
+</div>
+<p class="sport-rationale">Taktik dominiert mit weitem Abstand. Im direkten Vergleich entscheidet strategisches Denken praktisch immer gegen körperliche Verfassung und merklich häufiger als die Mustererkennungs-Routine, die hier als Skill zählt. Physis reduziert sich auf Konzentrationsausdauer. Material existiert nicht als Faktor — Brett und Figuren sind ohne Einfluss.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Straßenradsport</h3>
+<p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:45%" title="Physis: 45%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 45%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span><span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
+  </div>
+</div>
+<p class="sport-rationale">Physis trägt den Sport, mit taktischem Überbau. Ausdauerleistung entscheidet im Paarvergleich häufiger als alles andere; Taktik (Teamarbeit, Ausreißerkalkül) liegt davor auf Rang zwei. Skill und Material sind gleichauf — das Rad ist messbar relevant, aber innerhalb der World Tour technisch angeglichen.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Formel 1</h3>
+<p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:5%" title="Physis: 5%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:45%" title="Material: 45%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 5%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span><span class="leg-item"><span class="leg-dot material"></span>Material 45%</span>
+  </div>
+</div>
+<p class="sport-rationale">Material ist der stärkste einzelne Faktor. Im Paarvergleich entscheidet die Konstrukteursleistung häufiger als Fahrer-Taktik oder -Skill, die untereinander gleichauf liegen und gemeinsam den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle — sie ist Voraussetzung, aber selten der Unterschied zwischen Sieg und Niederlage im Spitzenfeld.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Marathon</h3>
+<p class="sport-meta">42,195 km · Straßenlauf</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:75%" title="Physis: 75%"></div><div class="seg skill" style="width:10%" title="Skill: 10%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 15%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 75%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
+  </div>
+</div>
+<p class="sport-rationale">Das physisch extremste Profil unter den zehn Beispielen — Ausdauerleistung entscheidet zu drei Vierteln. Im Paarvergleich dominiert Physis Skill deutlich (Lauftechnik ist relevant, aber nicht im selben Maß) und Taktik fast vollständig — Renntaktik wie Tempoeinteilung und Verpflegung spielt eine Rolle, aber nicht öfter als die reine Ausdauerkapazität. Material wurde ausgeschlossen: Laufschuhe sind reguliert, zwischen Spitzenathleten entscheidet die Ausrüstung nicht.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Boxen</h3>
+<p class="sport-meta">Profi · 12 Runden · 1 gegen 1</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 50%</span>
+  </div>
+</div>
+<p class="sport-rationale">Skill dominiert — Schlagtechnik, Beinarbeit und Distanzgefühl entscheiden im Paarvergleich häufiger als Kondition oder taktisches Lesen des Gegners. Physis folgt vor Taktik, beide aber deutlich hinter Skill. Boxen ist eine der wenigen Sportarten, in der alle drei nicht-Material-Komponenten substanziell vertreten sind. Material wurde ausgeschlossen — Handschuhe und Ring sind reguliert.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">American Football</h3>
+<p class="sport-meta">NFL · 11 gegen 11 · 4 × 15 Minuten</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 55%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
+  </div>
+</div>
+<p class="sport-rationale">Die taktischste Mannschaftssportart der Auswahl — und die taktischste Sportart überhaupt, noch vor Schach. Play-Calling, Down-Systeme und Coaching-Schemes entscheiden im Paarvergleich deutlich häufiger als individuelle Athletik oder Technik, die untereinander gleichauf liegen. Bemerkenswert: American Football liegt strukturell näher an Schach als an jeder anderen Mannschaftssportart — beide hochstrategisch, auf völlig verschiedene Art. Material wurde ausgeschlossen: Pads und Helme sind reguliert.</p>
+</div>
+
+<div class="sport-entry">
+<h3 class="anchored">Bob Viererbob</h3>
+<p class="sport-meta">FIBT/IBSF · Viererbob · 4 Läufe</p>
+<div class="stacked-bar-wrap">
+  <div class="stacked-bar">
+    <div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:35%" title="Material: 35%"></div>
+  </div>
+  <div class="seg-legend">
+    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 10%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span><span class="leg-item"><span class="leg-dot material"></span>Material 35%</span>
+  </div>
+</div>
+<p class="sport-rationale">Skill und Material gleichauf an der Spitze. Die Pilot-Linienführung und der Hightech-Schlitten entscheiden gemeinsam über das Rennen — Bob zeigt, dass Material-Dominanz nicht auf den Motorsport beschränkt ist. Physis (Anschub) folgt, Taktik ist minimal — die meisten Entscheidungen sind Sekundenbruchteile, keine Strategie.</p>
+</div>
+
+</div>
+<p><small>* Die Prozentsätze ergeben sich aus Paarvergleichen, strukturiert nach dem Analytic Hierarchy Process und auf Konsistenz geprüft. Das Verfahren macht die Urteile nachvollziehbar und widerspruchsfrei — nicht objektiv. Die Werte sind ernst gemeint, aber nicht endgültig.</small></p>
+<hr>
+</section>
+<section id="vergleich" class="level2">
+<h2 class="anchored" data-anchor-id="vergleich">Vergleich</h2>
+<p>Mit den zehn Beispielvektoren in der Hand lässt sich die ursprüngliche Frage stellen, von der diese Theorie ausgegangen ist: <em>Wie vergleicht man Sportarten?</em> Die These hat behauptet, dass jeder strukturelle Vergleich wohldefiniert ist. Dieser Abschnitt zeigt, was das konkret bedeutet.</p>
+<p>Die folgenden Beobachtungen ergeben sich direkt aus den Vektoren — gegeben die Werte aus dem Beispiele-Abschnitt fallen die Distanzen automatisch heraus. Welche Beobachtungen daraus interessant sind, ist eine Interpretation; dass die Zahlen sie tragen, ist keine.</p>
+<section id="strukturelle-distanz" class="level3">
+<h3 class="anchored" data-anchor-id="strukturelle-distanz">Strukturelle Distanz</h3>
+<p>Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, lässt sich die strukturelle Distanz zwischen je zwei Sportarten als Euklidischer Abstand berechnen:</p>
+<div class="math-block">d(S₁, S₂) = √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
+<p>Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.41 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe liegt die größte beobachtete Distanz bei etwa 56% dieses Maximums.</p>
+<p>Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung. Eine visuelle Karte aller bewerteten Sportarten als Force-directed Graph — in dem sich ähnliche Sportarten zu Clustern zusammenfinden — findet sich in der <a href="./datenbank/index.html">Datenbank</a>.</p>
+<div class="distance-matrix-wrap">
+
+<table class="vector-table distance-matrix caption-top table">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Fußball</th>
+<th data-quarto-table-cell-role="th">Tennis</th>
+<th data-quarto-table-cell-role="th">100m Sprint</th>
+<th data-quarto-table-cell-role="th">Schach</th>
+<th data-quarto-table-cell-role="th">Straßenradsport</th>
+<th data-quarto-table-cell-role="th">Formel 1</th>
+<th data-quarto-table-cell-role="th">Marathon</th>
+<th data-quarto-table-cell-role="th">Boxen</th>
+<th data-quarto-table-cell-role="th">American Football</th>
+<th data-quarto-table-cell-role="th">Bob Viererbob</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Fußball</th>
+<td class="diag">—</td>
+<td class="heat-0">0.25</td>
+<td class="heat-2">0.53</td>
+<td class="heat-1">0.31</td>
+<td class="heat-1">0.41</td>
+<td class="heat-2">0.52</td>
+<td class="heat-3">0.67</td>
+<td class="heat-0">0.24</td>
+<td class="heat-0">0.21</td>
+<td class="heat-2">0.46</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Tennis</th>
+<td class="heat-0">0.25</td>
+<td class="diag">—</td>
+<td class="heat-2">0.47</td>
+<td class="heat-2">0.55</td>
+<td class="heat-2">0.48</td>
+<td class="heat-2">0.52</td>
+<td class="heat-4">0.71</td>
+<td class="heat-0 cell-near">0.12</td>
+<td class="heat-2">0.46</td>
+<td class="heat-1">0.37</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">100m Sprint</th>
+<td class="heat-2">0.53</td>
+<td class="heat-2">0.47</td>
+<td class="diag">—</td>
+<td class="heat-4">0.79</td>
+<td class="heat-1">0.35</td>
+<td class="heat-4">0.74</td>
+<td class="heat-1">0.31</td>
+<td class="heat-1">0.37</td>
+<td class="heat-3">0.65</td>
+<td class="heat-2">0.53</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Schach</th>
+<td class="heat-1">0.31</td>
+<td class="heat-2">0.55</td>
+<td class="heat-4">0.79</td>
+<td class="diag">—</td>
+<td class="heat-3">0.56</td>
+<td class="heat-3">0.60</td>
+<td class="heat-4">0.83</td>
+<td class="heat-2">0.55</td>
+<td class="heat-0">0.14</td>
+<td class="heat-3">0.67</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Straßenradsport</th>
+<td class="heat-1">0.41</td>
+<td class="heat-2">0.48</td>
+<td class="heat-1">0.35</td>
+<td class="heat-3">0.56</td>
+<td class="diag">—</td>
+<td class="heat-2">0.51</td>
+<td class="heat-1">0.35</td>
+<td class="heat-1">0.41</td>
+<td class="heat-2">0.43</td>
+<td class="heat-1">0.41</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Formel 1</th>
+<td class="heat-2">0.52</td>
+<td class="heat-2">0.52</td>
+<td class="heat-4">0.74</td>
+<td class="heat-3">0.60</td>
+<td class="heat-2">0.51</td>
+<td class="diag">—</td>
+<td class="heat-4 cell-far">0.85</td>
+<td class="heat-3">0.57</td>
+<td class="heat-3">0.56</td>
+<td class="heat-0">0.25</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Marathon</th>
+<td class="heat-3">0.67</td>
+<td class="heat-4">0.71</td>
+<td class="heat-1">0.31</td>
+<td class="heat-4">0.83</td>
+<td class="heat-1">0.35</td>
+<td class="heat-4 cell-far">0.85</td>
+<td class="diag">—</td>
+<td class="heat-3">0.60</td>
+<td class="heat-3">0.70</td>
+<td class="heat-3">0.70</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Boxen</th>
+<td class="heat-0">0.24</td>
+<td class="heat-0 cell-near">0.12</td>
+<td class="heat-1">0.37</td>
+<td class="heat-2">0.55</td>
+<td class="heat-1">0.41</td>
+<td class="heat-3">0.57</td>
+<td class="heat-3">0.60</td>
+<td class="diag">—</td>
+<td class="heat-2">0.44</td>
+<td class="heat-1">0.41</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">American Football</th>
+<td class="heat-0">0.21</td>
+<td class="heat-2">0.46</td>
+<td class="heat-3">0.65</td>
+<td class="heat-0">0.14</td>
+<td class="heat-2">0.43</td>
+<td class="heat-3">0.56</td>
+<td class="heat-3">0.70</td>
+<td class="heat-2">0.44</td>
+<td class="diag">—</td>
+<td class="heat-3">0.58</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Bob Viererbob</th>
+<td class="heat-2">0.46</td>
+<td class="heat-1">0.37</td>
+<td class="heat-2">0.53</td>
+<td class="heat-3">0.67</td>
+<td class="heat-1">0.41</td>
+<td class="heat-0">0.25</td>
+<td class="heat-3">0.70</td>
+<td class="heat-1">0.41</td>
+<td class="heat-3">0.58</td>
+<td class="diag">—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="figure-caption"><strong>Tabelle 1</strong>Paarweise euklidische Distanzen der zehn Beispielsportarten im 4D-Komponentenraum (T, P, Sk, M). Grüne Färbung markiert strukturelle Nähe, orange strukturelle Ferne. Der durchgezogene Rahmen kennzeichnet das engste Paar (Tennis ↔ Boxen, 0.12), der gestrichelte das fernste (Formel 1 ↔ Marathon, 0.85). In der <a href="datenbank/">Datenbank</a> werden Distanzen auf Basis der feineren 7D-Aufschlüsselung berechnet — diese sind in der Regel leicht abweichend, da Sub-Strukturen wie Skill-motorisch vs. Skill-kognitiv dort sichtbar werden.</p>
+<p>Aus den Vektoren lassen sich vier Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.</p>
+<p><strong>Tennis und Boxen liegen strukturell am nächsten beieinander.</strong> Mit einer Distanz von 0.12 sind sie das ähnlichste Paar — und zugleich ein lehrreiches: Beide sind individuelle Skill-Sportarten mit moderater Physis und wenig Taktik (55/20/20 vs.&nbsp;50/30/20, plus 5% Material beim Tennis). Was Tennis und Boxen oberflächlich unterscheidet — Schläger statt Fäuste, Sand und Asche statt Ring, kollegiale statt gegnerische Begegnung — taucht im Composition Vector nicht auf. Die Theorie behauptet damit nicht, dass beide Sportarten dasselbe wären; sie sagt nur, dass die strukturelle Anforderung an den Athleten überraschend ähnlich ist.</p>
+<p><strong>Formel 1 und Marathon sind die strukturellen Antipoden.</strong> Mit einer Distanz von 0.85 sind sie das fernste Paar — das sind etwa 60% des theoretischen Maximums √2 ≈ 1.41, das in der Praxis nicht erreicht wird. Formel 1 reduziert Leistung auf das Zusammenspiel mit einer Maschine, Marathon auf reine Ausdauerphysis. Es gibt kaum eine Dimension, in der beide nennenswert übereinstimmen. Marathon ist zugleich die strukturell isolierteste Sportart der zehn (avg 0.64) — sieben von neun Sportarten haben Marathon als fernsten Nachbarn. Das passt zur Lage am Rand des Möglichkeitsraums: 75% Physis ist ein extremes Profil, von dem aus fast alles andere weit entfernt liegt.</p>
+<p><strong>Fußball ist die strukturell zentralste Sportart.</strong> Mit einer durchschnittlichen Distanz von 0.40 zu allen anderen liegt es näher an der Mitte des Möglichkeitsraums als jede andere. Das passt zu seinem ausgewogenen Profil: keine Komponente dominiert (40/20/40/0), also ist es zu keiner Spezialdisziplin extrem weit entfernt. American Football ist als zweite Mannschaftssportart (55/20/25/0) auffallend taktiklastiger — was strukturell näher an Schach (65/10/25/0) liegt als an Fußball. Es ist eines der überraschendsten Ergebnisse der Analyse: Die taktischste Mannschaftssportart und die taktischste Einzelsportart der Welt sind, gemessen am Composition Vector, fast Nachbarn (Distanz 0.14).</p>
+<p><strong>Jede stark dominante Komponente rückt eine Sportart an den Rand des Möglichkeitsraums.</strong> Das gilt für Physis bei Marathon (avg Distanz 0.64, weiteste in der Stichprobe), für Taktik bei Schach (0.56), für Material bei Formel 1 (0.57) — und es macht Formel 1 und Bob Viererbob zu strukturellen Nachbarn (Distanz 0.25), obwohl die eine Motorsport ist und die andere ein Wintersport. Was beide verbindet, ist nicht die Disziplin, sondern dass ein Hightech-Gerät über das Ergebnis mitbestimmt. Extreme Profile liegen nahe beieinander, wenn ihre Extremität dieselbe Richtung hat; sie liegen weit voneinander entfernt, wenn sie in verschiedene Richtungen zeigen.</p>
+<p>Diese Beobachtungen folgen unmittelbar aus den Vektoren — sie sind nicht hinzu-interpretiert, sondern in den Zahlen bereits enthalten.</p>
+</section>
+<section id="zuschauerperspektive" class="level3">
+<h3 class="anchored" data-anchor-id="zuschauerperspektive">Zuschauerperspektive</h3>
+<p>Der Composition Vector beschreibt, was eine Sportart vom Athleten verlangt. Eine naheliegende Folgefrage ist, was dieselbe Struktur für den Zuschauer bedeutet — genauer: wie zugänglich eine Sportart für jemanden ohne Vorwissen ist, und wie viel ein wachsendes Verständnis noch dazugewinnt. Beides lässt sich aus dem Vektor ableiten, wenn auch mit Einschränkungen, die am Ende dieses Abschnitts benannt werden.</p>
+<p>Zwei Kennzahlen werden definiert. Der <strong>Lesbarkeitsindex L</strong> misst, wie viel des Geschehens ohne Vorwissen direkt wahrnehmbar ist. Kraft und Schnelligkeit (P<sub>k</sub>, P<sub>s</sub>) sind unmittelbar sichtbar — ein Gewichtheber, der 200 kg stemmt, ein Sprinter, der davonzieht. Motorische Technik (Sk<sub>m</sub>) ist beobachtbar als Präzision und Bewegungsqualität. Material kann beeindrucken (ein Formel-1-Auto), ohne verstanden werden zu müssen. Taktik dagegen ist strukturell unsichtbar: Was ein Pressing-System von einem defensiven 5-4-1 unterscheidet, erschließt sich dem Laien nicht durch Hinsehen. Ausdauer ist das Paradox der Komponenten — sie entscheidet am stärksten (Marathon: 75%), ist aber über weite Strecken nicht wahrnehmbar. Die Formel:</p>
+<div class="math-block">L = (P<sub>k</sub> + P<sub>s</sub>) + (Sk<sub>m</sub> + Sk<sub>k</sub>) + 0.3·M − 0.6·T − 0.3·P<sub>a</sub></div>
+<p>Der <strong>Expertenmehrwert E</strong> misst, wie viel ein wachsendes Verständnis noch hinzubringt. Taktik skaliert stark mit Wissen: Wer die Laufwege kennt, sieht ein anderes Spiel. Kognitiver Skill (Sk<sub>k</sub> — Mustererkennung, Entscheidungsarbeit) lohnt ebenfalls als Beobachtungsgegenstand für Kundige. Physis gewinnt wenig dazu — ob jemand schnell läuft, ist mit und ohne Expertise gleich unmittelbar.</p>
+<div class="math-block">E = T + 0.4·(Sk<sub>m</sub> + Sk<sub>k</sub>)</div>
+<p>Beide Werte sind auf [0, 1] normiert, bezogen auf die zehn Beispielsportarten. Die folgende Karte trägt sie gegeneinander auf; die Punktgröße zeigt eine dritte Dimension: die geschätzte <strong>Ereignisdichte R</strong> — wie viele klar wahrnehmbare Entscheidungsmomente pro Stunde auftreten. R ist nicht aus dem Vektor ableitbar und wird als externe Schätzung eingeführt.</p>
+<div class="scatter-wrap">
+  <div id="scatter-canvas" class="scatter-canvas"></div>
+  <p class="figure-caption"><strong>Abb. 2</strong> Lesbarkeit (x) und Expertenmehrwert (y) der zehn Beispielsportarten. Punktgröße = Ereignisdichte R (geschätzt). Die gestrichelten Linien teilen den Raum in vier Zonen: <em>Sofortsport</em> (hohe Lesbarkeit, geringer Expertenzuwachs), <em>Kenner-Sport</em> (niedrige Lesbarkeit, hoher Expertenzuwachs), <em>Breite Anziehungskraft</em> (beides hoch) und <em>Nischen-Profil</em>. Schach und American Football liegen im selben Quadranten — beide strukturell opak für Laien, beide reich für Kundige. Hover über einen Punkt für Details zur Ereignisdichte.</p>
+</div>
+<p>Die Position im Streudiagramm lässt sich in wenigen Beobachtungen zusammenfassen. Hohe Taktik-Anteile kosten Lesbarkeit, liefern aber Expertenmehrwert — deshalb liegen <strong>Schach und American Football</strong> trotz grundverschiedener Natur im selben Quadranten. Das Umgekehrte gilt für <strong>100m Sprint und Bob Viererbob</strong>: sofort eindrucksvoll, aber strukturell flach. <strong>Boxen</strong> ist das einzige Beispiel, das weit rechts und gleichzeitig weit oben liegt — zugänglich und trotzdem aufschlussreich für Kundige. <strong>Marathon</strong> landet nicht wegen fehlender athletischer Tiefe im Nischen-Profil, sondern weil 75% Physis fast vollständig in Ausdauer liegen, die für kein Publikum direkt sichtbar ist.</p>
+<p>Nicht im Modell enthalten sind Faktoren, die den Unterhaltungswert in der Praxis stark prägen: Qualität einzelner Begegnungen, Team- oder Athletenloyalität, kultureller Kontext und das Live-Erlebnis. Diese Kennzahlen beschreiben die strukturelle Zugänglichkeit einer Sportart, nicht den emotionalen Wert eines konkreten Ereignisses. Entsprechend sollten L, E und U als Orientierungsgrößen gelesen werden, nicht als Messung.</p>
+<section id="grenzen-berechnung" class="level4">
+<h4 class="anchored" data-anchor-id="grenzen-berechnung">Grenzen dieser Berechnung</h4>
+<p>Die Distanz, wie sie hier definiert ist, ist die einfachste mögliche Wahl. Sie ist nicht die einzige, und sie hat methodische Schwächen, die offen benannt werden sollten.</p>
+<p><strong>Die Komponenten werden als gleichwertig behandelt.</strong> Der Euklidische Abstand setzt voraus, dass ein Unterschied von 10 Prozentpunkten in Taktik dasselbe bedeutet wie 10 Prozentpunkte in Material. Das ist eine Annahme, keine Selbstverständlichkeit — Material wirkt strukturell anders als Taktik, wie der Abschnitt Vorbehalte am Ende der Seite ausführt. Eine gewichtete Distanzformel wäre denkbar, würde aber einen zusätzlichen Gewichtungsvektor einführen, der seinerseits begründet werden müsste. Die Theorie verzichtet bewusst darauf und akzeptiert die Vereinfachung als Preis für die Einfachheit.</p>
+<p><strong>Die Vektoren leben auf einem Simplex, nicht im freien Raum.</strong> Weil T + P + Sk + M = 1 gilt, sind die Vektoren auf einem dreidimensionalen Simplex eingebettet, nicht im vollen 4D-Raum. Das ist keine Schwäche der Distanzformel selbst — der Euklidische Abstand misst korrekt den Abstand auf diesem Simplex — wohl aber ein Hinweis darauf, dass Komponenten nicht unabhängig variieren können. Erhöht sich eine Komponente um 20 Prozentpunkte, müssen die anderen entsprechend nachgeben. Die Distanz misst dies konsistent, aber der Leser sollte sich bewusst sein, dass Bewegungen im Raum eingeschränkt sind. Für Daten dieser Struktur — sogenannte <em>compositional data</em> — existiert mit der Aitchison-Distanz (Aitchison 1986) ein mathematisch passenderes Distanzmaß, das Verhältnisse zwischen Komponenten statt absoluter Differenzen misst. Diese Theorie nutzt die einfachere Euklidische Variante, weil sie für die Größenordnungsvergleiche, die hier gemacht werden, ausreichend ist.</p>
+<p><strong>Die Eingangswerte sind Schätzungen auf einem 5%-Raster.</strong> Die Vektoren entstehen aus Paarvergleichs-Urteilen, nicht aus Messungen (die vollständigen Paarvergleichsmatrizen und Konsistenzwerte pro Sportart finden sich in der <a href="./datenbank/index.html">Datenbank</a>). Eine Verschiebung um 5 Prozentpunkte in einer einzelnen Komponente verändert die Distanz typischerweise um 0.03 bis 0.05. Aus diesem Grund werden Distanzen auf zwei Nachkommastellen gerundet angegeben; weitere Dezimalstellen würden eine Präzision vortäuschen, die in den Eingangswerten nicht enthalten ist. Distanzen sollten in Größenordnungen gelesen werden, nicht in genauen Werten.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="vorbehalte-anmerkungen" class="level2">
+<h2 class="anchored" data-anchor-id="vorbehalte-anmerkungen">Vorbehalte &amp; Anmerkungen</h2>
+<p>Der Composition Vector ist eine bewusste Vereinfachung. Das ist ein Feature, kein Mangel — aber es hat Konsequenzen, die explizit benannt werden sollten.</p>
+<section id="mannschaftssport" class="level3">
+<h3 class="anchored" data-anchor-id="mannschaftssport">Das Mannschaftssport-Problem</h3>
+<p>In Einzelsportarten beschreibt der Composition Vector einen einzelnen Athleten. In Mannschaftssportarten beschreibt er das Team, nicht den Spieler — denn taktische Qualität operiert dort auf zwei Ebenen: kollektiv (Formation, Pressing, Standardsituationen) und individuell (Positionsentscheidungen innerhalb des Systems). Diese sind nicht dasselbe. Ein Spieler mit außergewöhnlicher individueller taktischer Intelligenz kann trotzdem deutlich verlieren, wenn die kollektive Struktur schlecht ist.</p>
+<p>Eine praktische Folge: Taktik wiegt in Mannschaftssportarten schwerer, als eine naive Lesart vermuten lässt, weil kollektive Organisation individuelle Überlegenheit in anderen Komponenten kompensieren oder neutralisieren kann. Elf individuell überlegene Athleten ohne System verlieren regelmäßig gegen elf organisierte.</p>
+<p>Das zeigt sich auch direkt in den Werten: In der Datenbank fallen mehrere ausgewogene Mannschaftssportarten — Fußball, Handball, Basketball — strukturell zusammen (alle 40/20/40/0). Aus Sicht der vier Komponenten sind sie ununterscheidbar, obwohl jede für sich ihre eigenen Spielsysteme, Wettkampfformate und Kulturen hat. Was zwischen ihnen unterscheidet, liegt außerhalb dessen, was der Composition Vector erfasst — Spielidee, Regelwerk, Geometrie des Feldes. Die Theorie sagt nicht, dass diese Sportarten austauschbar sind; sie sagt nur, dass die strukturelle Anforderung an den Athleten dieselbe ist. American Football ist mit 55/20/25/0 das taktisch deutlich abweichende Gegenbeispiel — eine Mannschaftssportart, in der die kollektive Strategieebene noch dominanter wirkt.</p>
+</section>
+<section id="material-asymmetrie" class="level3">
+<h3 class="anchored" data-anchor-id="material-asymmetrie">Material ist nicht symmetrisch zwischen Athleten</h3>
+<p>Material-Gewichte beschreiben eine Sportart als Ganzes, nicht das Duell zwischen zwei bestimmten Konkurrenten. In Formel 1 macht Material rund die Hälfte des Vektors aus — diese Zahl beschreibt, wie stark Ausrüstung Ergebnisse <em>im gesamten Feld</em> prägt. Innerhalb eines einzelnen Teams fahren zwei Fahrer aber identisches Material, und die Komponente kollabiert zwischen ihnen auf null. Dieselbe Logik gilt überall: ein Top-Rennrad ist entscheidend gegen einen Amateur, irrelevant zwischen zwei World-Tour-Profis. Der Composition Vector erfasst die Struktur der Sportart, nicht ein bestimmtes Duell innerhalb ihrer.</p>
+</section>
+<section id="zerlegbarkeit-kritik" class="level3">
+<h3 class="anchored" data-anchor-id="zerlegbarkeit-kritik">Kritik an der Zerlegbarkeit</h3>
+<p>Die These behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten für eine fünfte werden hier kurz behandelt — und an ihrem Platz innerhalb des Modells verortet, statt eine eigene Achse zu bekommen.</p>
+<p><strong>Glück, Varianz, Zufall.</strong> Glück ist keine sportliche Leistung; die Komponenten beschreiben, was vom Athleten <em>verlangt</em> wird. Wo Zufallsmanagement zur Leistung wird — Wahrscheinlichkeiten rechnen, Gegner lesen wie im Poker — ist das Taktik. Über lange Wettkampfformate (eine Bundesliga-Saison hat 34 Spieltage genau aus diesem Grund) mittelt sich Zufall ohnehin heraus.</p>
+<p><strong>Ästhetik und Wertungssport.</strong> Was Bewerter belohnen, ist im Wesentlichen Skill (saubere Ausführung) plus Physis (Schwierigkeitsgrad). Choreografie und Ausdruck sind eine interpretative Spielart von Skill, keine eigene Achse.</p>
+<p><strong>Mentale Härte.</strong> Bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck. Eine separate Komponente wäre Doppelzählung.</p>
+<p>Diese Antworten widerlegen die Einwände nicht; sie verorten sie innerhalb der bestehenden vier Komponenten. Wer das für unzureichend hält, sollte die Theorie entsprechend erweitern.</p>
+<script>
+(function() {
+  var sports = [
+    { name: "Fußball",           L: 0.409, E: 0.665, R: 0.20, color: "#e63946",
+      rDesc: "~2–3 Tore pro Stunde, aber viele sichtbare Zweikämpfe und Chancen" },
+    { name: "Tennis",            L: 0.784, E: 0.414, R: 0.65, color: "#06a77d",
+      rDesc: "~40–60 Punkte pro Stunde, jeder Ballwechsel klar abgegrenzt" },
+    { name: "100m Sprint",       L: 1.000, E: 0.000, R: 0.05, color: "#f4a261",
+      rDesc: "Ein einziger Entscheidungsmoment — der Lauf selbst" },
+    { name: "Schach",            L: 0.000, E: 1.000, R: 0.10, color: "#264653",
+      rDesc: "Einzelne Züge sichtbar, Entscheidungsmomente für Laien kaum erkennbar" },
+    { name: "Straßenradsport",   L: 0.213, E: 0.216, R: 0.15, color: "#6f4e7c",
+      rDesc: "Stunden ohne sichtbares Ereignis, Entscheidungen im Windschattenspiel verborgen" },
+    { name: "Formel 1",          L: 0.412, E: 0.288, R: 0.30, color: "#1d4e89",
+      rDesc: "Überholmanöver und Boxenstopps (~20–30 pro Rennen) als klare Ereignisse" },
+    { name: "Marathon",          L: 0.138, E: 0.000, R: 0.05, color: "#1a6e2e",
+      rDesc: "Nahezu keine sichtbaren Ereignisse — Tempo ändert sich minimal über 42 km" },
+    { name: "Boxen",             L: 0.749, E: 0.378, R: 0.75, color: "#c1121f",
+      rDesc: "~100–200 Schlagabtausche pro Kampf, jeder Treffer sofort wahrnehmbar" },
+    { name: "American Football", L: 0.205, E: 0.820, R: 0.80, color: "#7d4f16",
+      rDesc: "~130–150 Plays pro Spiel, jeder ein klares, separates Ereignis" },
+    { name: "Bob Viererbob",     L: 0.732, E: 0.090, R: 0.05, color: "#80b918",
+      rDesc: "Vier Läufe, kaum Variation — Spannung im Sekunden-Vergleich erschöpft sich rasch" },
+  ];
+
+  var isDark = function() {
+    return document.documentElement.getAttribute('data-bs-theme') === 'dark';
+  };
+
+  var canvas, ctx, tooltip, hoveredIdx;
+
+  function getColors() {
+    var dark = isDark();
+    return {
+      bg:      dark ? '#1a1a2e' : '#fafafa',
+      grid:    dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)',
+      axis:    dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.18)',
+      text:    dark ? '#ededed' : '#111111',
+      textMut: dark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.35)',
+      qdash:   dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.14)',
+      qlabel:  dark ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.20)',
+    };
+  }
+
+  function toPx(L, E, pad, cw, ch) {
+    return { x: pad.l + L * cw, y: pad.t + (1 - E) * ch };
+  }
+
+  function dotRadius(R) { return 7 + R * 20; }
+
+  function draw() {
+    if (!canvas) return;
+    var W = canvas.width, H = canvas.height;
+    var pad = { l: 48, r: 22, t: 24, b: 50 };
+    var cw = W - pad.l - pad.r;
+    var ch = H - pad.t - pad.b;
+    var c = getColors();
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = c.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    var qx = pad.l + cw * 0.45;
+    var qy = pad.t + ch * (1 - 0.45);
+    ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.025)' : 'rgba(0,0,0,0.018)';
+    ctx.fillRect(qx, pad.t, W - qx - pad.r, qy - pad.t);
+    ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.015)' : 'rgba(0,0,0,0.012)';
+    ctx.fillRect(pad.l, qy, qx - pad.l, H - qy - pad.b);
+
+    ctx.setLineDash([4, 3]);
+    ctx.strokeStyle = c.qdash;
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(qx, pad.t); ctx.lineTo(qx, pad.t + ch); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad.l, qy); ctx.lineTo(pad.l + cw, qy); ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.font = '500 10px Inter, sans-serif';
+    ctx.fillStyle = c.qlabel;
+    ctx.textAlign = 'left';
+    ctx.fillText('Kenner-Sport', pad.l + 5, pad.t + 14);
+    ctx.fillText('Nischen-Profil', pad.l + 5, pad.t + ch - 5);
+    ctx.textAlign = 'right';
+    ctx.fillText('Breite Anziehungskraft', pad.l + cw - 4, pad.t + 14);
+    ctx.fillText('Sofortsport', pad.l + cw - 4, pad.t + ch - 5);
+
+    ctx.strokeStyle = c.axis;
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ch); ctx.lineTo(pad.l + cw, pad.t + ch); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + ch); ctx.stroke();
+
+    ctx.font = '500 9px Inter, sans-serif';
+    ctx.fillStyle = c.textMut;
+    for (var ti = 0; ti <= 4; ti++) {
+      var tx = pad.l + cw * ti / 4;
+      var ty = pad.t + ch * (1 - ti / 4);
+      ctx.strokeStyle = c.axis; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(tx, pad.t + ch); ctx.lineTo(tx, pad.t + ch + 4); ctx.stroke();
+      ctx.textAlign = 'center';
+      ctx.fillText((ti / 4).toFixed(2), tx, pad.t + ch + 14);
+      ctx.beginPath(); ctx.moveTo(pad.l - 4, ty); ctx.lineTo(pad.l, ty); ctx.stroke();
+      ctx.textAlign = 'right';
+      ctx.fillText((ti / 4).toFixed(2), pad.l - 7, ty + 3);
+    }
+
+    ctx.font = '600 11px Inter, sans-serif';
+    ctx.fillStyle = c.text;
+    ctx.textAlign = 'center';
+    ctx.fillText('Lesbarkeit L', pad.l + cw / 2, H - 6);
+    ctx.save();
+    ctx.translate(13, pad.t + ch / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('Expertenmehrwert E', 0, 0);
+    ctx.restore();
+
+    sports.forEach(function(s, i) {
+      var p = toPx(s.L, s.E, pad, cw, ch);
+      var r = dotRadius(s.R);
+      var isHov = (i === hoveredIdx);
+
+      ctx.globalAlpha = isHov ? 0.30 : 0.14;
+      ctx.fillStyle = s.color;
+      ctx.beginPath(); ctx.arc(p.x, p.y, r + 7, 0, Math.PI * 2); ctx.fill();
+      ctx.globalAlpha = 1;
+
+      ctx.fillStyle = s.color;
+      ctx.globalAlpha = isHov ? 1.0 : 0.88;
+      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
+      ctx.globalAlpha = 1;
+
+      if (isHov) {
+        ctx.strokeStyle = s.color;
+        ctx.lineWidth = 2;
+        ctx.globalAlpha = 0.6;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r + 4, 0, Math.PI * 2); ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+
+      ctx.font = isHov ? '700 11px Inter, sans-serif' : '500 10px Inter, sans-serif';
+      ctx.fillStyle = isHov ? s.color : c.text;
+      ctx.globalAlpha = isHov ? 1 : 0.85;
+
+      var lx = p.x, ly = p.y - r - 5;
+      ctx.textAlign = 'center';
+
+      if (s.name === 'Schach')            { lx = p.x + r + 4; ly = p.y + 4; ctx.textAlign = 'left'; }
+      if (s.name === '100m Sprint')        { lx = p.x - r - 4; ly = p.y + 4; ctx.textAlign = 'right'; }
+      if (s.name === 'Boxen')              { lx = p.x + r + 4; ly = p.y + 4; ctx.textAlign = 'left'; }
+      if (s.name === 'Marathon')           { ly = p.y + r + 13; }
+      if (s.name === 'Formel 1')           { ly = p.y + r + 13; }
+      if (s.name === 'American Football')  { ly = p.y - r - 5; }
+      if (s.name === 'Bob Viererbob')      { ly = p.y - r - 5; }
+
+      ctx.strokeStyle = c.bg;
+      ctx.lineWidth = 3;
+      ctx.lineJoin = 'round';
+      ctx.strokeText(s.name, lx, ly);
+      ctx.fillText(s.name, lx, ly);
+      ctx.globalAlpha = 1;
+    });
+  }
+
+  function hitTest(mx, my) {
+    if (!canvas) return -1;
+    var W = canvas.width, H = canvas.height;
+    var pad = { l: 48, r: 22, t: 24, b: 50 };
+    var cw = W - pad.l - pad.r;
+    var ch = H - pad.t - pad.b;
+    for (var i = 0; i < sports.length; i++) {
+      var p = toPx(sports[i].L, sports[i].E, pad, cw, ch);
+      var r = dotRadius(sports[i].R) + 6;
+      if (Math.hypot(mx - p.x, my - p.y) <= r) return i;
+    }
+    return -1;
+  }
+
+  function showTooltip(idx, mx, my) {
+    if (!tooltip) return;
+    var s = sports[idx];
+    var Rp = Math.round(s.R * 100);
+    tooltip.innerHTML =
+      '<span class="stt-name" style="color:' + s.color + '">' + s.name + '</span>' +
+      '<span class="stt-row"><span class="stt-key">Lesbarkeit</span><span class="stt-val">' + s.L.toFixed(2) + '</span></span>' +
+      '<span class="stt-row"><span class="stt-key">Expertenmehrwert</span><span class="stt-val">' + s.E.toFixed(2) + '</span></span>' +
+      '<span class="stt-row"><span class="stt-key">Ereignisdichte R</span><span class="stt-val">' + Rp + ' %</span></span>' +
+      '<span class="stt-desc">' + s.rDesc + '</span>';
+    tooltip.style.display = 'block';
+    var rect = canvas.getBoundingClientRect();
+    var tx = mx + 14, ty = my + 14;
+    var tw = tooltip.offsetWidth || 220;
+    var th = tooltip.offsetHeight || 90;
+    if (tx + tw > canvas.offsetWidth) tx = mx - tw - 10;
+    if (ty + th > canvas.offsetHeight) ty = my - th - 10;
+    tooltip.style.left = tx + 'px';
+    tooltip.style.top  = ty + 'px';
+  }
+
+  function hideTooltip() {
+    if (tooltip) tooltip.style.display = 'none';
+  }
+
+  function buildScatter() {
+    var wrap = document.getElementById('scatter-canvas');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+
+    var container = document.createElement('div');
+    container.style.cssText = 'position:relative;width:100%;';
+    wrap.appendChild(container);
+
+    canvas = document.createElement('canvas');
+    var W = container.offsetWidth || 700;
+    var H = Math.round(W * 0.55);
+    if (H < 320) H = 320;
+    canvas.width  = W;
+    canvas.height = H;
+    canvas.style.cssText = 'display:block;width:100%;height:auto;border-radius:6px;cursor:default;';
+    container.appendChild(canvas);
+    ctx = canvas.getContext('2d');
+
+    tooltip = document.createElement('div');
+    tooltip.className = 'scatter-tooltip';
+    tooltip.style.display = 'none';
+    container.appendChild(tooltip);
+
+    hoveredIdx = -1;
+    draw();
+
+    canvas.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      var scaleX = canvas.width  / rect.width;
+      var scaleY = canvas.height / rect.height;
+      var mx = (e.clientX - rect.left) * scaleX;
+      var my = (e.clientY - rect.top)  * scaleY;
+      var idx = hitTest(mx, my);
+      if (idx !== hoveredIdx) {
+        hoveredIdx = idx;
+        canvas.style.cursor = idx >= 0 ? 'pointer' : 'default';
+        draw();
+      }
+      if (idx >= 0) {
+        showTooltip(idx, e.clientX - rect.left, e.clientY - rect.top);
+      } else {
+        hideTooltip();
+      }
+    });
+
+    canvas.addEventListener('mouseleave', function() {
+      hoveredIdx = -1;
+      draw();
+      hideTooltip();
+    });
+
+    canvas.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      var t = e.touches[0];
+      var rect = canvas.getBoundingClientRect();
+      var scaleX = canvas.width  / rect.width;
+      var scaleY = canvas.height / rect.height;
+      var mx = (t.clientX - rect.left) * scaleX;
+      var my = (t.clientY - rect.top)  * scaleY;
+      var idx = hitTest(mx, my);
+      hoveredIdx = (idx === hoveredIdx) ? -1 : idx;
+      draw();
+      if (hoveredIdx >= 0) showTooltip(hoveredIdx, t.clientX - rect.left, t.clientY - rect.top);
+      else hideTooltip();
+    }, { passive: false });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildScatter);
+  } else {
+    buildScatter();
+  }
+
+  var _resizeTimer;
+  window.addEventListener('resize', function() {
+    if (_resizeTimer) clearTimeout(_resizeTimer);
+    _resizeTimer = setTimeout(buildScatter, 120);
+  });
+
+  var obs = new MutationObserver(buildScatter);
+  obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
+})();
+</script>
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Sport Composition Theory</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

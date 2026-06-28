@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: _site
-
+ 
 website:
   title: "Sport Composition Theory"
   description: "Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Komponenten."

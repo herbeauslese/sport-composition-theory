@@ -1,106 +1,10 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Datenbank aller bewerteten Sportarten mit Berechnungen und Visualisierungen.">
-  <title>Datenbank — Sport Composition Theory</title>
+---
+title: "Datenbank"
+subtitle: "Alle Sportarten, ihre Werte, Berechnungen und Vergleiche."
+lang: de
+---
 
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    })();
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap">
-
-  <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
-
-<button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false">☰</button>
-
-<aside id="sidebar" class="sidebar" aria-label="Sidebar">
-  <div class="sidebar-inner">
-    <p class="sidebar-brand db-back"><a href="../#top">← Sport Composition Theory</a></p>
-
-    <nav class="toc" aria-label="Inhalt">
-      <p class="toc-title">Sportarten</p>
-<ol class="toc-list">
-  <li><a href="#fussball">Fußball</a></li>
-  <li><a href="#tennis">Tennis</a></li>
-  <li><a href="#100m-sprint">100m Sprint</a></li>
-  <li><a href="#schach">Schach</a></li>
-  <li><a href="#strassenradsport">Straßenradsport</a></li>
-  <li><a href="#formel-1">Formel 1</a></li>
-  <li><a href="#boxen">Boxen</a></li>
-  <li><a href="#triathlon">Triathlon</a></li>
-  <li><a href="#baseball">Baseball</a></li>
-  <li><a href="#super-g">Super G</a></li>
-  <li><a href="#bowling">Bowling</a></li>
-  <li><a href="#handball">Handball</a></li>
-  <li><a href="#zehnkampf">Zehnkampf</a></li>
-  <li><a href="#bob-viererbob">Bob Viererbob</a></li>
-  <li><a href="#golf">Golf</a></li>
-  <li><a href="#basketball">Basketball</a></li>
-  <li><a href="#american-football">American Football</a></li>
-  <li><a href="#tischtennis">Tischtennis</a></li>
-  <li><a href="#cricket">Cricket</a></li>
-  <li><a href="#judo">Judo</a></li>
-  <li><a href="#volleyball">Volleyball</a></li>
-  <li><a href="#schwimmen-100m">Schwimmen 100m</a></li>
-  <li><a href="#rugby">Rugby</a></li>
-  <li><a href="#eishockey">Eishockey</a></li>
-  <li><a href="#badminton">Badminton</a></li>
-  <li><a href="#gewichtheben">Gewichtheben</a></li>
-  <li><a href="#marathon">Marathon</a></li>
-  <li><a href="#sportklettern">Sportklettern</a></li>
-  <li><a href="#darts">Darts</a></li>
-  <li><a href="#geraetturnen">Gerätturnen</a></li>
-  <li><a href="#slalom">Slalom</a></li>
-  <li><a href="#curling">Curling</a></li>
-  <li><a href="#beachvolleyball">Beachvolleyball</a></li>
-  <li><a href="#squash">Squash</a></li>
-  <li><a href="#feldhockey">Feldhockey</a></li>
-  <li><a href="#karate">Karate</a></li>
-  <li><a href="#ringen">Ringen</a></li>
-  <li><a href="#stabhochsprung">Stabhochsprung</a></li>
-  <li><a href="#speerwurf">Speerwurf</a></li>
-  <li><a href="#segeln">Segeln</a></li>
-  <li><a href="#reiten-dressur">Reiten Dressur</a></li>
-  <li><a href="#fechten">Fechten</a></li>
-  <li><a href="#mma">MMA</a></li>
-  <li><a href="#rudern-achter">Rudern Achter</a></li>
-  <li><a href="#skispringen">Skispringen</a></li>
-  <li><a href="#eisschnelllauf">Eisschnelllauf</a></li>
-  <li><a href="#wasserball">Wasserball</a></li>
-  <li><a href="#diskuswurf">Diskuswurf</a></li>
-  <li><a href="#hochsprung">Hochsprung</a></li>
-  <li><a href="#go">Go</a></li>
-  <li><a href="#vergleich">Vergleich aller Sportarten</a></li>
-</ol>
-    </nav>
-
-    <div class="sidebar-controls">
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Theme umschalten">Theme: Auto</button>
-    </div>
-  </div>
-</aside>
-
-<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
-
-<main class="content" id="top">
-  <header class="page-header">
-    <h1>Datenbank</h1>
-    <p class="subtitle">Alle Sportarten, ihre Werte, Berechnungen und Vergleiche.</p>
-  </header>
-
+```{=html}
   <article class="article">
 
   <p>Diese Seite sammelt die nach der Theorie bewerteten Sportarten. Jede Zeile zeigt den Namen, einen kompakten Balken der Komponentenzerlegung und die nummerischen Werte. Klicken öffnet die Details — Beschreibung und vollständige Paarvergleichsmatrix samt Konsistenzwert. Unter den Sportarten folgt ein interaktives 3D-Kräftenetz, in dem alle Sportarten als frei angeordnete Punkte verortet sind. Ein Klick auf eine Kugel zeigt ihre Werte; ein Klick auf eine zweite Kugel macht den strukturellen Vergleich sichtbar.</p>
@@ -1733,8 +1637,9 @@
   </section>
 
   </article>
-</main>
+```
 
+```{=html}
 <script>
 (function () {
   var root = document.documentElement;
@@ -2299,5 +2204,4 @@ circleLayer.addEventListener('click', e => {
 })();
 </script>
 
-</body>
-</html>
+```

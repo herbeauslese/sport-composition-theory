@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Sport Composition Theory"
+  description: "Ein Framework zur Zerlegung jeder Sportart in ihre fundamentalen Komponenten."
+  favicon: ""
+
+  navbar:
+    pinned: true
+    title: "Sport Composition Theory"
+    left:
+      - text: "Theorie"
+        href: index.qmd
+      - text: "Datenbank"
+        href: datenbank/index.qmd
+
+  page-footer:
+    left: "Sport Composition Theory"
+    right: ""
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+      dark:  [darkly, styles.scss]
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    toc-title: "Inhalt"
+    toc-expand: true
+    reference-location: margin
+    smooth-scroll: true
+    number-sections: false
+    link-external-newwindow: true
+    lang: de

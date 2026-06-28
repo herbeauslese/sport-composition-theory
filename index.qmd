@@ -1,5 +1,5 @@
 ---
-title: "Sport Composition Theory"
+title: "Sport Composition Theory" 
 subtitle: "Sportarten lassen sich vergleichen. Man muss nur wissen, woraus sie bestehen."
 lang: de
 ---

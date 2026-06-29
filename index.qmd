@@ -43,15 +43,11 @@ Das ist die Kernbehauptung dieser Arbeit. Selbstverständlich ist sie nicht — 
 **Definition — Der Composition Vector.**
 Aus der These folgt eine einfache Schreibweise. Jede Sportart wird als Vektor ausgedrückt:
 
-```{=html}
-<div class="math-block">S = (T, P, Sk, M)</div>
-```
+$$S = (T, P, Sk, M)$$
 
 wobei *T* = Taktik, *P* = Physis, *Sk* = Skill, *M* = Material, und:
 
-```{=html}
-<div class="math-block">T + P + Sk + M = 1</div>
-```
+$$T + P + Sk + M = 1$$
 
 Alle Werte sind reelle Zahlen im Intervall [0, 1]. Für die meisten Sportarten gilt M = 0, was die Darstellung auf einen Drei-Komponenten-Vektor reduziert.^[Zu den genauen Bedingungen, unter denen Material einen Wert ungleich null annimmt, siehe den Abschnitt Material weiter unten.]
 
@@ -102,9 +98,9 @@ Das Verfahren macht die Werte nicht objektiv. Es macht die Urteile, die in sie e
 
 Jeder Paarvergleich beantwortet exakt dieselbe kontrafaktische Frage:
 
-```{=html}
-<div class="method-callout"><em>„Wenn zwei Konkurrenten auf Weltklasseniveau in allen anderen Komponenten exakt gleich wären — wie viel häufiger entscheidet ein Vorsprung in Komponente A statt in Komponente B über den Ausgang?"</em></div>
-```
+::: {.callout-note appearance="minimal" icon=false}
+*„Wenn zwei Konkurrenten auf Weltklasseniveau in allen anderen Komponenten exakt gleich wären — wie viel häufiger entscheidet ein Vorsprung in Komponente A statt in Komponente B über den Ausgang?"*
+:::
 
 Diese Formulierung isoliert jede Komponente. Sie zwingt zum „alles andere gleich"-Denken und verhindert, dass ein diffuses „Taktik ist halt wichtig" in die Bewertung einfließt. Gefragt wird nicht, wie sichtbar oder spektakulär eine Komponente ist, sondern wie oft sie tatsächlich den Unterschied zwischen Sieg und Niederlage macht.
 
@@ -112,15 +108,13 @@ Diese Formulierung isoliert jede Komponente. Sie zwingt zum „alles andere glei
 
 Die Antwort wird auf einer Skala von 1 bis 9 ausgedrückt, deren Stufen vorab mit Bedeutung belegt sind — damit dieselbe Zahl bei jeder Sportart dasselbe meint:
 
-```{=html}
-<div class="scale-table">
-  <div class="scale-row"><span class="scale-num">1</span><span class="scale-desc">beide gleichermaßen ergebnisentscheidend</span></div>
-  <div class="scale-row"><span class="scale-num">3</span><span class="scale-desc">A entscheidet merklich häufiger</span></div>
-  <div class="scale-row"><span class="scale-num">5</span><span class="scale-desc">A entscheidet klar häufiger als B</span></div>
-  <div class="scale-row"><span class="scale-num">7</span><span class="scale-desc">A dominiert</span></div>
-  <div class="scale-row"><span class="scale-num">9</span><span class="scale-desc">A entscheidet praktisch immer</span></div>
-</div>
-```
+| Wert | Bedeutung |
+|-----:|-----------|
+| 1 | beide gleichermaßen ergebnisentscheidend |
+| 3 | A entscheidet merklich häufiger |
+| 5 | A entscheidet klar häufiger als B |
+| 7 | A dominiert |
+| 9 | A entscheidet praktisch immer |
 
 Die geraden Zahlen (2, 4, 6, 8) sind Zwischenstufen. Entscheidet umgekehrt B häufiger, wird der Kehrwert eingetragen (ein Drittel statt drei).
 
@@ -132,12 +126,8 @@ Vor jeder Bewertung steht eine einzige Ja-Nein-Frage: *Beeinflusst Materialquali
 
 Die vier Hauptkomponenten sind selbst noch grobe Buckets. „Skill" bei Schach (reine Mustererkennung) und „Skill" bei Boxen (motorische Schlagtechnik plus Gegnerlesen) sind völlig verschiedene Phänomene; ohne weitere Auflösung erzwingt das künstliche Identitäten. Daher werden Skill und Physis in einem zweiten AHP-Schritt feiner aufgespalten:
 
-```{=html}
-<ul class="method-list">
-  <li><strong>Skill</strong> → motorisch (Bewegungspräzision, Schlagtechnik) vs. kognitiv (Mustererkennung, Entscheidung)</li>
-  <li><strong>Physis</strong> → Ausdauer (aerob) vs. Kraft (maximal/explosiv) vs. Schnelligkeit (Reaktion, Agilität)</li>
-</ul>
-```
+- **Skill** → motorisch (Bewegungspräzision, Schlagtechnik) vs. kognitiv (Mustererkennung, Entscheidung)
+- **Physis** → Ausdauer (aerob) vs. Kraft (maximal/explosiv) vs. Schnelligkeit (Reaktion, Agilität)
 
 Taktik und Material bleiben unverteilt — Taktik wäre nur künstlich in „kollektiv" und „individuell" trennbar, Material ist binär genug. Pro Sportart kommen damit ein zusätzlicher Skill-Paarvergleich und drei Physis-Paarvergleiche hinzu; jede Sub-Matrix bekommt eine eigene Konsistenzprüfung. Das Endprodukt ist ein **siebendimensionaler Vektor**: Taktik, Skill-motorisch, Skill-kognitiv, Physis-Ausdauer, Physis-Kraft, Physis-Schnelligkeit, Material. Die vier Hauptkomponenten in der Visualisierung bleiben sichtbar; die Sub-Verteilung erscheint in der Datenbank-Detailansicht jeder Sportart.
 
@@ -155,150 +145,48 @@ Die folgenden zehn Sportarten sind so gewählt, dass sie das Spektrum der vier K
 
 Jede Sportart wird als ein einzelner Balken dargestellt, der in seine Komponenten unterteilt ist. Unter jedem Balken folgt eine kurze Begründung. Alle Werte stammen aus dem im Methodik-Abschnitt beschriebenen AHP-Verfahren; die vollständigen Paarvergleichsmatrizen und Konsistenzwerte finden sich ebenfalls in der Datenbank.
 
-```{=html}
-<div class="sport-charts">
+```{ojs}
+{
+  const data = [
+    {name: "Fußball", meta: "11 gegen 11 · 90 Minuten", T: 40, P: 20, Sk: 40, M: 0,
+     rationale: "Taktik und Skill teilen sich die Spitze, Physis bleibt wichtige Grundlage. Im Paarvergleich entscheidet ein taktischer Vorsprung etwas häufiger als reine Athletik (organisierte Teams schlagen athletischere), während Taktik und individuelle Technik etwa gleichauf liegen. Material wurde ausgeschlossen — Ball, Schuhe und Platz sind standardisiert, zwischen zwei Profiteams entscheidet Ausrüstung nicht."},
+    {name: "Tennis", meta: "Einzel · drei oder fünf Sätze", T: 20, P: 20, Sk: 55, M: 5,
+     rationale: "Skill dominiert klar. Schlagtechnik und Aufschlagpräzision entscheiden im direkten Vergleich deutlich häufiger als taktischer Aufbau oder Physis, die untereinander etwa gleichauf liegen. Material ist mit einem kleinen, aber echten Anteil aktiv: Schläger und Besaitung sind nicht vollständig vereinheitlicht und beeinflussen das Spiel marginal."},
+    {name: "100m Sprint", meta: "Reine Leichtathletik-Disziplin", T: 5, P: 60, Sk: 35, M: 0,
+     rationale: "Physis entscheidet — fast alles hängt an zehn Sekunden Maximalleistung. Im Paarvergleich schlägt körperliche Anlage sowohl Taktik (die praktisch keine Rolle spielt) als auch Technik deutlich, wobei Skill in Startphase und Lauftechnik den zweiten Platz klar behauptet. Material ist ausgeschlossen — Spikes und Bahn sind reguliert."},
+    {name: "Schach", meta: "Klassische Bedenkzeit · 1 gegen 1", T: 65, P: 10, Sk: 25, M: 0,
+     rationale: "Taktik dominiert mit weitem Abstand. Im direkten Vergleich entscheidet strategisches Denken praktisch immer gegen körperliche Verfassung und merklich häufiger als die Mustererkennungs-Routine, die hier als Skill zählt. Physis reduziert sich auf Konzentrationsausdauer. Material existiert nicht als Faktor — Brett und Figuren sind ohne Einfluss."},
+    {name: "Straßenradsport", meta: "World Tour · Etappenrennen und Klassiker", T: 25, P: 45, Sk: 15, M: 15,
+     rationale: "Physis trägt den Sport, mit taktischem Überbau. Ausdauerleistung entscheidet im Paarvergleich häufiger als alles andere; Taktik (Teamarbeit, Ausreißerkalkül) liegt davor auf Rang zwei. Skill und Material sind gleichauf — das Rad ist messbar relevant, aber innerhalb der World Tour technisch angeglichen."},
+    {name: "Formel 1", meta: "21+ Rennen pro Saison · 1 Fahrer + 1 Auto", T: 25, P: 5, Sk: 25, M: 45,
+     rationale: "Material ist der stärkste einzelne Faktor. Im Paarvergleich entscheidet die Konstrukteursleistung häufiger als Fahrer-Taktik oder -Skill, die untereinander gleichauf liegen und gemeinsam den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle — sie ist Voraussetzung, aber selten der Unterschied zwischen Sieg und Niederlage im Spitzenfeld."},
+    {name: "Marathon", meta: "42,195 km · Straßenlauf", T: 15, P: 75, Sk: 10, M: 0,
+     rationale: "Das physisch extremste Profil unter den zehn Beispielen — Ausdauerleistung entscheidet zu drei Vierteln. Im Paarvergleich dominiert Physis Skill deutlich (Lauftechnik ist relevant, aber nicht im selben Maß) und Taktik fast vollständig — Renntaktik wie Tempoeinteilung und Verpflegung spielt eine Rolle, aber nicht öfter als die reine Ausdauerkapazität. Material wurde ausgeschlossen: Laufschuhe sind reguliert, zwischen Spitzenathleten entscheidet die Ausrüstung nicht."},
+    {name: "Boxen", meta: "Profi · 12 Runden · 1 gegen 1", T: 20, P: 30, Sk: 50, M: 0,
+     rationale: "Skill dominiert — Schlagtechnik, Beinarbeit und Distanzgefühl entscheiden im Paarvergleich häufiger als Kondition oder taktisches Lesen des Gegners. Physis folgt vor Taktik, beide aber deutlich hinter Skill. Boxen ist eine der wenigen Sportarten, in der alle drei nicht-Material-Komponenten substanziell vertreten sind. Material wurde ausgeschlossen — Handschuhe und Ring sind reguliert."},
+    {name: "American Football", meta: "NFL · 11 gegen 11 · 4 × 15 Minuten", T: 55, P: 20, Sk: 25, M: 0,
+     rationale: "Die taktischste Mannschaftssportart der Auswahl — und die taktischste Sportart überhaupt, noch vor Schach. Play-Calling, Down-Systeme und Coaching-Schemes entscheiden im Paarvergleich deutlich häufiger als individuelle Athletik oder Technik, die untereinander gleichauf liegen. Bemerkenswert: American Football liegt strukturell näher an Schach als an jeder anderen Mannschaftssportart — beide hochstrategisch, auf völlig verschiedene Art. Material wurde ausgeschlossen: Pads und Helme sind reguliert."},
+    {name: "Bob Viererbob", meta: "FIBT/IBSF · Viererbob · 4 Läufe", T: 10, P: 20, Sk: 35, M: 35,
+     rationale: "Skill und Material gleichauf an der Spitze. Die Pilot-Linienführung und der Hightech-Schlitten entscheiden gemeinsam über das Rennen — Bob zeigt, dass Material-Dominanz nicht auf den Motorsport beschränkt ist. Physis (Anschub) folgt, Taktik ist minimal — die meisten Entscheidungen sind Sekundenbruchteile, keine Strategie."}
+  ]
 
-<div class="sport-entry">
-<h3>Fußball</h3>
-<p class="sport-meta">11 gegen 11 · 90 Minuten</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:40%" title="Taktik: 40%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:40%" title="Skill: 40%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 40%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 40%</span>
-  </div>
-</div>
-<p class="sport-rationale">Taktik und Skill teilen sich die Spitze, Physis bleibt wichtige Grundlage. Im Paarvergleich entscheidet ein taktischer Vorsprung etwas häufiger als reine Athletik (organisierte Teams schlagen athletischere), während Taktik und individuelle Technik etwa gleichauf liegen. Material wurde ausgeschlossen — Ball, Schuhe und Platz sind standardisiert, zwischen zwei Profiteams entscheidet Ausrüstung nicht.</p>
-</div>
+  const cls = {Taktik: "tactics", Physis: "physical", Skill: "skill", Material: "material"}
 
-<div class="sport-entry">
-<h3>Tennis</h3>
-<p class="sport-meta">Einzel · drei oder fünf Sätze</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:55%" title="Skill: 55%"></div><div class="seg material" style="width:5%" title="Material: 5%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 55%</span><span class="leg-item"><span class="leg-dot material"></span>Material 5%</span>
-  </div>
-</div>
-<p class="sport-rationale">Skill dominiert klar. Schlagtechnik und Aufschlagpräzision entscheiden im direkten Vergleich deutlich häufiger als taktischer Aufbau oder Physis, die untereinander etwa gleichauf liegen. Material ist mit einem kleinen, aber echten Anteil aktiv: Schläger und Besaitung sind nicht vollständig vereinheitlicht und beeinflussen das Spiel marginal.</p>
-</div>
+  function card(s) {
+    const segs = [["Taktik", s.T], ["Physis", s.P], ["Skill", s.Sk], ["Material", s.M]].filter(([, v]) => v > 0)
+    return html`<div class="sport-entry">
+      <h3>${s.name}</h3>
+      <p class="sport-meta">${s.meta}</p>
+      <div class="stacked-bar-wrap">
+        <div class="stacked-bar">${segs.map(([n, v]) => html`<div class="seg ${cls[n]}" style="width:${v}%" title="${n}: ${v}%"></div>`)}</div>
+        <div class="seg-legend">${segs.map(([n, v]) => html`<span class="leg-item"><span class="leg-dot ${cls[n]}"></span>${n} ${v}%</span>`)}</div>
+      </div>
+      <p class="sport-rationale">${s.rationale}</p>
+    </div>`
+  }
 
-<div class="sport-entry">
-<h3>100m Sprint</h3>
-<p class="sport-meta">Reine Leichtathletik-Disziplin</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:5%" title="Taktik: 5%"></div><div class="seg physical" style="width:60%" title="Physis: 60%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 5%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 60%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span>
-  </div>
-</div>
-<p class="sport-rationale">Physis entscheidet — fast alles hängt an zehn Sekunden Maximalleistung. Im Paarvergleich schlägt körperliche Anlage sowohl Taktik (die praktisch keine Rolle spielt) als auch Technik deutlich, wobei Skill in Startphase und Lauftechnik den zweiten Platz klar behauptet. Material ist ausgeschlossen — Spikes und Bahn sind reguliert.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Schach</h3>
-<p class="sport-meta">Klassische Bedenkzeit · 1 gegen 1</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:65%" title="Taktik: 65%"></div><div class="seg physical" style="width:10%" title="Physis: 10%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 65%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 10%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
-  </div>
-</div>
-<p class="sport-rationale">Taktik dominiert mit weitem Abstand. Im direkten Vergleich entscheidet strategisches Denken praktisch immer gegen körperliche Verfassung und merklich häufiger als die Mustererkennungs-Routine, die hier als Skill zählt. Physis reduziert sich auf Konzentrationsausdauer. Material existiert nicht als Faktor — Brett und Figuren sind ohne Einfluss.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Straßenradsport</h3>
-<p class="sport-meta">World Tour · Etappenrennen und Klassiker</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:45%" title="Physis: 45%"></div><div class="seg skill" style="width:15%" title="Skill: 15%"></div><div class="seg material" style="width:15%" title="Material: 15%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 45%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 15%</span><span class="leg-item"><span class="leg-dot material"></span>Material 15%</span>
-  </div>
-</div>
-<p class="sport-rationale">Physis trägt den Sport, mit taktischem Überbau. Ausdauerleistung entscheidet im Paarvergleich häufiger als alles andere; Taktik (Teamarbeit, Ausreißerkalkül) liegt davor auf Rang zwei. Skill und Material sind gleichauf — das Rad ist messbar relevant, aber innerhalb der World Tour technisch angeglichen.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Formel 1</h3>
-<p class="sport-meta">21+ Rennen pro Saison · 1 Fahrer + 1 Auto</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:25%" title="Taktik: 25%"></div><div class="seg physical" style="width:5%" title="Physis: 5%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div><div class="seg material" style="width:45%" title="Material: 45%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 25%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 5%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span><span class="leg-item"><span class="leg-dot material"></span>Material 45%</span>
-  </div>
-</div>
-<p class="sport-rationale">Material ist der stärkste einzelne Faktor. Im Paarvergleich entscheidet die Konstrukteursleistung häufiger als Fahrer-Taktik oder -Skill, die untereinander gleichauf liegen und gemeinsam den zweiten Rang bilden. Fahrer-Physis spielt die kleinste Rolle — sie ist Voraussetzung, aber selten der Unterschied zwischen Sieg und Niederlage im Spitzenfeld.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Marathon</h3>
-<p class="sport-meta">42,195 km · Straßenlauf</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:15%" title="Taktik: 15%"></div><div class="seg physical" style="width:75%" title="Physis: 75%"></div><div class="seg skill" style="width:10%" title="Skill: 10%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 15%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 75%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 10%</span>
-  </div>
-</div>
-<p class="sport-rationale">Das physisch extremste Profil unter den zehn Beispielen — Ausdauerleistung entscheidet zu drei Vierteln. Im Paarvergleich dominiert Physis Skill deutlich (Lauftechnik ist relevant, aber nicht im selben Maß) und Taktik fast vollständig — Renntaktik wie Tempoeinteilung und Verpflegung spielt eine Rolle, aber nicht öfter als die reine Ausdauerkapazität. Material wurde ausgeschlossen: Laufschuhe sind reguliert, zwischen Spitzenathleten entscheidet die Ausrüstung nicht.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Boxen</h3>
-<p class="sport-meta">Profi · 12 Runden · 1 gegen 1</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:20%" title="Taktik: 20%"></div><div class="seg physical" style="width:30%" title="Physis: 30%"></div><div class="seg skill" style="width:50%" title="Skill: 50%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 20%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 30%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 50%</span>
-  </div>
-</div>
-<p class="sport-rationale">Skill dominiert — Schlagtechnik, Beinarbeit und Distanzgefühl entscheiden im Paarvergleich häufiger als Kondition oder taktisches Lesen des Gegners. Physis folgt vor Taktik, beide aber deutlich hinter Skill. Boxen ist eine der wenigen Sportarten, in der alle drei nicht-Material-Komponenten substanziell vertreten sind. Material wurde ausgeschlossen — Handschuhe und Ring sind reguliert.</p>
-</div>
-
-<div class="sport-entry">
-<h3>American Football</h3>
-<p class="sport-meta">NFL · 11 gegen 11 · 4 × 15 Minuten</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:55%" title="Taktik: 55%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:25%" title="Skill: 25%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 55%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 25%</span>
-  </div>
-</div>
-<p class="sport-rationale">Die taktischste Mannschaftssportart der Auswahl — und die taktischste Sportart überhaupt, noch vor Schach. Play-Calling, Down-Systeme und Coaching-Schemes entscheiden im Paarvergleich deutlich häufiger als individuelle Athletik oder Technik, die untereinander gleichauf liegen. Bemerkenswert: American Football liegt strukturell näher an Schach als an jeder anderen Mannschaftssportart — beide hochstrategisch, auf völlig verschiedene Art. Material wurde ausgeschlossen: Pads und Helme sind reguliert.</p>
-</div>
-
-<div class="sport-entry">
-<h3>Bob Viererbob</h3>
-<p class="sport-meta">FIBT/IBSF · Viererbob · 4 Läufe</p>
-<div class="stacked-bar-wrap">
-  <div class="stacked-bar">
-    <div class="seg tactics" style="width:10%" title="Taktik: 10%"></div><div class="seg physical" style="width:20%" title="Physis: 20%"></div><div class="seg skill" style="width:35%" title="Skill: 35%"></div><div class="seg material" style="width:35%" title="Material: 35%"></div>
-  </div>
-  <div class="seg-legend">
-    <span class="leg-item"><span class="leg-dot tactics"></span>Taktik 10%</span><span class="leg-item"><span class="leg-dot physical"></span>Physis 20%</span><span class="leg-item"><span class="leg-dot skill"></span>Skill 35%</span><span class="leg-item"><span class="leg-dot material"></span>Material 35%</span>
-  </div>
-</div>
-<p class="sport-rationale">Skill und Material gleichauf an der Spitze. Die Pilot-Linienführung und der Hightech-Schlitten entscheiden gemeinsam über das Rennen — Bob zeigt, dass Material-Dominanz nicht auf den Motorsport beschränkt ist. Physis (Anschub) folgt, Taktik ist minimal — die meisten Entscheidungen sind Sekundenbruchteile, keine Strategie.</p>
-</div>
-
-</div>
+  return html`<div class="sport-charts">${data.map(card)}</div>`
+}
 ```
 
 <small>* Die Prozentsätze ergeben sich aus Paarvergleichen, strukturiert nach dem Analytic Hierarchy Process und auf Konsistenz geprüft. Das Verfahren macht die Urteile nachvollziehbar und widerspruchsfrei — nicht objektiv. Die Werte sind ernst gemeint, aber nicht endgültig.</small>
@@ -315,51 +203,52 @@ Die folgenden Beobachtungen ergeben sich direkt aus den Vektoren — gegeben die
 
 Da jede Sportart als Vektor im selben vierdimensionalen Raum ausgedrückt wird, lässt sich die strukturelle Distanz zwischen je zwei Sportarten als Euklidischer Abstand berechnen:
 
-```{=html}
-<div class="math-block">d(S₁, S₂) = √[(T₁−T₂)² + (P₁−P₂)² + (Sk₁−Sk₂)² + (M₁−M₂)²]</div>
-```
+$$d(S_1, S_2) = \sqrt{(T_1-T_2)^2 + (P_1-P_2)^2 + (Sk_1-Sk_2)^2 + (M_1-M_2)^2}$$
 
 Der Wertebereich ist beschränkt. Zwei identische Vektoren haben Distanz 0; das theoretische Maximum liegt bei √2 ≈ 1.41 und wird nur erreicht, wenn zwei Sportarten jeweils vollständig in einer einzigen, unterschiedlichen Komponente liegen — also etwa (1, 0, 0, 0) gegen (0, 1, 0, 0). Reale Sportarten erreichen diesen Wert nie. In der vorliegenden Stichprobe liegt die größte beobachtete Distanz bei etwa 56% dieses Maximums.
 
 Distanzen sind euklidisch im 4D-Komponentenraum und sollten so gelesen werden: Sportarten mit Abstand unter etwa 0.10 sind strukturell nahezu ununterscheidbar, ein Abstand über 0.50 deutet auf fundamentale Verschiedenheit. Alles dazwischen ist Abstufung. Eine visuelle Karte aller bewerteten Sportarten als Force-directed Graph — in dem sich ähnliche Sportarten zu Clustern zusammenfinden — findet sich in der [Datenbank](datenbank/index.qmd).
 
-```{=html}
-<div class="distance-matrix-wrap">
-<table class="vector-table distance-matrix">
-<thead><tr><th></th><th>Fußball</th><th>Tennis</th><th>100m Sprint</th><th>Schach</th><th>Straßenradsport</th><th>Formel 1</th><th>Marathon</th><th>Boxen</th><th>American Football</th><th>Bob Viererbob</th></tr></thead>
-<tbody>
-<tr><th>Fußball</th>
-<td class="diag">—</td><td class="heat-0">0.25</td><td class="heat-2">0.53</td><td class="heat-1">0.31</td><td class="heat-1">0.41</td><td class="heat-2">0.52</td><td class="heat-3">0.67</td><td class="heat-0">0.24</td><td class="heat-0">0.21</td><td class="heat-2">0.46</td>
-</tr>
-<tr><th>Tennis</th>
-<td class="heat-0">0.25</td><td class="diag">—</td><td class="heat-2">0.47</td><td class="heat-2">0.55</td><td class="heat-2">0.48</td><td class="heat-2">0.52</td><td class="heat-4">0.71</td><td class="heat-0 cell-near">0.12</td><td class="heat-2">0.46</td><td class="heat-1">0.37</td>
-</tr>
-<tr><th>100m Sprint</th>
-<td class="heat-2">0.53</td><td class="heat-2">0.47</td><td class="diag">—</td><td class="heat-4">0.79</td><td class="heat-1">0.35</td><td class="heat-4">0.74</td><td class="heat-1">0.31</td><td class="heat-1">0.37</td><td class="heat-3">0.65</td><td class="heat-2">0.53</td>
-</tr>
-<tr><th>Schach</th>
-<td class="heat-1">0.31</td><td class="heat-2">0.55</td><td class="heat-4">0.79</td><td class="diag">—</td><td class="heat-3">0.56</td><td class="heat-3">0.60</td><td class="heat-4">0.83</td><td class="heat-2">0.55</td><td class="heat-0">0.14</td><td class="heat-3">0.67</td>
-</tr>
-<tr><th>Straßenradsport</th>
-<td class="heat-1">0.41</td><td class="heat-2">0.48</td><td class="heat-1">0.35</td><td class="heat-3">0.56</td><td class="diag">—</td><td class="heat-2">0.51</td><td class="heat-1">0.35</td><td class="heat-1">0.41</td><td class="heat-2">0.43</td><td class="heat-1">0.41</td>
-</tr>
-<tr><th>Formel 1</th>
-<td class="heat-2">0.52</td><td class="heat-2">0.52</td><td class="heat-4">0.74</td><td class="heat-3">0.60</td><td class="heat-2">0.51</td><td class="diag">—</td><td class="heat-4 cell-far">0.85</td><td class="heat-3">0.57</td><td class="heat-3">0.56</td><td class="heat-0">0.25</td>
-</tr>
-<tr><th>Marathon</th>
-<td class="heat-3">0.67</td><td class="heat-4">0.71</td><td class="heat-1">0.31</td><td class="heat-4">0.83</td><td class="heat-1">0.35</td><td class="heat-4 cell-far">0.85</td><td class="diag">—</td><td class="heat-3">0.60</td><td class="heat-3">0.70</td><td class="heat-3">0.70</td>
-</tr>
-<tr><th>Boxen</th>
-<td class="heat-0">0.24</td><td class="heat-0 cell-near">0.12</td><td class="heat-1">0.37</td><td class="heat-2">0.55</td><td class="heat-1">0.41</td><td class="heat-3">0.57</td><td class="heat-3">0.60</td><td class="diag">—</td><td class="heat-2">0.44</td><td class="heat-1">0.41</td>
-</tr>
-<tr><th>American Football</th>
-<td class="heat-0">0.21</td><td class="heat-2">0.46</td><td class="heat-3">0.65</td><td class="heat-0">0.14</td><td class="heat-2">0.43</td><td class="heat-3">0.56</td><td class="heat-3">0.70</td><td class="heat-2">0.44</td><td class="diag">—</td><td class="heat-3">0.58</td>
-</tr>
-<tr><th>Bob Viererbob</th>
-<td class="heat-2">0.46</td><td class="heat-1">0.37</td><td class="heat-2">0.53</td><td class="heat-3">0.67</td><td class="heat-1">0.41</td><td class="heat-0">0.25</td><td class="heat-3">0.70</td><td class="heat-1">0.41</td><td class="heat-3">0.58</td><td class="diag">—</td>
-</tr>
-</tbody></table></div>
-<p class="figure-caption"><strong>Tabelle 1</strong>Paarweise euklidische Distanzen der zehn Beispielsportarten im 4D-Komponentenraum (T, P, Sk, M). Grüne Färbung markiert strukturelle Nähe, orange strukturelle Ferne. Der durchgezogene Rahmen kennzeichnet das engste Paar (Tennis ↔ Boxen, 0.12), der gestrichelte das fernste (Formel 1 ↔ Marathon, 0.85). In der <a href="datenbank/">Datenbank</a> werden Distanzen auf Basis der feineren 7D-Aufschlüsselung berechnet — diese sind in der Regel leicht abweichend, da Sub-Strukturen wie Skill-motorisch vs. Skill-kognitiv dort sichtbar werden.</p>
+```{ojs}
+{
+  const sports = ["Fußball","Tennis","100m Sprint","Schach","Straßenradsport","Formel 1","Marathon","Boxen","American Football","Bob Viererbob"]
+  const m = [
+    [0,    0.25, 0.53, 0.31, 0.41, 0.52, 0.67, 0.24, 0.21, 0.46],
+    [0.25, 0,    0.47, 0.55, 0.48, 0.52, 0.71, 0.12, 0.46, 0.37],
+    [0.53, 0.47, 0,    0.79, 0.35, 0.74, 0.31, 0.37, 0.65, 0.53],
+    [0.31, 0.55, 0.79, 0,    0.56, 0.60, 0.83, 0.55, 0.14, 0.67],
+    [0.41, 0.48, 0.35, 0.56, 0,    0.51, 0.35, 0.41, 0.43, 0.41],
+    [0.52, 0.52, 0.74, 0.60, 0.51, 0,    0.85, 0.57, 0.56, 0.25],
+    [0.67, 0.71, 0.31, 0.83, 0.35, 0.85, 0,    0.60, 0.70, 0.70],
+    [0.24, 0.12, 0.37, 0.55, 0.41, 0.57, 0.60, 0,    0.44, 0.41],
+    [0.21, 0.46, 0.65, 0.14, 0.43, 0.56, 0.70, 0.44, 0,    0.58],
+    [0.46, 0.37, 0.53, 0.67, 0.41, 0.25, 0.70, 0.41, 0.58, 0   ]
+  ]
+
+  function hc(v) {
+    if (v < 0.30) return "heat-0"
+    if (v < 0.45) return "heat-1"
+    if (v < 0.60) return "heat-2"
+    if (v < 0.75) return "heat-3"
+    return "heat-4"
+  }
+
+  const rows = sports.map((row, i) => html`<tr>
+    <th>${row}</th>
+    ${sports.map((_, j) => i === j
+      ? html`<td class="diag">—</td>`
+      : html`<td class="${hc(m[i][j])}${m[i][j] === 0.12 ? " cell-near" : m[i][j] === 0.85 ? " cell-far" : ""}">${m[i][j].toFixed(2)}</td>`
+    )}
+  </tr>`)
+
+  return html`<div class="distance-matrix-wrap">
+  <table class="vector-table distance-matrix">
+  <thead><tr><th></th>${sports.map(s => html`<th>${s}</th>`)}</tr></thead>
+  <tbody>${rows}</tbody>
+  </table>
+  <p class="figure-caption"><strong>Tabelle 1</strong> Paarweise euklidische Distanzen der zehn Beispielsportarten im 4D-Komponentenraum (T, P, Sk, M). Grüne Färbung markiert strukturelle Nähe, orange strukturelle Ferne. Der durchgezogene Rahmen kennzeichnet das engste Paar (Tennis ↔ Boxen, 0.12), der gestrichelte das fernste (Formel 1 ↔ Marathon, 0.85). In der <a href="datenbank/">Datenbank</a> werden Distanzen auf Basis der feineren 7D-Aufschlüsselung berechnet — diese sind in der Regel leicht abweichend, da Sub-Strukturen wie Skill-motorisch vs. Skill-kognitiv dort sichtbar werden.</p>
+  </div>`
+}
 ```
 
 Aus den Vektoren lassen sich vier Beobachtungen ableiten, die für sich allein bereits aufschlussreich sind.
@@ -380,23 +269,94 @@ Der Composition Vector beschreibt, was eine Sportart vom Athleten verlangt. Eine
 
 Zwei Kennzahlen werden definiert. Der **Lesbarkeitsindex L** misst, wie viel des Geschehens ohne Vorwissen direkt wahrnehmbar ist. Kraft und Schnelligkeit (P~k~, P~s~) sind unmittelbar sichtbar — ein Gewichtheber, der 200 kg stemmt, ein Sprinter, der davonzieht. Motorische Technik (Sk~m~) ist beobachtbar als Präzision und Bewegungsqualität. Material kann beeindrucken (ein Formel-1-Auto), ohne verstanden werden zu müssen. Taktik dagegen ist strukturell unsichtbar: Was ein Pressing-System von einem defensiven 5-4-1 unterscheidet, erschließt sich dem Laien nicht durch Hinsehen. Ausdauer ist das Paradox der Komponenten — sie entscheidet am stärksten (Marathon: 75%), ist aber über weite Strecken nicht wahrnehmbar. Die Formel:
 
-```{=html}
-<div class="math-block">L = (P<sub>k</sub> + P<sub>s</sub>) + (Sk<sub>m</sub> + Sk<sub>k</sub>) + 0.3·M − 0.6·T − 0.3·P<sub>a</sub></div>
-```
+$$L = (P_k + P_s) + (Sk_m + Sk_k) + 0.3\cdot M - 0.6\cdot T - 0.3\cdot P_a$$
 
 Der **Expertenmehrwert E** misst, wie viel ein wachsendes Verständnis noch hinzubringt. Taktik skaliert stark mit Wissen: Wer die Laufwege kennt, sieht ein anderes Spiel. Kognitiver Skill (Sk~k~ — Mustererkennung, Entscheidungsarbeit) lohnt ebenfalls als Beobachtungsgegenstand für Kundige. Physis gewinnt wenig dazu — ob jemand schnell läuft, ist mit und ohne Expertise gleich unmittelbar.
 
-```{=html}
-<div class="math-block">E = T + 0.4·(Sk<sub>m</sub> + Sk<sub>k</sub>)</div>
-```
+$$E = T + 0.4\cdot(Sk_m + Sk_k)$$
 
 Beide Werte sind auf [0, 1] normiert, bezogen auf die zehn Beispielsportarten. Die folgende Karte trägt sie gegeneinander auf; die Punktgröße zeigt eine dritte Dimension: die geschätzte **Ereignisdichte R** — wie viele klar wahrnehmbare Entscheidungsmomente pro Stunde auftreten. R ist nicht aus dem Vektor ableitbar und wird als externe Schätzung eingeführt.
 
-```{=html}
-<div class="scatter-wrap">
-  <div id="scatter-canvas" class="scatter-canvas"></div>
-  <p class="figure-caption"><strong>Abb. 2</strong> Lesbarkeit (x) und Expertenmehrwert (y) der zehn Beispielsportarten. Punktgröße = Ereignisdichte R (geschätzt). Die gestrichelten Linien teilen den Raum in vier Zonen: <em>Sofortsport</em> (hohe Lesbarkeit, geringer Expertenzuwachs), <em>Kenner-Sport</em> (niedrige Lesbarkeit, hoher Expertenzuwachs), <em>Breite Anziehungskraft</em> (beides hoch) und <em>Nischen-Profil</em>. Schach und American Football liegen im selben Quadranten — beide strukturell opak für Laien, beide reich für Kundige. Hover über einen Punkt für Details zur Ereignisdichte.</p>
-</div>
+```{ojs}
+{
+  const sports = [
+    {name: "Fußball",           L: 0.409, E: 0.665, R: 0.20, color: "#e63946", rDesc: "~2–3 Tore pro Stunde, aber viele sichtbare Zweikämpfe und Chancen"},
+    {name: "Tennis",            L: 0.784, E: 0.414, R: 0.65, color: "#06a77d", rDesc: "~40–60 Punkte pro Stunde, jeder Ballwechsel klar abgegrenzt"},
+    {name: "100m Sprint",       L: 1.000, E: 0.000, R: 0.05, color: "#f4a261", rDesc: "Ein einziger Entscheidungsmoment — der Lauf selbst"},
+    {name: "Schach",            L: 0.000, E: 1.000, R: 0.10, color: "#264653", rDesc: "Einzelne Züge sichtbar, Entscheidungsmomente für Laien kaum erkennbar"},
+    {name: "Straßenradsport",   L: 0.213, E: 0.216, R: 0.15, color: "#6f4e7c", rDesc: "Stunden ohne sichtbares Ereignis, Entscheidungen im Windschattenspiel verborgen"},
+    {name: "Formel 1",          L: 0.412, E: 0.288, R: 0.30, color: "#1d4e89", rDesc: "Überholmanöver und Boxenstopps (~20–30 pro Rennen) als klare Ereignisse"},
+    {name: "Marathon",          L: 0.138, E: 0.000, R: 0.05, color: "#1a6e2e", rDesc: "Nahezu keine sichtbaren Ereignisse — Tempo ändert sich minimal über 42 km"},
+    {name: "Boxen",             L: 0.749, E: 0.378, R: 0.75, color: "#c1121f", rDesc: "~100–200 Schlagabtausche pro Kampf, jeder Treffer sofort wahrnehmbar"},
+    {name: "American Football", L: 0.205, E: 0.820, R: 0.80, color: "#7d4f16", rDesc: "~130–150 Plays pro Spiel, jeder ein klares, separates Ereignis"},
+    {name: "Bob Viererbob",     L: 0.732, E: 0.090, R: 0.05, color: "#80b918", rDesc: "Vier Läufe, kaum Variation — Spannung im Sekunden-Vergleich erschöpft sich rasch"}
+  ]
+
+  const quadrants = [
+    {x: 0.22, y: 0.97, text: "Kenner-Sport"},
+    {x: 0.78, y: 0.97, text: "Breite Anziehungskraft"},
+    {x: 0.22, y: 0.03, text: "Nischen-Profil"},
+    {x: 0.78, y: 0.03, text: "Sofortsport"}
+  ]
+
+  const labelDy = {Marathon: 18, "Formel 1": 18, "American Football": -18, "Bob Viererbob": -18}
+  const labelDx = {Schach: 14, Boxen: 14, "100m Sprint": -14}
+  const labelAnchor = {Schach: "start", Boxen: "start", "100m Sprint": "end"}
+
+  const chart = Plot.plot({
+    width: 700,
+    height: 400,
+    marginLeft: 55,
+    marginRight: 20,
+    marginTop: 30,
+    marginBottom: 50,
+    style: {background: "transparent", fontSize: "12px", overflow: "visible"},
+    x: {label: "Lesbarkeit L →", domain: [0, 1]},
+    y: {label: "↑ Expertenmehrwert E", domain: [0, 1]},
+    marks: [
+      Plot.rect(
+        [{x1: 0.45, x2: 1, y1: 0.45, y2: 1}],
+        {x1: "x1", x2: "x2", y1: "y1", y2: "y2", fill: "currentColor", fillOpacity: 0.04}
+      ),
+      Plot.ruleX([0.45], {stroke: "currentColor", strokeOpacity: 0.18, strokeDasharray: "4,3"}),
+      Plot.ruleY([0.45], {stroke: "currentColor", strokeOpacity: 0.18, strokeDasharray: "4,3"}),
+      Plot.text(quadrants, {
+        x: "x", y: "y", text: "text",
+        fill: "currentColor", fillOpacity: 0.25, fontSize: 10
+      }),
+      Plot.dot(sports, {
+        x: "L", y: "E",
+        r: d => 7 + d.R * 20,
+        fill: "color",
+        fillOpacity: 0.88,
+        channels: {
+          "Lesbarkeit": d => d.L.toFixed(2),
+          "Expertenmehrwert": d => d.E.toFixed(2),
+          "Ereignisdichte": d => Math.round(d.R * 100) + "%",
+          "Hinweis": "rDesc"
+        },
+        tip: true
+      }),
+      Plot.text(sports, {
+        x: "L", y: "E",
+        text: "name",
+        dx: d => labelDx[d.name] ?? 0,
+        dy: d => labelDy[d.name] ?? -14,
+        textAnchor: d => labelAnchor[d.name] ?? "middle",
+        fontSize: 10,
+        fontWeight: 500,
+        stroke: "var(--bs-body-bg)",
+        strokeWidth: 3,
+        fill: "currentColor"
+      })
+    ]
+  })
+
+  return html`<div class="scatter-wrap">
+    ${chart}
+    <p class="figure-caption"><strong>Abb. 2</strong> Lesbarkeit (x) und Expertenmehrwert (y) der zehn Beispielsportarten. Punktgröße = Ereignisdichte R (geschätzt). Die gestrichelten Linien teilen den Raum in vier Zonen: <em>Sofortsport</em> (hohe Lesbarkeit, geringer Expertenzuwachs), <em>Kenner-Sport</em> (niedrige Lesbarkeit, hoher Expertenzuwachs), <em>Breite Anziehungskraft</em> (beides hoch) und <em>Nischen-Profil</em>. Schach und American Football liegen im selben Quadranten — beide strukturell opak für Laien, beide reich für Kundige. Hover über einen Punkt für Details zur Ereignisdichte.</p>
+  </div>`
+}
 ```
 
 Die Position im Streudiagramm lässt sich in wenigen Beobachtungen zusammenfassen. Hohe Taktik-Anteile kosten Lesbarkeit, liefern aber Expertenmehrwert — deshalb liegen **Schach und American Football** trotz grundverschiedener Natur im selben Quadranten. Das Umgekehrte gilt für **100m Sprint und Bob Viererbob**: sofort eindrucksvoll, aber strukturell flach. **Boxen** ist das einzige Beispiel, das weit rechts und gleichzeitig weit oben liegt — zugänglich und trotzdem aufschlussreich für Kundige. **Marathon** landet nicht wegen fehlender athletischer Tiefe im Nischen-Profil, sondern weil 75% Physis fast vollständig in Ausdauer liegen, die für kein Publikum direkt sichtbar ist.
@@ -442,290 +402,3 @@ Die These behauptet, dass vier Komponenten ausreichen. Drei plausible Kandidaten
 **Mentale Härte.** Bereits in Physis enthalten — die Definition umfasst ausdrücklich psychische Belastbarkeit und kognitive Ausdauer unter Druck. Eine separate Komponente wäre Doppelzählung.
 
 Diese Antworten widerlegen die Einwände nicht; sie verorten sie innerhalb der bestehenden vier Komponenten. Wer das für unzureichend hält, sollte die Theorie entsprechend erweitern.
-
-```{=html}
-<script>
-(function() {
-  var sports = [
-    { name: "Fußball",           L: 0.409, E: 0.665, R: 0.20, color: "#e63946",
-      rDesc: "~2–3 Tore pro Stunde, aber viele sichtbare Zweikämpfe und Chancen" },
-    { name: "Tennis",            L: 0.784, E: 0.414, R: 0.65, color: "#06a77d",
-      rDesc: "~40–60 Punkte pro Stunde, jeder Ballwechsel klar abgegrenzt" },
-    { name: "100m Sprint",       L: 1.000, E: 0.000, R: 0.05, color: "#f4a261",
-      rDesc: "Ein einziger Entscheidungsmoment — der Lauf selbst" },
-    { name: "Schach",            L: 0.000, E: 1.000, R: 0.10, color: "#264653",
-      rDesc: "Einzelne Züge sichtbar, Entscheidungsmomente für Laien kaum erkennbar" },
-    { name: "Straßenradsport",   L: 0.213, E: 0.216, R: 0.15, color: "#6f4e7c",
-      rDesc: "Stunden ohne sichtbares Ereignis, Entscheidungen im Windschattenspiel verborgen" },
-    { name: "Formel 1",          L: 0.412, E: 0.288, R: 0.30, color: "#1d4e89",
-      rDesc: "Überholmanöver und Boxenstopps (~20–30 pro Rennen) als klare Ereignisse" },
-    { name: "Marathon",          L: 0.138, E: 0.000, R: 0.05, color: "#1a6e2e",
-      rDesc: "Nahezu keine sichtbaren Ereignisse — Tempo ändert sich minimal über 42 km" },
-    { name: "Boxen",             L: 0.749, E: 0.378, R: 0.75, color: "#c1121f",
-      rDesc: "~100–200 Schlagabtausche pro Kampf, jeder Treffer sofort wahrnehmbar" },
-    { name: "American Football", L: 0.205, E: 0.820, R: 0.80, color: "#7d4f16",
-      rDesc: "~130–150 Plays pro Spiel, jeder ein klares, separates Ereignis" },
-    { name: "Bob Viererbob",     L: 0.732, E: 0.090, R: 0.05, color: "#80b918",
-      rDesc: "Vier Läufe, kaum Variation — Spannung im Sekunden-Vergleich erschöpft sich rasch" },
-  ];
-
-  var isDark = function() {
-    return document.documentElement.getAttribute('data-bs-theme') === 'dark';
-  };
-
-  var canvas, ctx, tooltip, hoveredIdx;
-
-  function getColors() {
-    var dark = isDark();
-    return {
-      bg:      dark ? '#1a1a2e' : '#fafafa',
-      grid:    dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)',
-      axis:    dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.18)',
-      text:    dark ? '#ededed' : '#111111',
-      textMut: dark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.35)',
-      qdash:   dark ? 'rgba(255,255,255,0.14)' : 'rgba(0,0,0,0.14)',
-      qlabel:  dark ? 'rgba(255,255,255,0.20)' : 'rgba(0,0,0,0.20)',
-    };
-  }
-
-  function toPx(L, E, pad, cw, ch) {
-    return { x: pad.l + L * cw, y: pad.t + (1 - E) * ch };
-  }
-
-  function dotRadius(R) { return 7 + R * 20; }
-
-  function draw() {
-    if (!canvas) return;
-    var W = canvas.width, H = canvas.height;
-    var pad = { l: 48, r: 22, t: 24, b: 50 };
-    var cw = W - pad.l - pad.r;
-    var ch = H - pad.t - pad.b;
-    var c = getColors();
-
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = c.bg;
-    ctx.fillRect(0, 0, W, H);
-
-    var qx = pad.l + cw * 0.45;
-    var qy = pad.t + ch * (1 - 0.45);
-    ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.025)' : 'rgba(0,0,0,0.018)';
-    ctx.fillRect(qx, pad.t, W - qx - pad.r, qy - pad.t);
-    ctx.fillStyle = isDark() ? 'rgba(255,255,255,0.015)' : 'rgba(0,0,0,0.012)';
-    ctx.fillRect(pad.l, qy, qx - pad.l, H - qy - pad.b);
-
-    ctx.setLineDash([4, 3]);
-    ctx.strokeStyle = c.qdash;
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(qx, pad.t); ctx.lineTo(qx, pad.t + ch); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(pad.l, qy); ctx.lineTo(pad.l + cw, qy); ctx.stroke();
-    ctx.setLineDash([]);
-
-    ctx.font = '500 10px Inter, sans-serif';
-    ctx.fillStyle = c.qlabel;
-    ctx.textAlign = 'left';
-    ctx.fillText('Kenner-Sport', pad.l + 5, pad.t + 14);
-    ctx.fillText('Nischen-Profil', pad.l + 5, pad.t + ch - 5);
-    ctx.textAlign = 'right';
-    ctx.fillText('Breite Anziehungskraft', pad.l + cw - 4, pad.t + 14);
-    ctx.fillText('Sofortsport', pad.l + cw - 4, pad.t + ch - 5);
-
-    ctx.strokeStyle = c.axis;
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(pad.l, pad.t + ch); ctx.lineTo(pad.l + cw, pad.t + ch); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(pad.l, pad.t); ctx.lineTo(pad.l, pad.t + ch); ctx.stroke();
-
-    ctx.font = '500 9px Inter, sans-serif';
-    ctx.fillStyle = c.textMut;
-    for (var ti = 0; ti <= 4; ti++) {
-      var tx = pad.l + cw * ti / 4;
-      var ty = pad.t + ch * (1 - ti / 4);
-      ctx.strokeStyle = c.axis; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(tx, pad.t + ch); ctx.lineTo(tx, pad.t + ch + 4); ctx.stroke();
-      ctx.textAlign = 'center';
-      ctx.fillText((ti / 4).toFixed(2), tx, pad.t + ch + 14);
-      ctx.beginPath(); ctx.moveTo(pad.l - 4, ty); ctx.lineTo(pad.l, ty); ctx.stroke();
-      ctx.textAlign = 'right';
-      ctx.fillText((ti / 4).toFixed(2), pad.l - 7, ty + 3);
-    }
-
-    ctx.font = '600 11px Inter, sans-serif';
-    ctx.fillStyle = c.text;
-    ctx.textAlign = 'center';
-    ctx.fillText('Lesbarkeit L', pad.l + cw / 2, H - 6);
-    ctx.save();
-    ctx.translate(13, pad.t + ch / 2);
-    ctx.rotate(-Math.PI / 2);
-    ctx.fillText('Expertenmehrwert E', 0, 0);
-    ctx.restore();
-
-    sports.forEach(function(s, i) {
-      var p = toPx(s.L, s.E, pad, cw, ch);
-      var r = dotRadius(s.R);
-      var isHov = (i === hoveredIdx);
-
-      ctx.globalAlpha = isHov ? 0.30 : 0.14;
-      ctx.fillStyle = s.color;
-      ctx.beginPath(); ctx.arc(p.x, p.y, r + 7, 0, Math.PI * 2); ctx.fill();
-      ctx.globalAlpha = 1;
-
-      ctx.fillStyle = s.color;
-      ctx.globalAlpha = isHov ? 1.0 : 0.88;
-      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
-      ctx.globalAlpha = 1;
-
-      if (isHov) {
-        ctx.strokeStyle = s.color;
-        ctx.lineWidth = 2;
-        ctx.globalAlpha = 0.6;
-        ctx.beginPath(); ctx.arc(p.x, p.y, r + 4, 0, Math.PI * 2); ctx.stroke();
-        ctx.globalAlpha = 1;
-      }
-
-      ctx.font = isHov ? '700 11px Inter, sans-serif' : '500 10px Inter, sans-serif';
-      ctx.fillStyle = isHov ? s.color : c.text;
-      ctx.globalAlpha = isHov ? 1 : 0.85;
-
-      var lx = p.x, ly = p.y - r - 5;
-      ctx.textAlign = 'center';
-
-      if (s.name === 'Schach')            { lx = p.x + r + 4; ly = p.y + 4; ctx.textAlign = 'left'; }
-      if (s.name === '100m Sprint')        { lx = p.x - r - 4; ly = p.y + 4; ctx.textAlign = 'right'; }
-      if (s.name === 'Boxen')              { lx = p.x + r + 4; ly = p.y + 4; ctx.textAlign = 'left'; }
-      if (s.name === 'Marathon')           { ly = p.y + r + 13; }
-      if (s.name === 'Formel 1')           { ly = p.y + r + 13; }
-      if (s.name === 'American Football')  { ly = p.y - r - 5; }
-      if (s.name === 'Bob Viererbob')      { ly = p.y - r - 5; }
-
-      ctx.strokeStyle = c.bg;
-      ctx.lineWidth = 3;
-      ctx.lineJoin = 'round';
-      ctx.strokeText(s.name, lx, ly);
-      ctx.fillText(s.name, lx, ly);
-      ctx.globalAlpha = 1;
-    });
-  }
-
-  function hitTest(mx, my) {
-    if (!canvas) return -1;
-    var W = canvas.width, H = canvas.height;
-    var pad = { l: 48, r: 22, t: 24, b: 50 };
-    var cw = W - pad.l - pad.r;
-    var ch = H - pad.t - pad.b;
-    for (var i = 0; i < sports.length; i++) {
-      var p = toPx(sports[i].L, sports[i].E, pad, cw, ch);
-      var r = dotRadius(sports[i].R) + 6;
-      if (Math.hypot(mx - p.x, my - p.y) <= r) return i;
-    }
-    return -1;
-  }
-
-  function showTooltip(idx, mx, my) {
-    if (!tooltip) return;
-    var s = sports[idx];
-    var Rp = Math.round(s.R * 100);
-    tooltip.innerHTML =
-      '<span class="stt-name" style="color:' + s.color + '">' + s.name + '</span>' +
-      '<span class="stt-row"><span class="stt-key">Lesbarkeit</span><span class="stt-val">' + s.L.toFixed(2) + '</span></span>' +
-      '<span class="stt-row"><span class="stt-key">Expertenmehrwert</span><span class="stt-val">' + s.E.toFixed(2) + '</span></span>' +
-      '<span class="stt-row"><span class="stt-key">Ereignisdichte R</span><span class="stt-val">' + Rp + ' %</span></span>' +
-      '<span class="stt-desc">' + s.rDesc + '</span>';
-    tooltip.style.display = 'block';
-    var rect = canvas.getBoundingClientRect();
-    var tx = mx + 14, ty = my + 14;
-    var tw = tooltip.offsetWidth || 220;
-    var th = tooltip.offsetHeight || 90;
-    if (tx + tw > canvas.offsetWidth) tx = mx - tw - 10;
-    if (ty + th > canvas.offsetHeight) ty = my - th - 10;
-    tooltip.style.left = tx + 'px';
-    tooltip.style.top  = ty + 'px';
-  }
-
-  function hideTooltip() {
-    if (tooltip) tooltip.style.display = 'none';
-  }
-
-  function buildScatter() {
-    var wrap = document.getElementById('scatter-canvas');
-    if (!wrap) return;
-    wrap.innerHTML = '';
-
-    var container = document.createElement('div');
-    container.style.cssText = 'position:relative;width:100%;';
-    wrap.appendChild(container);
-
-    canvas = document.createElement('canvas');
-    var W = container.offsetWidth || 700;
-    var H = Math.round(W * 0.55);
-    if (H < 320) H = 320;
-    canvas.width  = W;
-    canvas.height = H;
-    canvas.style.cssText = 'display:block;width:100%;height:auto;border-radius:6px;cursor:default;';
-    container.appendChild(canvas);
-    ctx = canvas.getContext('2d');
-
-    tooltip = document.createElement('div');
-    tooltip.className = 'scatter-tooltip';
-    tooltip.style.display = 'none';
-    container.appendChild(tooltip);
-
-    hoveredIdx = -1;
-    draw();
-
-    canvas.addEventListener('mousemove', function(e) {
-      var rect = canvas.getBoundingClientRect();
-      var scaleX = canvas.width  / rect.width;
-      var scaleY = canvas.height / rect.height;
-      var mx = (e.clientX - rect.left) * scaleX;
-      var my = (e.clientY - rect.top)  * scaleY;
-      var idx = hitTest(mx, my);
-      if (idx !== hoveredIdx) {
-        hoveredIdx = idx;
-        canvas.style.cursor = idx >= 0 ? 'pointer' : 'default';
-        draw();
-      }
-      if (idx >= 0) {
-        showTooltip(idx, e.clientX - rect.left, e.clientY - rect.top);
-      } else {
-        hideTooltip();
-      }
-    });
-
-    canvas.addEventListener('mouseleave', function() {
-      hoveredIdx = -1;
-      draw();
-      hideTooltip();
-    });
-
-    canvas.addEventListener('touchstart', function(e) {
-      e.preventDefault();
-      var t = e.touches[0];
-      var rect = canvas.getBoundingClientRect();
-      var scaleX = canvas.width  / rect.width;
-      var scaleY = canvas.height / rect.height;
-      var mx = (t.clientX - rect.left) * scaleX;
-      var my = (t.clientY - rect.top)  * scaleY;
-      var idx = hitTest(mx, my);
-      hoveredIdx = (idx === hoveredIdx) ? -1 : idx;
-      draw();
-      if (hoveredIdx >= 0) showTooltip(hoveredIdx, t.clientX - rect.left, t.clientY - rect.top);
-      else hideTooltip();
-    }, { passive: false });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', buildScatter);
-  } else {
-    buildScatter();
-  }
-
-  var _resizeTimer;
-  window.addEventListener('resize', function() {
-    if (_resizeTimer) clearTimeout(_resizeTimer);
-    _resizeTimer = setTimeout(buildScatter, 120);
-  });
-
-  var obs = new MutationObserver(buildScatter);
-  obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
-})();
-</script>
-```
